@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{403FAB18-9A99-4784-9015-F0EF44B6999B}</ProjectGuid>
+    <ProjectGuid>{08CECFBA-ACAF-4043-A516-B5B9D3F66F08}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Wind_HelloWorld</RootNamespace>
-    <AssemblyName>Wind_HelloWorld</AssemblyName>
+    <RootNamespace>IsPowerOf</RootNamespace>
+    <AssemblyName>IsPowerOf</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandLine.cs" />
+    <Compile Include="IsPowerOf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

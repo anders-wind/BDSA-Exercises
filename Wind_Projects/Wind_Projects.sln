@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wind_HelloWorld", "Wind_HelloWorld\Wind_HelloWorld.csproj", "{403FAB18-9A99-4784-9015-F0EF44B6999B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsPowerOf", "IsPowerOf\IsPowerOf.csproj", "{08CECFBA-ACAF-4043-A516-B5B9D3F66F08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{403FAB18-9A99-4784-9015-F0EF44B6999B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{403FAB18-9A99-4784-9015-F0EF44B6999B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{403FAB18-9A99-4784-9015-F0EF44B6999B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08CECFBA-ACAF-4043-A516-B5B9D3F66F08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08CECFBA-ACAF-4043-A516-B5B9D3F66F08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08CECFBA-ACAF-4043-A516-B5B9D3F66F08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08CECFBA-ACAF-4043-A516-B5B9D3F66F08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

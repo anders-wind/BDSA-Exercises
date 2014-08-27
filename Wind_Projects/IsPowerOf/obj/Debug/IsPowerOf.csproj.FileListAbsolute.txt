@@ -1,0 +1,5 @@
+E:\User (E)\Programming (E)\BDSA-Exercises\Wind_Projects\IsPowerOf\bin\Debug\IsPowerOf.exe.config
+E:\User (E)\Programming (E)\BDSA-Exercises\Wind_Projects\IsPowerOf\bin\Debug\IsPowerOf.exe
+E:\User (E)\Programming (E)\BDSA-Exercises\Wind_Projects\IsPowerOf\bin\Debug\IsPowerOf.pdb
+E:\User (E)\Programming (E)\BDSA-Exercises\Wind_Projects\IsPowerOf\obj\Debug\IsPowerOf.exe
+E:\User (E)\Programming (E)\BDSA-Exercises\Wind_Projects\IsPowerOf\obj\Debug\IsPowerOf.pdb
