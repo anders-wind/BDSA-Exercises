@@ -3,3 +3,4 @@ E:\User (E)\Programming (E)\BDSA-Exercises\Wind_Projects\IsPowerOf\bin\Debug\IsP
 E:\User (E)\Programming (E)\BDSA-Exercises\Wind_Projects\IsPowerOf\bin\Debug\IsPowerOf.pdb
 E:\User (E)\Programming (E)\BDSA-Exercises\Wind_Projects\IsPowerOf\obj\Debug\IsPowerOf.exe
 E:\User (E)\Programming (E)\BDSA-Exercises\Wind_Projects\IsPowerOf\obj\Debug\IsPowerOf.pdb
+E:\User (E)\Programming (E)\BDSA-Exercises\Wind_Projects\IsPowerOf\obj\Debug\IsPowerOf.csprojResolveAssemblyReference.cache

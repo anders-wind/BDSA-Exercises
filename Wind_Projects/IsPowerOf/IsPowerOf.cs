@@ -9,11 +9,12 @@ namespace IsPowerOf
     class IsPowerOf
     {
         /**
-         * Has problems because it uses ints (28,3 returns true)
+         * Has problems because it uses ints (28,3 returns true) // not applicable anymore
          */
         static bool IsPowerOfBad(int a, int b)
         {
             if (a == b) return true;
+            if (a % b > 0) return false; // added to take into consideration the int problem.
             if (a > b)
             {
                 if (IsPowerOfBad(a / b, b) == true) return true;
@@ -33,9 +34,9 @@ namespace IsPowerOf
 
         static void Main(string[] args)
         {
+            Console.ReadKey();
             if(args.Length > 1)
             {
-                Console.WriteLine(Convert.ToInt32(args[0]) + " " + Convert.ToInt32(args[1]));
                 int args1 = Convert.ToInt32(args[0]);
                 int args2 = Convert.ToInt32(args[1]);
                 Console.WriteLine("\nBad method");
