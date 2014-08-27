@@ -1,0 +1,6 @@
+E:\User (E)\Programming (E)\BDSA-Exercises\Wind_Projects\Wind_ReversePolishCalculator\bin\Debug\Wind_ReversePolishCalculator.exe.config
+E:\User (E)\Programming (E)\BDSA-Exercises\Wind_Projects\Wind_ReversePolishCalculator\bin\Debug\Wind_ReversePolishCalculator.exe
+E:\User (E)\Programming (E)\BDSA-Exercises\Wind_Projects\Wind_ReversePolishCalculator\bin\Debug\Wind_ReversePolishCalculator.pdb
+E:\User (E)\Programming (E)\BDSA-Exercises\Wind_Projects\Wind_ReversePolishCalculator\obj\Debug\Wind_ReversePolishCalculator.csprojResolveAssemblyReference.cache
+E:\User (E)\Programming (E)\BDSA-Exercises\Wind_Projects\Wind_ReversePolishCalculator\obj\Debug\Wind_ReversePolishCalculator.exe
+E:\User (E)\Programming (E)\BDSA-Exercises\Wind_Projects\Wind_ReversePolishCalculator\obj\Debug\Wind_ReversePolishCalculator.pdb
