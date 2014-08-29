@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>d160caa4-b620-4c9c-81c1-a1fc69518f8c</ProjectGuid>
+    <ProjectGuid>{B744E89A-EFDB-4FB9-BA70-49494BE480B5}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Pierre_IsPowerOf</RootNamespace>

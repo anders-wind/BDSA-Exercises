@@ -1,1 +1,2 @@
 E:\User (E)\Programming (E)\BDSA-Exercises\BDSA2014\HelloWorld\bin\Debug\HelloWorld.exe.config
+C:\Users\jut\Documents\BDSA-Exercises\BDSA2014\HelloWorld\bin\Debug\HelloWorld.exe.config
