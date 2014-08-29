@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HelloWorld
+namespace IsPowerOf
 {
-    class Program
+    class IsPowerOf
     {
         static void Main(string[] args)
         {

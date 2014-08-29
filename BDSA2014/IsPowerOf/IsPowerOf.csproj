@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>7be06951-3447-4ce3-bb7b-d780d5aa7360</ProjectGuid>
+    <ProjectGuid>{AA36A080-5444-4684-BFCE-395B4CBAC563}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IsPowerOf</RootNamespace>
