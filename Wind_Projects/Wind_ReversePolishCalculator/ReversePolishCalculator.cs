@@ -10,17 +10,23 @@ namespace Wind_ReversePolishCalculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(calculate("5 1 2 + 4 * + 3 - 2"));
-            Console.ReadKey();
+            Console.WriteLine(calculate("5 5 + 6 * 7 4 - /"));
+            //Console.ReadKey();
         }
 
         static int calculate(String input)
         {
-            if (input == null) return 0;
+            if (input == null)
+            {
+                return 0;
+            }
 
             input = input.Trim();
 
-            if (input.Equals("")) return 0;
+            if (input.Equals(""))
+            {
+                return 0;
+            }
 
             var stack = new Stack<int>();
 
