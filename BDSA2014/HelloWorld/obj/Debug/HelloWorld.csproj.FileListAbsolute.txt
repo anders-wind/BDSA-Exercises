@@ -1,2 +1,6 @@
 E:\User (E)\Programming (E)\BDSA-Exercises\BDSA2014\HelloWorld\bin\Debug\HelloWorld.exe.config
+<<<<<<< HEAD
 C:\Users\jut\Documents\BDSA-Exercises\BDSA2014\HelloWorld\bin\Debug\HelloWorld.exe.config
+=======
+C:\Users\Christopher\Documents\BDSA-Exercises\BDSA2014\HelloWorld\bin\Debug\HelloWorld.exe.config
+>>>>>>> 82a6d7dfcc5a792a67aefcae9f1ec928aaceda59
