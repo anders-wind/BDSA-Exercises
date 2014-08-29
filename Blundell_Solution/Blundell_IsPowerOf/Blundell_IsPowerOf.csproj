@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>c468527c-985c-471e-829b-e4a1fdb3a5f4</ProjectGuid>
+    <ProjectGuid>{64591FB0-7D3A-4108-8582-5EB387B97ACF}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Blundell_IsPowerOf</RootNamespace>
