@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Pierre_IsPowerOf
 {
-    class Program
+    class IsPowerOf
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
