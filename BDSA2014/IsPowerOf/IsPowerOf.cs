@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IsPowerOf
 {
-    class Program
+    class IsPowerOf
     {
         static void Main(string[] args)
         {
