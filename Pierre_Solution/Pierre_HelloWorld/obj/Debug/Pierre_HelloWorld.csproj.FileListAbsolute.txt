@@ -1,0 +1,5 @@
+C:\Users\jut\Documents\BDSA-Exercises\Pierre_Solution\Pierre_HelloWorld\bin\Debug\Pierre_HelloWorld.exe.config
+C:\Users\jut\Documents\BDSA-Exercises\Pierre_Solution\Pierre_HelloWorld\bin\Debug\Pierre_HelloWorld.exe
+C:\Users\jut\Documents\BDSA-Exercises\Pierre_Solution\Pierre_HelloWorld\bin\Debug\Pierre_HelloWorld.pdb
+C:\Users\jut\Documents\BDSA-Exercises\Pierre_Solution\Pierre_HelloWorld\obj\Debug\Pierre_HelloWorld.exe
+C:\Users\jut\Documents\BDSA-Exercises\Pierre_Solution\Pierre_HelloWorld\obj\Debug\Pierre_HelloWorld.pdb
