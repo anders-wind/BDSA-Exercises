@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HelloWorld
+namespace SayHelloWorld
 {
     class HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!"); 
+            Console.WriteLine("Hello World!");
             Console.ReadKey();
 
             Console.WriteLine("Number of command line parameters = {0}", args.Length);
