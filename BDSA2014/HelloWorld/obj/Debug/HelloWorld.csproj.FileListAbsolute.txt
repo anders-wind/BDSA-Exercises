@@ -9,3 +9,5 @@ C:\Users\Christopher\Documents\BDSA-Exercises\BDSA2014\HelloWorld\bin\Debug\Hell
 C:\Users\Christopher\Documents\BDSA-Exercises\BDSA2014\HelloWorld\obj\Debug\HelloWorld.csprojResolveAssemblyReference.cache
 C:\Users\Christopher\Documents\BDSA-Exercises\BDSA2014\HelloWorld\obj\Debug\HelloWorld.exe
 C:\Users\Christopher\Documents\BDSA-Exercises\BDSA2014\HelloWorld\obj\Debug\HelloWorld.pdb
+C:\Users\jut\Documents\BDSA-Exercises\BDSA2014\HelloWorld\obj\Debug\HelloWorld.exe
+C:\Users\jut\Documents\BDSA-Exercises\BDSA2014\HelloWorld\obj\Debug\HelloWorld.pdb
