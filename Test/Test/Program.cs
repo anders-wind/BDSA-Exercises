@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pierre_IsPowerOf
+namespace Test
 {
-    class IsPowerOf
+    internal class Program
     {
         public static Boolean IsTrue;
 
@@ -14,10 +14,10 @@ namespace Pierre_IsPowerOf
         {
             // YOUR CODE GOES HERE
 
-            if (a % b != 0 || b <= 0)
-            {
-                return false;
-            }
+            //if (a%b != 0 || b <= 0)
+            //{
+            //    return false;
+            //}
 
             if (b == 1)
             {
@@ -28,15 +28,19 @@ namespace Pierre_IsPowerOf
                 return false;
             }
 
-
-            if ((a / b) > 1)
+            if (b == a)
             {
-                a = (a / b);
-                IsTrue = false;
+                return true;
+            }
+
+            if (currentval < a)
+            {
+                currentval *= b;
+                Console.WriteLine(b);
                 IsPowerOfMethod(a, b);
             }
 
-            if ((a / b).Equals(1))
+            if ((a/b).Equals(1))
             {
                 IsTrue = true;
             }
@@ -44,9 +48,9 @@ namespace Pierre_IsPowerOf
             return IsTrue;
         }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.Out.WriteLine(IsPowerOfMethod(27, 3));
+            Console.WriteLine(IsPowerOfMethod(27, 3));
         }
     }
 }
