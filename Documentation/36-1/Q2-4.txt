@@ -1,0 +1,9 @@
+Draw a use case diagram for a ticket distributor for a train system. The system includes
+two actors: a traveler who purchases different types of tickets, and a central computer
+system that maintains a reference database for the tariff. Use cases should include
+BuyOneWayTicket, BuyWeeklyCard, BuyMonthlyCard, and UpdateTariff. Also include
+the following exceptional cases: TimeOut (i.e., traveler took too long to insert the right
+amount), TransactionAborted (i.e., traveler selected the cancel button without
+completing the transaction), DistributorOutOfChange, and DistributorOutOfPaper.
+
+(Remember that a use case diagram consists of both the sticky man diagram as well as the use cases written in text using the template on p. 45 in [OOSE].)
