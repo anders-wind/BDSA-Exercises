@@ -3,3 +3,9 @@ C:\Users\jut\Documents\BDSA-Exercises\Pierre_Solution\Pierre_HelloWorld\bin\Debu
 C:\Users\jut\Documents\BDSA-Exercises\Pierre_Solution\Pierre_HelloWorld\bin\Debug\Pierre_HelloWorld.pdb
 C:\Users\jut\Documents\BDSA-Exercises\Pierre_Solution\Pierre_HelloWorld\obj\Debug\Pierre_HelloWorld.exe
 C:\Users\jut\Documents\BDSA-Exercises\Pierre_Solution\Pierre_HelloWorld\obj\Debug\Pierre_HelloWorld.pdb
+C:\Users\Pierre\Documents\BDSA-exercises\Pierre_Solution\Pierre_HelloWorld\bin\Debug\Pierre_HelloWorld.exe.config
+C:\Users\Pierre\Documents\BDSA-exercises\Pierre_Solution\Pierre_HelloWorld\bin\Debug\Pierre_HelloWorld.exe
+C:\Users\Pierre\Documents\BDSA-exercises\Pierre_Solution\Pierre_HelloWorld\bin\Debug\Pierre_HelloWorld.pdb
+C:\Users\Pierre\Documents\BDSA-exercises\Pierre_Solution\Pierre_HelloWorld\obj\Debug\Pierre_HelloWorld.csprojResolveAssemblyReference.cache
+C:\Users\Pierre\Documents\BDSA-exercises\Pierre_Solution\Pierre_HelloWorld\obj\Debug\Pierre_HelloWorld.exe
+C:\Users\Pierre\Documents\BDSA-exercises\Pierre_Solution\Pierre_HelloWorld\obj\Debug\Pierre_HelloWorld.pdb
