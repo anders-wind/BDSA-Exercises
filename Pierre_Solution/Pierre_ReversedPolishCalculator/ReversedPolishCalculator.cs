@@ -19,7 +19,7 @@ namespace Pierre_ReversedPolishCalculator
 
             //string rpce = "5 1 2 + 4 * + 3 -";
             Console.WriteLine(CalculateExpression(rpce));
-            Console.ReadKey();
+            //Console.ReadKey();
         }
 
         static int CalculateExpression(string rpce)
@@ -47,8 +47,7 @@ namespace Pierre_ReversedPolishCalculator
                                 }
                             case "-":
                                 {
-                                    firstStackPop = operands.Pop();
-                                    operands.Push(operands.Pop() - firstStackPop);
+                                    operands.Push(-operands.Pop() + operands.Pop());
                                     break;
                                 }
                             case "*":
@@ -71,11 +70,13 @@ namespace Pierre_ReversedPolishCalculator
                 }
                 else
                 {
+                    Console.WriteLine("The stack is either empty or there are more than two tokens left in the stack");
                     return 0;
                 }
             }
             catch (Exception ex)
             {
+                Console.WriteLine("Input caused an exception - uHazDumbzzssz");
                 return 0;
             }
         }
