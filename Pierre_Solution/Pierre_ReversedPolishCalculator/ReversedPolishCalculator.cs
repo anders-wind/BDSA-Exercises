@@ -10,8 +10,14 @@ namespace Pierre_ReversedPolishCalculator
     {
         static void Main(string[] args)
         {
-            string rpce = "5 1 2 + 4 * + 3 -";
+            String rpce = "";
+           
+            for(int i = 0; i < args.Length; i++)
+            {
+                rpce = rpce + args[i] + " ";
+            }
 
+            //string rpce = "5 1 2 + 4 * + 3 -";
             Console.WriteLine(CalculateExpression(rpce));
             Console.ReadKey();
         }
@@ -59,14 +65,17 @@ namespace Pierre_ReversedPolishCalculator
                         }
                     }
                 }
-                return operands.Pop();
-            }
-            catch (Exception ex)
-            {
-                if(ex is NullReferenceException || ex is InvalidOperationException)
+                if (operands.Count == 1)
+                {
+                    return operands.Pop();
+                }
+                else
                 {
                     return 0;
                 }
+            }
+            catch (Exception ex)
+            {
                 return 0;
             }
         }
