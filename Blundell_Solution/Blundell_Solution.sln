@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blundell_HelloWorld", "Blun
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blundell_IsPowerOf", "Blundell_IsPowerOf\Blundell_IsPowerOf.csproj", "{64591FB0-7D3A-4108-8582-5EB387B97ACF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blundell_ReversePolishCalculator", "Blundell_ReversePolishCalculator\Blundell_ReversePolishCalculator.csproj", "{0D9500A3-0CBD-452B-9900-C9B2B239F008}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{64591FB0-7D3A-4108-8582-5EB387B97ACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64591FB0-7D3A-4108-8582-5EB387B97ACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64591FB0-7D3A-4108-8582-5EB387B97ACF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D9500A3-0CBD-452B-9900-C9B2B239F008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D9500A3-0CBD-452B-9900-C9B2B239F008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D9500A3-0CBD-452B-9900-C9B2B239F008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D9500A3-0CBD-452B-9900-C9B2B239F008}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
