@@ -14,3 +14,4 @@ C:\Users\Christopher\Documents\BDSA-Exercises\Pierre_Solution\Pierre_HelloWorld\
 C:\Users\Christopher\Documents\BDSA-Exercises\Pierre_Solution\Pierre_HelloWorld\bin\Debug\Pierre_HelloWorld.pdb
 C:\Users\Christopher\Documents\BDSA-Exercises\Pierre_Solution\Pierre_HelloWorld\obj\Debug\Pierre_HelloWorld.exe
 C:\Users\Christopher\Documents\BDSA-Exercises\Pierre_Solution\Pierre_HelloWorld\obj\Debug\Pierre_HelloWorld.pdb
+D:\User (D)\Programmering\BDSA-Exercises\Pierre_Solution\Pierre_HelloWorld\bin\Debug\Pierre_HelloWorld.exe.config

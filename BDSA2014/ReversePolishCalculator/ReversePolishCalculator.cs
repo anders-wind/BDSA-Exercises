@@ -4,35 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pierre_ReversedPolishCalculator
+namespace ReversePolishCalculator
 {
-    class ReversedPolishCalculator
+    /// <summary>
+    /// The class takes a string as input, and if the string is in the format of a reverse Polish calculator expression, then it will calculate and return the result.
+    /// Features
+    ///     Can handle the operators: +, -, *, /, sqrt, cos, sin and pov (^)
+    ///     Can handle negative numbers if written in the form -x
+    ///     Tokens are separated by a whitespace.
+    ///     If a "token" includes a letter then the token is ignored.
+    /// 
+    /// </summary>
+    class ReversePolishCalculator
     {
+
         static void Main(string[] args)
         {
             String rpce = "";
-           
-            for(int i = 0; i < args.Length; i++)
+
+            for (int i = 0; i < args.Length; i++)
             {
                 rpce = rpce + args[i] + " ";
             }
 
             //string rpce = "5 1 2 + 4 * + 3 -";
             Console.WriteLine(CalculateExpression(rpce));
-            //Console.ReadKey();
         }
 
-        static int CalculateExpression(string rpce)
+        /// <summary>
+        /// Calculates the input reverse calculator string expression. Can handle a number of faulties.
+        /// </summary>
+        /// <param name="rpce">A String in the Reverse Polish Calculator expression format</param>
+        /// <returns>0 if faulty otherwise the result</returns>
+        static decimal CalculateExpression(string rpce)
         {
             try
             {
                 string[] rpceTokens = rpce.Split(' ');
-                Stack<int> operands = new Stack<int>();
-                int firstStackPop = 0;
+                var operands = new Stack<decimal>();
+                decimal firstStackPop = 0;
 
                 foreach (string token in rpceTokens)
                 {
-                    if (int.TryParse(token, out firstStackPop))
+                    if (decimal.TryParse(token, out firstStackPop))
                     {
                         operands.Push(firstStackPop);
                     }
@@ -61,13 +75,28 @@ namespace Pierre_ReversedPolishCalculator
                                     operands.Push(operands.Pop() / firstStackPop);
                                     break;
                                 }
-                            case "^"
+                            case "^":
                             case "pov":
-                                {
-                                    firstStackPop = operands.Pop();
-                                    operands.Push(Math.pov(operands.Pop(),firstStackPop));
-                                    break;
-                                }
+                            {
+                                firstStackPop = operands.Pop();
+                                operands.Push((decimal)Math.Pow((double)operands.Pop(), (double)firstStackPop));
+                                break;
+                            }
+                            case "sqrt":
+                            {
+                                operands.Push((decimal)Math.Sqrt((double)operands.Pop()));
+                                break;
+                            }
+                            case "cos":
+                            {
+                                operands.Push((decimal)Math.Cos((double)operands.Pop()));
+                                break;
+                            }
+                            case "sin":
+                            {
+                                operands.Push((decimal)Math.Sin((double)operands.Pop()));
+                                break;
+                            }
                         }
                     }
                 }
