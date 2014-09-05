@@ -36,11 +36,11 @@ namespace ReversePolishCalculator
         /// </summary>
         /// <param name="rpce">A String in the Reverse Polish Calculator expression format</param>
         /// <returns>0 if faulty otherwise the result</returns>
-        static decimal CalculateExpression(string rpce)
+        public static decimal CalculateExpression(string rpce)
         {
             try
             {
-                string[] rpceTokens = rpce.Split(' ');
+                string[] rpceTokens = rpce.ToLower().Split(' ');
                 var operands = new Stack<decimal>();
                 decimal firstStackPop = 0;
 
