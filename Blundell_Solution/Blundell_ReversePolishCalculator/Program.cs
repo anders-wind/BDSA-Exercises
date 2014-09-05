@@ -79,15 +79,15 @@ namespace Blundell_ReversePolishCalculator
                 rpn = rpn + " ";
                 int index = rpn.IndexOf(" ");
 
-                try
-                {
+                //try
+                //{
                     stack.Push(Convert.ToInt32(rpn.Substring(0, index)));
-                }
-                catch (FormatException ex)
-                {
-                    // if a char(non numeral or operational) is found then return 0.
-                    return 0;
-                }
+                //}
+                //catch (FormatException ex)
+                //{
+                //    // if a char(non numeral or operational) is found then return 0.
+                //    return 0;
+                //}
                 rpn = rpn.Substring(index).Trim();
 
                 //SPØRG DOCTOR SHOTS
