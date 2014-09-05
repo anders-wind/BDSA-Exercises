@@ -1,32 +1,42 @@
 \section{Reverse\+Polish\+Calculator.\+Reverse\+Polish\+Calculator\+Tests Class Reference}
 \label{class_reverse_polish_calculator_1_1_reverse_polish_calculator_tests}\index{Reverse\+Polish\+Calculator.\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator.\+Reverse\+Polish\+Calculator\+Tests}}
+
+
+A test class which ensures that the reverse Polish calculator works as intended most of the time.  
+
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void {\bf Test\+Null\+Input} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Testcase where the input is null -\/ should return 0. \end{DoxyCompactList}\item 
 void {\bf Test\+Empty\+Input} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Testcase where the input is \char`\"{}\char`\"{} -\/ should return 0. \end{DoxyCompactList}\item 
 void {\bf Test\+Plus\+Operator} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Testcase where the input contains a + operator (5 5 +) -\/ should return 10. \end{DoxyCompactList}\item 
 void {\bf Test\+Minus\+Operator} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Testcase where the input contains a -\/ operator (3 5 -\/) -\/ should return -\/2. \end{DoxyCompactList}\item 
 void {\bf Test\+Multiply\+Operator} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Testcase where the input contains a $\ast$ operator (3 4 $\ast$) -\/ should return 12. \end{DoxyCompactList}\item 
 void {\bf Test\+Divide\+Operator} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Testcase where the input contains a / operator (12 4 $\ast$) -\/ should return 3. \end{DoxyCompactList}\item 
 void {\bf Test\+Pov\+Operator} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Testcase where the input contains a pov ($^\wedge$) operator (5 2 pov) -\/ should return 25. (2 5 $^\wedge$) -\/ should return 32. \end{DoxyCompactList}\item 
 void {\bf Test\+Sin\+Operator} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Testcase where the input contains sin operator (30 sin) -\/ should return Math.\+Sin(30). \end{DoxyCompactList}\item 
 void {\bf Test\+Cos\+Operator} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Testcase where the input contains cos operator (30 cos) -\/ should return Math.\+Cos(30). \end{DoxyCompactList}\item 
 void {\bf Test\+Sqrt\+Operator} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Testcase where the input contains sqrt operator (25 sqrt) -\/ should return Math.\+Cos(5). \end{DoxyCompactList}\item 
 void {\bf Test\+Complex\+Expression\+Operator} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Testcase where the input contains multiple operators and values. \end{DoxyCompactList}\item 
 void {\bf Test\+Expression\+With\+Letters\+Operator} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Testcase where the input contains letters and letters combined with numbers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A test class which ensures that the reverse Polish calculator works as intended most of the time. 
+
 
 
 \subsection{Member Function Documentation}
@@ -37,6 +47,10 @@ void {\bf Test\+Expression\+With\+Letters\+Operator} ()
 {}
 \end{DoxyParamCaption}
 )}\label{class_reverse_polish_calculator_1_1_reverse_polish_calculator_tests_a58235c9b99031bd7a66a9a76b8d89fd5}
+
+
+Testcase where the input contains multiple operators and values. 
+
 \index{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}!Test\+Cos\+Operator@{Test\+Cos\+Operator}}
 \index{Test\+Cos\+Operator@{Test\+Cos\+Operator}!Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}}
 \subsubsection[{Test\+Cos\+Operator}]{\setlength{\rightskip}{0pt plus 5cm}void Reverse\+Polish\+Calculator.\+Reverse\+Polish\+Calculator\+Tests.\+Test\+Cos\+Operator (
@@ -44,6 +58,10 @@ void {\bf Test\+Expression\+With\+Letters\+Operator} ()
 {}
 \end{DoxyParamCaption}
 )}\label{class_reverse_polish_calculator_1_1_reverse_polish_calculator_tests_ab079da8b18cee4c910fe872c646c7b23}
+
+
+Testcase where the input contains cos operator (30 cos) -\/ should return Math.\+Cos(30). 
+
 \index{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}!Test\+Divide\+Operator@{Test\+Divide\+Operator}}
 \index{Test\+Divide\+Operator@{Test\+Divide\+Operator}!Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}}
 \subsubsection[{Test\+Divide\+Operator}]{\setlength{\rightskip}{0pt plus 5cm}void Reverse\+Polish\+Calculator.\+Reverse\+Polish\+Calculator\+Tests.\+Test\+Divide\+Operator (
@@ -51,6 +69,10 @@ void {\bf Test\+Expression\+With\+Letters\+Operator} ()
 {}
 \end{DoxyParamCaption}
 )}\label{class_reverse_polish_calculator_1_1_reverse_polish_calculator_tests_a9311abc2b10d8b1c4bb52647ee147b22}
+
+
+Testcase where the input contains a / operator (12 4 $\ast$) -\/ should return 3. 
+
 \index{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}!Test\+Empty\+Input@{Test\+Empty\+Input}}
 \index{Test\+Empty\+Input@{Test\+Empty\+Input}!Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}}
 \subsubsection[{Test\+Empty\+Input}]{\setlength{\rightskip}{0pt plus 5cm}void Reverse\+Polish\+Calculator.\+Reverse\+Polish\+Calculator\+Tests.\+Test\+Empty\+Input (
@@ -58,6 +80,10 @@ void {\bf Test\+Expression\+With\+Letters\+Operator} ()
 {}
 \end{DoxyParamCaption}
 )}\label{class_reverse_polish_calculator_1_1_reverse_polish_calculator_tests_af42a2b3ffcc69e2aec725c638b48aea5}
+
+
+Testcase where the input is \char`\"{}\char`\"{} -\/ should return 0. 
+
 \index{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}!Test\+Expression\+With\+Letters\+Operator@{Test\+Expression\+With\+Letters\+Operator}}
 \index{Test\+Expression\+With\+Letters\+Operator@{Test\+Expression\+With\+Letters\+Operator}!Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}}
 \subsubsection[{Test\+Expression\+With\+Letters\+Operator}]{\setlength{\rightskip}{0pt plus 5cm}void Reverse\+Polish\+Calculator.\+Reverse\+Polish\+Calculator\+Tests.\+Test\+Expression\+With\+Letters\+Operator (
@@ -65,6 +91,10 @@ void {\bf Test\+Expression\+With\+Letters\+Operator} ()
 {}
 \end{DoxyParamCaption}
 )}\label{class_reverse_polish_calculator_1_1_reverse_polish_calculator_tests_a646d50bfbe3b4130668ced392f2da2a2}
+
+
+Testcase where the input contains letters and letters combined with numbers. 
+
 \index{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}!Test\+Minus\+Operator@{Test\+Minus\+Operator}}
 \index{Test\+Minus\+Operator@{Test\+Minus\+Operator}!Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}}
 \subsubsection[{Test\+Minus\+Operator}]{\setlength{\rightskip}{0pt plus 5cm}void Reverse\+Polish\+Calculator.\+Reverse\+Polish\+Calculator\+Tests.\+Test\+Minus\+Operator (
@@ -72,6 +102,10 @@ void {\bf Test\+Expression\+With\+Letters\+Operator} ()
 {}
 \end{DoxyParamCaption}
 )}\label{class_reverse_polish_calculator_1_1_reverse_polish_calculator_tests_a8e8f0f8f7174acc0cc2ffb389c02b33a}
+
+
+Testcase where the input contains a -\/ operator (3 5 -\/) -\/ should return -\/2. 
+
 \index{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}!Test\+Multiply\+Operator@{Test\+Multiply\+Operator}}
 \index{Test\+Multiply\+Operator@{Test\+Multiply\+Operator}!Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}}
 \subsubsection[{Test\+Multiply\+Operator}]{\setlength{\rightskip}{0pt plus 5cm}void Reverse\+Polish\+Calculator.\+Reverse\+Polish\+Calculator\+Tests.\+Test\+Multiply\+Operator (
@@ -79,6 +113,10 @@ void {\bf Test\+Expression\+With\+Letters\+Operator} ()
 {}
 \end{DoxyParamCaption}
 )}\label{class_reverse_polish_calculator_1_1_reverse_polish_calculator_tests_aebb0f2edadb7f5327d158ec681e0bcd8}
+
+
+Testcase where the input contains a $\ast$ operator (3 4 $\ast$) -\/ should return 12. 
+
 \index{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}!Test\+Null\+Input@{Test\+Null\+Input}}
 \index{Test\+Null\+Input@{Test\+Null\+Input}!Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}}
 \subsubsection[{Test\+Null\+Input}]{\setlength{\rightskip}{0pt plus 5cm}void Reverse\+Polish\+Calculator.\+Reverse\+Polish\+Calculator\+Tests.\+Test\+Null\+Input (
@@ -86,6 +124,10 @@ void {\bf Test\+Expression\+With\+Letters\+Operator} ()
 {}
 \end{DoxyParamCaption}
 )}\label{class_reverse_polish_calculator_1_1_reverse_polish_calculator_tests_a236d73dc474a28991f21833ad3de7c2d}
+
+
+Testcase where the input is null -\/ should return 0. 
+
 \index{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}!Test\+Plus\+Operator@{Test\+Plus\+Operator}}
 \index{Test\+Plus\+Operator@{Test\+Plus\+Operator}!Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}}
 \subsubsection[{Test\+Plus\+Operator}]{\setlength{\rightskip}{0pt plus 5cm}void Reverse\+Polish\+Calculator.\+Reverse\+Polish\+Calculator\+Tests.\+Test\+Plus\+Operator (
@@ -93,6 +135,10 @@ void {\bf Test\+Expression\+With\+Letters\+Operator} ()
 {}
 \end{DoxyParamCaption}
 )}\label{class_reverse_polish_calculator_1_1_reverse_polish_calculator_tests_a1f916d3f516de2374501a0a972f4063b}
+
+
+Testcase where the input contains a + operator (5 5 +) -\/ should return 10. 
+
 \index{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}!Test\+Pov\+Operator@{Test\+Pov\+Operator}}
 \index{Test\+Pov\+Operator@{Test\+Pov\+Operator}!Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}}
 \subsubsection[{Test\+Pov\+Operator}]{\setlength{\rightskip}{0pt plus 5cm}void Reverse\+Polish\+Calculator.\+Reverse\+Polish\+Calculator\+Tests.\+Test\+Pov\+Operator (
@@ -100,6 +146,10 @@ void {\bf Test\+Expression\+With\+Letters\+Operator} ()
 {}
 \end{DoxyParamCaption}
 )}\label{class_reverse_polish_calculator_1_1_reverse_polish_calculator_tests_af6bc021afe5d36ba480bf6e8755a1913}
+
+
+Testcase where the input contains a pov ($^\wedge$) operator (5 2 pov) -\/ should return 25. (2 5 $^\wedge$) -\/ should return 32. 
+
 \index{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}!Test\+Sin\+Operator@{Test\+Sin\+Operator}}
 \index{Test\+Sin\+Operator@{Test\+Sin\+Operator}!Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}}
 \subsubsection[{Test\+Sin\+Operator}]{\setlength{\rightskip}{0pt plus 5cm}void Reverse\+Polish\+Calculator.\+Reverse\+Polish\+Calculator\+Tests.\+Test\+Sin\+Operator (
@@ -107,6 +157,10 @@ void {\bf Test\+Expression\+With\+Letters\+Operator} ()
 {}
 \end{DoxyParamCaption}
 )}\label{class_reverse_polish_calculator_1_1_reverse_polish_calculator_tests_ad84dcd8782694291c48cb9fbe98e6b46}
+
+
+Testcase where the input contains sin operator (30 sin) -\/ should return Math.\+Sin(30). 
+
 \index{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}!Test\+Sqrt\+Operator@{Test\+Sqrt\+Operator}}
 \index{Test\+Sqrt\+Operator@{Test\+Sqrt\+Operator}!Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests@{Reverse\+Polish\+Calculator\+::\+Reverse\+Polish\+Calculator\+Tests}}
 \subsubsection[{Test\+Sqrt\+Operator}]{\setlength{\rightskip}{0pt plus 5cm}void Reverse\+Polish\+Calculator.\+Reverse\+Polish\+Calculator\+Tests.\+Test\+Sqrt\+Operator (
@@ -114,6 +168,10 @@ void {\bf Test\+Expression\+With\+Letters\+Operator} ()
 {}
 \end{DoxyParamCaption}
 )}\label{class_reverse_polish_calculator_1_1_reverse_polish_calculator_tests_a50c1d58828cbb5180f1b0b202a48db00}
+
+
+Testcase where the input contains sqrt operator (25 sqrt) -\/ should return Math.\+Cos(5). 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
