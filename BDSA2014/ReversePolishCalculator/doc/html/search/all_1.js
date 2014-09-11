@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['calculateexpression',['CalculateExpression',['../class_reverse_polish_calculator_1_1_reverse_polish_calculator.html#ad72f2197711f4a68d2f7fce26e22b533',1,'ReversePolishCalculator::ReversePolishCalculator']]]
+  ['reversepolishcalculator',['ReversePolishCalculator',['../class_reverse_polish_calculator_1_1_reverse_polish_calculator.html',1,'ReversePolishCalculator']]],
+  ['reversepolishcalculator',['ReversePolishCalculator',['../namespace_reverse_polish_calculator.html',1,'']]],
+  ['reversepolishcalculatortests',['ReversePolishCalculatorTests',['../class_reverse_polish_calculator_1_1_reverse_polish_calculator_tests.html',1,'ReversePolishCalculator']]]
 ];

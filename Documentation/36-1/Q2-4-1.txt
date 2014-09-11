@@ -1,1 +1,0 @@
-Draw the class diagram for the ticket distributor system from exercise 2-4.

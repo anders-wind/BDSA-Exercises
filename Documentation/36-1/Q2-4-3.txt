@@ -1,1 +1,0 @@
-Draw an activity diagram showing how a traveler buys a ticket.

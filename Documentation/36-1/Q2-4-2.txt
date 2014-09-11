@@ -1,1 +1,0 @@
-Draw the sequence diagram for the use case in exercise 2-4.
