@@ -16,7 +16,7 @@ BuyOneWayTicket, BuyWeeklyCard, BuyMonthlyCard, and UpdateTariff. Also include t
 
 \textbf{Participating actors:}
 \begin{itemize}
-	\item Initiated by Traveler
+	\item Initiated by TravelerOR Timeout.
 	\item Communicates with CentralComputerSystem
 \end{itemize}
 
@@ -44,7 +44,7 @@ BuyOneWayTicket, BuyWeeklyCard, BuyMonthlyCard, and UpdateTariff. Also include t
 \textbf{Exit condition:}
 \begin{itemize}
 	\item Traveler has received the ticket and change (if any).
-	\item Traveler has initiated TransactionAborted.
+	\item Traveler has initiated TransactionAborted OR Timeout.
 	\item TicketDistributor has initiated DistributorOutOfChange OR DistributorOutOfPaper.
 \end{itemize}
 
