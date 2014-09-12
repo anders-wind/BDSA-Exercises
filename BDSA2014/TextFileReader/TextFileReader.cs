@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Text.RegularExpressions;
+
 
 namespace TextFileReader
 {
@@ -9,28 +11,43 @@ namespace TextFileReader
     static class TextFileReader
     {
 
-        static void Main(string[] args)
+        public static void Main()
         {
-            ReadFile("TestFile.txt");
+            string content = TextFileReader.ReadFile("TestFile.txt");
+
+            string keyword = "to";
+            keyword = keyword.ToLower();
+
+            print(content, keyword);
         }
+
+
+        static void print(string content, string keyword)
+        {
+            MatchCollection matches = Regex.Matches(content, keyword, RegexOptions.IgnoreCase);
+            int currentIndex = 0;
+            foreach(Match match in matches)
+            {
+                if (match.Success)
+                {
+                    Console.Write(content.Substring(currentIndex, match.Index));
+                    Console.BackgroundColor = ConsoleColor.Yellow;
+                    Console.Write(match.ToString());
+                    Console.ResetColor();
+                    currentIndex = match.Index + match.Length;
+                }
+            }
+            Console.Write(content.Substring(currentIndex));
+        }
+
+
+
+
         /// <summary>
         /// Reads a text file and returns its content as a string.
         /// </summary>
         /// <param name="filename">The file name to be read, including the path.</param>
         /// <returns>A string representing the content of the file</returns>
-        /// <example>
-        /// <code><pre>
-        /// public static void Main()
-        /// {
-        ///     var content = TextFileReader.ReadFile("TextFileReader.cs");
-        ///     var lines = content.Split(new[] {'\\r', '\\n'}, StringSplitOptions.RemoveEmptyEntries);
-        ///     foreach(string line in lines)
-        ///	    {
-        ///	        Console.Out.WriteLine(line);
-        ///	    }
-        /// }
-        /// </pre></code>
-        /// </example>
         public static string ReadFile(string filename)
         {
             try
