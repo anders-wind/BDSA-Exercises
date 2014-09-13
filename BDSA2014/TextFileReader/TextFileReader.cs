@@ -17,7 +17,7 @@ namespace TextFileReader
         {
             string content = TextFileReader.ReadFile("TestFile.txt") + "\n\n";
 
-            string keyword = "arm*";
+            string keyword = "top*";
 
             //Console.WriteLine(content);
             print(content, createRegex(keyword));
@@ -93,6 +93,32 @@ namespace TextFileReader
                 }
             }
             Console.Write(content.Substring(currentIndex));
+
+
+            // second solution - probably slower but can handle two formattings at a time
+            for (int i = 0; i < content.Length; i++)
+            {
+                foreach (Match match in sortedMatches)
+                {
+                    if (match.Index <= i && match.Index+match.Length > i)
+                    {
+                        if (datesList.Contains(match))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                        }
+                        else if (urlsList.Contains(match))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                        }
+                        else
+                        {
+                            Console.BackgroundColor = ConsoleColor.Yellow;
+                        }
+                    }
+                }
+                Console.Write(content.Substring(i,1));
+                Console.ResetColor();
+            }
         }
 
 
