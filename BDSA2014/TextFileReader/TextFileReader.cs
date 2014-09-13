@@ -15,7 +15,7 @@ namespace TextFileReader
         {
             string content = TextFileReader.ReadFile("TestFile.txt");
 
-            string keyword = "a*";
+            string keyword = "*strong";
 
             //Console.WriteLine(content);
             print(content, createRegex(keyword));
@@ -28,10 +28,16 @@ namespace TextFileReader
             {
                 return input.Substring(0, match.Index) + " " + input.Substring(match.Index+match.Length);
             }
-            match = Regex.Match(input, @"\w*\*");
+            match = Regex.Match(input, @"\w+\*");
             if (match.Success)
             {
                 return input.Substring(0, match.Length -1) + @"\w*";
+            }
+            match = Regex.Match(input, @"\*+\w+");
+            if (match.Success)
+            {
+                Console.WriteLine("whatup");
+                return @"\w*" + input.Substring(1);
             }
             return input;
         }
