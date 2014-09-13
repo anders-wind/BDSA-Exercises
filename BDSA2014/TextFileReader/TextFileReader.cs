@@ -15,10 +15,11 @@ namespace TextFileReader
         {
             string content = TextFileReader.ReadFile("TestFile.txt");
 
-            string keyword = "to";
+            string keyword = " to ";
             keyword = keyword.ToLower();
 
-            print(content, keyword);
+            //Console.WriteLine(content);
+            //print(content, keyword);
         }
 
 
@@ -30,7 +31,7 @@ namespace TextFileReader
             {
                 if (match.Success)
                 {
-                    Console.Write(content.Substring(currentIndex, match.Index));
+                    Console.Write(content.Substring(currentIndex, match.Index - currentIndex));
                     Console.BackgroundColor = ConsoleColor.Yellow;
                     Console.Write(match.ToString());
                     Console.ResetColor();
