@@ -15,7 +15,7 @@ namespace TextFileReader
         {
             string content = TextFileReader.ReadFile("TestFile.txt");
 
-            string keyword = "to + avoid";
+            string keyword = "a*";
 
             //Console.WriteLine(content);
             print(content, createRegex(keyword));
@@ -27,6 +27,11 @@ namespace TextFileReader
             if (match.Success)
             {
                 return input.Substring(0, match.Index) + " " + input.Substring(match.Index+match.Length);
+            }
+            match = Regex.Match(input, @"\w*\*");
+            if (match.Success)
+            {
+                return input.Substring(0, match.Length -1) + @"\w*";
             }
             return input;
         }
