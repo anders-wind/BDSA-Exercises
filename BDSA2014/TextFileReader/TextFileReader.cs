@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 
@@ -13,9 +15,9 @@ namespace TextFileReader
 
         public static void Main()
         {
-            string content = TextFileReader.ReadFile("TestFile.txt");
+            string content = TextFileReader.ReadFile("TestFile.txt") + "\n\n";
 
-            string keyword = "*strong";
+            string keyword = "arm*";
 
             //Console.WriteLine(content);
             print(content, createRegex(keyword));
@@ -36,7 +38,6 @@ namespace TextFileReader
             match = Regex.Match(input, @"\*+\w+");
             if (match.Success)
             {
-                Console.WriteLine("whatup");
                 return @"\w*" + input.Substring(1);
             }
             return input;
@@ -45,15 +46,48 @@ namespace TextFileReader
 
         static void print(string content, string keyword)
         {
-            MatchCollection matches = Regex.Matches(content, keyword, RegexOptions.IgnoreCase);
+            MatchCollection matchesKeywords = Regex.Matches(content, keyword, RegexOptions.IgnoreCase);
+            MatchCollection matchesURLs = Regex.Matches(content, @"http(s)?:\/\/([\w\d~\-\?\=]+(\.|\/){0,1})+", RegexOptions.IgnoreCase);
+            MatchCollection matchesDates = Regex.Matches(content, @"(\w){3}, (\d){2} (\w){3} (\d){4} (\d){2}:(\d){2}:(\d){2} -?(\d){4}", RegexOptions.IgnoreCase);
+
+            Match[] keyWords = new Match[matchesKeywords.Count];
+            matchesKeywords.CopyTo(keyWords, 0);
+            Match[] urls = new Match[matchesURLs.Count];
+            matchesURLs.CopyTo(urls, 0);
+            Match[] dates = new Match[matchesDates.Count];
+            matchesDates.CopyTo(dates, 0);
+            List<Match> keywordsList = keyWords.ToList();
+            List<Match> urlsList = urls.ToList();
+            List<Match> datesList = dates.ToList();
+
+            List<Match> sortedMatches = new List<Match>();
+            sortedMatches.AddRange(keywordsList);
+            sortedMatches.AddRange(urlsList);
+            sortedMatches.AddRange(datesList);
+            sortedMatches.Sort(Comparison);
+
             int currentIndex = 0;
-            foreach(Match match in matches)
+            foreach (Match match in sortedMatches)
             {
-                if (match.Success)
+                if (match.Success && match.Index > currentIndex)
                 {
                     Console.Write(content.Substring(currentIndex, match.Index - currentIndex));
-                    Console.BackgroundColor = ConsoleColor.Yellow;
-                    Console.Write(match.ToString());
+
+                    if (datesList.Contains(match))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write(match.ToString());
+                    }
+                    else if (urlsList.Contains(match))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.Write(match.ToString());
+                    }
+                    else
+                    {
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        Console.Write(match.ToString());
+                    }
                     Console.ResetColor();
                     currentIndex = match.Index + match.Length;
                 }
@@ -62,6 +96,12 @@ namespace TextFileReader
         }
 
 
+        private static int Comparison(Match match, Match match1)
+        {
+            if (match.Index < match1.Index) return -1;
+            if (match.Index > match1.Index) return 1;
+            return 0;
+        }
 
 
         /// <summary>
