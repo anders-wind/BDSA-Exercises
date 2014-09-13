@@ -15,11 +15,20 @@ namespace TextFileReader
         {
             string content = TextFileReader.ReadFile("TestFile.txt");
 
-            string keyword = " to ";
-            keyword = keyword.ToLower();
+            string keyword = "to + avoid";
 
             //Console.WriteLine(content);
-            //print(content, keyword);
+            print(content, createRegex(keyword));
+        }
+
+        static string createRegex(string input)
+        {
+            Match match = Regex.Match(input, @" \+ ");
+            if (match.Success)
+            {
+                return input.Substring(0, match.Index) + " " + input.Substring(match.Index+match.Length);
+            }
+            return input;
         }
 
 
