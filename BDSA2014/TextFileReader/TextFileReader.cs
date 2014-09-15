@@ -44,7 +44,7 @@ namespace TextFileReader
             Match match = Regex.Match(input, @" \+ ");
             if (match.Success)
             {
-                return " " + input.Substring(0, match.Index) + " " + input.Substring(match.Index+match.Length) + " ";
+                return input.Substring(0, match.Index) + " " + input.Substring(match.Index+match.Length);
             }
             match = Regex.Match(input, @"\w+\*{1}");
             if (match.Success)
