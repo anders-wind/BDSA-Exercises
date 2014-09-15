@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsPowerOf", "IsPowerOf\IsPo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SayHelloWorld", "SayHelloWorld\SayHelloWorld.csproj", "{F69E4A95-7ED1-4EEA-BC58-6330A939548F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReversePolishCalculator", "ReversePolishCalculator\ReversePolishCalculator.csproj", "{2703797C-53D6-4698-9D56-3405BD3879F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReversePolishCalculatorProject", "ReversePolishCalculator\ReversePolishCalculatorProject.csproj", "{2703797C-53D6-4698-9D56-3405BD3879F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextFileReader", "TextFileReader\TextFileReader.csproj", "{E07C5BE5-4CC2-458E-9C59-7554ED81DEA4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextFileReaderProject", "TextFileReader\TextFileReaderProject.csproj", "{E07C5BE5-4CC2-458E-9C59-7554ED81DEA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
