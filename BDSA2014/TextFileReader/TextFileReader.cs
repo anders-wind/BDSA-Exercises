@@ -9,7 +9,8 @@ using System.Text.RegularExpressions;
 namespace TextFileReader
 {
     /// <summary>
-    ///   Utility class for reading text files into a single string.
+    ///     Utility class for reading text files into a single string.
+    ///     Allows the user to search for a single keyword in the text.
     /// </summary>
     static class TextFileReader
     {
@@ -22,8 +23,8 @@ namespace TextFileReader
             }
             catch (Exception exception)
             {
-                Console.WriteLine("\nTherefore the default file is loaded.\nPress any key..." );
-                content = TextFileReader.ReadFile("TestFile.txt") + "\n\n";
+                Console.WriteLine("\nCould not load file, therefore the default file is loaded.\nPress any key..." );
+                content = "\n" + TextFileReader.ReadFile("TestFile.txt") + "\n\n";
                 Console.ReadKey();
             }
             
@@ -71,6 +72,7 @@ namespace TextFileReader
             MatchCollection matchesURLs = Regex.Matches(content, @"http(s)?:\/\/([\w\d~\-\?\=]+(\.|\/){0,1})+", RegexOptions.IgnoreCase);
             MatchCollection matchesDates = Regex.Matches(content, @"(\w){3}, (\d){2} (\w){3} (\d){4} (\d){2}:(\d){2}:(\d){2} -?(\d){4}", RegexOptions.IgnoreCase);
 
+            #region Put all MatchCollections into a List<Match> and sort
             Match[] keyWords = new Match[matchesKeywords.Count];
             matchesKeywords.CopyTo(keyWords, 0);
             Match[] urls = new Match[matchesURLs.Count];
@@ -86,8 +88,9 @@ namespace TextFileReader
             sortedMatches.AddRange(urlsList);
             sortedMatches.AddRange(datesList);
             sortedMatches.Sort(Comparison);
+            #endregion
 
-            // new implementation - probably slower but can handle two formattings at a time
+            // new implementation - probably slower but can handle to formattings at a time
             for (int i = 0; i < content.Length; i++)
             {
                 foreach (Match match in sortedMatches)
@@ -112,7 +115,7 @@ namespace TextFileReader
                 Console.ResetColor();
             }
 
-            // OLD IMPLEMENTATION
+            // OLD IMPLEMENTATION - Faster but not as precise
             //int currentIndex = 0;
             //foreach (Match match in sortedMatches)
             //{
