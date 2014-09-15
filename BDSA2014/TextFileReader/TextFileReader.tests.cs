@@ -17,7 +17,7 @@ namespace TextFileReader
         /// 
         /// </summary>
         [Test]
-        public void TestNullInput()
+        public void TestNullContent()
         {
         }
     }
