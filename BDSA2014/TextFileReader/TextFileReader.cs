@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text.RegularExpressions;
 
 
@@ -12,23 +13,38 @@ namespace TextFileReader
     /// </summary>
     static class TextFileReader
     {
-
-        public static void Main()
+        public static void Main(string[] args)
         {
-            string content = TextFileReader.ReadFile("TestFile.txt") + "\n\n";
+            string content = "";
+            try
+            {
+                content = TextFileReader.ReadFile(args[0]) + "\n\n";
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine("\nTherefore the default file is loaded.\nPress any key..." );
+                content = TextFileReader.ReadFile("TestFile.txt") + "\n\n";
+                Console.ReadKey();
+            }
+            
+            print(content, "");
 
-            string keyword = @"**hej";
-
-            //Console.WriteLine(content);
-            print(content, createRegex(keyword));
+            while (true)
+            {
+                Console.WriteLine("\n\nCommands: \t+ between two words\n\t\t* prefix\n\t\t* suffix");
+                Console.WriteLine("\n> type the string you want to search for and hit enter.");
+                string keyword = Console.ReadLine();
+                print(content, createRegex(keyword));
+            }
         }
+        
 
         static string createRegex(string input)
         {
             Match match = Regex.Match(input, @" \+ ");
             if (match.Success)
             {
-                return input.Substring(0, match.Index) + " " + input.Substring(match.Index+match.Length);
+                return " " + input.Substring(0, match.Index) + " " + input.Substring(match.Index+match.Length) + " ";
             }
             match = Regex.Match(input, @"\w+\*{1}");
             if (match.Success)
@@ -46,7 +62,12 @@ namespace TextFileReader
 
         static void print(string content, string keyword)
         {
-            MatchCollection matchesKeywords = Regex.Matches(content, keyword, RegexOptions.IgnoreCase);
+            MatchCollection matchesKeywords = null;
+            if (keyword != null || !keyword.Equals(""))
+            {
+                matchesKeywords = Regex.Matches(content, keyword, RegexOptions.IgnoreCase);
+            }
+
             MatchCollection matchesURLs = Regex.Matches(content, @"http(s)?:\/\/([\w\d~\-\?\=]+(\.|\/){0,1})+", RegexOptions.IgnoreCase);
             MatchCollection matchesDates = Regex.Matches(content, @"(\w){3}, (\d){2} (\w){3} (\d){4} (\d){2}:(\d){2}:(\d){2} -?(\d){4}", RegexOptions.IgnoreCase);
 
@@ -66,37 +87,7 @@ namespace TextFileReader
             sortedMatches.AddRange(datesList);
             sortedMatches.Sort(Comparison);
 
-            int currentIndex = 0;
-            foreach (Match match in sortedMatches)
-            {
-                if (match.Success && match.Index > currentIndex)
-                {
-                    Console.Write(content.Substring(currentIndex, match.Index - currentIndex));
-
-                    if (datesList.Contains(match))
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.Write(match.ToString());
-                    }
-                    else if (urlsList.Contains(match))
-                    {
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.Write(match.ToString());
-                    }
-                    else
-                    {
-                        Console.BackgroundColor = ConsoleColor.Yellow;
-                        Console.Write(match.ToString());
-                    }
-                    Console.ResetColor();
-                    currentIndex = match.Index + match.Length;
-                }
-            }
-            Console.Write(content.Substring(currentIndex));
-
-            Console.WriteLine("\n\n\n\n");
-
-            // second solution - probably slower but can handle two formattings at a time
+            // new implementation - probably slower but can handle two formattings at a time
             for (int i = 0; i < content.Length; i++)
             {
                 foreach (Match match in sortedMatches)
@@ -120,6 +111,35 @@ namespace TextFileReader
                 Console.Write(content.Substring(i,1));
                 Console.ResetColor();
             }
+
+            // OLD IMPLEMENTATION
+            //int currentIndex = 0;
+            //foreach (Match match in sortedMatches)
+            //{
+            //    if (match.Success && match.Index > currentIndex)
+            //    {
+            //        Console.Write(content.Substring(currentIndex, match.Index - currentIndex));
+
+            //        if (datesList.Contains(match))
+            //        {
+            //            Console.ForegroundColor = ConsoleColor.Green;
+            //            Console.Write(match.ToString());
+            //        }
+            //        else if (urlsList.Contains(match))
+            //        {
+            //            Console.ForegroundColor = ConsoleColor.Blue;
+            //            Console.Write(match.ToString());
+            //        }
+            //        else
+            //        {
+            //            Console.BackgroundColor = ConsoleColor.Yellow;
+            //            Console.Write(match.ToString());
+            //        }
+            //        Console.ResetColor();
+            //        currentIndex = match.Index + match.Length;
+            //    }
+            //}
+            //Console.Write(content.Substring(currentIndex));
         }
 
 
