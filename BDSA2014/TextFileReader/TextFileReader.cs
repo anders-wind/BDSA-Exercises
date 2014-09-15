@@ -17,7 +17,7 @@ namespace TextFileReader
         {
             string content = TextFileReader.ReadFile("TestFile.txt") + "\n\n";
 
-            string keyword = "top*";
+            string keyword = @"**hej";
 
             //Console.WriteLine(content);
             print(content, createRegex(keyword));
@@ -30,15 +30,15 @@ namespace TextFileReader
             {
                 return input.Substring(0, match.Index) + " " + input.Substring(match.Index+match.Length);
             }
-            match = Regex.Match(input, @"\w+\*");
+            match = Regex.Match(input, @"\w+\*{1}");
             if (match.Success)
             {
                 return input.Substring(0, match.Length -1) + @"\w*";
             }
-            match = Regex.Match(input, @"\*+\w+");
+            match = Regex.Match(input, @"\*{1}\w+");
             if (match.Success)
             {
-                return @"\w*" + input.Substring(1);
+                return @"\w*" + input.Substring(match.Index+1);
             }
             return input;
         }
@@ -94,6 +94,7 @@ namespace TextFileReader
             }
             Console.Write(content.Substring(currentIndex));
 
+            Console.WriteLine("\n\n\n\n");
 
             // second solution - probably slower but can handle two formattings at a time
             for (int i = 0; i < content.Length; i++)
