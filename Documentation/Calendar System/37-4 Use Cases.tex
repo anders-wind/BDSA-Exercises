@@ -1,0 +1,74 @@
+User Case name: CreateTag
+---
+Participating Actors:
+Initiated by User
+Communicates with PAC-CLOUD data storage
+
+---
+Flow of events
+User initiates the CreateTag
+
+User chooses a name for the tag
+	Exceptional case: User cancels the creation.
+
+User accepts and finish
+
+---
+Entry Condition
+The user has logged into the CALENDARSYSTEM
+The user is in the tag drop down menu OR creating an Event or Updating an Event
+
+---
+EXIT Condition
+The user has created a tag or cancelled the creation
+
+
+
+User Case name: ChooseTag
+---
+Participating Actors:
+Initiated by User
+Communicates with PAC-CLOUD data storage
+
+---
+Flow of events
+User opens the TAG drop down menu
+	a) Exceptional case: CreateTag use case - user wants to create a new tag
+	a) Exceptional case: user closes the dropdown menu
+
+User chooses between his tags or <All>
+	
+The Calendar overview is updated with all events with the tag.
+
+---
+Entry Condition
+The user has logged into the CALENDARSYSTEM
+
+---
+EXIT Condition
+The user has picked a tag or choosen to keep the current tag
+
+
+
+User Case name: GetNotifikation
+---
+Participating Actors:
+Initiated by CALENDARSYSTEM
+Communicates with PAC-CLOUD data storage
+Prompted to the user
+
+---
+Flow of events
+
+CALENDARSYSTEM creates a popup with a notifikation message of the event
+
+User reads the notification
+
+---
+Entry Condition
+The user has logged into the CALENDARSYSTEM
+CALENDARSYSTEM has a notifikation from an event set at a specific time.
+
+---
+EXIT Condition
+User closes the notification
