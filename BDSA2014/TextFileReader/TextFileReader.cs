@@ -90,59 +90,60 @@ namespace TextFileReader
             sortedMatches.Sort(Comparison);
             #endregion
 
-            // new implementation - probably slower but can handle to formattings at a time
-            for (int i = 0; i < content.Length; i++)
+            //OLD IMPLEMENTATION - Faster but cannot take two formatting at the same time.
+            int currentIndex = 0;
+            foreach (Match match in sortedMatches)
             {
-                foreach (Match match in sortedMatches)
+                if (match.Success && match.Index > currentIndex)
                 {
-                    if (match.Index <= i && match.Index+match.Length > i)
+                    Console.Write(content.Substring(currentIndex, match.Index - currentIndex));
+
+                    if (datesList.Contains(match))
                     {
-                        if (datesList.Contains(match))
-                        {
-                            Console.ForegroundColor = ConsoleColor.Green;
-                        }
-                        else if (urlsList.Contains(match))
-                        {
-                            Console.ForegroundColor = ConsoleColor.Blue;
-                        }
-                        else
-                        {
-                            Console.BackgroundColor = ConsoleColor.Yellow;
-                        }
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write(match.ToString());
                     }
+                    else if (urlsList.Contains(match))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.Write(match.ToString());
+                    }
+                    else
+                    {
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        Console.Write(match.ToString());
+                    }
+                    Console.ResetColor();
+                    currentIndex = match.Index + match.Length;
                 }
-                Console.Write(content.Substring(i,1));
-                Console.ResetColor();
             }
+            Console.Write(content.Substring(currentIndex));
 
-            // OLD IMPLEMENTATION - Faster but not as precise
-            //int currentIndex = 0;
-            //foreach (Match match in sortedMatches)
+
+            //// new implementation - probably slower but can handle to formattings at a time
+            //for (int i = 0; i < content.Length; i++)
             //{
-            //    if (match.Success && match.Index > currentIndex)
+            //    foreach (Match match in sortedMatches)
             //    {
-            //        Console.Write(content.Substring(currentIndex, match.Index - currentIndex));
-
-            //        if (datesList.Contains(match))
+            //        if (match.Index <= i && match.Index + match.Length > i)
             //        {
-            //            Console.ForegroundColor = ConsoleColor.Green;
-            //            Console.Write(match.ToString());
+            //            if (datesList.Contains(match))
+            //            {
+            //                Console.ForegroundColor = ConsoleColor.Green;
+            //            }
+            //            else if (urlsList.Contains(match))
+            //            {
+            //                Console.ForegroundColor = ConsoleColor.Blue;
+            //            }
+            //            else
+            //            {
+            //                Console.BackgroundColor = ConsoleColor.Yellow;
+            //            }
             //        }
-            //        else if (urlsList.Contains(match))
-            //        {
-            //            Console.ForegroundColor = ConsoleColor.Blue;
-            //            Console.Write(match.ToString());
-            //        }
-            //        else
-            //        {
-            //            Console.BackgroundColor = ConsoleColor.Yellow;
-            //            Console.Write(match.ToString());
-            //        }
-            //        Console.ResetColor();
-            //        currentIndex = match.Index + match.Length;
             //    }
+            //    Console.Write(content.Substring(i, 1));
+            //    Console.ResetColor();
             //}
-            //Console.Write(content.Substring(currentIndex));
         }
 
 
