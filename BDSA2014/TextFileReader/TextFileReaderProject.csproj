@@ -45,8 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TextFileReader.cs" />
+    <Compile Include="TextSearcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TextFileReader.tests.cs" />
+    <Compile Include="TextSearcher.tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
