@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace TextFileReaderProject
 {
     /// <summary>
-    /// 
+    /// A testclass that tests the TestSearcher class' methods.
     /// </summary>
     [TestFixture]
     class TextSearcherTests
