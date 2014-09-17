@@ -134,7 +134,7 @@ namespace TextFileReaderProject
             sortedMatches.Sort(Comparison);
             #endregion
 
-            //OLD IMPLEMENTATION - Faster but cannot take two formatting at the same time.
+            //OLD IMPLEMENTATION - Faster but cannot take two formattings at the same time.
             int currentIndex = 0;
             foreach (Match match in sortedMatches)
             {
@@ -163,7 +163,7 @@ namespace TextFileReaderProject
             Console.Write(content.Substring(currentIndex));
 
 
-            //// new implementation - probably slower but can handle to formattings at a time
+            //// new implementation - probably slower but can handle two formattings at a time
             //for (int i = 0; i < content.Length; i++)
             //{
             //    foreach (Match match in sortedMatches)
