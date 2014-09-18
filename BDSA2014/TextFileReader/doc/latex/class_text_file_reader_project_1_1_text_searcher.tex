@@ -1,0 +1,121 @@
+\section{Text\+File\+Reader\+Project.\+Text\+Searcher Class Reference}
+\label{class_text_file_reader_project_1_1_text_searcher}\index{Text\+File\+Reader\+Project.\+Text\+Searcher@{Text\+File\+Reader\+Project.\+Text\+Searcher}}
+
+
+A utility class that allows the user to search for a single keyword in the text, and then print it in the terminal  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Text\+Searcher} (string input\+File)
+\begin{DoxyCompactList}\small\item\em The constructor tries to load the textfile 'inputfile' in the debug folder If inputfile is invalid the default text file 'Test\+File.\+txt' will be loaded. While running, the user can enter new keywords to search for. Commands\+: + between two words, $\ast$ prefix, $\ast$ suffix. \end{DoxyCompactList}\item 
+{\bf Text\+Searcher} ()
+\begin{DoxyCompactList}\small\item\em Empty constructor \end{DoxyCompactList}\item 
+string {\bf create\+Regex} (string input)
+\begin{DoxyCompactList}\small\item\em Generates a regular expression string based on the user input. Three different commands are available, but there can only be one command pr. regular expression. Commands\+: + between two words, $\ast$ prefix, $\ast$ suffix. \end{DoxyCompactList}\item 
+void {\bf print} (string content, string keyword)
+\begin{DoxyCompactList}\small\item\em Finds matches for U\+R\+L, D\+A\+T\+E\+S and K\+E\+Y\+W\+O\+R\+D matches. Prints U\+R\+L\+S with blue font Prints D\+A\+T\+E\+S with green font Prints K\+E\+Y\+W\+O\+R\+D\+S with yellow background. Cannor handle multiple formattions eg. url and keyword matches. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bfseries Main} (string[$\,$] args)\label{class_text_file_reader_project_1_1_text_searcher_ae121d404d208313e96027138f7d7f3e9}
+
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries url\+Regex}\hspace{0.3cm}{\ttfamily  [get]}\label{class_text_file_reader_project_1_1_text_searcher_ae45f8aa246fff406abe126e2ccd12f5e}
+
+\item 
+string {\bfseries date\+Regex}\hspace{0.3cm}{\ttfamily  [get]}\label{class_text_file_reader_project_1_1_text_searcher_a2eacb9f7c27a9d7a439e53828b174b5e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A utility class that allows the user to search for a single keyword in the text, and then print it in the terminal 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Text\+File\+Reader\+Project\+::\+Text\+Searcher@{Text\+File\+Reader\+Project\+::\+Text\+Searcher}!Text\+Searcher@{Text\+Searcher}}
+\index{Text\+Searcher@{Text\+Searcher}!Text\+File\+Reader\+Project\+::\+Text\+Searcher@{Text\+File\+Reader\+Project\+::\+Text\+Searcher}}
+\subsubsection[{Text\+Searcher}]{\setlength{\rightskip}{0pt plus 5cm}Text\+File\+Reader\+Project.\+Text\+Searcher.\+Text\+Searcher (
+\begin{DoxyParamCaption}
+\item[{string}]{input\+File}
+\end{DoxyParamCaption}
+)}\label{class_text_file_reader_project_1_1_text_searcher_a80925d997c0515cc436082d8ad93ee74}
+
+
+The constructor tries to load the textfile 'inputfile' in the debug folder If inputfile is invalid the default text file 'Test\+File.\+txt' will be loaded. While running, the user can enter new keywords to search for. Commands\+: + between two words, $\ast$ prefix, $\ast$ suffix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & The text file the class will print and search for keywords in\\
+\hline
+\end{DoxyParams}
+\index{Text\+File\+Reader\+Project\+::\+Text\+Searcher@{Text\+File\+Reader\+Project\+::\+Text\+Searcher}!Text\+Searcher@{Text\+Searcher}}
+\index{Text\+Searcher@{Text\+Searcher}!Text\+File\+Reader\+Project\+::\+Text\+Searcher@{Text\+File\+Reader\+Project\+::\+Text\+Searcher}}
+\subsubsection[{Text\+Searcher}]{\setlength{\rightskip}{0pt plus 5cm}Text\+File\+Reader\+Project.\+Text\+Searcher.\+Text\+Searcher (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_text_file_reader_project_1_1_text_searcher_a1e93e07bafa9d64310d8517b23217115}
+
+
+Empty constructor 
+
+
+
+\subsection{Member Function Documentation}
+\index{Text\+File\+Reader\+Project\+::\+Text\+Searcher@{Text\+File\+Reader\+Project\+::\+Text\+Searcher}!create\+Regex@{create\+Regex}}
+\index{create\+Regex@{create\+Regex}!Text\+File\+Reader\+Project\+::\+Text\+Searcher@{Text\+File\+Reader\+Project\+::\+Text\+Searcher}}
+\subsubsection[{create\+Regex}]{\setlength{\rightskip}{0pt plus 5cm}string Text\+File\+Reader\+Project.\+Text\+Searcher.\+create\+Regex (
+\begin{DoxyParamCaption}
+\item[{string}]{input}
+\end{DoxyParamCaption}
+)}\label{class_text_file_reader_project_1_1_text_searcher_a69436806f694456cd6bb3d26dc12d6ee}
+
+
+Generates a regular expression string based on the user input. Three different commands are available, but there can only be one command pr. regular expression. Commands\+: + between two words, $\ast$ prefix, $\ast$ suffix. 
+
+
+\begin{DoxyItemize}
+\item means that two adjacent keywords should be present one after the other, e.\+g. text + file matches “text file” but does not match “text big file”
+\item after a keyword means search for words starting with keyword e.\+g. inter$\ast$ matches “internet”
+\item before a keyword means search for words ending with keyword e.\+g. $\ast$net matches “internet” and “intranet” 
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The keyword the user searches after\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A regular expression string created from the user input
+\end{DoxyReturn}
+\index{Text\+File\+Reader\+Project\+::\+Text\+Searcher@{Text\+File\+Reader\+Project\+::\+Text\+Searcher}!print@{print}}
+\index{print@{print}!Text\+File\+Reader\+Project\+::\+Text\+Searcher@{Text\+File\+Reader\+Project\+::\+Text\+Searcher}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+File\+Reader\+Project.\+Text\+Searcher.\+print (
+\begin{DoxyParamCaption}
+\item[{string}]{content, }
+\item[{string}]{keyword}
+\end{DoxyParamCaption}
+)}\label{class_text_file_reader_project_1_1_text_searcher_ad1c669abcc21ddca45f7d8b4b091512c}
+
+
+Finds matches for U\+R\+L, D\+A\+T\+E\+S and K\+E\+Y\+W\+O\+R\+D matches. Prints U\+R\+L\+S with blue font Prints D\+A\+T\+E\+S with green font Prints K\+E\+Y\+W\+O\+R\+D\+S with yellow background. Cannor handle multiple formattions eg. url and keyword matches. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em content} & The text that needs to be printed\\
+\hline
+{\em keyword} & The search keyword in a regular expression format\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Christopher/\+Documents/\+B\+D\+S\+A-\/\+Exercises/\+B\+D\+S\+A2014/\+Text\+File\+Reader/Text\+Searcher.\+cs\end{DoxyCompactItemize}

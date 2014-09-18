@@ -1,0 +1,52 @@
+\begin{theindex}
+
+  \item {create\+Regex}
+    \subitem {Text\+File\+Reader\+Project\+::\+Text\+Searcher}, 10
+
+  \indexspace
+
+  \item {print}
+    \subitem {Text\+File\+Reader\+Project\+::\+Text\+Searcher}, 10
+
+  \indexspace
+
+  \item {Test\+Create\+Regex\+Empty\+Input}
+    \subitem {Text\+File\+Reader\+Project\+::\+Text\+Searcher\+Tests}, 
+		11
+  \item {Test\+Create\+Regex\+Plus\+Command}
+    \subitem {Text\+File\+Reader\+Project\+::\+Text\+Searcher\+Tests}, 
+		11
+  \item {Test\+Create\+Regex\+Star\+Prefix\+Command}
+    \subitem {Text\+File\+Reader\+Project\+::\+Text\+Searcher\+Tests}, 
+		11
+  \item {Test\+Create\+Regex\+Star\+Suffix\+Command}
+    \subitem {Text\+File\+Reader\+Project\+::\+Text\+Searcher\+Tests}, 
+		11
+  \item {Test\+Create\+Regex\+Two\+Commands\+Input}
+    \subitem {Text\+File\+Reader\+Project\+::\+Text\+Searcher\+Tests}, 
+		11
+  \item {Test\+Date\+Regex}
+    \subitem {Text\+File\+Reader\+Project\+::\+Text\+Searcher\+Tests}, 
+		11
+  \item {Test\+U\+R\+L\+Regex}
+    \subitem {Text\+File\+Reader\+Project\+::\+Text\+Searcher\+Tests}, 
+		11
+  \item {Text\+File\+Reader\+Project}, 7
+  \item {Text\+File\+Reader\+Project.\+Text\+Searcher}, 9
+  \item {Text\+File\+Reader\+Project.\+Text\+Searcher\+Tests}, 10
+  \item {Text\+File\+Reader\+Project\+::\+Text\+Searcher}
+    \subitem {create\+Regex}, 10
+    \subitem {print}, 10
+    \subitem {Text\+Searcher}, 9, 10
+  \item {Text\+File\+Reader\+Project\+::\+Text\+Searcher\+Tests}
+    \subitem {Test\+Create\+Regex\+Empty\+Input}, 11
+    \subitem {Test\+Create\+Regex\+Plus\+Command}, 11
+    \subitem {Test\+Create\+Regex\+Star\+Prefix\+Command}, 11
+    \subitem {Test\+Create\+Regex\+Star\+Suffix\+Command}, 11
+    \subitem {Test\+Create\+Regex\+Two\+Commands\+Input}, 11
+    \subitem {Test\+Date\+Regex}, 11
+    \subitem {Test\+U\+R\+L\+Regex}, 11
+  \item {Text\+Searcher}
+    \subitem {Text\+File\+Reader\+Project\+::\+Text\+Searcher}, 9, 10
+
+\end{theindex}
