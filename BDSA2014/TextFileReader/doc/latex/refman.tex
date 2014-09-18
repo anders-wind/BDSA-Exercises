@@ -58,6 +58,7 @@
     \normalfont\normalsize\bfseries\SS@subparafont%
   }%
 }
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \makeatother
 
 % Headers & footers
@@ -71,8 +72,8 @@
 \fancyhead[RO]{\fancyplain{}{\bfseries\thepage}}
 \fancyfoot[LE]{\fancyplain{}{}}
 \fancyfoot[CE]{\fancyplain{}{}}
-\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize Generated on Thu Sep 18 2014 21\+:24\+:28 for TextFileReader by Doxygen }}
-\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize Generated on Thu Sep 18 2014 21\+:24\+:28 for TextFileReader by Doxygen }}
+\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize Generated on Thu Sep 11 2014 23\+:57\+:39 for Reverse Polish Calculator by Doxygen }}
+\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize Generated on Thu Sep 11 2014 23\+:57\+:39 for Reverse Polish Calculator by Doxygen }}
 \fancyfoot[CO]{\fancyplain{}{}}
 \fancyfoot[RO]{\fancyplain{}{}}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -83,12 +84,27 @@
   \markright{\thesection\ #1}%
 }
 
+
 % Indices & bibliography
 \usepackage{natbib}
 \usepackage[titles]{tocloft}
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{5}
 \makeindex
+
+% Hyperlinks (required, but should be loaded last)
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[pdftex,pagebackref=true]{hyperref}
+\else
+  \usepackage[ps2pdf,pagebackref=true]{hyperref}
+\fi
+\hypersetup{%
+  colorlinks=true,%
+  linkcolor=blue,%
+  citecolor=blue,%
+  unicode%
+}
 
 % Custom commands
 \newcommand{\clearemptydoublepage}{%
@@ -102,10 +118,10 @@
 
 % Titlepage & ToC
 \hypersetup{pageanchor=false,
-	 bookmarks=true,
-	 bookmarksnumbered=true,
-	 pdfencoding=unicode
-	 }
+             bookmarks=true,
+             bookmarksnumbered=true,
+             pdfencoding=unicode
+            }
 \pagenumbering{roman}
 \begin{titlepage}
 \vspace*{7cm}
@@ -148,10 +164,10 @@ Pierre Mandas - mail@itu.dk\\
 \chapter{Class Index}
 \input{annotated}
 \chapter{Namespace Documentation}
-\input{namespace_text_file_reader_project}
+\input{namespace_reverse_polish_calculator}
 \chapter{Class Documentation}
-\input{class_text_file_reader_project_1_1_text_searcher}
-\input{class_text_file_reader_project_1_1_text_searcher_tests}
+\input{class_reverse_polish_calculator_1_1_reverse_polish_calculator}
+\input{class_reverse_polish_calculator_1_1_reverse_polish_calculator_tests}
 %--- End generated contents ---
 
 % Index
