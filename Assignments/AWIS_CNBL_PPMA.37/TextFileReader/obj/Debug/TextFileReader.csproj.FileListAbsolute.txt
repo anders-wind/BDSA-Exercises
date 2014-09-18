@@ -1,0 +1,6 @@
+E:\User (E)\Programming (E)\BDSA-Exercises\BDSA2014\TextFileReader\bin\Debug\TextFileReader.exe.config
+E:\User (E)\Programming (E)\BDSA-Exercises\BDSA2014\TextFileReader\bin\Debug\TextFileReader.exe
+E:\User (E)\Programming (E)\BDSA-Exercises\BDSA2014\TextFileReader\bin\Debug\TextFileReader.pdb
+E:\User (E)\Programming (E)\BDSA-Exercises\BDSA2014\TextFileReader\obj\Debug\TextFileReader.exe
+E:\User (E)\Programming (E)\BDSA-Exercises\BDSA2014\TextFileReader\obj\Debug\TextFileReader.pdb
+E:\User (E)\Programming (E)\BDSA-Exercises\BDSA2014\TextFileReader\obj\Debug\TextFileReader.csprojResolveAssemblyReference.cache
