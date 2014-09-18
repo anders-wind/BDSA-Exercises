@@ -14,6 +14,9 @@ namespace TextFileReaderProject
     /// </summary>
     class TextSearcher
     {
+        public string urlRegex { get { return @"http(s)?:\/\/([\w\d~\-\?\=]+(\.|\/){0,1})+"; } }
+        public string dateRegex { get { return @"(\w){3}, (\d){2} (\w){3} (\d){4}( (\d){2}:(\d){2}:(\d){2})?( -?(\d){4})?"; } }
+
         public static void Main(string[] args)
         {
             try
