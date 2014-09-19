@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReversePolishCalculatorProj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextFileReaderProject", "TextFileReader\TextFileReaderProject.csproj", "{E07C5BE5-4CC2-458E-9C59-7554ED81DEA4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InheritanceRPC_Project", "InheritanceRPC_Project\InheritanceRPC_Project.csproj", "{76F4BC81-879F-4FC2-BAA2-3092A57F9213}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{E07C5BE5-4CC2-458E-9C59-7554ED81DEA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E07C5BE5-4CC2-458E-9C59-7554ED81DEA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E07C5BE5-4CC2-458E-9C59-7554ED81DEA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76F4BC81-879F-4FC2-BAA2-3092A57F9213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76F4BC81-879F-4FC2-BAA2-3092A57F9213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76F4BC81-879F-4FC2-BAA2-3092A57F9213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76F4BC81-879F-4FC2-BAA2-3092A57F9213}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
