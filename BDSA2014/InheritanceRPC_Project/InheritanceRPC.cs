@@ -22,8 +22,8 @@ namespace InheritanceRPC_Project
             }
 
             InheritanceRPC iRPC = new InheritanceRPC();
-            //string rpce = "5 1 2 + 4 * + 3 -";
-            Console.WriteLine(iRPC.CalculateExpression(rpce));
+            rpce = "5 1 2 + 4 * + 3 -";
+            Console.WriteLine("Input: " + rpce + "\nThe answer is = " + iRPC.CalculateExpression(rpce));
         }
 
         public InheritanceRPC()
@@ -35,11 +35,11 @@ namespace InheritanceRPC_Project
         private void addOperations()
         {
             operations.Add("+", new BinaryOperation((x, y) => x + y));
-            operations.Add("-", new BinaryOperation((x, y) => y - x));
+            operations.Add("-", new BinaryOperation((x, y) => x - y));
             operations.Add("*", new BinaryOperation((x, y) => x * y));
-            operations.Add("/", new BinaryOperation((x, y) => y / x));
-            operations.Add("pow", new BinaryOperation((x, y) => Math.Pow(y,x)));
-            operations.Add("^", new BinaryOperation((x, y) => Math.Pow(y, x)));
+            operations.Add("/", new BinaryOperation((x, y) => x / y));
+            operations.Add("pow", new BinaryOperation((x, y) => Math.Pow(x,y)));
+            operations.Add("^", new BinaryOperation((x, y) => Math.Pow(x, y)));
             operations.Add("sqrt", new UnaryOperation((x) => Math.Sqrt(x)));
             operations.Add("abs", new UnaryOperation((x) => Math.Abs(x)));
             operations.Add("sin", new UnaryOperation((x) => Math.Sin(x)));
@@ -54,12 +54,13 @@ namespace InheritanceRPC_Project
         /// <returns>0 if faulty otherwise the result</returns>
         public double CalculateExpression(string rpce)
         {
-            try
+            if (rpce == null || rpce.Trim().Equals(""))
             {
-                string[] rpceTokens = rpce.ToLower().Split(' ');
-                var operands = new Stack<double>();
-                double firstStackPop = 0;
-
+                return 0;
+            }
+            string[] rpceTokens = rpce.ToLower().Split(' ');
+            var operands = new Stack<double>();
+            double firstStackPop = 0.0;
                 foreach (string token in rpceTokens)
                 {
                     if (double.TryParse(token, out firstStackPop))
@@ -74,20 +75,21 @@ namespace InheritanceRPC_Project
                         }
                         else if (operations[token] is BinaryOperation)
                         {
-                            operands.Push(operations[token].Execute(operands.Pop(), operands.Pop()));
+                            var v2 = operands.Pop();
+                            var v1 = operands.Pop();
+                            operands.Push(operations[token].Execute(v1, v2));
                         }
+                    }
+                    else
+                    {
+                        throw new Exception();
                     }
                 }
                 if (operands.Count == 1)
                 {
                     return operands.Pop();
                 }
-                else return 0;
-            }
-            catch (Exception ex)
-            {
-                return 0;
-            }
+            throw new Exception();
         }
     }
     public interface IOperation
