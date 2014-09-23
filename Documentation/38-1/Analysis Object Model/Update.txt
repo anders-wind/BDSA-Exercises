@@ -1,0 +1,7 @@
+Initial object analysis. 
+	"USER" skal revideres. passer ikke soim entitet i denne kontekst.
+	Rename "VIEW" to "CalendarView.
+	
+
+Use case models: 
+	new "CreateHistoryReport", "NoticeView", "EventView", "LoginView", "Login"

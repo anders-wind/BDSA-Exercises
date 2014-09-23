@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage{booktabs}
+\begin{document}
+
+Analysis Object Model (Static Model)\\
+\\
+\begin{tabular}{l | l | l}
+
+Entity    	& Control 			& Boundry 		\\
+\toprule
+Event     	& CreateCalendarEntry	& CalendarView	\\
+Calendar	& UpdateCalendarEntry	& EventView 		\\
+User		& ChangeOverviewType	& NoticeView		\\
+Notification	& ChooseTag			& LoginView		\\
+Tag		& CreateTag			&			\\
+		& SetNotification		&			\\
+		& GetNotification		&			\\		
+		& CreateHistoryReport	&			\\
+		& CancelEntry		&			\\
+		& Login			&			\\		
+		
+\bottomrule
+\end{tabular}
+
+
+\end{document}
