@@ -1,0 +1,61 @@
+\hypertarget{class_inheritance_r_p_c___project_1_1_inheritance_r_p_c}{\section{Inheritance\+R\+P\+C\+\_\+\+Project.\+Inheritance\+R\+P\+C Class Reference}
+\label{class_inheritance_r_p_c___project_1_1_inheritance_r_p_c}\index{Inheritance\+R\+P\+C\+\_\+\+Project.\+Inheritance\+R\+P\+C@{Inheritance\+R\+P\+C\+\_\+\+Project.\+Inheritance\+R\+P\+C}}
+}
+
+
+The class takes a string as input, and if the string is in the format of a reverse Polish calculator expression, then it will calculate and return the result. Features Can handle the operators\+: +, -\/, $\ast$, /, sqrt, cos, sin, abs and pow ($^\wedge$) Can handle negative numbers if written in the form -\/x Can handle doubles if written in the form x,x Tokens are separated by a whitespace. If the input is invalid an exception is thrown. The class uses a dictionary$<$string, I\+Operation$>$ to handle the operations. To add an operation simply add it to the dictionary. The class currently has \hyperlink{interface_inheritance_r_p_c___project_1_1_i_operation}{I\+Operation} classes for unary and binary operations but tienary and so on can be added by creating an inner class which implements the \hyperlink{interface_inheritance_r_p_c___project_1_1_i_operation}{I\+Operation} interface.\+s  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_inheritance_r_p_c___project_1_1_inheritance_r_p_c_ad34c70442f6f3696e800c3937f5bfd20}{Inheritance\+R\+P\+C} ()
+\begin{DoxyCompactList}\small\item\em Constructor which sets up the class. \end{DoxyCompactList}\item 
+double \hyperlink{class_inheritance_r_p_c___project_1_1_inheritance_r_p_c_a98c2f1992b820eba5b7528554c3c7d96}{Calculate\+Expression} (string rpce)
+\begin{DoxyCompactList}\small\item\em Calculates the input reverse calculator string expression. Throws exceptions if the input is not in the R\+P\+C format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The class takes a string as input, and if the string is in the format of a reverse Polish calculator expression, then it will calculate and return the result. Features Can handle the operators\+: +, -\/, $\ast$, /, sqrt, cos, sin, abs and pow ($^\wedge$) Can handle negative numbers if written in the form -\/x Can handle doubles if written in the form x,x Tokens are separated by a whitespace. If the input is invalid an exception is thrown. The class uses a dictionary$<$string, I\+Operation$>$ to handle the operations. To add an operation simply add it to the dictionary. The class currently has \hyperlink{interface_inheritance_r_p_c___project_1_1_i_operation}{I\+Operation} classes for unary and binary operations but tienary and so on can be added by creating an inner class which implements the \hyperlink{interface_inheritance_r_p_c___project_1_1_i_operation}{I\+Operation} interface.\+s 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_inheritance_r_p_c___project_1_1_inheritance_r_p_c_ad34c70442f6f3696e800c3937f5bfd20}{\index{Inheritance\+R\+P\+C\+\_\+\+Project\+::\+Inheritance\+R\+P\+C@{Inheritance\+R\+P\+C\+\_\+\+Project\+::\+Inheritance\+R\+P\+C}!Inheritance\+R\+P\+C@{Inheritance\+R\+P\+C}}
+\index{Inheritance\+R\+P\+C@{Inheritance\+R\+P\+C}!Inheritance\+R\+P\+C\+\_\+\+Project\+::\+Inheritance\+R\+P\+C@{Inheritance\+R\+P\+C\+\_\+\+Project\+::\+Inheritance\+R\+P\+C}}
+\subsubsection[{Inheritance\+R\+P\+C}]{\setlength{\rightskip}{0pt plus 5cm}Inheritance\+R\+P\+C\+\_\+\+Project.\+Inheritance\+R\+P\+C.\+Inheritance\+R\+P\+C (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_inheritance_r_p_c___project_1_1_inheritance_r_p_c_ad34c70442f6f3696e800c3937f5bfd20}
+
+
+Constructor which sets up the class. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_inheritance_r_p_c___project_1_1_inheritance_r_p_c_a98c2f1992b820eba5b7528554c3c7d96}{\index{Inheritance\+R\+P\+C\+\_\+\+Project\+::\+Inheritance\+R\+P\+C@{Inheritance\+R\+P\+C\+\_\+\+Project\+::\+Inheritance\+R\+P\+C}!Calculate\+Expression@{Calculate\+Expression}}
+\index{Calculate\+Expression@{Calculate\+Expression}!Inheritance\+R\+P\+C\+\_\+\+Project\+::\+Inheritance\+R\+P\+C@{Inheritance\+R\+P\+C\+\_\+\+Project\+::\+Inheritance\+R\+P\+C}}
+\subsubsection[{Calculate\+Expression}]{\setlength{\rightskip}{0pt plus 5cm}double Inheritance\+R\+P\+C\+\_\+\+Project.\+Inheritance\+R\+P\+C.\+Calculate\+Expression (
+\begin{DoxyParamCaption}
+\item[{string}]{rpce}
+\end{DoxyParamCaption}
+)}}\label{class_inheritance_r_p_c___project_1_1_inheritance_r_p_c_a98c2f1992b820eba5b7528554c3c7d96}
+
+
+Calculates the input reverse calculator string expression. Throws exceptions if the input is not in the R\+P\+C format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rpce} & A String in the Reverse Polish Calculator expression format\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if input is null or empty, otherwise returns the result
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+User (\+E)/\+Programming (\+E)/\+B\+D\+S\+A-\/\+Exercises/\+B\+D\+S\+A2014/\+Inheritance\+R\+P\+C\+\_\+\+Project/Inheritance\+R\+P\+C.\+cs\end{DoxyCompactItemize}
