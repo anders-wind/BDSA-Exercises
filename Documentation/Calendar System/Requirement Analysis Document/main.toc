@@ -16,5 +16,6 @@
 \contentsline {subsection}{Use Case Models}{15}{section*.3}
 \contentsline {subsection}{Initial object analysis}{18}{section*.4}
 \contentsline {subsection}{Dynamic Model}{20}{section*.5}
-\contentsline {subsection}{User Interface}{20}{section*.6}
-\contentsline {chapter}{\chapternumberline {4}Glossary}{21}{chapter.4}
+\contentsline {subsubsection}{State Machine Diagrams}{20}{section*.6}
+\contentsline {subsection}{User Interface}{22}{section*.7}
+\contentsline {chapter}{\chapternumberline {4}Glossary}{23}{chapter.4}
