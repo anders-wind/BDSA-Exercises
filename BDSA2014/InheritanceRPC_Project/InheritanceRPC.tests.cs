@@ -42,7 +42,7 @@ namespace InheritanceRPC_Project
         [Test]
         public void TestPlusOperator()
         {
-            Assert.AreEqual(10.5, iRPC.CalculateExpression("5,0 5,5 +"));
+            Assert.AreEqual(10,5, iRPC.CalculateExpression("5,0 5,5 +"));
             Assert.AreEqual(10, iRPC.CalculateExpression("5 5 +"));
         }
 
@@ -52,8 +52,8 @@ namespace InheritanceRPC_Project
         [Test]
         public void TestMinusOperator()
         {
-            Assert.AreEqual(-2,iRPC.CalculateExpression("3 5 -"));
-            Assert.AreEqual(-2.5, iRPC.CalculateExpression("3,0 5,5 -"));
+            Assert.AreEqual(2, iRPC.CalculateExpression("5 3 -"));
+            Assert.AreEqual(2,5, iRPC.CalculateExpression("5,5 3,0 -"));
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace InheritanceRPC_Project
         public void TestMultiplyOperator()
         {
             Assert.AreEqual(12, iRPC.CalculateExpression("3 4 *"));
-            Assert.AreEqual(13.5, iRPC.CalculateExpression("3,0 4,5 *"));
+            Assert.AreEqual(13,5, iRPC.CalculateExpression("3,0 4,5 *"));
         }
 
         /// <summary>
@@ -85,6 +85,8 @@ namespace InheritanceRPC_Project
         {
             Assert.AreEqual(25, iRPC.CalculateExpression("5 2 pow"));
             Assert.AreEqual(32, iRPC.CalculateExpression("2 5 pow"));
+            Assert.AreEqual(25,0, iRPC.CalculateExpression("5,0 2,0 pow"));
+            Assert.AreEqual(32,0, iRPC.CalculateExpression("2,0 5,0 pow"));
         }
 
         /// <summary>
@@ -94,6 +96,7 @@ namespace InheritanceRPC_Project
         public void TestSinOperator()
         {
             Assert.AreEqual(Math.Sin(30),iRPC.CalculateExpression("30 sin"), 0.001D);
+            Assert.AreEqual(Math.Sin(30), iRPC.CalculateExpression("30,0 sin"), 0.001D);
         }
 
         /// <summary>
@@ -103,6 +106,7 @@ namespace InheritanceRPC_Project
         public void TestCosOperator()
         {
             Assert.AreEqual(Math.Cos(60), iRPC.CalculateExpression("60 cos"), 0.001D);
+            Assert.AreEqual(Math.Cos(60), iRPC.CalculateExpression("60,0 cos"), 0.001D);
         }
 
         /// <summary>
@@ -112,6 +116,7 @@ namespace InheritanceRPC_Project
         public void TestSqrtOperator()
         {
             Assert.AreEqual(5, iRPC.CalculateExpression("25 sqrt"));
+            Assert.AreEqual(5,0, iRPC.CalculateExpression("25,0 sqrt"));
         }
 
         /// <summary>
@@ -124,6 +129,11 @@ namespace InheritanceRPC_Project
             Assert.AreEqual(25, iRPC.CalculateExpression("-25 abs"));
             Assert.AreEqual(0, iRPC.CalculateExpression("0 abs"));
             Assert.AreEqual(0, iRPC.CalculateExpression("-0 abs"));
+
+            Assert.AreEqual(25,0, iRPC.CalculateExpression("25,0 abs"));
+            Assert.AreEqual(25,0, iRPC.CalculateExpression("-25,0 abs"));
+            Assert.AreEqual(0,0, iRPC.CalculateExpression("0,0 abs"));
+            Assert.AreEqual(0,0, iRPC.CalculateExpression("-0,0 abs"));
         }
 
         /// <summary>
@@ -134,6 +144,9 @@ namespace InheritanceRPC_Project
         {
             Assert.AreEqual(14, iRPC.CalculateExpression("5 1 2 + 4 * + 3 -"));
             Assert.AreEqual(3, iRPC.CalculateExpression("5 1 2 pow 4 * + 3 - 3 + sqrt"));
+
+            Assert.AreEqual(14,0, iRPC.CalculateExpression("5,0 1,0 2,0 + 4,0 * + 3,0 -"));
+            Assert.AreEqual(3,0, iRPC.CalculateExpression("5,0 1,0 2,0 pow 4,0 * + 3,0 - 3,0 + sqrt"));
         }
 
         /// <summary>
@@ -149,6 +162,14 @@ namespace InheritanceRPC_Project
             Assert.Throws<Exception>(() => iRPC.CalculateExpression("a 5a 5 +")); // exception
             Assert.Throws<Exception>(() => iRPC.CalculateExpression("a 5")); // no calculations
             Assert.AreEqual(5, iRPC.CalculateExpression("5")); // no calculations
+
+            Assert.Throws<Exception>(() => iRPC.CalculateExpression("a b,01 2,0c + +")); // exception
+            Assert.Throws<Exception>(() => iRPC.CalculateExpression("5,0 a 5,0 +"));
+            Assert.Throws<Exception>(() => iRPC.CalculateExpression("a 5,0 5,0 +"));
+            Assert.Throws<Exception>(() => iRPC.CalculateExpression("5,0 5 a +"));
+            Assert.Throws<Exception>(() => iRPC.CalculateExpression("a 5,0a 5,0 +")); // exception
+            Assert.Throws<Exception>(() => iRPC.CalculateExpression("a 5,0")); // no calculations
+            Assert.AreEqual(5,0, iRPC.CalculateExpression("5,0")); // no calculations
 
         }
     }
