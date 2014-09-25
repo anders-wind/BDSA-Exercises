@@ -1,7 +1,6 @@
 \subsection{Initial object analysis}
 The table describes the predicted classes and their purpose and relations. This will be elaborated on when the class diagram will be added in assignment 38.
 \\
-\\
 \HRule \\[0.4cm]
 \emph{Event}\\
 A collection of information such as DATE, TIME, DESCRIPTION, NOTIFICATION, TAG.\\
@@ -28,4 +27,29 @@ A collection of notifications that will be popped and shown to the user when a t
 A visual representation of the CALENDAR to the USER\\
 \HRule \\[0.4cm]
 
-\newpage
+\textbf{Analysis Object Model (Static Model):}\\
+This table contains our Entity, Control and Boundry objects, that are being used in our system, at the moment.
+These objects are being used to make our class diagram\\
+\\
+\begin{tabular}{l | l | l}
+
+Entity    	& Control 			& Boundry 		\\
+\toprule
+Event     	& CreateCalendarEntry	& CalendarView	\\
+Calendar	& UpdateCalendarEntry	& EventView 		\\
+User		& ChangeOverviewType	& NoticeView		\\
+Notification	& ChooseTag			& LoginView		\\
+Tag		& CreateTag			&			\\
+		& SetNotification		&			\\
+		& GetNotification		&			\\		
+		& CreateHistoryReport	&			\\
+		& CancelEntry		&			\\
+		& Login			&			\\		
+		
+\bottomrule
+\end{tabular}\\
+\\
+
+This is our class diagram. All our Entity, Control and Boundry objects are represented in our class diagram, 
+and our class diagram shows how our objects are connected to each other.\\
+\includegraphics[scale=0.4]{UMLClassDiagram}

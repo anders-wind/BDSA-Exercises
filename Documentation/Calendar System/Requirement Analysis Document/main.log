@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.1)  25 SEP 2014 22:01
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.1)  25 SEP 2014 22:45
 entering extended mode
 **C:/Users/Pierre/Documents/BDSA-exercises/Documentation/Calendar*System/Requir
 ement*Analysis*Document/main.tex
@@ -1573,23 +1573,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--58
 uirement Analysis Document/CalendarSystemUseCaseDiagram.png>] [16] [17])
 ("C:\Users\Pierre\Documents\BDSA-exercises\Documentation\Calendar System\Requir
 ement Analysis Document\ProposedSystem-SystemModels-Objectmodel.tex"
-Underfull \hbox (badness 10000) in paragraph at lines 2--30
+Underfull \hbox (badness 10000) in paragraph at lines 2--29
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 30--52
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--30
+Underfull \hbox (badness 10000) in paragraph at lines 30--52
 
  []
 
-[18] [19])
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--52
+
+ []
+
+<UMLClassDiagram.png, id=177, 726.3135pt x 659.46375pt>
+File: UMLClassDiagram.png Graphic file (type png)
+
+<use UMLClassDiagram.png>
+Package pdftex.def Info: UMLClassDiagram.png used on input line 55.
+(pdftex.def)             Requested size: 290.52025pt x 263.78082pt.
+)
 ("C:\Users\Pierre\Documents\BDSA-exercises\Documentation\Calendar System\Requir
 ement Analysis Document\ProposedSystem-SystemModels-DynamicModels.tex"
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
-<SequenceDiagramUseCaseOne.png, id=180, 524.55975pt x 272.81924pt>
+[19 <C:/Users/Pierre/Documents/BDSA-exercises/Documentation/Calendar System/Req
+uirement Analysis Document/UMLClassDiagram.png>]
+<SequenceDiagramUseCaseOne.png, id=181, 524.55975pt x 272.81924pt>
 File: SequenceDiagramUseCaseOne.png Graphic file (type png)
 
 <use SequenceDiagramUseCaseOne.png>
@@ -1600,7 +1618,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--8
 
  []
 
-<SequenceDiagramUseCaseTwo.png, id=181, 302.93175pt x 168.63pt>
+<SequenceDiagramUseCaseTwo.png, id=182, 302.93175pt x 168.63pt>
 File: SequenceDiagramUseCaseTwo.png Graphic file (type png)
 
 <use SequenceDiagramUseCaseTwo.png>
@@ -1611,7 +1629,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
  []
 
-<SequenceDiagramUseCaseThree.png, id=182, 413.1435pt x 160.1985pt>
+<SequenceDiagramUseCaseThree.png, id=183, 413.1435pt x 160.1985pt>
 File: SequenceDiagramUseCaseThree.png Graphic file (type png)
 
 <use SequenceDiagramUseCaseThree.png>
@@ -1633,7 +1651,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-<CreateUpdateEntry-StateDiagram.png, id=187, 739.76375pt x 665.48625pt>
+<CreateUpdateEntry-StateDiagram.png, id=188, 739.76375pt x 665.48625pt>
 File: CreateUpdateEntry-StateDiagram.png Graphic file (type png)
 
 <use CreateUpdateEntry-StateDiagram.png>
@@ -1645,7 +1663,7 @@ Overfull \hbox (4.50578pt too wide) in paragraph at lines 19--20
 [][] 
  []
 
-<ChooseTag-StateDiagram.png, id=189, 472.76625pt x 548.0475pt>
+<ChooseTag-StateDiagram.png, id=190, 472.76625pt x 548.0475pt>
 File: ChooseTag-StateDiagram.png Graphic file (type png)
 
 <use ChooseTag-StateDiagram.png>
@@ -1653,14 +1671,14 @@ Package pdftex.def Info: ChooseTag-StateDiagram.png used on input line 21.
 (pdftex.def)             Requested size: 283.66193pt x 328.83104pt.
  [21 <C:/Users/Pierre/Documents/BDSA-exercises/Documentation/Calendar System/Re
 quirement Analysis Document/CreateUpdateEntry-StateDiagram.png>]
-<Notification-StateDiagram.png, id=195, 437.635pt x 403.5075pt>
+<Notification-StateDiagram.png, id=196, 437.635pt x 403.5075pt>
 File: Notification-StateDiagram.png Graphic file (type png)
 
 <use Notification-StateDiagram.png>
 Package pdftex.def Info: Notification-StateDiagram.png used on input line 23.
 (pdftex.def)             Requested size: 262.58302pt x 242.10637pt.
 
-<ChangeOverview-StateDiagram.png, id=196, 670.505pt x 452.69125pt>
+<ChangeOverview-StateDiagram.png, id=197, 670.505pt x 452.69125pt>
 File: ChangeOverview-StateDiagram.png Graphic file (type png)
 
 <use ChangeOverview-StateDiagram.png>
@@ -1714,11 +1732,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 64.
  ) 
 Here is how much of TeX's memory you used:
- 26578 strings out of 493921
- 485062 string characters out of 3144874
+ 26589 strings out of 493921
+ 485227 string characters out of 3144874
  599300 words of memory out of 3000000
- 29210 multiletter control sequences out of 15000+200000
- 57388 words of font info for 127 fonts, out of 3000000 for 9000
+ 29214 multiletter control sequences out of 15000+200000
+ 57706 words of font info for 131 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  72i,12n,94p,649b,412s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
@@ -1728,9 +1746,9 @@ Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x
 eX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
 onts/type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (26 pages, 247361 bytes).
+Output written on main.pdf (26 pages, 280199 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
+ 239 PDF objects out of 1000 (max. 8388607)
  23 named destinations out of 1000 (max. 500000)
- 25813 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 25818 words of extra memory for PDF output out of 29859 (max. 10000000)
 
