@@ -1,0 +1,16 @@
+\hypertarget{namespace_inheritance_r_p_c___project}{\section{Package Inheritance\+R\+P\+C\+\_\+\+Project}
+\label{namespace_inheritance_r_p_c___project}\index{Inheritance\+R\+P\+C\+\_\+\+Project@{Inheritance\+R\+P\+C\+\_\+\+Project}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_inheritance_r_p_c___project_1_1_binary_operation}{Binary\+Operation}
+\begin{DoxyCompactList}\small\item\em An operation class which extends the \hyperlink{interface_inheritance_r_p_c___project_1_1_i_operation}{I\+Operation} interface, and therefore has an execute method which takes doubles as parametre. The class is meant to handle binary operations (operations with 2 doubles as input). \end{DoxyCompactList}\item 
+class \hyperlink{class_inheritance_r_p_c___project_1_1_inheritance_r_p_c}{Inheritance\+R\+P\+C}
+\begin{DoxyCompactList}\small\item\em The class takes a string as input, and if the string is in the format of a reverse Polish calculator expression, then it will calculate and return the result. Features Can handle the operators\+: +, -\/, $\ast$, /, sqrt, cos, sin, abs and pow ($^\wedge$) Can handle negative numbers if written in the form -\/x Can handle doubles if written in the form x,x Tokens are separated by a whitespace. If the input is invalid an exception is thrown. The class uses a dictionary$<$string, I\+Operation$>$ to handle the operations. To add an operation simply add it to the dictionary. The class currently has \hyperlink{interface_inheritance_r_p_c___project_1_1_i_operation}{I\+Operation} classes for unary and binary operations but tienary and so on can be added by creating an inner class which implements the \hyperlink{interface_inheritance_r_p_c___project_1_1_i_operation}{I\+Operation} interface.\+s \end{DoxyCompactList}\item 
+class \hyperlink{class_inheritance_r_p_c___project_1_1_inheritance_r_p_ctests}{Inheritance\+R\+P\+Ctests}
+\item 
+interface \hyperlink{interface_inheritance_r_p_c___project_1_1_i_operation}{I\+Operation}
+\begin{DoxyCompactList}\small\item\em An interface which has an execute method which can take doubles as parametres. \end{DoxyCompactList}\item 
+class \hyperlink{class_inheritance_r_p_c___project_1_1_unary_operation}{Unary\+Operation}
+\begin{DoxyCompactList}\small\item\em An operation class which extends the \hyperlink{interface_inheritance_r_p_c___project_1_1_i_operation}{I\+Operation} interface, and therefore has an execute method which takes doubles as parametre. The class is meant to handle unary operations (operations with 1 double as input). \end{DoxyCompactList}\end{DoxyCompactItemize}
