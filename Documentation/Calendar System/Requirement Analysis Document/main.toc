@@ -17,6 +17,6 @@
 \contentsline {subsection}{Initial object analysis}{18}{section*.4}
 \contentsline {subsection}{Dynamic Model}{20}{section*.5}
 \contentsline {subsubsection}{Sequence Diagrams}{20}{section*.6}
-\contentsline {subsubsection}{State Machine Diagrams}{21}{section*.7}
-\contentsline {subsection}{User Interface}{23}{section*.8}
-\contentsline {chapter}{\chapternumberline {4}Glossary}{24}{chapter.4}
+\contentsline {subsubsection}{State Machine Diagrams}{22}{section*.7}
+\contentsline {subsection}{User Interface}{24}{section*.8}
+\contentsline {chapter}{\chapternumberline {4}Glossary}{25}{chapter.4}
