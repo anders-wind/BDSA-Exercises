@@ -15,7 +15,7 @@ namespace Model
             PRIVATE,
         }
 
-        public void createTags(string newTag, Color newColor)
+        public void createTags(string newTag, Colors newColor) // Skal muligvis placeres et andet sted (en controller?)
         {
             throw new NotImplementedException();
         }

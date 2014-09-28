@@ -32,6 +32,22 @@ namespace Model
         {
             subscribers.Add(subscriber);
         }
+
+        public void createCalenderEntry(int month, int day, int startHour, int startMinute, int endHour, int endMinute)
+        {
+            Event CalenderEvent = new Event(month, day, startHour, startMinute, endHour, endMinute);
+            events.Add(CalenderEvent);
+        }
+
+        public void updateCalenderEntry()
+        {
+
+        }
+
+        public void createHistoryReport()
+        {
+
+        }
     }
 
 
