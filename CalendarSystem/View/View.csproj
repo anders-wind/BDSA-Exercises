@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>f0270793-b707-47e5-9aff-ccd392f30a28</ProjectGuid>
+    <ProjectGuid>{00BA0E81-F363-4C27-8C8A-497D11E1E324}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>View</RootNamespace>
@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="CalendarView.cs" />
+    <Compile Include="EventView.cs" />
+    <Compile Include="LoginView.cs" />
+    <Compile Include="NotificationView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

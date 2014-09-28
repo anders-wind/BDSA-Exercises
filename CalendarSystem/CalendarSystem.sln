@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalendarSystem", "CalendarSystem\CalendarSystem.csproj", "{A276EAEF-D227-4A2A-A38F-73BE537DA6BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View", "View\View.csproj", "{00BA0E81-F363-4C27-8C8A-497D11E1E324}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Controller\Controller.csproj", "{0DDE2989-16A4-4170-AD1F-361A48E5F6C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A276EAEF-D227-4A2A-A38F-73BE537DA6BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A276EAEF-D227-4A2A-A38F-73BE537DA6BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A276EAEF-D227-4A2A-A38F-73BE537DA6BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00BA0E81-F363-4C27-8C8A-497D11E1E324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00BA0E81-F363-4C27-8C8A-497D11E1E324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00BA0E81-F363-4C27-8C8A-497D11E1E324}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00BA0E81-F363-4C27-8C8A-497D11E1E324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DDE2989-16A4-4170-AD1F-361A48E5F6C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DDE2989-16A4-4170-AD1F-361A48E5F6C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DDE2989-16A4-4170-AD1F-361A48E5F6C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DDE2989-16A4-4170-AD1F-361A48E5F6C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
