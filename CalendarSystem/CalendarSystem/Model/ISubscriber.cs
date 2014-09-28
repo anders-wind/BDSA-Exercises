@@ -2,6 +2,6 @@
 {
     internal interface ISubscriber
     {
-        void Notify();
+        void NotifySubscribers();
     }
 }

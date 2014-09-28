@@ -1,8 +1,10 @@
-﻿namespace CalendarSystem.View
+﻿using CalendarSystem.Model;
+
+namespace CalendarSystem.View
 {
     class CalendarView : ISubscriber
     {
-        public void Notify() // Muligvis til en controller class
+        public void NotifySubscribers()
         {
             throw new System.NotImplementedException();
         }
