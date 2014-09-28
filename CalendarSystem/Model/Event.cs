@@ -8,5 +8,11 @@ namespace Model
 {
     public class Event
     {
+        private DateTime dt;
+
+        public Event
+        {
+            dt = new DateTime(2010, 1, 18);
+        }
     }
 }
