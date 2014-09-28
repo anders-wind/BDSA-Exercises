@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InputController.cs" />
+    <Compile Include="ModelController.cs" />
+    <Compile Include="NotificationController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
