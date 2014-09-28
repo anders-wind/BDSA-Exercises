@@ -10,7 +10,7 @@ namespace CalendarSystem.DataStorage
             throw new NotImplementedException();
         }
 
-        public bool isCalendarUpToDate(User user)
+        public bool IsCalendarUpToDate(User user)
         {
             throw new NotImplementedException();
         }
