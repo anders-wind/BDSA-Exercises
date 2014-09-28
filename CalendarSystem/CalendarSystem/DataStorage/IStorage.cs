@@ -1,4 +1,6 @@
-﻿namespace CalendarSystem.DataStorage
+﻿using CalendarSystem.Model;
+
+namespace CalendarSystem.DataStorage
 {
     interface IStorage
     {

@@ -2,16 +2,16 @@
 
 namespace CalendarSystem.View
 {
-    class CalendarView : ISubscriber
+    class CalendarView : IObserver
     {
-        public void NotifySubscribers()
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void changeOverviewType() // Muligvis til en controller class (view fremstiller data, manipulere ikke med data)
         {
 
+        }
+
+        public void NotifyObserver()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

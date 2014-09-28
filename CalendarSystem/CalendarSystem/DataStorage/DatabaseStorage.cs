@@ -1,4 +1,4 @@
-﻿using System;
+﻿using CalendarSystem.Model;
 
 namespace CalendarSystem.DataStorage
 {
@@ -6,22 +6,22 @@ namespace CalendarSystem.DataStorage
     {
         public Calendar GetCalendar(User user)
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
         public bool isCalendarUpToDate(User user)
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
         public void SaveEvent(User user, Event saveEvent)
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
         public void SaveTag(User user, Tag tag)
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
     }
 }

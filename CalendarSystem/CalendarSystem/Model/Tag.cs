@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace CalendarSystem.Model
 {
@@ -10,7 +11,7 @@ namespace CalendarSystem.Model
             PRIVATE,
         }
 
-        public void createTags(string newTag, Colors newColor) // Skal muligvis placeres et andet sted (en controller?)
+        public void createTags(string newTag, Color newColor) // Skal muligvis placeres et andet sted (en controller?)
         {
             throw new NotImplementedException();
         }

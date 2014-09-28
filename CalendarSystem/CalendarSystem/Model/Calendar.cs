@@ -4,30 +4,10 @@ namespace CalendarSystem.Model
 {
     public class Calendar
     {
-        private IList<ISubscriber> subscribers = new List<ISubscriber>();
+        private IList<IObserver> _Observers = new List<IObserver>();
         private IList<Event> events = new List<Event>();
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        private void notifySubscribers()
-        {
-            foreach (var subscriber in subscribers)
-            {
-                subscriber.Notify();
-            }
-        }
 
-        public void Subscribe(ISubscriber subscriber)
-        {
-            subscribers.Add(subscriber);
-        }
 
         public void createCalenderEntry(int month, int day, int startHour, int startMinute, int endHour, int endMinute)
         {
@@ -39,10 +19,20 @@ namespace CalendarSystem.Model
         {
 
         }
+        
 
-        public void createHistoryReport()
+        
+        private void NotifyObservers()
         {
+            foreach (var subscriber in _Observers)
+            {
+                subscriber.NotifyObserver();
+            }
+        }
 
+        public void Subscribe(IObserver observer)
+        {
+            _Observers.Add(observer);
         }
     }
 

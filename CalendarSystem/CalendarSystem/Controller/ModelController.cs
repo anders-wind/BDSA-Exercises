@@ -2,5 +2,10 @@
 {
     class ModelController
     {
+
+        public void createHistoryReport()
+        {
+
+        }
     }
 }

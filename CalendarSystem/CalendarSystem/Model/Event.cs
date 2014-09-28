@@ -19,7 +19,7 @@ namespace CalendarSystem.Model
 
         public void chooseTag()
         {
-
+           
         }
 
         public void setNotification()
