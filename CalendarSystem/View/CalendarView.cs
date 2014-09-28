@@ -1,6 +1,12 @@
-﻿namespace View
+﻿using Model;
+
+namespace View
 {
-    class CalendarView
+    class CalendarView : ISubscriber
     {
+        public void Notify()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
