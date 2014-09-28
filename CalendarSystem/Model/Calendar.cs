@@ -8,5 +8,7 @@ namespace Model
 {
     class Calendar
     {
+        List<Event> events = new List<Event>(); 
+
     }
 }
