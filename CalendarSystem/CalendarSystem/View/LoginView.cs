@@ -1,4 +1,4 @@
-﻿namespace View
+﻿namespace CalendarSystem.View
 {
     class LoginView
     {

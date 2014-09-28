@@ -1,6 +1,4 @@
-﻿using Model;
-
-namespace View
+﻿namespace CalendarSystem.View
 {
     class CalendarView : ISubscriber
     {
