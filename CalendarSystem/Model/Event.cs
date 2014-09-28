@@ -9,10 +9,15 @@ namespace Model
     public class Event
     {
         private DateTime dt;
+        private TimeSpan startTime;
+        private TimeSpan endTime;
 
-        public Event
+        public Event()
         {
-            dt = new DateTime(2010, 1, 18);
+            dt = new DateTime();
+            startTime = new TimeSpan();
+            endTime = new TimeSpan();
         }
+        
     }
 }
