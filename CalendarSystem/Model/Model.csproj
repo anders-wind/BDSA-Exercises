@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>4092e11a-b36d-4cd3-b8c9-2e73241ed3ab</ProjectGuid>
+    <ProjectGuid>{7A6CBB24-4303-4FA4-80A1-B029063524F2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Model</RootNamespace>
@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Calendar.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="Notification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tag.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
