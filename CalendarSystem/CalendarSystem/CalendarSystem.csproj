@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\InputController.cs" />
-    <Compile Include="Controller\ModelController.cs" />
     <Compile Include="Controller\NotificationController.cs" />
     <Compile Include="Controller\ViewController.cs" />
     <Compile Include="DataStorage\DatabaseStorage.cs" />
@@ -60,6 +59,7 @@
     <Compile Include="View\CalendarView.cs" />
     <Compile Include="View\EventView.cs" />
     <Compile Include="View\LoginView.cs" />
+    <Compile Include="View\MainView.cs" />
     <Compile Include="View\NotificationView.cs" />
   </ItemGroup>
   <ItemGroup>
