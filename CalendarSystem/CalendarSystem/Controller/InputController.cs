@@ -6,26 +6,26 @@ namespace CalendarSystem.Controller
 {
     class InputController
     {
-        private static InputController instance = null;
+        private static InputController _instance = null;
 
-        private IStorage _storage;
-        private User _user;
+        public IStorage _storage{ get; private set; }
+        public User _user { get; private set; }
        
         private InputController()
         {
+            _storage = new FakeStorage();
         }
 
         public void userLogedIn(User user)
         {
             _user = user;
-            _storage = new FakeStorage();
         }
 
 
         public static InputController getInstance()
         {
-            if (instance == null) instance = new InputController();
-            return instance;
+            if (_instance == null) _instance = new InputController();
+            return _instance;
         }
     }
 }

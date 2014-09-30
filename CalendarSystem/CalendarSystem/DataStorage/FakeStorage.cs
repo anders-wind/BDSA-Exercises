@@ -15,6 +15,11 @@ namespace CalendarSystem.DataStorage
             throw new NotImplementedException();
         }
 
+        public User loginAuthentication(string userName, string password)
+        {
+            throw new NotImplementedException();
+        }
+
         public void SaveEvent(User user, Event saveEvent)
         {
             throw new NotImplementedException();
