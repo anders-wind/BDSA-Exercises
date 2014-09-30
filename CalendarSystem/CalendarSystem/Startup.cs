@@ -11,11 +11,10 @@ namespace CalendarSystem
         {
             LoginView loginView = new LoginView();
             // wait for login to succeed.
-            User user = loginView.GetUser();
 
 
             ViewController viewController = new ViewController();
-            InputController inputController = InputController.getInstanceSafe(new FakeStorage(), user);
+            InputController inputController = InputController.getInstance();
             NotificationController notificationController = new NotificationController();
         }
     }

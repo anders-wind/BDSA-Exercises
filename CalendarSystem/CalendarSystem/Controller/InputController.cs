@@ -11,22 +11,20 @@ namespace CalendarSystem.Controller
         private IStorage _storage;
         private User _user;
        
-        private InputController(IStorage storage, User user)
+        private InputController()
         {
-            _storage = storage;
+        }
+
+        public void userLogedIn(User user)
+        {
             _user = user;
+            _storage = new FakeStorage();
         }
 
 
-        public static InputController getInstanceSafe(IStorage storage, User user)
+        public static InputController getInstance()
         {
-            if (instance == null) instance = new InputController(storage, user);
-            return instance;
-        }
-
-        public static InputController getInstanceUnsafe()
-        {
-            if (instance == null) throw new Exception();
+            if (instance == null) instance = new InputController();
             return instance;
         }
     }
