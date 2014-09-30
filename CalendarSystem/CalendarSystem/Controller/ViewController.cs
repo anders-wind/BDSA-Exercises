@@ -1,10 +1,13 @@
-﻿using CalendarSystem.View;
+﻿using CalendarSystem.Model;
+using CalendarSystem.View;
 
 namespace CalendarSystem.Controller
 {
-    class ViewController
+    class ViewController : IObserver
     {
         private static ViewController _instance = null;
+        private InputController _inputController;
+        private NotificationController _notificationController;
 
         private CalendarView _calendarView;
         private EventView _eventView;
@@ -13,7 +16,8 @@ namespace CalendarSystem.Controller
 
         private ViewController()
         {
-            
+            _notificationController = NotificationController.getInstance();
+            _inputController = InputController.getInstance();
         }
 
         public void startMainView()
@@ -25,6 +29,11 @@ namespace CalendarSystem.Controller
         {
             if(_instance == null) _instance = new ViewController();
             return _instance;
+        }
+
+        public void NotifyObserver()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -3,9 +3,12 @@
     class NotificationController
     {
         private static NotificationController _instance = null;
+        private InputController _inputController;
+        private ViewController _viewController;
         private NotificationController()
         {
-            
+            _viewController = ViewController.getInstance();
+            _inputController = InputController.getInstance();
         }
 
         private void notifyUser()

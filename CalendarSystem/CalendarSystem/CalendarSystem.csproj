@@ -50,6 +50,8 @@
     <Compile Include="DataStorage\IStorage.cs" />
     <Compile Include="Model\Calendar.cs" />
     <Compile Include="Model\Event.cs" />
+    <Compile Include="Model\IEvent.cs" />
+    <Compile Include="Model\IObservable.cs" />
     <Compile Include="Model\IObserver.cs" />
     <Compile Include="Model\Notification.cs" />
     <Compile Include="Model\Tag.cs" />

@@ -11,7 +11,7 @@ namespace CalendarSystem.View
         private CalendarView _calendarView;
         public MainView(CalendarView calendarView)
         {
-            _calendarView = calendarView
+            _calendarView = calendarView;
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace CalendarSystem.Model
 {
-    class Notification
+    public class Notification
     {
         private DateTime _date; //date for notification
         private String _description; //notification description

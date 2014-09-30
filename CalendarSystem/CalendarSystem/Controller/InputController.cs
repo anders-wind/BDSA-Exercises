@@ -7,18 +7,23 @@ namespace CalendarSystem.Controller
     class InputController
     {
         private static InputController _instance = null;
+        private ViewController _viewController;
+        private NotificationController _notificationController;
 
         public IStorage _storage{ get; private set; }
-        public User _user { get; private set; }
+        public Calendar _Calendar { get; private set; }
        
         private InputController()
         {
             _storage = new FakeStorage();
+            _viewController = ViewController.getInstance();
+            _notificationController = NotificationController.getInstance();
         }
 
         public void userLogedIn(User user)
         {
-            _user = user;
+            _Calendar = _storage.GetCalendar(user);
+            _Calendar.Observe(_viewController);
         }
 
 
