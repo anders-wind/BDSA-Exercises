@@ -1,0 +1,5 @@
+C:\Users\jut\Documents\BDSA-Exercises\Test\Test\bin\Debug\Test.exe.config
+C:\Users\jut\Documents\BDSA-Exercises\Test\Test\bin\Debug\Test.exe
+C:\Users\jut\Documents\BDSA-Exercises\Test\Test\bin\Debug\Test.pdb
+C:\Users\jut\Documents\BDSA-Exercises\Test\Test\obj\Debug\Test.exe
+C:\Users\jut\Documents\BDSA-Exercises\Test\Test\obj\Debug\Test.pdb
