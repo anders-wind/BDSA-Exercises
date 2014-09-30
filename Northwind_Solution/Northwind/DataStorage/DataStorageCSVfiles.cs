@@ -17,11 +17,17 @@ namespace Northwind.DataStorage
             IList<Product> products = new List<Product>();
             string[] productLines = System.IO.File.ReadAllLines(@"../../../northwind_csv_data/products.csv");
             string[] categoryLines = System.IO.File.ReadAllLines(@"../../../northwind_csv_data/categories.csv");
-            foreach (var line in productLines)
+
+            var element = from product in productLines
+                          let elements = product.Split(';')
+                          select elements;
+
+            foreach (var line in element)
             {
-                Console.WriteLine(line);
+                
+                Console.WriteLine(line+"\n");
             }
-            throw new NotImplementedException();
+            return null;
         }
 
         public IList<Product> Categories()
