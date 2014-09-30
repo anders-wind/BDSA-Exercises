@@ -16,5 +16,17 @@ namespace Northwind.Model
         private int _UnitsOnOrder;
         private int _ReorderLevel;
         private bool _Discontinued;
+
+        public Product(string name, Category category, string quantityPerUnit, decimal unitPrice, int unitsInStock, int unitsOnOrder, int reorderLevel, bool discontinued)
+        {
+            _name = name;
+            _category = category;
+            _QuantityPerUnit = quantityPerUnit;
+            _UnitPrice = unitPrice;
+            _UnitsInStock = unitsInStock;
+            _UnitsOnOrder = unitsOnOrder;
+            _ReorderLevel = reorderLevel;
+            _Discontinued = discontinued;
+        }
     }
 }

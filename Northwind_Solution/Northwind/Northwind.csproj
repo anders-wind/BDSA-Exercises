@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataStorage\DataStorageCSVfiles.cs" />
+    <Compile Include="DataStorage\IDataStorage.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Order_Details.cs" />
