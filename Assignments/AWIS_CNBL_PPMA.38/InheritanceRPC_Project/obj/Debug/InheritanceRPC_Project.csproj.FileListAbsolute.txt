@@ -1,0 +1,8 @@
+C:\Users\Christopher\Documents\BDSA-Exercises\BDSA2014\InheritanceRPC_Project\bin\Debug\InheritanceRPC_Project.exe.config
+C:\Users\Christopher\Documents\BDSA-Exercises\BDSA2014\InheritanceRPC_Project\bin\Debug\InheritanceRPC_Project.exe
+C:\Users\Christopher\Documents\BDSA-Exercises\BDSA2014\InheritanceRPC_Project\bin\Debug\InheritanceRPC_Project.pdb
+C:\Users\Christopher\Documents\BDSA-Exercises\BDSA2014\InheritanceRPC_Project\bin\Debug\nunit.framework.dll
+C:\Users\Christopher\Documents\BDSA-Exercises\BDSA2014\InheritanceRPC_Project\bin\Debug\nunit.framework.xml
+C:\Users\Christopher\Documents\BDSA-Exercises\BDSA2014\InheritanceRPC_Project\obj\Debug\InheritanceRPC_Project.csprojResolveAssemblyReference.cache
+C:\Users\Christopher\Documents\BDSA-Exercises\BDSA2014\InheritanceRPC_Project\obj\Debug\InheritanceRPC_Project.exe
+C:\Users\Christopher\Documents\BDSA-Exercises\BDSA2014\InheritanceRPC_Project\obj\Debug\InheritanceRPC_Project.pdb
