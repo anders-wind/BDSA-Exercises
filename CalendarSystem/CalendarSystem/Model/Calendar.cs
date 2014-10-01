@@ -1,30 +1,47 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace CalendarSystem.Model
 {
     public class Calendar
     {
         // eventually a tree structure to create faster gets
-        private IList<IEvent> _Events = new List<IEvent>();
-
-        public void createCalenderEntry(string description, int month, int day, int startHour, int endHour)
-        {
-            Event calenderEvent = new Event(description, month, day, startHour, endHour, _Events.Count);
-            _Events.Add(calenderEvent);
-        }
+        public IList<IEvent> _Events = new List<IEvent>();
 
         public void createCalenderEntry(IEvent newEvent)
         {
             _Events.Add(newEvent);
         }
 
-        public void updateCalenderEntry()
+        public void updateCalenderEntry(IEvent newEvent)
         {
+            IEvent eventToRemove = null;
+            foreach (IEvent eventToUpdate in _Events)
+            {
+                if (newEvent._ID == eventToUpdate._ID)
+                {
+                    eventToRemove = eventToUpdate;
+                    break;
+                }
+            }
+            if (eventToRemove != null)
+            {
+                _Events.Remove(eventToRemove);
+                _Events.Add(newEvent);
+            }
+            throw new Exception(); // could not find event
+        }
 
+        public IEvent GetEvent(int ID)
+        {
+            foreach (IEvent eventToReturn in _Events)
+            {
+                if (ID == eventToReturn._ID)
+                {
+                    return eventToReturn;
+                }
+            }
+            throw new Exception(); // could not find event
         }
     }
-
-
-    
-
 }

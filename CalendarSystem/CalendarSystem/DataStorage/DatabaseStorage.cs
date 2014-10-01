@@ -27,22 +27,29 @@ namespace CalendarSystem.DataStorage
 
         public void SaveEvent(string description, int month, int day, int startHour, int endHour)
         {
-            throw new System.NotImplementedException();
+            int ID = 0; // get ID from DB
+            IEvent tempEvent = new Event(description, month, day, startHour, endHour, ID);
+            
+            _calendar.createCalenderEntry(tempEvent);
+            // upload
         }
 
         public void UpdateEvent(int ID, string description, int month, int day, int startHour, int endHour)
         {
-            throw new System.NotImplementedException();
+            IEvent tempEvent = new Event(description, month, day, startHour, endHour, ID);
+            
+            _calendar.updateCalenderEntry(tempEvent);
+            // upload
         }
 
         public IList<IEvent> GetEvents()
         {
-            throw new System.NotImplementedException();
+            return _calendar._Events;
         }
 
         public IEvent GetEvent(int ID)
         {
-            throw new System.NotImplementedException();
+            return _calendar.GetEvent(ID);
         }
 
         public void SaveTag(Tag tag)

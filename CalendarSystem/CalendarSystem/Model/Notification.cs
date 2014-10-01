@@ -6,7 +6,12 @@ namespace CalendarSystem.Model
     {
         private DateTime _date; //date for notification
         private String _description; //notification description
-        private Tag _tag; //notification tag (skal evt. være en liste?, kan en notification have flere tags?)
+
+        public Notification(DateTime date, string description)
+        {
+            _date = date;
+            _description = description;
+        }
 
         // getters og setters for date, startTime, endTime, nd (notification description) og nt (notification tag)
     }
