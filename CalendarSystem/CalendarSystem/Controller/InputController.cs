@@ -19,6 +19,7 @@ namespace CalendarSystem.Controller
             _storage = new FakeStorage();
             _viewController = ViewController.getInstance();
             _notificationController = NotificationController.getInstance();
+            _storage.Observe(_viewController);
         }
 
         public void CreateCalendarEntry(string description, int month, int day, int startHour, int endHour)
