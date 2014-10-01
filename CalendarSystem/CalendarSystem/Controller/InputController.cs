@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Dynamic;
 using CalendarSystem.DataStorage;
 using CalendarSystem.Model;
 
@@ -11,7 +12,6 @@ namespace CalendarSystem.Controller
         private NotificationController _notificationController;
 
         public IStorage _storage{ get; private set; }
-        public Calendar _Calendar { get; private set; }
        
         private InputController()
         {
@@ -20,10 +20,25 @@ namespace CalendarSystem.Controller
             _notificationController = NotificationController.getInstance();
         }
 
-        public void userLogedIn(User user)
+        public void CreateCalendarEntry(string description, int month, int day, int startHour, int endHour)
         {
-            _Calendar = _storage.GetCalendar(user);
-            _Calendar.Observe(_viewController);
+        }
+
+        public void UpdateCalendarEntry(IEvent eventToUpdate, IEvent oldEvent)
+        {
+        }
+
+        void Login(string username, string password)
+        {
+            User user;
+            try
+            {
+                user = _storage.loginAuthentication(username, password);
+                ViewController.getInstance().startMainView();
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
 

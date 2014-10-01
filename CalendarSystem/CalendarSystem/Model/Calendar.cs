@@ -9,10 +9,15 @@ namespace CalendarSystem.Model
 
 
 
-        public void createCalenderEntry(int month, int day, int startHour, int startMinute, int endHour, int endMinute)
+        public void createCalenderEntry(string description, int month, int day, int startHour, int endHour)
         {
-            Event calenderEvent = new Event(month, day, startHour, endHour);
+            Event calenderEvent = new Event(description, month, day, startHour, endHour, _Events.Count);
             _Events.Add(calenderEvent);
+        }
+
+        public void createCalenderEntry(IEvent newEvent)
+        {
+            _Events.Add(newEvent);
         }
 
         public void updateCalenderEntry()

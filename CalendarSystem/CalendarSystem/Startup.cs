@@ -9,6 +9,7 @@ namespace CalendarSystem
     {
         private static void Main(string[] args)
         {
+            InputController.getInstance();
             LoginView loginView = new LoginView();
             // wait for login to succeed.
         }
