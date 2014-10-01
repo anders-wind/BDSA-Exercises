@@ -31,6 +31,11 @@ namespace CalendarSystem.Controller
             return _instance;
         }
 
+        public void UpdateCalenderOverview(CalendarView.OverviewType overviewType)
+        {
+            _calendarView.changeOverviewType(overviewType);
+        }
+
         public void NotifyObserver()
         {
             throw new System.NotImplementedException();

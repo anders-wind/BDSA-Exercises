@@ -4,15 +4,16 @@ namespace CalendarSystem.View
 {
     class CalendarView : IObserver
     {
-        private enum OverviewType
+        private OverviewType currentOverviewType;
+        public enum OverviewType
         {
             montly, 
             weekly, 
             daily
         }
-        public void changeOverviewType() // Muligvis til en controller class (view fremstiller data, manipulere ikke med data)
+        public void changeOverviewType(OverviewType overviewType) // Muligvis til en controller class (view fremstiller data, manipulere ikke med data)
         {
-            throw new System.NotImplementedException();
+            currentOverviewType = overviewType;
         }
 
         public void NotifyObserver()

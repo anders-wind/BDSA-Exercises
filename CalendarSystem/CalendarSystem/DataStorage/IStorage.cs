@@ -3,7 +3,7 @@ using CalendarSystem.Model;
 
 namespace CalendarSystem.DataStorage
 {
-    interface IStorage
+    interface IStorage : IObservable
     {
         User loginAuthentication(string userName, string password);
         void SaveEvent(string description, int month, int day, int startHour, int endHour);

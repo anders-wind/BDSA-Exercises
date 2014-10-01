@@ -2,6 +2,7 @@
 using System.Dynamic;
 using CalendarSystem.DataStorage;
 using CalendarSystem.Model;
+using CalendarSystem.View;
 
 namespace CalendarSystem.Controller
 {
@@ -24,8 +25,19 @@ namespace CalendarSystem.Controller
         {
         }
 
-        public void UpdateCalendarEntry(IEvent eventToUpdate, IEvent oldEvent)
+        public void UpdateCalendarEntry(int ID, string description, int month, int day, int startHour, int endHour)
         {
+        }
+
+        public void CreateTag(string newTag)
+        {
+            
+        }
+
+        public void ChangeOverviewType(string overviewType)
+        {
+            // convert string to overviewtype
+            //ViewController.getInstance().UpdateCalenderOverview(overviewType);
         }
 
         void Login(string username, string password)

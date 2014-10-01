@@ -2,12 +2,10 @@
 
 namespace CalendarSystem.Model
 {
-    public class Calendar : IObservable
+    public class Calendar
     {
-        private IList<IObserver> _Observers = new List<IObserver>();
+        // eventually a tree structure to create faster gets
         private IList<IEvent> _Events = new List<IEvent>();
-
-
 
         public void createCalenderEntry(string description, int month, int day, int startHour, int endHour)
         {
@@ -23,29 +21,6 @@ namespace CalendarSystem.Model
         public void updateCalenderEntry()
         {
 
-        }
-        
-
-        
-        public void NotifyObservers()
-        {
-            foreach (var subscriber in _Observers)
-            {
-                subscriber.NotifyObserver();
-            }
-        }
-
-        public void Observe(IObserver observer)
-        {
-            _Observers.Add(observer);
-        }
-
-        public void Observe(IList<IObserver> observers)
-        {
-            foreach (var observer in observers)
-            {
-                _Observers.Add(observer);
-            }
         }
     }
 

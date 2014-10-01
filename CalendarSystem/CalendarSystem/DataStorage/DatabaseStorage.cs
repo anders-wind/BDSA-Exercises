@@ -5,6 +5,8 @@ namespace CalendarSystem.DataStorage
 {
     class DatabaseStorage : IStorage
     {
+        private IList<IObserver> _Observers = new List<IObserver>();
+
         private string _username;
         private string _password;
         private Calendar _calendar;
@@ -46,6 +48,27 @@ namespace CalendarSystem.DataStorage
         public void SaveTag(Tag tag)
         {
             throw new System.NotImplementedException();
+        }
+
+        public void NotifyObservers()
+        {
+            foreach (var observer in _Observers)
+            {
+                observer.NotifyObserver();
+            }
+        }
+
+        public void Observe(IObserver observer)
+        {
+            _Observers.Add(observer);
+        }
+
+        public void Observe(IList<IObserver> observers)
+        {
+            foreach (var observer in observers)
+            {
+                _Observers.Add(observer);
+            }
         }
     }
 }
