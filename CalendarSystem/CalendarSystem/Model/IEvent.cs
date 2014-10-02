@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace CalendarSystem.Model
 {
+    /// <summary>
+    /// An interface for event classes, used for given the minimum an event class must be able to do, and have.
+    /// </summary>
     public interface IEvent
     {
         Notification _notification { get; set; }

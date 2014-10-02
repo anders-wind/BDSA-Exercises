@@ -6,6 +6,9 @@ using CalendarSystem.View;
 
 namespace CalendarSystem.Controller
 {
+    /// <summary>
+    /// The inputcontroller handles all incoming user interaction, such as button presses and so on.
+    /// </summary>
     class InputController
     {
         private static InputController _instance = null;

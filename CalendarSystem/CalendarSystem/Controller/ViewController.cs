@@ -4,6 +4,9 @@ using CalendarSystem.View;
 
 namespace CalendarSystem.Controller
 {
+    /// <summary>
+    /// The view controller handles all calls and creations of the view. It implements the IObserver interface and therefore can get notified when changes in the model happens.
+    /// </summary>
     class ViewController : IObserver
     {
         private static ViewController _instance = null;
@@ -89,7 +92,7 @@ namespace CalendarSystem.Controller
         /// <summary>
         /// The observable pattern method of the observers. When a change in the model has happened (the model is the observable) it has to update the calendar view.
         /// </summary>
-        public void NotifyObserver()
+        public void BeNotifiedByObserved()
         {
             updateCalendarView();
         }

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace CalendarSystem.Model
 {
+    /// <summary>
+    /// A class containing a datastructure with IEvents and provides methods to get the events from the datastructure.
+    /// </summary>
     public class Calendar
     {
         // eventually a tree structure to create faster gets

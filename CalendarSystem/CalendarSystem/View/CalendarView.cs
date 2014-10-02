@@ -16,7 +16,7 @@ namespace CalendarSystem.View
             currentOverviewType = overviewType;
         }
 
-        public void NotifyObserver()
+        public void BeNotifiedByObserved()
         {
             throw new System.NotImplementedException();
         }

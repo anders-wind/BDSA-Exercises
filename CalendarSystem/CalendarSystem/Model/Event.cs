@@ -3,6 +3,9 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace CalendarSystem.Model
 {
+    /// <summary>
+    /// The event class implements the IEvent interface and represents a period of time at a given time, with a couple of other fields.
+    /// </summary>
     public class Event : IEvent
     {
         public Notification _notification { get; set; }

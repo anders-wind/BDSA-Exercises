@@ -67,7 +67,7 @@ namespace CalendarSystem.DataStorage
         {
             foreach (var observer in _Observers)
             {
-                observer.NotifyObserver();
+                observer.BeNotifiedByObserved();
             }
         }
 

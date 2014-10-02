@@ -39,7 +39,7 @@ namespace CalendarSystem.Controller
         /// <summary>
         /// A change in the model has happened.
         /// </summary>
-        public void NotifyObserver()
+        public void BeNotifiedByObserved()
         {
             throw new System.NotImplementedException();
         }
