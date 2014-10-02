@@ -23,12 +23,17 @@ namespace CalendarSystem.DataStorage
             throw new NotImplementedException();
         }
 
-        public IList<IEvent> GetEvents()
+        public IList<IEvent> GetAllEvents()
         {
             throw new NotImplementedException();
         }
 
         public IEvent GetEvent(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<IEvent> GetEventsBetweenDates(DateTime beginDateTime, DateTime enDateTime)
         {
             throw new NotImplementedException();
         }

@@ -24,10 +24,12 @@ namespace CalendarSystem.Controller
 
         public void CreateCalendarEntry(string description, int month, int day, int startHour, int endHour)
         {
+            _storage.SaveEvent(description, month, day, startHour, endHour);
         }
 
         public void UpdateCalendarEntry(int ID, string description, int month, int day, int startHour, int endHour)
         {
+            _storage.UpdateEvent(ID, description, month, day, startHour, endHour);
         }
 
         public void CreateTag(string newTag)
@@ -37,8 +39,24 @@ namespace CalendarSystem.Controller
 
         public void ChangeOverviewType(string overviewType)
         {
+            CalendarView.OverviewType newOverviewType;
             // convert string to overviewtype
-            //ViewController.getInstance().UpdateCalenderOverview(overviewType);
+            switch (overviewType.ToLower())
+            {
+                case "daily":
+                    newOverviewType = CalendarView.OverviewType.daily;
+                    break;
+                case "weekly":
+                    newOverviewType = CalendarView.OverviewType.weekly;
+                    break;
+                case "montly":
+                    newOverviewType = CalendarView.OverviewType.montly;
+                    break;
+                default: 
+                    throw new Exception();
+                    return;
+            }
+            ViewController.getInstance().UpdateCalenderOverview(newOverviewType);
         }
 
         void Login(string username, string password)

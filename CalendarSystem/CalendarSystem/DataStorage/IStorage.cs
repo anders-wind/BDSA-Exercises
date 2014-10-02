@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CalendarSystem.Model;
 
 namespace CalendarSystem.DataStorage
@@ -8,8 +9,9 @@ namespace CalendarSystem.DataStorage
         User loginAuthentication(string userName, string password);
         void SaveEvent(string description, int month, int day, int startHour, int endHour);
         void UpdateEvent(int ID, string description, int month, int day, int startHour, int endHour);
-        IList<IEvent> GetEvents();
+        IList<IEvent> GetAllEvents();
         IEvent GetEvent(int ID);
+        IList<IEvent> GetEventsBetweenDates(DateTime beginDateTime, DateTime enDateTime);
         void SaveTag(Tag tag);
     }
 }
