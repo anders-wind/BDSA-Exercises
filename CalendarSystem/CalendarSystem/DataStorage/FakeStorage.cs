@@ -48,12 +48,12 @@ namespace CalendarSystem.DataStorage
             throw new NotImplementedException();
         }
 
-        public void Observe(IObserver observer)
+        public void BeObserved(IObserver observer)
         {
             throw new NotImplementedException();
         }
 
-        public void Observe(IList<IObserver> observers)
+        public void BeObserved(IList<IObserver> observers)
         {
             throw new NotImplementedException();
         }

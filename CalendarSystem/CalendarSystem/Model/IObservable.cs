@@ -9,7 +9,7 @@ namespace CalendarSystem.Model
     interface IObservable
     {
         void NotifyObservers();
-        void Observe(IObserver observer);
-        void Observe(IList<IObserver> observers);
+        void BeObserved(IObserver observer);
+        void BeObserved(IList<IObserver> observers);
     }
 }

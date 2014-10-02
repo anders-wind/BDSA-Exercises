@@ -15,19 +15,22 @@ namespace CalendarSystem.Model
 
         public int _ID { get; private set; }
 
-        public Event(string description, int month, int day, int startHour, int endHour, int ID)
+        public Event(string description, TimeSpan timespan, DateTime date, Notification notification)
         {
-            _date = new DateTime(DateTime.Now.Year, month, day);
-            _timeSpan = new TimeSpan(startHour, endHour, 0);
+            _date = date;
+            _timeSpan = timespan;
             _description = description;
-            _ID = ID;
+            _notification = notification;
         }
 
         // getters og setters for _date, startTime, endTime, _description (event description) og tag
 
 
         
-
+        /// <summary>
+        /// Change the tag of the 
+        /// </summary>
+        /// <param name="tag"></param>
         public void changeTag(Tag tag)
         {
             throw new NotImplementedException();

@@ -71,12 +71,12 @@ namespace CalendarSystem.DataStorage
             }
         }
 
-        public void Observe(IObserver observer)
+        public void BeObserved(IObserver observer)
         {
             _Observers.Add(observer);
         }
 
-        public void Observe(IList<IObserver> observers)
+        public void BeObserved(IList<IObserver> observers)
         {
             foreach (var observer in observers)
             {
