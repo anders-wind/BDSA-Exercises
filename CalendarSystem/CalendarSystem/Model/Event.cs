@@ -15,12 +15,13 @@ namespace CalendarSystem.Model
 
         public int _ID { get; private set; }
 
-        public Event(string description, TimeSpan timespan, DateTime date, Notification notification)
+        public Event(string description, TimeSpan timespan, DateTime date, Notification notification, int ID)
         {
             _date = date;
             _timeSpan = timespan;
             _description = description;
             _notification = notification;
+            _ID = ID;
         }
 
         // getters og setters for _date, startTime, endTime, _description (event description) og tag

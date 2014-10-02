@@ -26,18 +26,18 @@ namespace CalendarSystem.DataStorage
             return null;
         }
 
-        public void SaveEvent(string description, int month, int day, int startHour, int endHour)
+        public void SaveEvent(string description, DateTime dateTime, TimeSpan timeSpan, Notification notification)
         {
             int ID = 0; // get ID from DB
-            IEvent tempEvent = new Event(description, month, day, startHour, endHour, ID);
+            IEvent tempEvent = new Event(description,timeSpan,dateTime, notification, ID);
             
             _calendar.createCalenderEntry(tempEvent);
             // upload
         }
 
-        public void UpdateEvent(int ID, string description, int month, int day, int startHour, int endHour)
+        public void UpdateEvent(int ID, string description, DateTime dateTime, TimeSpan timeSpan, Notification notification)
         {
-            IEvent tempEvent = new Event(description, month, day, startHour, endHour, ID);
+            IEvent tempEvent = new Event(description, timeSpan, dateTime, notification, ID);
             
             _calendar.updateCalenderEntry(tempEvent);
             // upload

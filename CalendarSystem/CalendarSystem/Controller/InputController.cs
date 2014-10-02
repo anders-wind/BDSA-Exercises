@@ -32,9 +32,9 @@ namespace CalendarSystem.Controller
         /// <param name="day"> The day of the event</param>
         /// <param name="startHour">The start hour of the event</param>
         /// <param name="endHour">The end hour of the event</param>
-        public void CreateCalendarEntry(string description, int month, int day, int startHour, int endHour)
+        public void CreateCalendarEntry(string description,int year, int month, int day, int startHour, int endHour)
         {
-            _storage.SaveEvent(description, month, day, startHour, endHour);
+            _storage.SaveEvent(description, new DateTime(year, month, day), new TimeSpan(endHour-startHour), null);
         }
 
         /// <summary>
@@ -47,9 +47,9 @@ namespace CalendarSystem.Controller
         /// <param name="day"> The day of the event</param>
         /// <param name="startHour">The start hour of the event</param>
         /// <param name="endHour">The end hour of the event</param>
-        public void UpdateCalendarEntry(int ID, string description, int month, int day, int startHour, int endHour)
+        public void UpdateCalendarEntry(int ID, string description, int year, int month, int day, int startHour, int endHour)
         {
-            _storage.UpdateEvent(ID, description, month, day, startHour, endHour);
+            _storage.UpdateEvent(ID, description, new DateTime(year, month, day), new TimeSpan(endHour - startHour), null);
         }
 
         /// <summary>

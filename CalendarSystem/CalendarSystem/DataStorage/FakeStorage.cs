@@ -13,12 +13,12 @@ namespace CalendarSystem.DataStorage
             throw new NotImplementedException();
         }
 
-        public void SaveEvent(string description, int month, int day, int startHour, int endHour)
+        public void SaveEvent(string description, DateTime dateTime, TimeSpan timeSpan, Notification notification)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateEvent(int ID, string description, int month, int day, int startHour, int endHour)
+        public void UpdateEvent(int ID, string description, DateTime dateTime, TimeSpan timeSpan, Notification notification)
         {
             throw new NotImplementedException();
         }
