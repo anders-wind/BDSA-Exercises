@@ -1,1 +1,21 @@
 \section{Overview}
+
+\textbf{View subsystem:}
+This subsystem contains the different types of views that will show, depending on how the user is 
+using the system. Therefore, its assignment of functionality will be that this subsystem 
+has to keep track of the different views.\\
+
+\textbf{Model subsystem:}
+This subsystem contains the data that the system will be using. When the model changes state, 
+it will notify the controllers, and the controllers will then change the view. Therefore, 
+this subsystems assignment of functionality will be notifying the controllers, 
+when its state is being changed.\\
+
+\textbf{Controller subsystem:}
+This subsystem is being used to update the views, by receiving the models state. 
+Its assignment of functionality will be that this subsystem will have to update the views 
+with the received models state.\\
+
+\textbf{DataStorage subsystem:}
+This subsystem contains a database storage. Users gain accesss to this database storage through an interface.
+Therefore, its assignment of functionality of this subsystem will be to store data, which will be used at a later time.
