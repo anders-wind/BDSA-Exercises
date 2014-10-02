@@ -1,0 +1,150 @@
+\hypertarget{class_calendar_system_1_1_controller_1_1_input_controller}{\section{Calendar\+System.\+Controller.\+Input\+Controller Class Reference}
+\label{class_calendar_system_1_1_controller_1_1_input_controller}\index{Calendar\+System.\+Controller.\+Input\+Controller@{Calendar\+System.\+Controller.\+Input\+Controller}}
+}
+
+
+The inputcontroller handles all incoming user interaction, such as button presses and so on.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_calendar_system_1_1_controller_1_1_input_controller_a6a6b437e915b97c6ca03b846baeffbef}{Create\+Calendar\+Entry} (string description, int year, int month, int day, int start\+Hour, int end\+Hour)
+\begin{DoxyCompactList}\small\item\em A method which will often be called from the view. The method takes some parameters and gives the to the storage, where an event will be created and uploaded. \end{DoxyCompactList}\item 
+void \hyperlink{class_calendar_system_1_1_controller_1_1_input_controller_a600a42ef535df171f500022244b7d432}{Update\+Calendar\+Entry} (int I\+D, string description, int year, int month, int day, int start\+Hour, int end\+Hour)
+\begin{DoxyCompactList}\small\item\em A method which will often be called from the view. The method takes some parameters and gives the to the storage, where an event will be updated and uploaded. \end{DoxyCompactList}\item 
+void \hyperlink{class_calendar_system_1_1_controller_1_1_input_controller_ab7b792da94ca5d8cfffacb501c97be0c}{Create\+Tag} (string new\+Tag)
+\begin{DoxyCompactList}\small\item\em A method to create a tag and put it in the datastorage \end{DoxyCompactList}\item 
+void \hyperlink{class_calendar_system_1_1_controller_1_1_input_controller_aaf0f1ccecfd2ba1d09759d4d58b39f34}{Change\+Overview\+Type} (string overview\+Type)
+\begin{DoxyCompactList}\small\item\em Send the request for a new view type to the view\+Controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_calendar_system_1_1_controller_1_1_input_controller}{Input\+Controller} \hyperlink{class_calendar_system_1_1_controller_1_1_input_controller_ac2ab91bd66d05a5bb762ede338dabc47}{get\+Instance} ()
+\begin{DoxyCompactList}\small\item\em Singleton pattern. Makes sure only one instance can exist at a given time, and give classes easy access to the controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_calendar_system_1_1_controller_1_1_input_controller_a9a599456b056daf9a5b5dc47bc385c78}{\hyperlink{interface_calendar_system_1_1_data_storage_1_1_i_storage}{I\+Storage} {\bfseries \+\_\+storage}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}}\label{class_calendar_system_1_1_controller_1_1_input_controller_a9a599456b056daf9a5b5dc47bc385c78}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The inputcontroller handles all incoming user interaction, such as button presses and so on. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_calendar_system_1_1_controller_1_1_input_controller_aaf0f1ccecfd2ba1d09759d4d58b39f34}{\index{Calendar\+System\+::\+Controller\+::\+Input\+Controller@{Calendar\+System\+::\+Controller\+::\+Input\+Controller}!Change\+Overview\+Type@{Change\+Overview\+Type}}
+\index{Change\+Overview\+Type@{Change\+Overview\+Type}!Calendar\+System\+::\+Controller\+::\+Input\+Controller@{Calendar\+System\+::\+Controller\+::\+Input\+Controller}}
+\subsubsection[{Change\+Overview\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Controller.\+Input\+Controller.\+Change\+Overview\+Type (
+\begin{DoxyParamCaption}
+\item[{string}]{overview\+Type}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_controller_1_1_input_controller_aaf0f1ccecfd2ba1d09759d4d58b39f34}
+
+
+Send the request for a new view type to the view\+Controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em overview\+Type} & A string which represents a overview type\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_calendar_system_1_1_controller_1_1_input_controller_a6a6b437e915b97c6ca03b846baeffbef}{\index{Calendar\+System\+::\+Controller\+::\+Input\+Controller@{Calendar\+System\+::\+Controller\+::\+Input\+Controller}!Create\+Calendar\+Entry@{Create\+Calendar\+Entry}}
+\index{Create\+Calendar\+Entry@{Create\+Calendar\+Entry}!Calendar\+System\+::\+Controller\+::\+Input\+Controller@{Calendar\+System\+::\+Controller\+::\+Input\+Controller}}
+\subsubsection[{Create\+Calendar\+Entry}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Controller.\+Input\+Controller.\+Create\+Calendar\+Entry (
+\begin{DoxyParamCaption}
+\item[{string}]{description, }
+\item[{int}]{year, }
+\item[{int}]{month, }
+\item[{int}]{day, }
+\item[{int}]{start\+Hour, }
+\item[{int}]{end\+Hour}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_controller_1_1_input_controller_a6a6b437e915b97c6ca03b846baeffbef}
+
+
+A method which will often be called from the view. The method takes some parameters and gives the to the storage, where an event will be created and uploaded. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em description} & The description of an event\\
+\hline
+{\em month} & The month of the event\\
+\hline
+{\em day} & The day of the event\\
+\hline
+{\em start\+Hour} & The start hour of the event\\
+\hline
+{\em end\+Hour} & The end hour of the event\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_calendar_system_1_1_controller_1_1_input_controller_ab7b792da94ca5d8cfffacb501c97be0c}{\index{Calendar\+System\+::\+Controller\+::\+Input\+Controller@{Calendar\+System\+::\+Controller\+::\+Input\+Controller}!Create\+Tag@{Create\+Tag}}
+\index{Create\+Tag@{Create\+Tag}!Calendar\+System\+::\+Controller\+::\+Input\+Controller@{Calendar\+System\+::\+Controller\+::\+Input\+Controller}}
+\subsubsection[{Create\+Tag}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Controller.\+Input\+Controller.\+Create\+Tag (
+\begin{DoxyParamCaption}
+\item[{string}]{new\+Tag}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_controller_1_1_input_controller_ab7b792da94ca5d8cfffacb501c97be0c}
+
+
+A method to create a tag and put it in the datastorage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Tag} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_calendar_system_1_1_controller_1_1_input_controller_ac2ab91bd66d05a5bb762ede338dabc47}{\index{Calendar\+System\+::\+Controller\+::\+Input\+Controller@{Calendar\+System\+::\+Controller\+::\+Input\+Controller}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Calendar\+System\+::\+Controller\+::\+Input\+Controller@{Calendar\+System\+::\+Controller\+::\+Input\+Controller}}
+\subsubsection[{get\+Instance}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Input\+Controller} Calendar\+System.\+Controller.\+Input\+Controller.\+get\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_calendar_system_1_1_controller_1_1_input_controller_ac2ab91bd66d05a5bb762ede338dabc47}
+
+
+Singleton pattern. Makes sure only one instance can exist at a given time, and give classes easy access to the controller. 
+
+\begin{DoxyReturn}{Returns}
+The only instance of the class
+\end{DoxyReturn}
+\hypertarget{class_calendar_system_1_1_controller_1_1_input_controller_a600a42ef535df171f500022244b7d432}{\index{Calendar\+System\+::\+Controller\+::\+Input\+Controller@{Calendar\+System\+::\+Controller\+::\+Input\+Controller}!Update\+Calendar\+Entry@{Update\+Calendar\+Entry}}
+\index{Update\+Calendar\+Entry@{Update\+Calendar\+Entry}!Calendar\+System\+::\+Controller\+::\+Input\+Controller@{Calendar\+System\+::\+Controller\+::\+Input\+Controller}}
+\subsubsection[{Update\+Calendar\+Entry}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Controller.\+Input\+Controller.\+Update\+Calendar\+Entry (
+\begin{DoxyParamCaption}
+\item[{int}]{I\+D, }
+\item[{string}]{description, }
+\item[{int}]{year, }
+\item[{int}]{month, }
+\item[{int}]{day, }
+\item[{int}]{start\+Hour, }
+\item[{int}]{end\+Hour}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_controller_1_1_input_controller_a600a42ef535df171f500022244b7d432}
+
+
+A method which will often be called from the view. The method takes some parameters and gives the to the storage, where an event will be updated and uploaded. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I\+D} & The I\+D of the \\
+\hline
+{\em description} & The description of an event\\
+\hline
+{\em month} & The month of the event\\
+\hline
+{\em day} & The day of the event\\
+\hline
+{\em start\+Hour} & The start hour of the event\\
+\hline
+{\em end\+Hour} & The end hour of the event\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Calendar\+System/\+Controller/Input\+Controller.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,12 @@
+\hypertarget{namespace_calendar_system_1_1_data_storage}{\section{Package Calendar\+System.\+Data\+Storage}
+\label{namespace_calendar_system_1_1_data_storage}\index{Calendar\+System.\+Data\+Storage@{Calendar\+System.\+Data\+Storage}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_calendar_system_1_1_data_storage_1_1_database_storage}{Database\+Storage}
+\begin{DoxyCompactList}\small\item\em A storage class which implements the \hyperlink{interface_calendar_system_1_1_data_storage_1_1_i_storage}{I\+Storage} interface. The class is meant to have a connection to a database where events will be added when they are created and put in the local Calendar class. \end{DoxyCompactList}\item 
+class \hyperlink{class_calendar_system_1_1_data_storage_1_1_fake_storage}{Fake\+Storage}
+\begin{DoxyCompactList}\small\item\em A storage class which implements the \hyperlink{interface_calendar_system_1_1_data_storage_1_1_i_storage}{I\+Storage} interface. The class is a fake storage in that sense that the fields and methods return components that are created at runtime. Therefore no events will be accessible from between runs of the system. \end{DoxyCompactList}\item 
+interface \hyperlink{interface_calendar_system_1_1_data_storage_1_1_i_storage}{I\+Storage}
+\begin{DoxyCompactList}\small\item\em An interface for a storage class. The interface has methods which will make it possible to get and save events into the calendar, without knowing the actual implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
