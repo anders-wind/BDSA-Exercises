@@ -1,4 +1,5 @@
-﻿using CalendarSystem.Model;
+﻿using System;
+using CalendarSystem.Model;
 using CalendarSystem.View;
 
 namespace CalendarSystem.Controller
@@ -25,6 +26,21 @@ namespace CalendarSystem.Controller
             new MainView(_calendarView);
         }
 
+        public void updateCalendarView()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void createEventView()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void createEventView(IEvent iEvent)
+        {
+            throw new NotImplementedException();
+        }
+
         public static ViewController getInstance()
         {
             if(_instance == null) _instance = new ViewController();
@@ -38,7 +54,7 @@ namespace CalendarSystem.Controller
 
         public void NotifyObserver()
         {
-            throw new System.NotImplementedException();
+            updateCalendarView();
         }
     }
 }

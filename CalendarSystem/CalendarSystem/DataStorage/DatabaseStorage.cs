@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CalendarSystem.Model;
 
 namespace CalendarSystem.DataStorage
@@ -42,7 +43,7 @@ namespace CalendarSystem.DataStorage
             // upload
         }
 
-        public IList<IEvent> GetEvents()
+        public IList<IEvent> GetAllEvents()
         {
             return _calendar._Events;
         }
@@ -50,6 +51,11 @@ namespace CalendarSystem.DataStorage
         public IEvent GetEvent(int ID)
         {
             return _calendar.GetEvent(ID);
+        }
+
+        public IList<IEvent> GetEventsBetweenDates(DateTime beginDateTime, DateTime enDateTime)
+        {
+            throw new NotImplementedException();
         }
 
         public void SaveTag(Tag tag)
