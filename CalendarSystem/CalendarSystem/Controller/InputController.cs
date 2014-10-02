@@ -81,10 +81,9 @@ namespace CalendarSystem.Controller
         /// <param name="password">The inputted password</param>
         void Login(string username, string password)
         {
-            User user;
             try
             {
-                user = _storage.loginAuthentication(username, password);
+                _storage.loginAuthentication(username, password);
                 ViewController.getInstance().startMainView();
             }
             catch (Exception ex)

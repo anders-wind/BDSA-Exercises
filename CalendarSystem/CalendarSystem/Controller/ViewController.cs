@@ -65,6 +65,7 @@ namespace CalendarSystem.Controller
         /// <summary>
         /// Change the overviewtype of the calendarview.
         /// Right now it does not use the enum type correctly.
+        /// Must be updated to properly use the enum type.
         /// </summary>
         /// <param name="overviewType"></param>
         public void UpdateCalenderOverview(string overviewType)

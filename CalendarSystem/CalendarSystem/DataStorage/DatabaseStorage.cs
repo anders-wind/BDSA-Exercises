@@ -4,6 +4,10 @@ using CalendarSystem.Model;
 
 namespace CalendarSystem.DataStorage
 {
+    /// <summary>
+    /// A storage class which implements the IStorage interface.
+    /// The class is meant to have a connection to a database where events will be added when they are created and put in the local Calendar class.
+    /// </summary>
     class DatabaseStorage : IStorage
     {
         private IList<IObserver> _Observers = new List<IObserver>();
@@ -12,7 +16,7 @@ namespace CalendarSystem.DataStorage
         private string _password;
         private Calendar _calendar;
 
-        public User loginAuthentication(string userName, string password)
+        public void loginAuthentication(string userName, string password)
         {
             // check if okay
             _username = userName;
@@ -23,7 +27,7 @@ namespace CalendarSystem.DataStorage
         private Calendar getCalendar()
         {
             // download
-            return null;
+            throw new NotImplementedException();
         }
 
         public void SaveEvent(string description, DateTime dateTime, TimeSpan timeSpan, Notification notification)
@@ -58,7 +62,7 @@ namespace CalendarSystem.DataStorage
             throw new NotImplementedException();
         }
 
-        public void SaveTag(Tag tag)
+        public void CreateTag(Tag tag)
         {
             throw new System.NotImplementedException();
         }

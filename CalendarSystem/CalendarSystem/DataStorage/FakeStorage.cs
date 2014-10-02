@@ -4,11 +4,15 @@ using CalendarSystem.Model;
 
 namespace CalendarSystem.DataStorage
 {
+    /// <summary>
+    /// A storage class which implements the IStorage interface.
+    /// The class is a fake storage in that sense that the fields and methods return components that are created at runtime. Therefore no events will be accessible from between runs of the system.
+    /// </summary>
     class FakeStorage : IStorage
     {
         private IList<IObserver> _Observers = new List<IObserver>();
 
-        public User loginAuthentication(string userName, string password)
+        public void loginAuthentication(string userName, string password)
         {
             throw new NotImplementedException();
         }
@@ -38,7 +42,7 @@ namespace CalendarSystem.DataStorage
             throw new NotImplementedException();
         }
 
-        public void SaveTag(Tag tag)
+        public void CreateTag(Tag tag)
         {
             throw new NotImplementedException();
         }
