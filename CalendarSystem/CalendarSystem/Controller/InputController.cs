@@ -15,11 +15,11 @@ namespace CalendarSystem.Controller
         private ViewController _viewController;
         private NotificationController _notificationController;
 
-        public IStorage _storage{ get; private set; }
+        public IAbstractStorage _storage{ get; private set; }
        
         private InputController()
         {
-            _storage = new FakeStorage();
+            _storage = new AbstractStorage(new DatabaseStorage());
             _viewController = ViewController.getInstance();
             _notificationController = NotificationController.getInstance();
             _storage.BeObserved(_viewController);
