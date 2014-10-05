@@ -49,7 +49,10 @@
     <Compile Include="DataStorage\DatabaseStorage.cs" />
     <Compile Include="DataStorage\FakeStorage.cs" />
     <Compile Include="DataStorage\IAbstractStorage.cs" />
+    <Compile Include="DataStorage\IConnection.cs" />
     <Compile Include="DataStorage\IStorage.cs" />
+    <Compile Include="DataStorage\OfflineConnection.cs" />
+    <Compile Include="DataStorage\OnlineConnection.cs" />
     <Compile Include="Model\Calendar.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\GoogleCalendarEntry.cs" />
@@ -57,6 +60,7 @@
     <Compile Include="Model\IEvent.cs" />
     <Compile Include="Model\IObservable.cs" />
     <Compile Include="Model\IObserver.cs" />
+    <Compile Include="Model\LinkedEvents.cs" />
     <Compile Include="Model\Notification.cs" />
     <Compile Include="Model\Tag.cs" />
     <Compile Include="Startup.cs" />
