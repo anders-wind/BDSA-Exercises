@@ -18,15 +18,18 @@ namespace Northwind.DataStorage
             string[] productLines = System.IO.File.ReadAllLines(@"../../../northwind_csv_data/products.csv");
             string[] categoryLines = System.IO.File.ReadAllLines(@"../../../northwind_csv_data/categories.csv");
 
-            var element = from product in productLines
-                          let elements = product.Split(';')
-                          select elements;
+            var qry = from line in productLines
+                      let elements = line.Split(';')
+                      select new Product(elements[1], elements[4], Convert.ToDecimal(elements[5]), Convert.ToInt16(elements[6]), Convert.ToInt16(elements[7]), Convert.ToInt16(elements[8]));
 
-            foreach (var line in element)
+            var test = qry.ToList();
+
+            foreach (var line in test)
             {
-                
-                Console.WriteLine(line+"\n");
+                Console.WriteLine(line);
             }
+
+            Console.ReadKey();
             return null;
         }
 
