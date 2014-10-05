@@ -9,12 +9,32 @@ namespace CalendarSystem.DataStorage
 {
     class AbstractStorage : IAbstractStorage
     {
+        public enum storageTypes
+        {
+            TestStub,
+            Database
+
+        }
+
+        private IStorage createStorageFactory(storageTypes storageType)
+        {
+            if (storageType == storageTypes.TestStub)
+            {
+                return new FakeStorage();
+            }
+            else if (storageType == storageTypes.TestStub)
+            {
+                return new DatabaseStorage();
+            }
+            throw new Exception();
+        }
+
         private IStorage _storage;
         public IConnection _connection { private get; set; }
 
-        public AbstractStorage(IStorage storage, IConnection connection )
+        public AbstractStorage(IStorage storage, IConnection connection, storageTypes storageType )
         {
-            _storage = storage;
+            _storage = createStorageFactory(storageType);
             _connection = connection;
         }
 
