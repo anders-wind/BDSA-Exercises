@@ -29,10 +29,109 @@ namespace Northwind.Model
             //_Discontinued = discontinued;
         }
 
+        public Product()
+        {
+            // TODO: Complete member initialization
+        }
+
         public string name
         {
-            get;
-            set;
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                _name = value;
+            }
+        }
+
+        public string quantityPerUnit
+        {
+            get
+            {
+                return _QuantityPerUnit;
+            }
+            set
+            {
+                _QuantityPerUnit = value;
+            }
+        }
+
+        public string unitPrice
+        {
+            get
+            {
+                return _UnitPrice.ToString();
+            }
+            set
+            {
+                try
+                {
+                    _UnitPrice = decimal.Parse(value);
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+        }
+
+        public string unitsInStock
+        {
+            get
+            {
+                return _UnitsInStock.ToString();
+            }
+            set
+            {
+                try
+                {
+                    _UnitsInStock = int.Parse(value);
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+        }
+
+        public string unitsOnOrder
+        {
+            get
+            {
+                return _UnitsOnOrder.ToString();
+            }
+            set
+            {
+                try
+                {
+                    _UnitsOnOrder = int.Parse(value);
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+        }
+
+        public string reorderLevel
+        {
+            get
+            {
+                return _ReorderLevel.ToString();
+            }
+            set
+            {
+                try
+                {
+                    _ReorderLevel = int.Parse(value);
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
         }
     }
 }

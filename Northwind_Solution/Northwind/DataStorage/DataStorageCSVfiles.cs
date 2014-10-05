@@ -20,13 +20,21 @@ namespace Northwind.DataStorage
 
             var qry = from line in productLines
                       let elements = line.Split(';')
-                      select new Product(elements[1], elements[4], Convert.ToDecimal(elements[5]), Convert.ToInt16(elements[6]), Convert.ToInt16(elements[7]), Convert.ToInt16(elements[8]));
+                      select new Product()
+                      {
+                          name = elements[1],
+                          quantityPerUnit = elements[4],
+                          unitPrice = elements[5],
+                          unitsInStock = elements[6],
+                          unitsOnOrder = elements[7],
+                          reorderLevel = elements[8]
+                      };
 
             var test = qry.ToList();
 
-            foreach (var line in test)
+            foreach (var line in test.Skip(1))
             {
-                Console.WriteLine(line);
+                Console.WriteLine(line.name);
             }
 
             Console.ReadKey();
