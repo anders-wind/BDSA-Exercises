@@ -34,5 +34,29 @@ namespace Northwind.Model
             _ShipPostalCode = shipPostalCode;
             _ShipCountry = shipCountry;
         }
+
+        public Order_Details orderDetails
+        {
+            get
+            {
+                return _OrderDetails;
+            }
+            set
+            {
+                _OrderDetails = value;
+            }
+        }
+
+        public DateTime shippedDate
+        {
+            get
+            {
+                return _ShippedDate;
+            }
+            set
+            {
+                _ShippedDate = value;
+            }
+        }
     }
 }

@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 namespace Northwind.Model
 {
     class Product
-    {        
+    {
+        private int _id;
         private string _name;
-        //private Category _category;
+        private Category _category;
         private string _QuantityPerUnit;
         private decimal _UnitPrice;
         private int _UnitsInStock;
@@ -17,10 +18,11 @@ namespace Northwind.Model
         private int _ReorderLevel;
         private bool _Discontinued;
 
-        public Product(string name, /*Category category*/ string quantityPerUnit, decimal unitPrice, int unitsInStock, int unitsOnOrder, int reorderLevel, bool discontinued)
+        public Product(int id, string name, Category category, string quantityPerUnit, decimal unitPrice, int unitsInStock, int unitsOnOrder, int reorderLevel, bool discontinued)
         {
+            _id = id;
             _name = name;
-            //_category = category;
+            _category = category;
             _QuantityPerUnit = quantityPerUnit;
             _UnitPrice = unitPrice;
             _UnitsInStock = unitsInStock;
@@ -29,9 +31,16 @@ namespace Northwind.Model
             _Discontinued = discontinued;
         }
 
-        public Product()
+        public int id
         {
-            // TODO: Complete member initialization
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
         }
 
         public string name
@@ -43,6 +52,18 @@ namespace Northwind.Model
             set
             {
                 _name = value;
+            }
+        }
+
+        public Category category
+        {
+            get
+            {
+                return _category;
+            }
+            set
+            {
+                _category = value;
             }
         }
 

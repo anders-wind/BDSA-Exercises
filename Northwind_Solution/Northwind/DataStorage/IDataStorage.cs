@@ -10,7 +10,7 @@ namespace Northwind.DataStorage
     interface IDataStorage
     {
         IList<Product> Products();
-        IList<Product> Categories();
+        IList<Category> Categories();
         IList<Order> Orders();
         void CreateOrder(Order order);
     }

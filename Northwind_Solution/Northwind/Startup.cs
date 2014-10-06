@@ -11,7 +11,17 @@ namespace Northwind
     {
         static void Main(string[] args)
         {
-            new DataStorageCSVfiles().Products();
+            var test = new DataStorageCSVfiles().Orders();
+
+            foreach(var el in test)
+            {
+                foreach(var t in el.orderDetails.products)
+                {
+                    Console.WriteLine(t.name + " " + t.id);
+                }
+            }
+
+            Console.ReadKey();
         }
     }
 }
