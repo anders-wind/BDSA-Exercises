@@ -15,9 +15,9 @@ namespace Northwind.Model
         private int _UnitsInStock;
         private int _UnitsOnOrder;
         private int _ReorderLevel;
-        //private bool _Discontinued;
+        private bool _Discontinued;
 
-        public Product(string name, /*Category category*/ string quantityPerUnit, decimal unitPrice, int unitsInStock, int unitsOnOrder, int reorderLevel /*bool discontinued*/)
+        public Product(string name, /*Category category*/ string quantityPerUnit, decimal unitPrice, int unitsInStock, int unitsOnOrder, int reorderLevel, bool discontinued)
         {
             _name = name;
             //_category = category;
@@ -26,7 +26,7 @@ namespace Northwind.Model
             _UnitsInStock = unitsInStock;
             _UnitsOnOrder = unitsOnOrder;
             _ReorderLevel = reorderLevel;
-            //_Discontinued = discontinued;
+            _Discontinued = discontinued;
         }
 
         public Product()
@@ -58,79 +58,64 @@ namespace Northwind.Model
             }
         }
 
-        public string unitPrice
+        public decimal unitPrice
         {
             get
             {
-                return _UnitPrice.ToString();
+                return _UnitPrice;
             }
             set
             {
-                try
-                {
-                    _UnitPrice = decimal.Parse(value);
-                }
-                catch (FormatException ex)
-                {
-                    Console.WriteLine(ex);
-                }
+                _UnitPrice = value;
             }
         }
 
-        public string unitsInStock
+        public int unitsInStock
         {
             get
             {
-                return _UnitsInStock.ToString();
+                return _UnitsInStock;
             }
             set
             {
-                try
-                {
-                    _UnitsInStock = int.Parse(value);
-                }
-                catch (FormatException ex)
-                {
-                    Console.WriteLine(ex);
-                }
+
+                _UnitsInStock = value;
             }
         }
 
-        public string unitsOnOrder
+        public int unitsOnOrder
         {
             get
             {
-                return _UnitsOnOrder.ToString();
+                return _UnitsOnOrder;
             }
             set
             {
-                try
-                {
-                    _UnitsOnOrder = int.Parse(value);
-                }
-                catch (FormatException ex)
-                {
-                    Console.WriteLine(ex);
-                }
+                _UnitsOnOrder = value;
             }
         }
 
-        public string reorderLevel
+        public int reorderLevel
         {
             get
             {
-                return _ReorderLevel.ToString();
+                return _ReorderLevel;
             }
             set
             {
-                try
-                {
-                    _ReorderLevel = int.Parse(value);
-                }
-                catch (FormatException ex)
-                {
-                    Console.WriteLine(ex);
-                }
+                _ReorderLevel = value;       
+            }
+        }
+
+        public bool discontinued
+        {
+            get
+            {
+                return _Discontinued;
+            }
+            set
+            {
+                _Discontinued = value;
             }
         }
     }
