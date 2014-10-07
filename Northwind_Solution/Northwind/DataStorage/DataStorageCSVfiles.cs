@@ -177,10 +177,11 @@ namespace Northwind.DataStorage
 
             var orderQuery = from line in orderLines.Skip(1)
                 let elements = line.Split(';')
+                let ID = Int32.Parse(elements[0])
                 let orderDetailElement = findOrderDetails(listOfOrderDetails, Int32.Parse(elements[0]))
                 let orderDate = DateTime.Parse(elements[3])
                 let requiredDate = DateTime.Parse(elements[4])
-                let shippedDate = fixEmptyTime(elements[5]) // DateTime.Parse(elements[5]) // maybe this is empty.
+                let shippedDate = fixEmptyTime(elements[5])
                 let freight = decimal.Parse(elements[7])
                 let shipname = elements[8]
                 let shipAddress = elements[9]
@@ -188,7 +189,7 @@ namespace Northwind.DataStorage
                 let shipRegion = elements[11]
                 let shipPostalCode = elements[12]
                 let shipCountry = elements[13]
-                select new Order(orderDetailElement, orderDate, requiredDate, shippedDate, freight, shipname, shipAddress, shipCity, shipRegion, shipPostalCode, shipCountry);
+                select new Order(ID, orderDetailElement, orderDate, requiredDate, shippedDate, freight, shipname, shipAddress, shipCity, shipRegion, shipPostalCode, shipCountry);
 
             var listOfOrders = orderQuery.ToList();
 

@@ -8,6 +8,8 @@ namespace Northwind.Model
 {
     class Order
     {
+        public static int _maxID { get; private set; }
+        private int _id { get; set; }
         private IList<Order_Details> _orderDetails { get; set; }
         private DateTime _orderDate { get; set; }
         private DateTime _requiredDate { get; set; }
@@ -20,8 +22,9 @@ namespace Northwind.Model
         private string _shipPostalCode { get; set; }
         private string _shipCountry { get; set; }
 
-        public Order(IList<Order_Details> orderDetails, DateTime orderDate, DateTime requiredDate, DateTime? shippedDate, decimal freight, string shipName, string shipAddress, string shipCity, string shipRegion, string shipPostalCode, string shipCountry)
+        public Order(int ID, IList<Order_Details> orderDetails, DateTime orderDate, DateTime requiredDate, DateTime? shippedDate, decimal freight, string shipName, string shipAddress, string shipCity, string shipRegion, string shipPostalCode, string shipCountry)
         {
+            if (ID > _maxID) _maxID = ID;
             _orderDetails = orderDetails;
             _orderDate = orderDate;
             _requiredDate = requiredDate;

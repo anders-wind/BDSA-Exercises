@@ -11,15 +11,9 @@ namespace Northwind
     {
         static void Main(string[] args)
         {
-            var test = new DataStorageCSVfiles().Orders();
-
-            //foreach(var el in test)
-            //{
-            //    foreach(var t in el.orderDetails)
-            //    {
-            //        Console.WriteLine(t.id);
-            //    }
-            //}
+            IDataStorage storage = new DataStorageCSVfiles();
+            NorthwindController northwindController = new NorthwindController(storage);
+            northwindController._subscribers.Add(e => e);
 
             Console.ReadKey();
         }
