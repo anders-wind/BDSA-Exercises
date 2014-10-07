@@ -20,7 +20,7 @@ namespace Northwind.Model
         private string _shipCity { get; set; }
         private string _shipRegion { get; set; }
         private string _shipPostalCode { get; set; }
-        private string _shipCountry { get; set; }
+        public string _shipCountry { get; private set; }
 
         public Order(int ID, IList<Order_Details> orderDetails, DateTime orderDate, DateTime requiredDate, DateTime? shippedDate, decimal freight, string shipName, string shipAddress, string shipCity, string shipRegion, string shipPostalCode, string shipCountry)
         {

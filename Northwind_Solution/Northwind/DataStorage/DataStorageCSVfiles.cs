@@ -168,8 +168,6 @@ namespace Northwind.DataStorage
             if (_orders != null) return _orders;
             IList<Product> products = Products();
 
-            IList<Order> orders = new List<Order>();
-            IList<Order_Details> orderDetails = new List<Order_Details>();
             string[] orderLines = System.IO.File.ReadAllLines(orderCSVFilePath);
             string[] orderDetailLines = System.IO.File.ReadAllLines(orderDetailsCSVFilePath);
 
@@ -211,7 +209,7 @@ namespace Northwind.DataStorage
             //}
 
             
-            return orders;
+            return listOfOrders;
         }
 
         public void CreateOrder(Order order)

@@ -9,7 +9,7 @@ namespace Northwind.Model
     class Product
     {
         public int _id { get; private set; }
-        private string _name { get; set; }
+        public string _name { get; private set; }
         private Category _category { get; set; }
         private string _quantityPerUnit { get; set; }
         private decimal _unitPrice { get; set; }
