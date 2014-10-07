@@ -8,149 +8,41 @@ namespace Northwind.Model
 {
     class Product
     {
-        private int _id;
-        private string _name;
-        private Category _category;
-        private string _QuantityPerUnit;
-        private decimal _UnitPrice;
-        private int _UnitsInStock;
-        private int _UnitsOnOrder;
-        private int _ReorderLevel;
-        private bool _Discontinued;
+        public int _id { get; private set; }
+        private string _name { get; set; }
+        private Category _category { get; set; }
+        private string _quantityPerUnit { get; set; }
+        private decimal _unitPrice { get; set; }
+        private int _unitsInStock { get; set; }
+        private int _unitsOnOrder { get; set; }
+        private int _reorderLevel { get; set; }
+        private bool _discontinued { get; set; }
 
         public Product(int id, string name, Category category, string quantityPerUnit, decimal unitPrice, int unitsInStock, int unitsOnOrder, int reorderLevel, bool discontinued)
         {
             _id = id;
             _name = name;
             _category = category;
-            _QuantityPerUnit = quantityPerUnit;
-            _UnitPrice = unitPrice;
-            _UnitsInStock = unitsInStock;
-            _UnitsOnOrder = unitsOnOrder;
-            _ReorderLevel = reorderLevel;
-            _Discontinued = discontinued;
+            _quantityPerUnit = quantityPerUnit;
+            _unitPrice = unitPrice;
+            _unitsInStock = unitsInStock;
+            _unitsOnOrder = unitsOnOrder;
+            _reorderLevel = reorderLevel;
+            _discontinued = discontinued;
         }
 
-        public int id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                _id = value;
-            }
-        }
-
-        public string name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
-
-        public Category category
-        {
-            get
-            {
-                return _category;
-            }
-            set
-            {
-                _category = value;
-            }
-        }
-
-        public string quantityPerUnit
-        {
-            get
-            {
-                return _QuantityPerUnit;
-            }
-            set
-            {
-                _QuantityPerUnit = value;
-            }
-        }
-
-        public decimal unitPrice
-        {
-            get
-            {
-                return _UnitPrice;
-            }
-            set
-            {
-                _UnitPrice = value;
-            }
-        }
-
-        public int unitsInStock
-        {
-            get
-            {
-                return _UnitsInStock;
-            }
-            set
-            {
-
-                _UnitsInStock = value;
-            }
-        }
-
-        public int unitsOnOrder
-        {
-            get
-            {
-                return _UnitsOnOrder;
-            }
-            set
-            {
-                _UnitsOnOrder = value;
-            }
-        }
-
-        public int reorderLevel
-        {
-            get
-            {
-                return _ReorderLevel;
-            }
-            set
-            {
-                _ReorderLevel = value;       
-            }
-        }
-
-        public bool discontinued
-        {
-            get
-            {
-                return _Discontinued;
-            }
-            set
-            {
-                _Discontinued = value;
-            }
-        }
 
         public override string ToString()
         {
-            return  "Product" + "\n   ID: " + id + 
-                    "\n   Name: " + name + 
-                    "\n   " + category +
-                    "\n   QuantityPerUnit: " + quantityPerUnit +
-                    "\n   UnitPrice: " + unitPrice +
-                    "\n   UnitsInStock: " + unitsInStock +
-                    "\n   UnitsOnOrder: " + unitsOnOrder +
-                    "\n   ReorderLevel: " + reorderLevel +
-                    "\n   Discontinued: " + discontinued;
+            return  "Product" + "\n   ID: " + _id + 
+                    "\n   Name: " + _name + 
+                    "\n   " + _category +
+                    "\n   QuantityPerUnit: " + _quantityPerUnit +
+                    "\n   UnitPrice: " + _unitPrice +
+                    "\n   UnitsInStock: " + _unitsInStock +
+                    "\n   UnitsOnOrder: " + _unitsOnOrder +
+                    "\n   ReorderLevel: " + _reorderLevel +
+                    "\n   Discontinued: " + _discontinued;
         }
     }
 }

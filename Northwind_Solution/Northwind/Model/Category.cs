@@ -10,10 +10,10 @@ namespace Northwind.Model
 {
     class Category
     {
-        private int _id;
-        private string _name;
-        private string _description;
-        private string _picture; // must be something else
+        public int _id { get; private set; }
+        private string _name { get; set; }
+        private string _description { get; set; }
+        private string _picture; // must be something else { get; set; }
         public Category(int id, string name, string description, string picture)
         {
             _id = id;
@@ -22,45 +22,11 @@ namespace Northwind.Model
             _picture = picture;
         }
 
-        public int id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                _id = value;
-            }
-        }
-
-        public string name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
-
-        public string description
-        {
-            get
-            {
-                return _description;
-            }
-            set
-            {
-                _description = value;
-            }
-        }
-
         public override string ToString()
         {
-            return "Category\n      ID: " + id + "\n      Name: " + name + "\n      Description: " + description;
+            return "Category\n      ID: " + _id +
+                "\n      Name: " + _name +
+                "\n      Description: " + _description;
         }
 
         //Needs getter and setter for picture.

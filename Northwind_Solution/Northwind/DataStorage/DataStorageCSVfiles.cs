@@ -11,11 +11,16 @@ namespace Northwind.DataStorage
 {
     internal class DataStorageCSVfiles : IDataStorage
     {
+        private string productCSVFilePath = @"../../../northwind_csv_data/products.csv";
+        private string categoriesCSVFilePath = @"../../../northwind_csv_data/categories.csv";
+        private string orderCSVFilePath = @"../../../northwind_csv_data/orders.csv";
+        private string orderDetailsCSVFilePath = @"../../../northwind_csv_data/order_details.csv";
+
         public IList<Product> Products()
         {
             IList<Category> categories = new List<Category>();
-            string[] productLines = System.IO.File.ReadAllLines(@"../../../northwind_csv_data/products.csv");
-            string[] categoryLines = System.IO.File.ReadAllLines(@"../../../northwind_csv_data/categories.csv");
+            string[] productLines = System.IO.File.ReadAllLines(productCSVFilePath);
+            string[] categoryLines = System.IO.File.ReadAllLines(categoriesCSVFilePath);
 
             var categoryQuery = from line in categoryLines.Skip(1)
                 let elements = line.Split(';')
@@ -68,7 +73,7 @@ namespace Northwind.DataStorage
         {
             foreach (var category in categories)
             {
-                if (category.id == ID)
+                if (category._id == ID)
                 {
                     return category;
                 }
@@ -76,9 +81,46 @@ namespace Northwind.DataStorage
             return null;
         }
 
+        private Product findProduct(IList<Product> products, int ID)
+        {
+            foreach (var product in products)
+            {
+                if (product._id == ID)
+                {
+                    return product;
+                }
+            }
+            return null;
+        }
+
+        private IList<Order_Details> findOrderDetails(IList<Order_Details> orderDetails, int ID)
+        {
+            var tempList = new List<Order_Details>();
+            foreach (var orderDetail in orderDetails)
+            {
+                if (orderDetail._id == ID)
+                {
+                     tempList.Add(orderDetail);
+                }
+            }
+            return tempList;
+        }
+
+        private DateTime? fixEmptyTime(string Date)
+        {
+            if (String.IsNullOrEmpty(Date))
+            {
+                return null;
+            }
+            else
+            {
+                return DateTime.Parse(Date);
+            }
+        }
+
         public IList<Product> Categories(int ID)
         {
-            string[] categoryLines = System.IO.File.ReadAllLines(@"../../../northwind_csv_data/categories.csv");
+            string[] categoryLines = System.IO.File.ReadAllLines(categoriesCSVFilePath);
             var categoryQuery = from line in categoryLines.Skip(1)
                                 let elements = line.Split(';')
                                 where Int32.Parse(elements[0]) == ID
@@ -86,7 +128,7 @@ namespace Northwind.DataStorage
 
             var listOfCategories = categoryQuery.ToList();
 
-            string[] productLines = System.IO.File.ReadAllLines(@"../../../northwind_csv_data/products.csv");
+            string[] productLines = System.IO.File.ReadAllLines(productCSVFilePath);
             var productQuery = from line in productLines.Skip(1)
                                let elements = line.Split(';')
                                where Int32.Parse(elements[3]) == ID
@@ -118,94 +160,46 @@ namespace Northwind.DataStorage
 
             IList<Order> orders = new List<Order>();
             IList<Order_Details> orderDetails = new List<Order_Details>();
-            string[] orderLines = System.IO.File.ReadAllLines(@"../../../northwind_csv_data/orders.csv");
-            string[] orderDetailLines = System.IO.File.ReadAllLines(@"../../../northwind_csv_data/order_details.csv");
+            string[] orderLines = System.IO.File.ReadAllLines(orderCSVFilePath);
+            string[] orderDetailLines = System.IO.File.ReadAllLines(orderDetailsCSVFilePath);
 
-            var odqry = from line in orderDetailLines.Skip(1)
+            var orderDetailsQuery = from line in orderDetailLines.Skip(1)
                 let elements = line.Split(';')
-                select new String[] {elements[0], elements[1], elements[2], elements[3], elements[4]};
+                let id = Int32.Parse(elements[0])
+                let product = findProduct(products, Int32.Parse(elements[1]))
+                let unitPrice = decimal.Parse(elements[2])
+                let quantity = Int32.Parse(elements[3])
+                let discount = decimal.Parse(elements[4], System.Globalization.NumberStyles.Any)
+                select new Order_Details(id, product,unitPrice,quantity,discount);
 
-            var listOfOrderDetails = odqry.ToList();
-            foreach (var element in listOfOrderDetails)
-            {
-                Order_Details od = new Order_Details(
-                    Convert.ToInt16(element[0]),
-                    null,
-                    Convert.ToDecimal(element[2]),
-                    Convert.ToInt16(element[3]),
-                    0
-                    );
+            var listOfOrderDetails = orderDetailsQuery.ToList();
 
-                if (element[4].Contains("E"))
-                {
-                    decimal d = decimal.Parse(element[4], System.Globalization.NumberStyles.Any);
-                    od.Discount = d;
-                }
-                else
-                {
-                    od.Discount = Convert.ToDecimal(element[4]);
-                }
 
-                foreach (var product in products)
-                {
-                    int orderDetailID = Convert.ToInt16(element[1]);
-                    if (product.id == orderDetailID)
-                    {
-                        od.product = product;
-                    }
-                }
-
-                orderDetails.Add(od);
-            }
-
-            var oqry = from line in orderLines.Skip(1)
+            var orderQuery = from line in orderLines.Skip(1)
                 let elements = line.Split(';')
-                select
-                    new String[]
-                    {
-                        elements[0], elements[3], elements[4], elements[5], elements[7], elements[8], elements[9],
-                        elements[10], elements[11], elements[12], elements[13]
-                    };
+                let orderDetailElement = findOrderDetails(listOfOrderDetails, Int32.Parse(elements[0]))
+                let orderDate = DateTime.Parse(elements[3])
+                let requiredDate = DateTime.Parse(elements[4])
+                let shippedDate = fixEmptyTime(elements[5]) // DateTime.Parse(elements[5]) // maybe this is empty.
+                let freight = decimal.Parse(elements[7])
+                let shipname = elements[8]
+                let shipAddress = elements[9]
+                let shipCity = elements[10]
+                let shipRegion = elements[11]
+                let shipPostalCode = elements[12]
+                let shipCountry = elements[13]
+                select new Order(orderDetailElement, orderDate, requiredDate, shippedDate, freight, shipname, shipAddress, shipCity, shipRegion, shipPostalCode, shipCountry);
 
-            var listOfOrders = oqry.ToList();
-            foreach (var element in listOfOrders)
-            {
-                Order o = new Order(
-                    null,
-                    Convert.ToDateTime(element[1]),
-                    Convert.ToDateTime(element[2]),
-                    Convert.ToDateTime(DateTime.MinValue),
-                    Convert.ToDecimal(element[4]),
-                    element[5],
-                    element[6],
-                    element[7],
-                    element[8],
-                    element[9],
-                    element[10]
-                    );
+            var listOfOrders = orderQuery.ToList();
 
-                if (String.IsNullOrEmpty(element[3]))
-                {
-                    //do nothing, standard DateTime is already minvalue
-                }
-                else
-                {
-                    o.shippedDate = Convert.ToDateTime(element[3]);
-                }
 
-                o.orderDetails = new List<Order_Details>();
-                foreach (var orderDetail in orderDetails)
-                {
-                    int orderID = Convert.ToInt16(element[0]);
-                    if (orderDetail.id == orderID)
-                    {
-                        o.orderDetails.Add(orderDetail);
-                    }
-                }
+            //Console.WriteLine("Orders");
+            //foreach (var order in listOfOrders)
+            //{
+            //    Console.WriteLine(order);
+            //}
 
-                orders.Add(o);
-            }
-
+            
             return orders;
         }
 

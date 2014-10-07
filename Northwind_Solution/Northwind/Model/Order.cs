@@ -8,55 +8,46 @@ namespace Northwind.Model
 {
     class Order
     {
-        private List<Order_Details> _OrderDetails;
-        private DateTime _OrderDate;
-        private DateTime _RequiredDate;
-        private DateTime _ShippedDate;
-        private decimal _Freight;
-        private string _ShipName;
-        private string _ShipAddress;
-        private string _ShipCity;
-        private string _ShipRegion;
-        private string _ShipPostalCode;
-        private string _ShipCountry;
+        private IList<Order_Details> _orderDetails { get; set; }
+        private DateTime _orderDate { get; set; }
+        private DateTime _requiredDate { get; set; }
+        public DateTime? _shippedDate { get; private set; }
+        private decimal _freight { get; set; }
+        private string _shipName { get; set; }
+        private string _shipAddress { get; set; }
+        private string _shipCity { get; set; }
+        private string _shipRegion { get; set; }
+        private string _shipPostalCode { get; set; }
+        private string _shipCountry { get; set; }
 
-        public Order(List<Order_Details> orderDetails, DateTime orderDate, DateTime requiredDate, DateTime shippedDate, decimal freight, string shipName, string shipAddress, string shipCity, string shipRegion, string shipPostalCode, string shipCountry)
+        public Order(IList<Order_Details> orderDetails, DateTime orderDate, DateTime requiredDate, DateTime? shippedDate, decimal freight, string shipName, string shipAddress, string shipCity, string shipRegion, string shipPostalCode, string shipCountry)
         {
-            _OrderDetails = orderDetails;
-            _OrderDate = orderDate;
-            _RequiredDate = requiredDate;
-            _ShippedDate = shippedDate;
-            _Freight = freight;
-            _ShipName = shipName;
-            _ShipAddress = shipAddress;
-            _ShipCity = shipCity;
-            _ShipRegion = shipRegion;
-            _ShipPostalCode = shipPostalCode;
-            _ShipCountry = shipCountry;
+            _orderDetails = orderDetails;
+            _orderDate = orderDate;
+            _requiredDate = requiredDate;
+            _shippedDate = shippedDate;
+            _freight = freight;
+            _shipName = shipName;
+            _shipAddress = shipAddress;
+            _shipCity = shipCity;
+            _shipRegion = shipRegion;
+            _shipPostalCode = shipPostalCode;
+            _shipCountry = shipCountry;
         }
 
-        public List<Order_Details> orderDetails
+        public override string ToString()
         {
-            get
-            {
-                return _OrderDetails;
-            }
-            set
-            {
-                _OrderDetails = value;
-            }
-        }
-
-        public DateTime shippedDate
-        {
-            get
-            {
-                return _ShippedDate;
-            }
-            set
-            {
-                _ShippedDate = value;
-            }
+            return "Order\n      Order Details: " + _orderDetails +
+                "\n      Order Date: " + _orderDate +
+                "\n      Required Date: " + _requiredDate +
+                "\n      Shipped Date: " + _shippedDate +
+                "\n      Freight: " + _freight +
+                "\n      Ship Name: " + _shipName +
+                "\n      Ship Adress: " + _shipAddress +
+                "\n      Ship City: " + _shipCity +
+                "\n      Ship Region: " + _shipRegion +
+                "\n      Ship Postal Code: " + _shipPostalCode +
+                "\n      Ship Country: " + _shipCountry;
         }
     }
 }
