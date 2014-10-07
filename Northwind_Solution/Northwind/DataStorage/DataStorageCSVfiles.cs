@@ -9,99 +9,83 @@ using Northwind.Model;
 
 namespace Northwind.DataStorage
 {
-    class DataStorageCSVfiles : IDataStorage
+    internal class DataStorageCSVfiles : IDataStorage
     {
-        private string _DataFolder = @"northwind_csv_data\";
         public IList<Product> Products()
         {
-            IList<Product> products = new List<Product>();
             IList<Category> categories = new List<Category>();
             string[] productLines = System.IO.File.ReadAllLines(@"../../../northwind_csv_data/products.csv");
             string[] categoryLines = System.IO.File.ReadAllLines(@"../../../northwind_csv_data/categories.csv");
 
-            var pqry = from line in productLines.Skip(1)
-                      let elements = line.Split(';')
-                      select new String[]{ elements[0], elements[1], elements[3], elements[4], elements[5], elements[6], elements[7], elements[8], elements[9] };
+            var categoryQuery = from line in categoryLines.Skip(1)
+                let elements = line.Split(';')
+                select new Category(Int32.Parse(elements[0]), elements[1], elements[2], "");
 
-            var cqry = from line in categoryLines.Skip(1)
-                       let elements = line.Split(';')
-                       select new String[] { elements[0], elements[1], elements[2] };
+            var listOfCategories = categoryQuery.ToList();
 
-            var listOfCategories = cqry.ToList();
-            foreach(var element in listOfCategories)
-            {
-                Category c = new Category(
-                    Convert.ToInt16(element[0]),
-                    element[1],
-                    element[2],
-                    ""
-                    );
+            var productQuery = from line in productLines.Skip(1)
+                let elements = line.Split(';')
+                let id = Int32.Parse(elements[0])
+                let name = elements[1]
+                let category = findCategory(listOfCategories,Int32.Parse(elements[3]))
+                let quantityPerUnit = elements[4]
+                let unitPrice = decimal.Parse(elements[5])
+                let unitsInStock = Int32.Parse(elements[6])
+                let unitsOnOrder = Int32.Parse(elements[7])
+                let reorderLevel = Int32.Parse(elements[8])
+                let discontinued = isDiscontinued(Int32.Parse(elements[9]))
+                select
+                    new Product(id, name, category, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel,
+                        discontinued);
 
-                categories.Add(c);
-            }
+            //Console.WriteLine("Categories:");
+            //foreach (var category in listOfCategories)
+            //{
+            //    Console.WriteLine(category);
+            //}
+            //Console.WriteLine("\n\n\nProducts:");
+            //foreach (var product in productQuery)
+            //{
+            //    Console.WriteLine(product);
+            //}
 
-            var listOfProducts = pqry.ToList();
-            foreach (var element in listOfProducts)
-            {
-                Product p = new Product(
-                    Convert.ToInt16(element[0]),
-                    element[1],
-                    null,
-                    element[3],
-                    Convert.ToDecimal(element[4]),
-                    Convert.ToInt16(element[5]),
-                    Convert.ToInt16(element[6]),
-                    Convert.ToInt16(element[7]),
-                    false
-                    );
-
-                foreach(var category in categories)
-                {
-                    int productID = Convert.ToInt16(element[2]);
-                    if(category.id == productID)
-                    {
-                        p.category = category;
-                    }
-                }
-
-                if(Convert.ToInt16(element[8]) == -1)
-                {
-                    p.discontinued = true;
-                } else
-                {
-                    p.discontinued = false;
-                }
-
-                products.Add(p);
-            }
-
-            return products;
+            return productQuery.ToList();
         }
 
-        public IList<Category> Categories()
+        private bool isDiscontinued(int i)
         {
-            IList<Category> categories = new List<Category>();
+            if (i == -1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
+        private Category findCategory(IList<Category> categories, int ID)
+        {
+            foreach (var category in categories)
+            {
+                if (category.id == ID)
+                {
+                    return category;
+                }
+            }
+            return null;
+        }
+
+        public IList<Category> Categories(int ID)
+        {
             string[] categoryLines = System.IO.File.ReadAllLines(@"../../../northwind_csv_data/categories.csv");
 
-            var cqry = from line in categoryLines.Skip(1)
-                       let elements = line.Split(';')
-                       select new String[] { elements[0], elements[1], elements[2] };
+            var categoryQuery = from line in categoryLines.Skip(1)
+                                let elements = line.Split(';')
+                                where Int32.Parse(elements[0]) == ID
+                                select new Category(Int32.Parse(elements[0]), elements[1], elements[2], "");
 
-            var listOfCategories = cqry.ToList();
-            foreach (var element in listOfCategories)
-            {
-                Category c = new Category(
-                    Convert.ToInt16(element[0]),
-                    element[1],
-                    element[2],
-                    ""
-                    );
-
-                categories.Add(c);
-            }
-
-            return categories;
+            return categoryQuery.ToList();
         }
 
         public IList<Order> Orders()
@@ -114,13 +98,12 @@ namespace Northwind.DataStorage
             string[] orderDetailLines = System.IO.File.ReadAllLines(@"../../../northwind_csv_data/order_details.csv");
 
             var odqry = from line in orderDetailLines.Skip(1)
-                        let elements = line.Split(';')
-                        select new String[] { elements[0], elements[1], elements[2], elements[3], elements[4] };
+                let elements = line.Split(';')
+                select new String[] {elements[0], elements[1], elements[2], elements[3], elements[4]};
 
             var listOfOrderDetails = odqry.ToList();
-            foreach(var element in listOfOrderDetails)
-            {         
-
+            foreach (var element in listOfOrderDetails)
+            {
                 Order_Details od = new Order_Details(
                     Convert.ToInt16(element[0]),
                     null,
@@ -129,31 +112,36 @@ namespace Northwind.DataStorage
                     0
                     );
 
-                    if (element[4].Contains("E"))
-                    {
-                        decimal d = decimal.Parse(element[4], System.Globalization.NumberStyles.Any);
-                        od.Discount = d;
-                    }
-                    else
-                    {
-                        od.Discount = Convert.ToDecimal(element[4]);
-                    }
+                if (element[4].Contains("E"))
+                {
+                    decimal d = decimal.Parse(element[4], System.Globalization.NumberStyles.Any);
+                    od.Discount = d;
+                }
+                else
+                {
+                    od.Discount = Convert.ToDecimal(element[4]);
+                }
 
-                    foreach (var product in products)
+                foreach (var product in products)
+                {
+                    int orderDetailID = Convert.ToInt16(element[1]);
+                    if (product.id == orderDetailID)
                     {
-                        int orderDetailID = Convert.ToInt16(element[1]);
-                        if (product.id == orderDetailID)
-                        {
-                            od.product = product;
-                        }
+                        od.product = product;
                     }
+                }
 
-                    orderDetails.Add(od);
+                orderDetails.Add(od);
             }
 
             var oqry = from line in orderLines.Skip(1)
-                       let elements = line.Split(';')
-                       select new String[] { elements[0], elements[3], elements[4], elements[5], elements[7], elements[8], elements[9], elements[10], elements[11], elements[12], elements[13] };
+                let elements = line.Split(';')
+                select
+                    new String[]
+                    {
+                        elements[0], elements[3], elements[4], elements[5], elements[7], elements[8], elements[9],
+                        elements[10], elements[11], elements[12], elements[13]
+                    };
 
             var listOfOrders = oqry.ToList();
             foreach (var element in listOfOrders)
@@ -172,10 +160,11 @@ namespace Northwind.DataStorage
                     element[10]
                     );
 
-                if(String.IsNullOrEmpty(element[3]))
+                if (String.IsNullOrEmpty(element[3]))
                 {
                     //do nothing, standard DateTime is already minvalue
-                } else
+                }
+                else
                 {
                     o.shippedDate = Convert.ToDateTime(element[3]);
                 }
@@ -184,7 +173,7 @@ namespace Northwind.DataStorage
                 foreach (var orderDetail in orderDetails)
                 {
                     int orderID = Convert.ToInt16(element[0]);
-                    if(orderDetail.id == orderID)
+                    if (orderDetail.id == orderID)
                     {
                         o.orderDetails.Add(orderDetail);
                     }
@@ -198,7 +187,6 @@ namespace Northwind.DataStorage
 
         public void CreateOrder(Order order)
         {
-            
         }
     }
 }
