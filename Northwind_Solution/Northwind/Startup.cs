@@ -11,7 +11,7 @@ namespace Northwind
     {
         static void Main(string[] args)
         {
-            var test = new DataStorageCSVfiles().Products();
+            var test = new DataStorageCSVfiles().Categories(1);
 
             //foreach(var el in test)
             //{

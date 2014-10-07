@@ -76,16 +76,40 @@ namespace Northwind.DataStorage
             return null;
         }
 
-        public IList<Category> Categories(int ID)
+        public IList<Product> Categories(int ID)
         {
             string[] categoryLines = System.IO.File.ReadAllLines(@"../../../northwind_csv_data/categories.csv");
-
             var categoryQuery = from line in categoryLines.Skip(1)
                                 let elements = line.Split(';')
                                 where Int32.Parse(elements[0]) == ID
                                 select new Category(Int32.Parse(elements[0]), elements[1], elements[2], "");
 
-            return categoryQuery.ToList();
+            var listOfCategories = categoryQuery.ToList();
+
+            string[] productLines = System.IO.File.ReadAllLines(@"../../../northwind_csv_data/products.csv");
+            var productQuery = from line in productLines.Skip(1)
+                               let elements = line.Split(';')
+                               where Int32.Parse(elements[3]) == ID
+                               let id = Int32.Parse(elements[0])
+                               let name = elements[1]
+                               let category = listOfCategories[0]
+                               let quantityPerUnit = elements[4]
+                               let unitPrice = decimal.Parse(elements[5])
+                               let unitsInStock = Int32.Parse(elements[6])
+                               let unitsOnOrder = Int32.Parse(elements[7])
+                               let reorderLevel = Int32.Parse(elements[8])
+                               let discontinued = isDiscontinued(Int32.Parse(elements[9]))
+                               select
+                                   new Product(id, name, category, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel,
+                                       discontinued);
+
+            //Console.WriteLine("Products with category ID: " + ID);
+            //foreach (var product in productQuery)
+            //{
+            //    Console.WriteLine(product);
+            //}
+
+            return productQuery.ToList();
         }
 
         public IList<Order> Orders()
