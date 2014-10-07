@@ -11,9 +11,7 @@ namespace Northwind
     {
         static void Main(string[] args)
         {
-            IDataStorage storage = new DataStorageCSVfiles();
-            NorthwindController northwindController = new NorthwindController(storage);
-            northwindController._subscribers.Add(e => e);
+            NorthwindController northwindController = new NorthwindController(new DataStorageCSVfiles(););
 
             Console.ReadKey();
         }

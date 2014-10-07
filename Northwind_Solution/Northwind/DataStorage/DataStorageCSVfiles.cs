@@ -16,8 +16,17 @@ namespace Northwind.DataStorage
         private string orderCSVFilePath = @"../../../northwind_csv_data/orders.csv";
         private string orderDetailsCSVFilePath = @"../../../northwind_csv_data/order_details.csv";
 
+        public IList<Order> _orders { get; private set; }
+        public IList<Product> _products { get; private set; }
+
+        public DataStorageCSVfiles()
+        {
+            _orders = Orders();
+            _products = Products();
+        }
         public IList<Product> Products()
         {
+            if (_products != null) return _products;
             IList<Category> categories = new List<Category>();
             string[] productLines = System.IO.File.ReadAllLines(productCSVFilePath);
             string[] categoryLines = System.IO.File.ReadAllLines(categoriesCSVFilePath);
@@ -156,6 +165,7 @@ namespace Northwind.DataStorage
 
         public IList<Order> Orders()
         {
+            if (_orders != null) return _orders;
             IList<Product> products = Products();
 
             IList<Order> orders = new List<Order>();

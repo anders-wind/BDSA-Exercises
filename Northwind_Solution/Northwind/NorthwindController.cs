@@ -10,18 +10,22 @@ namespace Northwind
 {
     class NorthwindController
     {
-        public IList<Order> _orders { get; private set; }
-        public IList<Product> _products { get; private set; }
+        public IList<Order> _orders
+        {
+            get { return _storage.Orders(); }
+        }
+        public IList<Product> _products
+        {
+            get { return _storage.Products(); }
+        }
         public IList<object> _subscribers { get; private set; }
 
-        private IDataStorage _storage;
+        public IDataStorage _storage { get; private set; };
 
         public NorthwindController(IDataStorage storage)
         {
             _subscribers = new List<object>();
             _storage = storage;
-            _orders = _storage.Orders();
-            _products = _storage.Products();
         }
 
         public void AddOrder(IList<Order_Details> orderDetails, DateTime requiredDate, DateTime? shippedDate, decimal freight, string shipName, string shipAddress, string shipCity, string shipRegion, string shipPostalCode, string shipCountry)
@@ -32,14 +36,24 @@ namespace Northwind
             
             _storage.CreateOrder(tempOrder);
 
-            NewOrderEvent();
+            new NewOrderEvent(tempOrder);
         }
 
-        public void NewOrderEvent()
+        //public void NewOrderEvent()
+        //{
+        //    foreach (var subscriber in _subscribers)
+        //    {
+        //        Console.WriteLine("notify dat subscriber");// do something
+        //    }
+        //}
+
+        class NewOrderEvent
         {
-            foreach (var subscriber in _subscribers)
+            public Order Order { get; set; }
+
+            public NewOrderEvent(Order order)
             {
-                Console.WriteLine("notify dat subscriber");// do something
+                Order = order;
             }
         }
     }
