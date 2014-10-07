@@ -15,9 +15,9 @@ namespace Northwind
 
             foreach(var el in test)
             {
-                foreach(var t in el.orderDetails.products)
+                foreach(var t in el.orderDetails)
                 {
-                    Console.WriteLine(t.name + " " + t.id);
+                    Console.WriteLine(t.id);
                 }
             }
 

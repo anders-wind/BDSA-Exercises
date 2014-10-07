@@ -8,7 +8,7 @@ namespace Northwind.Model
 {
     class Order
     {
-        private Order_Details _OrderDetails;
+        private List<Order_Details> _OrderDetails;
         private DateTime _OrderDate;
         private DateTime _RequiredDate;
         private DateTime _ShippedDate;
@@ -20,7 +20,7 @@ namespace Northwind.Model
         private string _ShipPostalCode;
         private string _ShipCountry;
 
-        public Order(Order_Details orderDetails, DateTime orderDate, DateTime requiredDate, DateTime shippedDate, decimal freight, string shipName, string shipAddress, string shipCity, string shipRegion, string shipPostalCode, string shipCountry)
+        public Order(List<Order_Details> orderDetails, DateTime orderDate, DateTime requiredDate, DateTime shippedDate, decimal freight, string shipName, string shipAddress, string shipCity, string shipRegion, string shipPostalCode, string shipCountry)
         {
             _OrderDetails = orderDetails;
             _OrderDate = orderDate;
@@ -35,7 +35,7 @@ namespace Northwind.Model
             _ShipCountry = shipCountry;
         }
 
-        public Order_Details orderDetails
+        public List<Order_Details> orderDetails
         {
             get
             {

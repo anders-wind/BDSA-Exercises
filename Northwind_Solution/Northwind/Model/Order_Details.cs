@@ -9,15 +9,15 @@ namespace Northwind.Model
     class Order_Details
     {
         private int _id;
-        private List<Product> _Products;
+        private Product _Product;
         private decimal _UnitPrice;
         private int _Quantity;
         private decimal _Discount;
 
-        public Order_Details(int id, List<Product> products, decimal unitPrice, int quantity, decimal discount)
+        public Order_Details(int id, Product product, decimal unitPrice, int quantity, decimal discount)
         {
             _id = id;
-            _Products = products;
+            _Product = product;
             _UnitPrice = unitPrice;
             _Quantity = quantity;
             _Discount = discount;
@@ -35,15 +35,15 @@ namespace Northwind.Model
             }
         }
 
-        public List<Product> products
+        public Product product
         {
             get
             {
-                return _Products;
+                return _Product;
             }
             set
             {
-                _Products = value;
+                _Product = value;
             }
         }
 

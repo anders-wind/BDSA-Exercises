@@ -139,16 +139,14 @@ namespace Northwind.DataStorage
                         od.Discount = Convert.ToDecimal(element[4]);
                     }
 
-                    List<Product> orderedProducts = new List<Product>();
                     foreach (var product in products)
                     {
                         int orderDetailID = Convert.ToInt16(element[1]);
                         if (product.id == orderDetailID)
                         {
-                            orderedProducts.Add(product);
+                            od.product = product;
                         }
                     }
-                    od.products = orderedProducts;
 
                     orderDetails.Add(od);
             }
@@ -182,12 +180,13 @@ namespace Northwind.DataStorage
                     o.shippedDate = Convert.ToDateTime(element[3]);
                 }
 
+                o.orderDetails = new List<Order_Details>();
                 foreach (var orderDetail in orderDetails)
                 {
                     int orderID = Convert.ToInt16(element[0]);
                     if(orderDetail.id == orderID)
                     {
-                        o.orderDetails = orderDetail;
+                        o.orderDetails.Add(orderDetail);
                     }
                 }
 
