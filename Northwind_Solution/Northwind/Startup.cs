@@ -11,9 +11,10 @@ namespace Northwind
     {
         static void Main(string[] args)
         {
-            NorthwindController northwindController = new NorthwindController(new DataStorageCSVfiles(););
+            NorthwindController northwindController = new NorthwindController(new DataStorageCSVfiles());
 
             Console.ReadKey();
         }
+
     }
 }

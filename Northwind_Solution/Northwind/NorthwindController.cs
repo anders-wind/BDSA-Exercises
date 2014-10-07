@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,13 +19,14 @@ namespace Northwind
         {
             get { return _storage.Products(); }
         }
-        public IList<object> _subscribers { get; private set; }
 
-        public IDataStorage _storage { get; private set; };
+        public IDataStorage _storage { get; private set; }
+
+        public event Action<object, EventArgs> newOrderEventArgs;
 
         public NorthwindController(IDataStorage storage)
         {
-            _subscribers = new List<object>();
+            
             _storage = storage;
         }
 
@@ -35,26 +37,6 @@ namespace Northwind
             _orders.Add(tempOrder);
             
             _storage.CreateOrder(tempOrder);
-
-            new NewOrderEvent(tempOrder);
-        }
-
-        //public void NewOrderEvent()
-        //{
-        //    foreach (var subscriber in _subscribers)
-        //    {
-        //        Console.WriteLine("notify dat subscriber");// do something
-        //    }
-        //}
-
-        class NewOrderEvent
-        {
-            public Order Order { get; set; }
-
-            public NewOrderEvent(Order order)
-            {
-                Order = order;
-            }
         }
     }
 }
