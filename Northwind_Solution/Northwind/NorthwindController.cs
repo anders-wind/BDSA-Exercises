@@ -22,7 +22,7 @@ namespace Northwind
 
         public IDataStorage _storage { get; private set; }
 
-        public event Action<object, EventArgs> newOrderEventArgs;
+        public event Action<object, Order> NewOrderEvent;
 
         public NorthwindController(IDataStorage storage)
         {
@@ -37,6 +37,17 @@ namespace Northwind
             _orders.Add(tempOrder);
             
             _storage.CreateOrder(tempOrder);
+
+            if (NewOrderEvent != null)
+            {
+                NewOrderEvent.Invoke(this, tempOrder);
+            }
         }
+
+        public void Subscribe(Action<object, Order> action)
+        {
+            NewOrderEvent += action;
+        }
+
     }
 }

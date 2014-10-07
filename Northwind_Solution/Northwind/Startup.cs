@@ -13,6 +13,8 @@ namespace Northwind
         {
             NorthwindController northwindController = new NorthwindController(new DataStorageCSVfiles());
 
+            northwindController.Subscribe((o, order) => Console.WriteLine(order));
+
             Console.ReadKey();
         }
 
