@@ -58,6 +58,11 @@ namespace Northwind.Model
             }
         }
 
+        public override string ToString()
+        {
+            return "Category\n      ID: " + id + "\n      Name: " + name + "\n      Description: " + description;
+        }
+
         //Needs getter and setter for picture.
     }
 }

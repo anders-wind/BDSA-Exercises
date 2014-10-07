@@ -139,5 +139,18 @@ namespace Northwind.Model
                 _Discontinued = value;
             }
         }
+
+        public override string ToString()
+        {
+            return  "Product" + "\n   ID: " + id + 
+                    "\n   Name: " + name + 
+                    "\n   " + category +
+                    "\n   QuantityPerUnit: " + quantityPerUnit +
+                    "\n   UnitPrice: " + unitPrice +
+                    "\n   UnitsInStock: " + unitsInStock +
+                    "\n   UnitsOnOrder: " + unitsOnOrder +
+                    "\n   ReorderLevel: " + reorderLevel +
+                    "\n   Discontinued: " + discontinued;
+        }
     }
 }
