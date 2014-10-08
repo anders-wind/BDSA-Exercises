@@ -21,10 +21,11 @@ namespace Northwind
                                 let name = product._name
                                 select name).Take(5);
 
-            //foreach (var name in productNames)
-            //{
-            //    Console.WriteLine(name);
-            //}
+            Console.WriteLine("Name of the first 5 products:");
+            foreach (var name in productNames)
+            {
+                Console.WriteLine(name);
+            }
 
             //Write the counting of orders by shipping country. Order the output by descending count [use LINQ]
             var orders = northwindController._orders;
@@ -37,6 +38,7 @@ namespace Northwind
                                      orderby g.Count() descending
                                      select new { Country = g.Key, NumberOfCountryOrders = g.Count()};
 
+            Console.WriteLine("\n\nCounting of orders by shipping country:\n");
             foreach (var count in countings)
             {
                 Console.WriteLine("Country: " + count.Country + "\nOrders by shipping country: " + count.NumberOfCountryOrders + "\n");

@@ -27,7 +27,6 @@ namespace Northwind.DataStorage
         public IList<Product> Products()
         {
             if (_products != null) return _products;
-            IList<Category> categories = new List<Category>();
             string[] productLines = System.IO.File.ReadAllLines(productCSVFilePath);
             string[] categoryLines = System.IO.File.ReadAllLines(categoriesCSVFilePath);
 
@@ -199,9 +198,6 @@ namespace Northwind.DataStorage
                 let shipCountry = elements[13]
                 select new Order(ID, orderDetailElement, orderDate, requiredDate, shippedDate, freight, shipname, shipAddress, shipCity, shipRegion, shipPostalCode, shipCountry);
 
-            var listOfOrders = orderQuery.ToList();
-
-
             //Console.WriteLine("Orders");
             //foreach (var order in listOfOrders)
             //{
@@ -209,7 +205,7 @@ namespace Northwind.DataStorage
             //}
 
             
-            return listOfOrders;
+            return orderQuery.ToList();
         }
 
         public void CreateOrder(Order order)
