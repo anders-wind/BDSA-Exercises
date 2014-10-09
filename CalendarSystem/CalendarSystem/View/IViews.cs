@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace CalendarSystem.View
 {
-    abstract class IViews
+    interface IViews
     {
         /// <summary>
         /// shows the view
         /// </summary>
-        public abstract void Show();
+        void Show();
 
         /// <summary>
         /// Hides the view
         /// </summary>
-        public abstract void Hide();
+        void Hide();
 
         /// <summary>
         /// clears the view of data.
         /// </summary>
-        public abstract void Clear();
+        void Clear();
     }
 }

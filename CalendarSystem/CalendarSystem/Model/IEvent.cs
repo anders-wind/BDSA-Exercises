@@ -16,8 +16,6 @@ namespace CalendarSystem.Model
         TimeSpan _timeSpan { get; set; }
         string _description { get; set; }
         int _ID { get; }
-
-
-        void changeTag(Tag tag);
+        int tag { get; }
     }
 }

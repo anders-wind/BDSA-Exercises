@@ -17,17 +17,17 @@ namespace CalendarSystem.View
             _calendarView = calendarView;
         }
 
-        public override void Show()
+        public void Show()
         {
             throw new NotImplementedException();
         }
 
-        public override void Hide()
+        public void Hide()
         {
             throw new NotImplementedException();
         }
 
-        public override void Clear()
+        public void Clear()
         {
             throw new NotImplementedException();
         }

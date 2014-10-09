@@ -16,7 +16,6 @@ namespace CalendarSystem.DataStorage
         /// <param name="password"></param>
         /// <returns></returns>
         void loginAuthentication(string userName, string password);
-
         /// <summary>
         /// Save an event to the storage
         /// </summary>
@@ -55,6 +54,6 @@ namespace CalendarSystem.DataStorage
         /// Create a tag and save it in the storage.
         /// </summary>
         /// <param name="tag"></param>
-        void CreateTag(Tag tag);
+        void CreateTag(string tag);
     }
 }

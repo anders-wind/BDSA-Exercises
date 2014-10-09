@@ -5,17 +5,17 @@
     /// </summary>
     class EventView : IViews
     {
-        public override void Show()
+        public void Show()
         {
             throw new System.NotImplementedException();
         }
 
-        public override void Hide()
+        public void Hide()
         {
             throw new System.NotImplementedException();
         }
 
-        public override void Clear()
+        public void Clear()
         {
             throw new System.NotImplementedException();
         }
