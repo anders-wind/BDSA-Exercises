@@ -15,3 +15,10 @@ with the received models state.\\
 \textbf{DataStorage subsystem:}
 This subsystem contains a database storage. Users gain accesss to this database storage through an interface.
 Therefore, its assignment of functionality of this subsystem will be to store data, which will be used at a later time.
+
+\subsection{UML class Diagram}
+Along the project comes a UML Class Diagram file which can be viewed in Visual studio. Here we can see the different subsystems in action. Topmost is the Storage subsystem. The subsystem is in the form of a Abstract Factory pattern. The IAbsatract storage has a factory which creates Abstractstorages which has IStorage. \\In this section the bridge pattern is also in use (the abstract storage works as a bridge) and the strategy pattern in the form of the Offline and Online connection classes.\\
+
+Beneath the storage subsystem we can see the view subsystem. The classes all share the IViews interface which provides the classe with basic view methods such as show, hide and clear.\\
+
+At the bottum of the UML class diagram we can see the Events and how they are implemented. The Event section of the model subsystem uses a couple of design patterns to increase coherence and loosen the coupling. The GoogleCalendarEvent is the result of the Adapter pattern and The LinkedEvents class is a result of the Composite pattern.
