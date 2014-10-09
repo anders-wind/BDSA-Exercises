@@ -1,6 +1,13 @@
 \section{Design goals}
+\begin{itemize}
+\item Strong and easy usability\\
 The goal with the systems usability, is to end up with a product which is user-friendly for all types of users. By applying gestalt laws, the goal is to end up with a clean and simple user interface which is logical for all users, even the unexperienced.\\
+\item High Reliabiltiy\\
 Furthermore it is desired to create a reliable program, preventing users from losing all progress related to unexpected crashes. This will be handled by frequently auto-saving data and synchronizing with the data storage. Furthermore every time the user commits anything, for example a new calendar entry, it will also be saved immediately. Force restarting should not be acceptable and most exceptions must be caught and handled runtime. By doing the abovementioned, data loss will be kept to a minimum by limiting it to users current activity, should a failure occur.\\
-The goal performance-wise is to be able to handle a large number of events daily, without setting a noticable strain on the program. Heavy operations must run in the background, and therefore not disturbing the user while operating the program. The trade-off however will be the loading time of the program. This allows us to load all the initially required data, and prevent long waiting times while operating the system.\\
+\item Solid perfomance\\
+The goal performance-wise is to be able to handle a large number of events daily, without setting a noticable strain on the program. Heavy operations must run in the background, and therefore not disturbing the user while operating the program. The trade-off however will be the loading time of the program. This allows us to load all the initially required data, and prevent long waiting times while operating the system. The Calendar is a lightweight system, and stores data on the cloud, so there spacewise a maximum of around 1gb should be achievable. Additionally, in it's current form the CalendarSystem is only runnable on Windows OS\\
+\item Strong achritecture with focus on extendability\\
 When rolling out future updates for the system, a full re-installation of the program will be necessary. This is due to resources allocated to other more desired design goals.\\
-Finally the system will be tested before release, but in a limited way. Key components will be tested, but due to the time frame set for this systems development thorough testing is unattainable. The Calendar is a lightweight system, and stores data on the cloud, so there spacewise a maximum of around 1gb should be achievable. Additionally, in it's current form the CalendarSystem is only runnable on Windows OS\\
+\item Good documentation and Testing of the most important subsystems\\
+The system will be tested before release, but in a limited way. Key components will be tested, but due to the time frame set for this systems development thorough testing is unattainable. Documentation should be made for the majority of the classes - helping to the extendability \\
+\end{itemize}
