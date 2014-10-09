@@ -5,7 +5,7 @@ namespace CalendarSystem.View
     /// <summary>
     /// The calendar view visually represents the calendar of events in the storage
     /// </summary>
-    class CalendarView
+    class CalendarView : IViews
     {
         private OverviewType currentOverviewType;
         /// <summary>
@@ -24,6 +24,21 @@ namespace CalendarSystem.View
         public void changeOverviewType(OverviewType overviewType) // Muligvis til en controller class (view fremstiller data, manipulere ikke med data)
         {
             currentOverviewType = overviewType;
+        }
+
+        public override void Show()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void Hide()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void Clear()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

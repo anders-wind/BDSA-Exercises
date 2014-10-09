@@ -19,7 +19,7 @@ namespace CalendarSystem.Controller
        
         private InputController()
         {
-            _storage = new AbstractStorage(new DatabaseStorage());
+            _storage = new AbstractStorage(new OnlineConnection(), AbstractStorage.storageTypes.Database);
             _viewController = ViewController.getInstance();
             _notificationController = NotificationController.getInstance();
             _storage.BeObserved(_viewController);
@@ -86,7 +86,7 @@ namespace CalendarSystem.Controller
                 _storage.loginAuthentication(username, password);
                 ViewController.getInstance().startMainView();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception();
             }

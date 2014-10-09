@@ -85,7 +85,6 @@ namespace CalendarSystem.Controller
                     break;
                 default:
                     throw new Exception();
-                    return;
             }
             _calendarView.changeOverviewType(newOverviewType);
         }

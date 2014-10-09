@@ -9,12 +9,27 @@ namespace CalendarSystem.View
     /// <summary>
     /// The main view is the container of the other views as well as search bars, properties and so on.
     /// </summary>
-    class MainView
+    class MainView : IViews
     {
         private CalendarView _calendarView;
         public MainView(CalendarView calendarView)
         {
             _calendarView = calendarView;
+        }
+
+        public override void Show()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Hide()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Clear()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -9,6 +9,8 @@ namespace CalendarSystem.DataStorage
 {
     class AbstractStorage : IAbstractStorage
     {
+        private IStorage _storage;
+        public IConnection _connection { private get; set; }
         public enum storageTypes
         {
             TestStub,
@@ -16,7 +18,12 @@ namespace CalendarSystem.DataStorage
 
         }
 
-        private IStorage createStorageFactory(storageTypes storageType)
+        /// <summary>
+        /// Create the Istorage depending on a given storage type.
+        /// </summary>
+        /// <param name="storageType"></param>
+        /// <returns></returns>
+        private IStorage createStorage(storageTypes storageType)
         {
             if (storageType == storageTypes.TestStub)
             {
@@ -29,12 +36,14 @@ namespace CalendarSystem.DataStorage
             throw new Exception();
         }
 
-        private IStorage _storage;
-        public IConnection _connection { private get; set; }
-
-        public AbstractStorage(IStorage storage, IConnection connection, storageTypes storageType )
+        /// <summary>
+        /// The constructor takes a connection and a storagetype to create the storage and the given connection.
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <param name="storageType"></param>
+        public AbstractStorage(IConnection connection, storageTypes storageType)
         {
-            _storage = createStorageFactory(storageType);
+            _storage = createStorage(storageType);
             _connection = connection;
         }
 
@@ -52,15 +61,15 @@ namespace CalendarSystem.DataStorage
         }
         public IList<IEvent> GetAllEvents()
         {
-            _storage.GetAllEvents();
+            return _storage.GetAllEvents();
         }
         public IEvent GetEvent(int ID)
         {
-            _storage.GetEvent(ID);
+            return _storage.GetEvent(ID);
         }
         public IList<IEvent> GetEventsBetweenDates(DateTime beginDateTime, DateTime endDateTime)
         {
-            _storage.GetEventsBetweenDates(beginDateTime, endDateTime);
+            return _storage.GetEventsBetweenDates(beginDateTime, endDateTime);
         }
         public void CreateTag(Tag tag)
         {

@@ -67,6 +67,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\CalendarView.cs" />
     <Compile Include="View\EventView.cs" />
+    <Compile Include="View\IViews.cs" />
     <Compile Include="View\LoginView.cs" />
     <Compile Include="View\MainView.cs" />
     <Compile Include="View\NotificationView.cs" />
