@@ -26,7 +26,6 @@ namespace Northwind
 
         public NorthwindController(IDataStorage storage)
         {
-            
             _storage = storage;
         }
 

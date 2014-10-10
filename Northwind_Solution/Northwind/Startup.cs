@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Northwind.DataStorage;
+using Northwind.Model;
 
 namespace Northwind
 {
@@ -14,6 +15,8 @@ namespace Northwind
             NorthwindController northwindController = new NorthwindController(new DataStorageCSVfiles());
 
             northwindController.Subscribe((o, order) => Console.WriteLine(order));
+
+            northwindController.AddOrder(null,DateTime.Now,null,100,"SickShip","SickAddress","SickCity","SickRegion","SickPostalCode","SuckCountry");
 
             //Write a list with the name of the first 5 products [use LINQ]
             var products = northwindController._products;
