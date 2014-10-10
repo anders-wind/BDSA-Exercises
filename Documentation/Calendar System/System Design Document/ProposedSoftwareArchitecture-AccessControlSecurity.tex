@@ -1,1 +1,21 @@
 \section{Access control and security}
+
+%\documentclass{article}
+
+
+%\begin{document}
+
+\linethickness{1pt}
+\setlength{\arrayrulewidth}{1pt}
+\begin{tabular}{|c|c|c|c|}
+    \hline
+    \backslashbox{Actors}{Objects} & Calendar  & Notification & Event \\ \hline
+               User & createCalendar & setNotification & createEvent\\
+            & updateCalendar &  & updateEvent\\
+            & deleteCalendar &  & deleteEvent  \\ \hline
+                 System & createCalendarView & createNotifier &createEventView  \\ \hline
+\end{tabular}\\\\
+
+Due to the fact that our Calendarsystem is available for many users, possibly with sensitive information, it is important to keep the individuals data private as seen necessary. This is done by providing each user with a password. When the user wishes to access his or her data, the password will be prompted, and after authentication through encryption, the respective data will be accessable to the user.
+
+%\end{document}
