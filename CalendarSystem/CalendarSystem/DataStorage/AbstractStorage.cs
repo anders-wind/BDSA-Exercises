@@ -71,7 +71,7 @@ namespace CalendarSystem.DataStorage
         {
             return _storage.GetEventsBetweenDates(beginDateTime, endDateTime);
         }
-        public void CreateTag(Tag tag)
+        public void CreateTag(string tag)
         {
             _storage.CreateTag(tag);
         }

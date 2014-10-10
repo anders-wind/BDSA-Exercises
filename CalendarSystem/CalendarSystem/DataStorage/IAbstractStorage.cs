@@ -49,6 +49,6 @@ namespace CalendarSystem.DataStorage
         /// Create a tag and save it in the storage.
         /// </summary>
         /// <param name="tag"></param>
-        void CreateTag(Tag tag);
+        void CreateTag(string tag);
     }
 }

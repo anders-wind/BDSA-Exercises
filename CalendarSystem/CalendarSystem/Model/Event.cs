@@ -17,6 +17,7 @@ namespace CalendarSystem.Model
         public string _description { get; set; }
 
         public int _ID { get; private set; }
+        public int tag { get; private set; }
 
         public Event(string description, TimeSpan timespan, DateTime date, Notification notification, int ID)
         {
@@ -35,7 +36,7 @@ namespace CalendarSystem.Model
         /// Change the tag of the 
         /// </summary>
         /// <param name="tag"></param>
-        public void changeTag(Tag tag)
+        public void changeTag(string tag)
         {
             throw new NotImplementedException();
         }

@@ -42,7 +42,7 @@ namespace CalendarSystem.DataStorage
             throw new NotImplementedException();
         }
 
-        public void CreateTag(Tag tag)
+        public void CreateTag(string tag)
         {
             throw new NotImplementedException();
         }

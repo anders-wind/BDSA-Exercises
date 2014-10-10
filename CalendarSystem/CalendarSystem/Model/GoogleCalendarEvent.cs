@@ -20,7 +20,9 @@ namespace CalendarSystem.Model
         public TimeSpan _timeSpan { get; set; }
         public string _description { get; set; }
         public int _ID { get; private set; }
-        public void changeTag(Tag tag)
+        public int tag { get; private set; }
+
+        public void changeTag(string tag)
         {
             throw new NotImplementedException();
         }

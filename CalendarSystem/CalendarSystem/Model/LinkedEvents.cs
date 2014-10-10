@@ -16,6 +16,7 @@ namespace CalendarSystem.Model
         public string _description { get; set; }
 
         public int _ID { get; private set; }
+        public int tag { get; private set; }
 
         public void AddEvent(IEvent anEvent)
         {
@@ -26,7 +27,7 @@ namespace CalendarSystem.Model
             events.Concat(someEvents);
         }
 
-        public void changeTag(Tag tag)
+        public void changeTag(string tag)
         {
             throw new NotImplementedException();
         }
