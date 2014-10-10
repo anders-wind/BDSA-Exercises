@@ -12,18 +12,12 @@ namespace CalendarSystem.Controller
     class InputController
     {
         private static InputController _instance = null;
-        private ViewController _viewController;
-        private NotificationController _notificationController;
 
         public IAbstractStorage _storage{ get; private set; }
        
         private InputController()
         {
             _storage = new AbstractStorage(new OnlineConnection(), AbstractStorage.storageTypes.Database);
-            _viewController = ViewController.getInstance();
-            _notificationController = NotificationController.getInstance();
-            //_storage.BeObserved(_viewController);
-           // _storage.BeObserved(_notificationController);
         }
 
         /// <summary>

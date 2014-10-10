@@ -9,13 +9,9 @@ namespace CalendarSystem.Controller
     class NotificationController : IObserver
     {
         private static NotificationController _instance = null;
-        private InputController _inputController;
-        private ViewController _viewController;
         private Dictionary<int, Notification> notifications; 
         private NotificationController()
         {
-            _viewController = ViewController.getInstance();
-            _inputController = InputController.getInstance();
         }
 
         /// <summary>

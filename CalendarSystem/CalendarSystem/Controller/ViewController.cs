@@ -10,8 +10,6 @@ namespace CalendarSystem.Controller
     class ViewController : IObserver
     {
         private static ViewController _instance = null;
-        private InputController _inputController;
-        private NotificationController _notificationController;
 
         private CalendarView _calendarView;
         private EventView _eventView;
@@ -20,8 +18,6 @@ namespace CalendarSystem.Controller
 
         private ViewController()
         {
-            _notificationController = NotificationController.getInstance();
-            _inputController = InputController.getInstance();
         }
 
         /// <summary>
