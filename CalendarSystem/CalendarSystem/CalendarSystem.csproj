@@ -51,8 +51,10 @@
     <Compile Include="DataStorage\IAbstractStorage.cs" />
     <Compile Include="DataStorage\IConnection.cs" />
     <Compile Include="DataStorage\IStorage.cs" />
+    <Compile Include="DataStorage\IUndoableCommand.cs" />
     <Compile Include="DataStorage\OfflineConnection.cs" />
     <Compile Include="DataStorage\OnlineConnection.cs" />
+    <Compile Include="DataStorage\StoreToGoogleCommand.cs" />
     <Compile Include="Model\Calendar.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\GoogleCalendarEntry.cs" />
