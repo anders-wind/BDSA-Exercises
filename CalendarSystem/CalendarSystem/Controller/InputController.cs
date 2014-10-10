@@ -22,8 +22,8 @@ namespace CalendarSystem.Controller
             _storage = new AbstractStorage(new OnlineConnection(), AbstractStorage.storageTypes.Database);
             _viewController = ViewController.getInstance();
             _notificationController = NotificationController.getInstance();
-            _storage.BeObserved(_viewController);
-            _storage.BeObserved(_notificationController);
+            //_storage.BeObserved(_viewController);
+           // _storage.BeObserved(_notificationController);
         }
 
         /// <summary>

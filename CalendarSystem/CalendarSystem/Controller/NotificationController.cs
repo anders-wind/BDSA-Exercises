@@ -11,7 +11,7 @@ namespace CalendarSystem.Controller
         private static NotificationController _instance = null;
         private InputController _inputController;
         private ViewController _viewController;
-        private Dictionary<int, Notification> notifications ; 
+        private Dictionary<int, Notification> notifications; 
         private NotificationController()
         {
             _viewController = ViewController.getInstance();
