@@ -29,11 +29,9 @@ namespace Northwind
             _storage = storage;
         }
 
-        public void AddOrder(IList<Order_Details> orderDetails, DateTime requiredDate, DateTime? shippedDate, decimal freight, string shipName, string shipAddress, string shipCity, string shipRegion, string shipPostalCode, string shipCountry)
+        public void AddOrder(IList<Order_Detail> orderDetails, DateTime requiredDate, DateTime? shippedDate, decimal freight, string shipName, string shipAddress, string shipCity, string shipRegion, string shipPostalCode, string shipCountry)
         {
-            Order tempOrder = new Order(Order._maxID + 1, orderDetails,DateTime.Now, requiredDate,shippedDate,freight,shipName,shipAddress,shipCity,shipRegion,shipPostalCode,shipCountry);
-            
-            _orders.Add(tempOrder);
+            Order tempOrder = new Order(_storage.maxOrderID() + 1,DateTime.Now,requiredDate,shippedDate,freight,shipName,shipAddress,shipCity,shipRegion,shipPostalCode,orderDetails,shipCountry);
             
             _storage.CreateOrder(tempOrder);
 

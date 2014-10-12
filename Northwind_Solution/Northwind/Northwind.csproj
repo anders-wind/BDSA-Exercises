@@ -32,8 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,18 +50,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs">
+      <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerDemographic.cs">
+      <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataStorage\DataStorageDB.cs" />
     <Compile Include="DataStorage\DataStorageCSVfiles.cs" />
     <Compile Include="DataStorage\IDataStorage.cs" />
-    <Compile Include="Model\Category.cs" />
-    <Compile Include="Model\Order.cs" />
-    <Compile Include="Model\Order_Details.cs" />
-    <Compile Include="Model\Product.cs" />
+    <Compile Include="Employee.cs">
+      <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model OLD\CategoryCSV.cs" />
+    <Compile Include="Model OLD\OrderCSV.cs" />
+    <Compile Include="Model OLD\Order_DetailsCSV.cs" />
+    <Compile Include="Model OLD\ProductCSV.cs" />
     <Compile Include="NorthwindController.cs" />
+    <Compile Include="NorthwindDatabase.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthwindDatabase.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NorthwindDatabase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NorthwindDatabase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthwindDatabase.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order_Detail.cs">
+      <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Region.cs">
+      <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Shipper.cs">
+      <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Supplier.cs">
+      <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Territory.cs">
+      <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="NorthwindDatabase.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NorthwindDatabase.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="NorthwindDatabase.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NorthwindDatabase.edmx</DependentUpon>
+      <LastGenOutput>NorthwindDatabase.Context.cs</LastGenOutput>
+    </None>
+    <None Include="NorthwindDatabase.edmx.diagram">
+      <DependentUpon>NorthwindDatabase.edmx</DependentUpon>
+    </None>
+    <None Include="NorthwindDatabase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NorthwindDatabase.edmx</DependentUpon>
+      <LastGenOutput>NorthwindDatabase.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

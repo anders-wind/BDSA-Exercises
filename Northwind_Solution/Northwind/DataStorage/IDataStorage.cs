@@ -13,5 +13,6 @@ namespace Northwind.DataStorage
         IList<Product> Categories(int ID);
         IList<Order> Orders();
         void CreateOrder(Order order);
+        int maxOrderID();
     }
 }

@@ -12,7 +12,7 @@ namespace Northwind
     {
         static void Main(string[] args)
         {
-            NorthwindController northwindController = new NorthwindController(new DataStorageCSVfiles());
+            NorthwindController northwindController = new NorthwindController(new DataStorageDB());
 
             northwindController.Subscribe((o, order) => Console.WriteLine(order));
 
@@ -21,7 +21,7 @@ namespace Northwind
             //Write a list with the name of the first 5 products [use LINQ]
             var products = northwindController._products;
             var productNames = (from product in products
-                                let name = product._name
+                                let name = product.ProductName
                                 select name).Take(5);
 
             Console.WriteLine("Name of the first 5 products:");
@@ -34,7 +34,7 @@ namespace Northwind
             var orders = northwindController._orders;
 
             var groups = from order in orders
-                         group order by order._shipCountry into g
+                         group order by order.ShipCountry into g
                          select g;
 
             var countings = from g in groups

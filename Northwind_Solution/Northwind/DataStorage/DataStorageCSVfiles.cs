@@ -1,215 +1,220 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Northwind.Model;
+﻿//using System;
+//using System.Collections;
+//using System.Collections.Generic;
+//using System.IO;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
+//using Northwind.Model;
 
-namespace Northwind.DataStorage
-{
-    internal class DataStorageCSVfiles : IDataStorage
-    {
-        private string productCSVFilePath = @"../../../northwind_csv_data/products.csv";
-        private string categoriesCSVFilePath = @"../../../northwind_csv_data/categories.csv";
-        private string orderCSVFilePath = @"../../../northwind_csv_data/orders.csv";
-        private string orderDetailsCSVFilePath = @"../../../northwind_csv_data/order_details.csv";
+//namespace Northwind.DataStorage
+//{
+//    internal class DataStorageCSVfiles : IDataStorage
+//    {
+//        private string productCSVFilePath = @"../../../northwind_csv_data/products.csv";
+//        private string categoriesCSVFilePath = @"../../../northwind_csv_data/categories.csv";
+//        private string orderCSVFilePath = @"../../../northwind_csv_data/orders.csv";
+//        private string orderDetailsCSVFilePath = @"../../../northwind_csv_data/order_details.csv";
 
-        public IList<Order> _orders { get; private set; }
-        public IList<Product> _products { get; private set; }
+//        public IList<Order> _orders { get; private set; }
+//        public IList<Product> _products { get; private set; }
 
-        public DataStorageCSVfiles()
-        {
-            _orders = Orders();
-            _products = Products();
-        }
-        public IList<Product> Products()
-        {
-            if (_products != null) return _products;
-            string[] productLines = System.IO.File.ReadAllLines(productCSVFilePath);
-            string[] categoryLines = System.IO.File.ReadAllLines(categoriesCSVFilePath);
+//        public DataStorageCSVfiles()
+//        {
+//            _orders = Orders();
+//            _products = Products();
+//        }
+//        public IList<Product> Products()
+//        {
+//            if (_products != null) return _products;
+//            string[] productLines = System.IO.File.ReadAllLines(productCSVFilePath);
+//            string[] categoryLines = System.IO.File.ReadAllLines(categoriesCSVFilePath);
 
-            var categoryQuery = from line in categoryLines.Skip(1)
-                let elements = line.Split(';')
-                select new Category(Int32.Parse(elements[0]), elements[1], elements[2], "");
+//            var categoryQuery = from line in categoryLines.Skip(1)
+//                let elements = line.Split(';')
+//                select new CategoryCSV(Int32.Parse(elements[0]), elements[1], elements[2], "");
 
-            var listOfCategories = categoryQuery.ToList();
+//            var listOfCategories = categoryQuery.ToList();
 
-            var productQuery = from line in productLines.Skip(1)
-                let elements = line.Split(';')
-                let id = Int32.Parse(elements[0])
-                let name = elements[1]
-                let category = findCategory(listOfCategories,Int32.Parse(elements[3]))
-                let quantityPerUnit = elements[4]
-                let unitPrice = decimal.Parse(elements[5])
-                let unitsInStock = Int32.Parse(elements[6])
-                let unitsOnOrder = Int32.Parse(elements[7])
-                let reorderLevel = Int32.Parse(elements[8])
-                let discontinued = isDiscontinued(Int32.Parse(elements[9]))
-                select
-                    new Product(id, name, category, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel,
-                        discontinued);
+//            var productQuery = from line in productLines.Skip(1)
+//                let elements = line.Split(';')
+//                let id = Int32.Parse(elements[0])
+//                let name = elements[1]
+//                let category = findCategory(listOfCategories,Int32.Parse(elements[3]))
+//                let quantityPerUnit = elements[4]
+//                let unitPrice = decimal.Parse(elements[5])
+//                let unitsInStock = Int32.Parse(elements[6])
+//                let unitsOnOrder = Int32.Parse(elements[7])
+//                let reorderLevel = Int32.Parse(elements[8])
+//                let discontinued = isDiscontinued(Int32.Parse(elements[9]))
+//                select
+//                    new Product(id, name, category, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel,
+//                        discontinued);
 
-            //Console.WriteLine("Categories:");
-            //foreach (var category in listOfCategories)
-            //{
-            //    Console.WriteLine(category);
-            //}
-            //Console.WriteLine("\n\n\nProducts:");
-            //foreach (var product in productQuery)
-            //{
-            //    Console.WriteLine(product);
-            //}
+//            //Console.WriteLine("Categories:");
+//            //foreach (var category in listOfCategories)
+//            //{
+//            //    Console.WriteLine(category);
+//            //}
+//            //Console.WriteLine("\n\n\nProducts:");
+//            //foreach (var product in productQuery)
+//            //{
+//            //    Console.WriteLine(product);
+//            //}
 
-            return productQuery.ToList();
-        }
+//            return productQuery.ToList();
+//        }
 
-        private bool isDiscontinued(int i)
-        {
-            if (i == -1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+//        private bool isDiscontinued(int i)
+//        {
+//            if (i == -1)
+//            {
+//                return true;
+//            }
+//            else
+//            {
+//                return false;
+//            }
+//        }
 
-        private Category findCategory(IList<Category> categories, int ID)
-        {
-            foreach (var category in categories)
-            {
-                if (category._id == ID)
-                {
-                    return category;
-                }
-            }
-            return null;
-        }
+//        private Category findCategory(IList<Category> categories, int ID)
+//        {
+//            foreach (var category in categories)
+//            {
+//                if (category._id == ID)
+//                {
+//                    return category;
+//                }
+//            }
+//            return null;
+//        }
 
-        private Product findProduct(IList<Product> products, int ID)
-        {
-            foreach (var product in products)
-            {
-                if (product._id == ID)
-                {
-                    return product;
-                }
-            }
-            return null;
-        }
+//        private Product findProduct(IList<Product> products, int ID)
+//        {
+//            foreach (var product in products)
+//            {
+//                if (product._id == ID)
+//                {
+//                    return product;
+//                }
+//            }
+//            return null;
+//        }
 
-        private IList<Order_Details> findOrderDetails(IList<Order_Details> orderDetails, int ID)
-        {
-            var tempList = new List<Order_Details>();
-            foreach (var orderDetail in orderDetails)
-            {
-                if (orderDetail._id == ID)
-                {
-                     tempList.Add(orderDetail);
-                }
-            }
-            return tempList;
-        }
+//        private IList<Order_DetailsCSV> findOrderDetails(IList<Order_DetailsCSV> orderDetails, int ID)
+//        {
+//            var tempList = new List<Order_DetailsCSV>();
+//            foreach (var orderDetail in orderDetails)
+//            {
+//                if (orderDetail._id == ID)
+//                {
+//                     tempList.Add(orderDetail);
+//                }
+//            }
+//            return tempList;
+//        }
 
-        private DateTime? fixEmptyTime(string Date)
-        {
-            if (String.IsNullOrEmpty(Date))
-            {
-                return null;
-            }
-            else
-            {
-                return DateTime.Parse(Date);
-            }
-        }
+//        private DateTime? fixEmptyTime(string Date)
+//        {
+//            if (String.IsNullOrEmpty(Date))
+//            {
+//                return null;
+//            }
+//            else
+//            {
+//                return DateTime.Parse(Date);
+//            }
+//        }
 
-        public IList<Product> Categories(int ID)
-        {
-            string[] categoryLines = System.IO.File.ReadAllLines(categoriesCSVFilePath);
-            var categoryQuery = from line in categoryLines.Skip(1)
-                                let elements = line.Split(';')
-                                where Int32.Parse(elements[0]) == ID
-                                select new Category(Int32.Parse(elements[0]), elements[1], elements[2], "");
+//        public IList<Product> Categories(int ID)
+//        {
+//            string[] categoryLines = System.IO.File.ReadAllLines(categoriesCSVFilePath);
+//            var categoryQuery = from line in categoryLines.Skip(1)
+//                                let elements = line.Split(';')
+//                                where Int32.Parse(elements[0]) == ID
+//                                select new Category(Int32.Parse(elements[0]), elements[1], elements[2], "");
 
-            var listOfCategories = categoryQuery.ToList();
+//            var listOfCategories = categoryQuery.ToList();
 
-            string[] productLines = System.IO.File.ReadAllLines(productCSVFilePath);
-            var productQuery = from line in productLines.Skip(1)
-                               let elements = line.Split(';')
-                               where Int32.Parse(elements[3]) == ID
-                               let id = Int32.Parse(elements[0])
-                               let name = elements[1]
-                               let category = listOfCategories[0]
-                               let quantityPerUnit = elements[4]
-                               let unitPrice = decimal.Parse(elements[5])
-                               let unitsInStock = Int32.Parse(elements[6])
-                               let unitsOnOrder = Int32.Parse(elements[7])
-                               let reorderLevel = Int32.Parse(elements[8])
-                               let discontinued = isDiscontinued(Int32.Parse(elements[9]))
-                               select
-                                   new Product(id, name, category, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel,
-                                       discontinued);
+//            string[] productLines = System.IO.File.ReadAllLines(productCSVFilePath);
+//            var productQuery = from line in productLines.Skip(1)
+//                               let elements = line.Split(';')
+//                               where Int32.Parse(elements[3]) == ID
+//                               let id = Int32.Parse(elements[0])
+//                               let name = elements[1]
+//                               let category = listOfCategories[0]
+//                               let quantityPerUnit = elements[4]
+//                               let unitPrice = decimal.Parse(elements[5])
+//                               let unitsInStock = Int32.Parse(elements[6])
+//                               let unitsOnOrder = Int32.Parse(elements[7])
+//                               let reorderLevel = Int32.Parse(elements[8])
+//                               let discontinued = isDiscontinued(Int32.Parse(elements[9]))
+//                               select
+//                                   new Product(id, name, category, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel,
+//                                       discontinued);
 
-            //Console.WriteLine("Products with category ID: " + ID);
-            //foreach (var product in productQuery)
-            //{
-            //    Console.WriteLine(product);
-            //}
+//            //Console.WriteLine("Products with category ID: " + ID);
+//            //foreach (var product in productQuery)
+//            //{
+//            //    Console.WriteLine(product);
+//            //}
 
-            return productQuery.ToList();
-        }
+//            return productQuery.ToList();
+//        }
 
-        public IList<Order> Orders()
-        {
-            if (_orders != null) return _orders;
-            IList<Product> products = Products();
+//        public IList<Order> Orders()
+//        {
+//            if (_orders != null) return _orders;
+//            IList<Product> products = Products();
 
-            string[] orderLines = System.IO.File.ReadAllLines(orderCSVFilePath);
-            string[] orderDetailLines = System.IO.File.ReadAllLines(orderDetailsCSVFilePath);
+//            string[] orderLines = System.IO.File.ReadAllLines(orderCSVFilePath);
+//            string[] orderDetailLines = System.IO.File.ReadAllLines(orderDetailsCSVFilePath);
 
-            var orderDetailsQuery = from line in orderDetailLines.Skip(1)
-                let elements = line.Split(';')
-                let id = Int32.Parse(elements[0])
-                let product = findProduct(products, Int32.Parse(elements[1]))
-                let unitPrice = decimal.Parse(elements[2])
-                let quantity = Int32.Parse(elements[3])
-                let discount = decimal.Parse(elements[4], System.Globalization.NumberStyles.Any)
-                select new Order_Details(id, product,unitPrice,quantity,discount);
+//            var orderDetailsQuery = from line in orderDetailLines.Skip(1)
+//                let elements = line.Split(';')
+//                let id = Int32.Parse(elements[0])
+//                let product = findProduct(products, Int32.Parse(elements[1]))
+//                let unitPrice = decimal.Parse(elements[2])
+//                let quantity = Int32.Parse(elements[3])
+//                let discount = decimal.Parse(elements[4], System.Globalization.NumberStyles.Any)
+//                select new Order_DetailsCSV(id, product,unitPrice,quantity,discount);
 
-            var listOfOrderDetails = orderDetailsQuery.ToList();
+//            var listOfOrderDetails = orderDetailsQuery.ToList();
 
 
-            var orderQuery = from line in orderLines.Skip(1)
-                let elements = line.Split(';')
-                let ID = Int32.Parse(elements[0])
-                let orderDetailElement = findOrderDetails(listOfOrderDetails, Int32.Parse(elements[0]))
-                let orderDate = DateTime.Parse(elements[3])
-                let requiredDate = DateTime.Parse(elements[4])
-                let shippedDate = fixEmptyTime(elements[5])
-                let freight = decimal.Parse(elements[7])
-                let shipname = elements[8]
-                let shipAddress = elements[9]
-                let shipCity = elements[10]
-                let shipRegion = elements[11]
-                let shipPostalCode = elements[12]
-                let shipCountry = elements[13]
-                select new Order(ID, orderDetailElement, orderDate, requiredDate, shippedDate, freight, shipname, shipAddress, shipCity, shipRegion, shipPostalCode, shipCountry);
+//            var orderQuery = from line in orderLines.Skip(1)
+//                let elements = line.Split(';')
+//                let ID = Int32.Parse(elements[0])
+//                let orderDetailElement = findOrderDetails(listOfOrderDetails, Int32.Parse(elements[0]))
+//                let orderDate = DateTime.Parse(elements[3])
+//                let requiredDate = DateTime.Parse(elements[4])
+//                let shippedDate = fixEmptyTime(elements[5])
+//                let freight = decimal.Parse(elements[7])
+//                let shipname = elements[8]
+//                let shipAddress = elements[9]
+//                let shipCity = elements[10]
+//                let shipRegion = elements[11]
+//                let shipPostalCode = elements[12]
+//                let shipCountry = elements[13]
+//                select new Order(ID, orderDetailElement, orderDate, requiredDate, shippedDate, freight, shipname, shipAddress, shipCity, shipRegion, shipPostalCode, shipCountry);
 
-            //Console.WriteLine("Orders");
-            //foreach (var order in listOfOrders)
-            //{
-            //    Console.WriteLine(order);
-            //}
+//            //Console.WriteLine("Orders");
+//            //foreach (var order in listOfOrders)
+//            //{
+//            //    Console.WriteLine(order);
+//            //}
 
             
-            return orderQuery.ToList();
-        }
+//            return orderQuery.ToList();
+//        }
 
-        public void CreateOrder(Order order)
-        {
-        }
-    }
-}
+//        public void CreateOrder(Order order)
+//        {
+//        }
+
+//        public int maxOrderID()
+//        {
+//            throw new NotImplementedException();
+//        }
+//    }
+//}
