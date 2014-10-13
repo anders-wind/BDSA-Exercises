@@ -58,7 +58,9 @@ namespace Northwind
 
         public override string ToString()
         {
-            return "Order\n      Order Details: " + Order_Details +
+            return "Order" +
+                "\n      Order ID: " + OrderID + 
+                "\n      Order Details: " + Order_Details +
                 "\n      Order Date: " + OrderDate +
                 "\n      Required Date: " + RequiredDate +
                 "\n      Shipped Date: " + ShippedDate +

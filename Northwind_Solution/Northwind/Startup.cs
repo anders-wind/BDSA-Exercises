@@ -12,7 +12,7 @@ namespace Northwind
     {
         static void Main(string[] args)
         {
-            NorthwindController northwindController = new NorthwindController(new DataStorageDB());
+            NorthwindController northwindController = new NorthwindController(new DataStorageCSVfiles());
 
             northwindController.Subscribe((o, order) => Console.WriteLine(order));
 

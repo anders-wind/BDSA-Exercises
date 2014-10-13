@@ -23,14 +23,13 @@ namespace Northwind
         public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }
 
-        public Order_Detail(int orderId, int productId, decimal unitPrice, short quantity, float discount, Order order, Product product)
+        public Order_Detail(int orderId, int productId, decimal unitPrice, short quantity, float discount, Product product)
         {
             OrderID = orderId;
             ProductID = productId;
             UnitPrice = unitPrice;
             Quantity = quantity;
             Discount = discount;
-            Order = order;
             Product = product;
         }
 
