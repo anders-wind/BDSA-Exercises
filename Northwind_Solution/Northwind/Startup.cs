@@ -12,12 +12,17 @@ namespace Northwind
     {
         static void Main(string[] args)
         {
-            NorthwindController northwindController = new NorthwindController(new DataStorageCSVfiles());
+            NorthwindController northwindController = new NorthwindController(new DataStorageDB());
 
             northwindController.Subscribe((o, order) => Console.WriteLine(order));
-
             northwindController.AddOrder(null,DateTime.Now,null,100,"SickShip","SickAddress","SickCity","SickRegion","SickPostalCode","SuckCountry");
 
+            Print5FirstProducts(northwindController);
+            ShippingCountriesInOrder(northwindController);
+        }
+
+        private static void Print5FirstProducts(NorthwindController northwindController)
+        {
             //Write a list with the name of the first 5 products [use LINQ]
             var products = northwindController._products;
             var productNames = (from product in products
@@ -29,7 +34,10 @@ namespace Northwind
             {
                 Console.WriteLine(name);
             }
+        }
 
+        private static void ShippingCountriesInOrder(NorthwindController northwindController)
+        {
             //Write the counting of orders by shipping country. Order the output by descending count [use LINQ]
             var orders = northwindController._orders;
 
@@ -38,16 +46,14 @@ namespace Northwind
                          select g;
 
             var countings = from g in groups
-                                     orderby g.Count() descending
-                                     select new { Country = g.Key, NumberOfCountryOrders = g.Count()};
+                            orderby g.Count() descending
+                            select new { Country = g.Key, NumberOfCountryOrders = g.Count() };
 
             Console.WriteLine("\n\nCounting of orders by shipping country:\n");
             foreach (var count in countings)
             {
                 Console.WriteLine("Country: " + count.Country + "\nOrders by shipping country: " + count.NumberOfCountryOrders + "\n");
             }
-
-            Console.ReadKey();
         }
 
     }
