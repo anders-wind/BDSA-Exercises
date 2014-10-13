@@ -97,6 +97,7 @@
     <Compile Include="Region.cs">
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="ReportingController.cs" />
     <Compile Include="Shipper.cs">
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
     </Compile>
