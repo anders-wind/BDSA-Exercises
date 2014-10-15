@@ -21,6 +21,7 @@ namespace Northwind
 
         public Order(int orderId, DateTime? orderDate, DateTime? requiredDate, DateTime? shippedDate, decimal? freight, string shipName, string shipAddress, string shipCity, string shipRegion, string shipPostalCode, ICollection<Order_Detail> orderDetails, string shipCountry)
         {
+            this.Order_Details = new HashSet<Order_Detail>();
             OrderID = orderId;
             OrderDate = orderDate;
             RequiredDate = requiredDate;
@@ -31,7 +32,7 @@ namespace Northwind
             ShipCity = shipCity;
             ShipRegion = shipRegion;
             ShipPostalCode = shipPostalCode;
-            Order_Details = orderDetails;
+            //Order_Details = orderDetails;
             ShipCountry = shipCountry;
         }
 
