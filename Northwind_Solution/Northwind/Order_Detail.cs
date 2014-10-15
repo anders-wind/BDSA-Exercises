@@ -33,6 +33,7 @@ namespace Northwind
             Product = product;
         }
 
+
         public override string ToString()
         {
             return "Order details\n      ID: " + OrderID +

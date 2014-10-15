@@ -44,6 +44,7 @@ namespace Northwind.DataStorage
             using (var db = new NORTHWNDEntities())
             {
                 db.Orders.Add(order);
+                db.SaveChanges();
             }
         }
 

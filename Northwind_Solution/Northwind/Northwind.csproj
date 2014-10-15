@@ -52,18 +52,22 @@
   <ItemGroup>
     <Compile Include="Category.cs">
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Customer.cs">
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="CustomerDemographic.cs">
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="DataStorage\DataStorageDB.cs" />
     <Compile Include="DataStorage\DataStorageCSVfiles.cs" />
     <Compile Include="DataStorage\IDataStorage.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Model OLD\CategoryCSV.cs" />
     <Compile Include="Model OLD\OrderCSV.cs" />
@@ -74,40 +78,50 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDatabase.Context.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="NorthwindDatabase.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="NorthwindDatabase.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDatabase.edmx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Order_Detail.cs">
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Region.cs">
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="ReportingController.cs" />
     <Compile Include="Shipper.cs">
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Supplier.cs">
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Territory.cs">
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -115,19 +129,23 @@
     <EntityDeploy Include="NorthwindDatabase.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>NorthwindDatabase.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EntityDeploy>
     <None Include="NorthwindDatabase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>NorthwindDatabase.edmx</DependentUpon>
       <LastGenOutput>NorthwindDatabase.Context.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="NorthwindDatabase.edmx.diagram">
       <DependentUpon>NorthwindDatabase.edmx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="NorthwindDatabase.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>NorthwindDatabase.edmx</DependentUpon>
       <LastGenOutput>NorthwindDatabase.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

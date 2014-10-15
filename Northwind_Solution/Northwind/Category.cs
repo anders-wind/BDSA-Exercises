@@ -19,6 +19,7 @@ namespace Northwind
             this.Products = new HashSet<Product>();
         }
 
+
         public Category(int categoryId, string categoryName, string description)
         {
             CategoryID = categoryId;

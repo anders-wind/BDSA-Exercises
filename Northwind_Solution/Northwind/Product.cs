@@ -33,6 +33,7 @@ namespace Northwind
             Category = category;
         }
 
+
         public int ProductID { get; set; }
         public string ProductName { get; set; }
         public Nullable<int> SupplierID { get; set; }
