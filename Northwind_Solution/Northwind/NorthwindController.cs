@@ -20,6 +20,7 @@ namespace Northwind
             get { return _storage.Products(); }
         }
 
+
         public IDataStorage _storage { get; private set; }
 
         public event Action<object, Order> NewOrderEvent;
