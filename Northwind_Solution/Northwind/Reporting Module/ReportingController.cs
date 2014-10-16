@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Northwind.Reporting_Module
 {
-    internal class ReportingController
+    class ReportingController
     {
         private NorthwindController _northwindController;
 
