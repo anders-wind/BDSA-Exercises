@@ -36,6 +36,28 @@ namespace Northwind
             ShipCountry = shipCountry;
         }
 
+        public Order(int orderId, string customerId, int? employeeId, DateTime? orderDate, DateTime? requiredDate, DateTime? shippedDate, int? shipVia, decimal? freight, string shipName, string shipAddress, string shipCity, string shipRegion, string shipPostalCode, string shipCountry, Customer customer, Employee employee, ICollection<Order_Detail> orderDetails, Shipper shipper)
+        {
+            OrderID = orderId;
+            CustomerID = customerId;
+            EmployeeID = employeeId;
+            OrderDate = orderDate;
+            RequiredDate = requiredDate;
+            ShippedDate = shippedDate;
+            ShipVia = shipVia;
+            Freight = freight;
+            ShipName = shipName;
+            ShipAddress = shipAddress;
+            ShipCity = shipCity;
+            ShipRegion = shipRegion;
+            ShipPostalCode = shipPostalCode;
+            ShipCountry = shipCountry;
+            Customer = customer;
+            Employee = employee;
+            Order_Details = orderDetails;
+            Shipper = shipper;
+        }
+
         public int OrderID { get; set; }
         public string CustomerID { get; set; }
         public Nullable<int> EmployeeID { get; set; }

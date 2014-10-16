@@ -21,8 +21,6 @@ namespace Northwind.Reporting_Module
         /// <returns></returns>
         public Report<IList<OrdersByTotalPriceDto>, ReportError> TopOrdersByTotalPrice(int count)
         {
-                IList<Order> topOrders = null;
-
                 var ListOfOrders = _northwindController._orders;
                 
                 IList<OrdersByTotalPriceDto> ordersByTotalPriceDtoList = (from order in ListOfOrders
@@ -32,7 +30,7 @@ namespace Northwind.Reporting_Module
                     let totalPrice = (from od in order.Order_Details 
                                                   select od).Sum(od => od.UnitPrice*od.Quantity)
                     let totalPriceWithDiscount = (from od in order.Order_Details 
-                                                  select od).Sum(od => ((float)od.UnitPrice-od.Discount)*od.Quantity)
+                                                  select od).Sum(od => (od.UnitPrice*od.Quantity)*(1-od.Discount))
                     orderby totalPrice descending 
                     select
                         new OrdersByTotalPriceDto(orderId, orderDate, customerContactName, (decimal)totalPriceWithDiscount,
