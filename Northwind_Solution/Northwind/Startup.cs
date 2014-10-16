@@ -10,6 +10,10 @@ namespace Northwind
 {
     class Startup
     {
+        /// <summary>
+        /// The main which shows that we fulfill the part 3 assignment 40.1 Here the data storage is using the csv file.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             NorthwindController northwindController = new NorthwindController(new DataStorageDB());
@@ -21,6 +25,10 @@ namespace Northwind
             ShippingCountriesInOrder(northwindController);
         }
 
+        /// <summary>
+        /// The main which shows that we fulfill the part 2 assignment 40.1 Here the data storage is using the csv file.
+        /// </summary>
+        /// <param name="args"></param>
         private static void MainCSV(string[] args)
         {
             NorthwindController northwindController = new NorthwindController(new DataStorageCSVfiles());
@@ -32,7 +40,6 @@ namespace Northwind
             Print5FirstProducts(northwindController);
             ShippingCountriesInOrder(northwindController);
         }
-
 
         private static void Print5FirstProducts(NorthwindController northwindController)
         {
