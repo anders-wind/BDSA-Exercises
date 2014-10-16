@@ -25,8 +25,9 @@ namespace Northwind.Reporting_Module
                 var ListOfOrderDetails = from orderDetail in db.Order_Details
                                             select orderDetail;
 
-
-
+                var OrdersByTotalPriceDtoList = from order in ListOfOrders
+                                                let 
+                
                 // get top results
                 return new Report<IList<OrdersByTotalPriceDto>, ReportError>(null, null);
                 //return null;
