@@ -1,4 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Northwind
 {
@@ -9,12 +15,19 @@ namespace Northwind
         /// </summary>
         /// <param name="count"></param>
         /// <returns></returns>
-        Report<IList<Order>, ReportError> TopOrdersByTotalPrice(int count)
+        public Report<IList<Order>, ReportError> TopOrdersByTotalPrice(int count)
         {
-            IList<Order> topOrders = null;
-            // get top results
-            new Report<IList<Order>, ReportError>(null, topOrders);
-            return null;
+            using (var db = new NORTHWNDEntities())
+            {
+                IList<Order> topOrders = null;
+
+                var ListOfTopOrders = from order in db.Orders
+                                      select order;
+
+                // get top results
+                return new Report<IList<Order>, ReportError>(ListOfTopOrders.ToList(), null);
+                //return null;
+            }
         }
 
         public class Report<TData, TError>
@@ -22,7 +35,7 @@ namespace Northwind
             public TData Data { get; set; }
             public TError Error { get; set; }
 
-            public Report(TError error, TData data)
+            public Report(TData data, TError error)
             {
                 Error = error;
                 Data = data;
