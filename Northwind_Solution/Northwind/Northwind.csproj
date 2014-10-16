@@ -108,7 +108,9 @@
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="ReportingController.cs" />
+    <Compile Include="Reporting Module\OrdersByTotalPriceDto.cs" />
+    <Compile Include="Reporting Module\ProductsBySaleDto.cs" />
+    <Compile Include="Reporting Module\UnitsSoldByMonth.cs" />
     <Compile Include="Shipper.cs">
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
