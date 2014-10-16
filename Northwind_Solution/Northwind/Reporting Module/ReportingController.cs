@@ -24,28 +24,19 @@ namespace Northwind.Reporting_Module
                 IList<Order> topOrders = null;
 
                 var ListOfOrders = _northwindController._orders;
-
-                var ListOfOrderDetails = from orderDetail in ListOfOrders.Order_Details
-                                            select orderDetail;
-
+                
                 IList<OrdersByTotalPriceDto> ordersByTotalPriceDtoList = (from order in ListOfOrders
                     let orderId = order.OrderID
                     let orderDate = order.OrderDate
                     let customerContactName = order.Customer.ContactName
-
-                    let totalPriceWithDiscountGet = (from orderDetail in ListOfOrderDetails
-                        let totalPriceWithDiscount =
-                            orderDetail.UnitPrice*orderDetail.Quantity*((decimal) (1 - orderDetail.Discount))
-                        select totalPriceWithDiscount).SingleOrDefault()
-
-                    let totalPrice = (from orderDetail in ListOfOrderDetails
-                        let totalPrice = orderDetail.UnitPrice*orderDetail.Quantity
-                        select totalPrice).SingleOrDefault()
-
+                    let totalPrice = (from od in order.Order_Details 
+                                                  select od).Sum(od => od.UnitPrice*od.Quantity)
+                    let totalPriceWithDiscount = (from od in order.Order_Details 
+                                                  select od).Sum(od => ((float)od.UnitPrice-od.Discount)*od.Quantity)
                     orderby totalPrice descending 
                     select
-                        new OrdersByTotalPriceDto(orderId, orderDate, customerContactName, totalPriceWithDiscountGet,
-                            totalPrice)).ToList();
+                        new OrdersByTotalPriceDto(orderId, orderDate, customerContactName, (decimal)totalPriceWithDiscount,
+                            totalPrice)).Take(count).ToList();
 
                 foreach (var test in ordersByTotalPriceDtoList)
                 {
