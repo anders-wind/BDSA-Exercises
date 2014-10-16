@@ -19,15 +19,6 @@ namespace Northwind
 
             Print5FirstProducts(northwindController);
             ShippingCountriesInOrder(northwindController);
-
-            ReportingController test = new ReportingController();
-            var testList = test.TopOrdersByTotalPrice(2);
-            foreach (var l in testList.Data)
-            {
-                Console.WriteLine(l.ShippedDate);
-            }
-
-            Console.ReadKey();
         }
 
         private static void Print5FirstProducts(NorthwindController northwindController)
