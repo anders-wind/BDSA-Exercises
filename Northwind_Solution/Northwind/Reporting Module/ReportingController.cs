@@ -49,11 +49,6 @@ namespace Northwind.Reporting_Module
             }
         }
 
-        //public Report<IList<ProductsBySaleDto>, ReportError> TopProductsBySale(int count)
-        //{
-        //    var listOfProducts = _northwindController._products;
-
-<<<<<<< HEAD
         public Report<IList<ProductsBySaleDto>, ReportError> TopProductsBySale(int count)
         {
             var listOfProducts = _northwindController._products;
@@ -67,11 +62,6 @@ namespace Northwind.Reporting_Module
 
             
         }
-=======
-        //    IList<ProductsBySaleDto> ProductsBySaleDToList = from product in listOfProducts
-        //        select product.Category;
-        //}
->>>>>>> 3e77ba98cbffc91b831d6c2b1ff8c9acf8dd7f63
 
         public class Report<TData, TError>
         {
