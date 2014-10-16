@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Northwind.Reporting_Module
 {
-    class ReportingController
+    internal class ReportingController
     {
         private NorthwindController _northwindController;
+
         public ReportingController(NorthwindController northwindController)
         {
             _northwindController = northwindController;
@@ -21,28 +22,36 @@ namespace Northwind.Reporting_Module
         /// <returns></returns>
         public Report<IList<OrdersByTotalPriceDto>, ReportError> TopOrdersByTotalPrice(int count)
         {
-                var ListOfOrders = _northwindController._orders;
-                
-                IList<OrdersByTotalPriceDto> ordersByTotalPriceDtoList = (from order in ListOfOrders
-                    let orderId = order.OrderID
-                    let orderDate = order.OrderDate
-                    let customerContactName = order.Customer.ContactName
-                    let totalPrice = (from od in order.Order_Details 
-                                                  select od).Sum(od => od.UnitPrice*od.Quantity)
-                    let totalPriceWithDiscount = (from od in order.Order_Details 
-                                                  select od).Sum(od => (od.UnitPrice*od.Quantity)*(1-od.Discount))
-                    orderby totalPrice descending 
-                    select
-                        new OrdersByTotalPriceDto(orderId, orderDate, customerContactName, (decimal)totalPriceWithDiscount,
-                            totalPrice)).Take(count).ToList();
+            var ListOfOrders = _northwindController._orders;
 
-                foreach (var test in ordersByTotalPriceDtoList)
-                {
-                    Console.WriteLine(test.OrderId);
-                }
-                // get top results
-                //return new Report<ordersByTotalPriceDtoList, ReportError>(null, null);
-                return null;
+            var ordersByTotalPriceDtoList = (from order in ListOfOrders
+                let orderId = order.OrderID
+                let orderDate = order.OrderDate
+                let customerContactName = order.Customer.ContactName
+                let totalPrice = (from od in order.Order_Details
+                    select od).Sum(od => od.UnitPrice*od.Quantity)
+                let totalPriceWithDiscount = (from od in order.Order_Details
+                    select od).Sum(od => (od.UnitPrice*od.Quantity)*(decimal) (1 - od.Discount))
+                orderby totalPrice descending
+                select
+                    new OrdersByTotalPriceDto(orderId, orderDate, customerContactName,
+                        (decimal) totalPriceWithDiscount,
+                        totalPrice)).Take(count);
+            try
+            {
+                return new Report<IList<OrdersByTotalPriceDto>, ReportError>(ordersByTotalPriceDtoList.ToList(), null);
+            }
+            catch (Exception)
+            {
+                return new Report<IList<OrdersByTotalPriceDto>, ReportError>(null, new ReportError("Failed"));
+            }
+            foreach (var test in ordersByTotalPriceDtoList)
+            {
+                Console.WriteLine(test.OrderId);
+            }
+            // get top results
+            //return new Report<ordersByTotalPriceDtoList, ReportError>(null, null);
+            return null;
         }
 
         public Report<IList<ProductsBySaleDto>, ReportError> TopProductsBySale(int count)

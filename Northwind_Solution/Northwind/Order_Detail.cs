@@ -21,7 +21,7 @@ namespace Northwind
         public float Discount { get; set; }
     
         public virtual Order Order { get; set; }
-        public virtual Product Product { get; set; }
+        public Product Product { get; set; }
 
         public Order_Detail(int orderId, int productId, decimal unitPrice, short quantity, float discount, Product product)
         {
