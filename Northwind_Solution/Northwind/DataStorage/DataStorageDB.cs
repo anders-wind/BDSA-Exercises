@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,8 +34,8 @@ namespace Northwind.DataStorage
         {
             using (var db = new NORTHWNDEntities())
             {
-                var orders = from order in db.Orders
-                             select order;
+                var orders = (from order in db.Orders
+                    select order).Include("Customer").Include("Order_Details");
                 return orders.ToList();
             }
         }

@@ -20,7 +20,7 @@ namespace Northwind
         public short Quantity { get; set; }
         public float Discount { get; set; }
     
-        public virtual Order Order { get; set; }
+        public Order Order { get; set; }
         public Product Product { get; set; }
 
         public Order_Detail(int orderId, int productId, decimal unitPrice, short quantity, float discount, Product product)
@@ -33,6 +33,10 @@ namespace Northwind
             Product = product;
         }
 
+        public Order_Detail()
+        {
+            
+        }
 
         public override string ToString()
         {
