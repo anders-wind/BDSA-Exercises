@@ -18,8 +18,16 @@ namespace Northwind
             //Print5FirstProducts(northwindController);
             //ShippingCountriesInOrder(northwindController);
 
-            ReportingController test = new ReportingController(northwindController);
-            Console.WriteLine(test.TopOrdersByTotalPrice(5).Error.errorMessage);
+            ReportingController reportingController = new ReportingController(northwindController);
+            //Console.WriteLine(test.TopOrdersByTotalPrice(5).Error.errorMessage);
+            foreach (var test in reportingController.TopOrdersByTotalPrice(5).Data)
+            {
+                Console.Write("\nOID: " + test.OrderId);
+                Console.Write(" OD: " + test.OrderDate);
+                Console.Write(" CN: " + test.CustomerContactName);
+                Console.Write(" TP: " + test.TotalPrice);
+                Console.Write(" TPWD: " + test.TotalPriceWithDiscount + "\n");
+            }
         }
 
         private static void MainCSV(string[] args)
