@@ -33,8 +33,8 @@ namespace Northwind.Reporting_Module
                     let totalPriceWithDiscountGet = (from orderDetail in ListOfOrderDetails
                         let totalPriceWithDiscount =
                             orderDetail.UnitPrice*orderDetail.Quantity*((decimal) (1 - orderDetail.Discount))
-
                         select totalPriceWithDiscount).SingleOrDefault()
+
                     let totalPrice = (from orderDetail in ListOfOrderDetails
                         let totalPrice = orderDetail.UnitPrice*orderDetail.Quantity
                         select totalPrice).SingleOrDefault()

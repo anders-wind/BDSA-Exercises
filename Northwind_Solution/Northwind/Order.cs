@@ -32,7 +32,7 @@ namespace Northwind
             ShipCity = shipCity;
             ShipRegion = shipRegion;
             ShipPostalCode = shipPostalCode;
-            //Order_Details = orderDetails;
+            if (orderDetails != null)Order_Details = orderDetails;
             ShipCountry = shipCountry;
         }
 

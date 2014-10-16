@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Northwind.DataStorage;
-using Northwind.Model;
 
 namespace Northwind
 {
@@ -21,7 +20,7 @@ namespace Northwind
         }
 
 
-        public IDataStorage _storage { get; private set; }
+        private IDataStorage _storage { get; set; }
 
         public event Action<object, Order> NewOrderEvent;
 
