@@ -17,9 +17,7 @@ namespace Northwind
         {
             NorthwindController northwindController = new NorthwindController(new DataStorageDB());
 
-            northwindController.Subscribe((o, order) => Console.WriteLine(order));
-            northwindController.AddOrder(null,DateTime.Now,null,100,"SickShip","SickAddress","SickCity","SickRegion","SickPC","SuckCountry");
-
+            SubscribeAndAddOrder(northwindController);
             Print5FirstProducts(northwindController);
             ShippingCountriesInOrder(northwindController);
         }
@@ -32,12 +30,17 @@ namespace Northwind
         {
             NorthwindController northwindController = new NorthwindController(new DataStorageCSVfiles());
 
+            SubscribeAndAddOrder(northwindController);
+            Print5FirstProducts(northwindController);
+            ShippingCountriesInOrder(northwindController);
+        }
+
+
+        private static void SubscribeAndAddOrder(NorthwindController northwindController)
+        {
             northwindController.Subscribe((o, order) => Console.WriteLine(order));
             northwindController.AddOrder(null, DateTime.Now, null, 100, "SickShip", "SickAddress", "SickCity",
                 "SickRegion", "SickPC", "SuckCountry");
-
-            Print5FirstProducts(northwindController);
-            ShippingCountriesInOrder(northwindController);
         }
 
         private static void Print5FirstProducts(NorthwindController northwindController)
