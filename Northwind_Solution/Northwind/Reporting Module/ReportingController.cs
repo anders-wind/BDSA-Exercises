@@ -63,6 +63,12 @@ namespace Northwind.Reporting_Module
             return null;
         }
 
+        public Report<EmployeeSaleDto, ReportError> EmployeeSale(int id)
+        {
+            var listOfProducts = _northwindController._employee;
+            return null;
+        }
+
         public class Report<TData, TError>
         {
             public TData Data { get; set; }
