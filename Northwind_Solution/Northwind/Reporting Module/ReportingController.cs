@@ -37,18 +37,21 @@ namespace Northwind.Reporting_Module
                     new OrdersByTotalPriceDto(orderId, orderDate, customerContactName,
                         (decimal) totalPriceWithDiscount,
                         totalPrice)).Take(count);
-
-            foreach (var test in ordersByTotalPriceDto)
-            {
-                Console.WriteLine(test.OrderId);
-            }
             try
             {
+                foreach (var test in ordersByTotalPriceDto)
+                {
+                    Console.Write("\n"+test.OrderId);
+                    Console.Write(test.OrderDate);
+                    Console.Write(test.CustomerContactName);
+                    Console.Write(test.TotalPrice);
+                    Console.Write(test.TotalPriceWithDiscount);
+                }
                 return new Report<IList<OrdersByTotalPriceDto>, ReportError>(ordersByTotalPriceDto.ToList(), null);
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                return new Report<IList<OrdersByTotalPriceDto>, ReportError>(null, new ReportError("Failed"));
+                return new Report<IList<OrdersByTotalPriceDto>, ReportError>(null, new ReportError("Failed: " + exception.Message));
             }
         }
 

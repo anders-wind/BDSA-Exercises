@@ -19,7 +19,7 @@ namespace Northwind
             //ShippingCountriesInOrder(northwindController);
 
             ReportingController test = new ReportingController(northwindController);
-            test.TopOrdersByTotalPrice(1);
+            Console.WriteLine(test.TopOrdersByTotalPrice(5).Error.errorMessage);
         }
 
         private static void MainCSV(string[] args)
