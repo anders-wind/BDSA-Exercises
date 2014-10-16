@@ -25,12 +25,32 @@ namespace Northwind.Reporting_Module
                 var ListOfOrderDetails = from orderDetail in db.Order_Details
                                             select orderDetail;
 
-                var OrdersByTotalPriceDtoList = from order in ListOfOrders
-                                                let 
-                
+                IList<OrdersByTotalPriceDto> ordersByTotalPriceDtoList = (from order in ListOfOrders
+                    let orderId = order.OrderID
+                    let orderDate = order.OrderDate
+                    let customerContactName = order.Customer.ContactName
+
+                    let totalPriceWithDiscountGet = (from orderDetail in ListOfOrderDetails
+                        let totalPriceWithDiscount =
+                            orderDetail.UnitPrice*orderDetail.Quantity*((decimal) (1 - orderDetail.Discount))
+
+                        select totalPriceWithDiscount).SingleOrDefault()
+                    let totalPrice = (from orderDetail in ListOfOrderDetails
+                        let totalPrice = orderDetail.UnitPrice*orderDetail.Quantity
+                        select totalPrice).SingleOrDefault()
+
+                    orderby totalPrice descending 
+                    select
+                        new OrdersByTotalPriceDto(orderId, orderDate, customerContactName, totalPriceWithDiscountGet,
+                            totalPrice)).ToList();
+
+                foreach (var test in ordersByTotalPriceDtoList)
+                {
+                    Console.WriteLine(test.OrderId);
+                }
                 // get top results
-                return new Report<IList<OrdersByTotalPriceDto>, ReportError>(null, null);
-                //return null;
+                //return new Report<ordersByTotalPriceDtoList, ReportError>(null, null);
+                return null;
             }
         }
 

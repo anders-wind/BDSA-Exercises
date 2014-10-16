@@ -111,6 +111,7 @@
     <Compile Include="Reporting Module\EmployeeSaleDto.cs" />
     <Compile Include="Reporting Module\OrdersByTotalPriceDto.cs" />
     <Compile Include="Reporting Module\ProductsBySaleDto.cs" />
+    <Compile Include="Reporting Module\ReportingController.cs" />
     <Compile Include="Shipper.cs">
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

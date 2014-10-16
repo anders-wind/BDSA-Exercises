@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Northwind.DataStorage;
 using Northwind.Model;
+using Northwind.Reporting_Module;
 
 namespace Northwind
 {
@@ -12,13 +13,16 @@ namespace Northwind
     {
         static void Main(string[] args)
         {
-            NorthwindController northwindController = new NorthwindController(new DataStorageDB());
+            //NorthwindController northwindController = new NorthwindController(new DataStorageDB());
 
-            northwindController.Subscribe((o, order) => Console.WriteLine(order));
-            northwindController.AddOrder(null,DateTime.Now,null,100,"SickShip","SickAddress","SickCity","SickRegion","SickPC","SuckCountry");
+            //northwindController.Subscribe((o, order) => Console.WriteLine(order));
+            //northwindController.AddOrder(null,DateTime.Now,null,100,"SickShip","SickAddress","SickCity","SickRegion","SickPC","SuckCountry");
 
-            Print5FirstProducts(northwindController);
-            ShippingCountriesInOrder(northwindController);
+            //Print5FirstProducts(northwindController);
+            //ShippingCountriesInOrder(northwindController);
+
+            ReportingController test = new ReportingController();
+            test.TopOrdersByTotalPrice(1);
         }
 
         private static void MainCSV(string[] args)
