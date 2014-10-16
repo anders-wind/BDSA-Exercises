@@ -24,34 +24,32 @@ namespace Northwind.Reporting_Module
         {
             var ListOfOrders = _northwindController._orders;
 
-            var ordersByTotalPriceDtoList = (from order in ListOfOrders
+            var ordersByTotalPriceDto = (from order in ListOfOrders
                 let orderId = order.OrderID
                 let orderDate = order.OrderDate
                 let customerContactName = order.Customer.ContactName
                 let totalPrice = (from od in order.Order_Details
-                    select od).Sum(od => od.UnitPrice*od.Quantity)
+                                    select od).Sum(od => od.UnitPrice*od.Quantity)
                 let totalPriceWithDiscount = (from od in order.Order_Details
-                    select od).Sum(od => (od.UnitPrice*od.Quantity)*(decimal) (1 - od.Discount))
+                                    select od).Sum(od => (od.UnitPrice*od.Quantity)*(decimal) (1 - od.Discount))
                 orderby totalPrice descending
                 select
                     new OrdersByTotalPriceDto(orderId, orderDate, customerContactName,
                         (decimal) totalPriceWithDiscount,
                         totalPrice)).Take(count);
+
+            foreach (var test in ordersByTotalPriceDto)
+            {
+                Console.WriteLine(test.OrderId);
+            }
             try
             {
-                return new Report<IList<OrdersByTotalPriceDto>, ReportError>(ordersByTotalPriceDtoList.ToList(), null);
+                return new Report<IList<OrdersByTotalPriceDto>, ReportError>(ordersByTotalPriceDto.ToList(), null);
             }
             catch (Exception)
             {
                 return new Report<IList<OrdersByTotalPriceDto>, ReportError>(null, new ReportError("Failed"));
             }
-            foreach (var test in ordersByTotalPriceDtoList)
-            {
-                Console.WriteLine(test.OrderId);
-            }
-            // get top results
-            //return new Report<ordersByTotalPriceDtoList, ReportError>(null, null);
-            return null;
         }
 
         public class Report<TData, TError>
