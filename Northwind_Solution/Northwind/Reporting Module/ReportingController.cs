@@ -55,6 +55,14 @@ namespace Northwind.Reporting_Module
             }
         }
 
+        public Report<IList<ProductsBySaleDto>, ReportError> TopProductsBySale(int count)
+        {
+            var listOfProducts = _northwindController._products;
+
+            IList<ProductsBySaleDto> ProductsBySaleDToList = from product in listOfProducts
+                select product.Category;
+        }
+
         public class Report<TData, TError>
         {
             public TData Data { get; set; }
