@@ -21,6 +21,19 @@ namespace Northwind
             ShippingCountriesInOrder(northwindController);
         }
 
+        private static void MainCSV(string[] args)
+        {
+            NorthwindController northwindController = new NorthwindController(new DataStorageCSVfiles());
+
+            northwindController.Subscribe((o, order) => Console.WriteLine(order));
+            northwindController.AddOrder(null, DateTime.Now, null, 100, "SickShip", "SickAddress", "SickCity",
+                "SickRegion", "SickPC", "SuckCountry");
+
+            Print5FirstProducts(northwindController);
+            ShippingCountriesInOrder(northwindController);
+        }
+
+
         private static void Print5FirstProducts(NorthwindController northwindController)
         {
             //Write a list with the name of the first 5 products [use LINQ]
