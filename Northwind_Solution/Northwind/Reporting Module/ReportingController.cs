@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Northwind.Reporting_Module
@@ -64,7 +66,13 @@ namespace Northwind.Reporting_Module
             var listOfProducts = _northwindController._products;
 
             IList<ProductsBySaleDto> ProductsBySaleDToList = from product in listOfProducts
-                select product.Category;
+                                                             let ProductId = product.ProductID
+                                                             let ProductName = product.ProductName
+                                                             let Count = (from orderDetail in product.Order_Details
+                                                                          where orderDetail.ProductID = product.ProductID
+                                                                          select orderDetail).Count()
+
+            
         }
 
         public class Report<TData, TError>

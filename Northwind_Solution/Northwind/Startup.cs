@@ -28,6 +28,7 @@ namespace Northwind
                 Console.Write(" TP: " + test.TotalPrice);
                 Console.Write(" TPWD: " + test.TotalPriceWithDiscount + "\n");
             }
+            Console.ReadKey();
         }
 
         private static void MainCSV(string[] args)
