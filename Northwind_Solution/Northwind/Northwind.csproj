@@ -108,9 +108,9 @@
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Reporting Module\EmployeeSaleDto.cs" />
     <Compile Include="Reporting Module\OrdersByTotalPriceDto.cs" />
     <Compile Include="Reporting Module\ProductsBySaleDto.cs" />
-    <Compile Include="Reporting Module\UnitsSoldByMonth.cs" />
     <Compile Include="Shipper.cs">
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -127,7 +127,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <EntityDeploy Include="NorthwindDatabase.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>NorthwindDatabase.Designer.cs</LastGenOutput>
