@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Northwind.DataStorage;
-using Northwind.Model;
 using Northwind.Reporting_Module;
 
 namespace Northwind
@@ -13,7 +12,7 @@ namespace Northwind
     {
         static void Main(string[] args)
         {
-            //NorthwindController northwindController = new NorthwindController(new DataStorageDB());
+            NorthwindController northwindController = new NorthwindController(new DataStorageDB());
 
             //northwindController.Subscribe((o, order) => Console.WriteLine(order));
             //northwindController.AddOrder(null,DateTime.Now,null,100,"SickShip","SickAddress","SickCity","SickRegion","SickPC","SuckCountry");
@@ -21,7 +20,7 @@ namespace Northwind
             //Print5FirstProducts(northwindController);
             //ShippingCountriesInOrder(northwindController);
 
-            ReportingController test = new ReportingController();
+            ReportingController test = new ReportingController(northwindController);
             test.TopOrdersByTotalPrice(1);
         }
 

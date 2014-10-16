@@ -8,6 +8,12 @@ namespace Northwind.Reporting_Module
 {
     class ReportingController
     {
+        private NorthwindController _northwindController;
+        public ReportingController(NorthwindController northwindController)
+        {
+            _northwindController = northwindController;
+        }
+
         /// <summary>
         /// Report<IList<OrdersByTotalPriceDto>, ReportError> TopOrdersByTotalPrice(int count)
         /// </summary>
@@ -15,14 +21,11 @@ namespace Northwind.Reporting_Module
         /// <returns></returns>
         public Report<IList<OrdersByTotalPriceDto>, ReportError> TopOrdersByTotalPrice(int count)
         {
-            using (var db = new NORTHWNDEntities())
-            {
                 IList<Order> topOrders = null;
 
-                var ListOfOrders = from order in db.Orders
-                                      select order;
+                var ListOfOrders = _northwindController._orders;
 
-                var ListOfOrderDetails = from orderDetail in db.Order_Details
+                var ListOfOrderDetails = from orderDetail in ListOfOrders.Order_Details
                                             select orderDetail;
 
                 IList<OrdersByTotalPriceDto> ordersByTotalPriceDtoList = (from order in ListOfOrders
@@ -51,7 +54,6 @@ namespace Northwind.Reporting_Module
                 // get top results
                 //return new Report<ordersByTotalPriceDtoList, ReportError>(null, null);
                 return null;
-            }
         }
 
         public class Report<TData, TError>
