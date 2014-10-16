@@ -69,10 +69,6 @@
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Model OLD\CategoryCSV.cs" />
-    <Compile Include="Model OLD\OrderCSV.cs" />
-    <Compile Include="Model OLD\Order_DetailsCSV.cs" />
-    <Compile Include="Model OLD\ProductCSV.cs" />
     <Compile Include="NorthwindController.cs" />
     <Compile Include="NorthwindDatabase.Context.cs">
       <AutoGen>True</AutoGen>
