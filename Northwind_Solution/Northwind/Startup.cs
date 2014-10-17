@@ -22,6 +22,7 @@ namespace Northwind
             //Console.WriteLine(test.TopOrdersByTotalPrice(5).Error.errorMessage);
             Console.WriteLine(reportingController.TopOrdersByTotalPrice(5));
             Console.WriteLine(reportingController.EmployeeSale(1));
+            Console.WriteLine(reportingController.TopProductsBySale(3));
 
             Console.ReadKey();
         }

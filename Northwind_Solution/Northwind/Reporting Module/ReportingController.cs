@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -54,16 +55,30 @@ namespace Northwind.Reporting_Module
         public Report<IList<ProductsBySaleDto>, ReportError> TopProductsBySale(int count)
         {
             var listOfProducts = _northwindController._products;
-            var listOfOrders = _northwindController._orders;
 
-            IList<ProductsBySaleDto> ProductsBySaleDToList = from product in listOfProducts
-                                                             let ProductId = product.ProductID
-                                                             let ProductName = product.ProductName
-                                                             let Count = (product.Order_Details.Where(x => x.ProductID == product.ProductID).GroupBy(x => x.ProductID)).Count()
-                                                             let UnitsSold = (product.Order_Details.Where(x => x.ProductID == product.ProductID).Sum(x => x.Quantity))
-                                                             let date = (from d in listOfOrders.Where(x => x.OrderID == ()))
+            var ProductsBySaleDToList = (from product in listOfProducts
+                let ProductId = product.ProductID
+                let ProductName = product.ProductName
+                let orderDetailsPerMonth = (from unitSoldByMonth in product.Order_Details
+                                        group unitSoldByMonth by unitSoldByMonth.Order.OrderDate)
+                let unitsSoldByMonth = (from test in orderDetailsPerMonth
+                            let county = test.Count()
+                            let quantity = (IList<int>)test.Select(e=>(Int32)e.Quantity).ToList()
+                            let date = test.Key
+                            orderby quantity.Sum(e=>e) descending 
+                            select new ProductsBySaleDto.UnitsSoldByMonth(county,date.Value,quantity))
+                
+                select new ProductsBySaleDto(ProductId,ProductName, unitsSoldByMonth.ToList())).Take(count);
 
-            return null;
+
+            try
+            {
+                return new Report<IList<ProductsBySaleDto>, ReportError>(ProductsBySaleDToList.ToList(), null);
+            }
+            catch (Exception exception)
+            {
+                return new Report<IList<ProductsBySaleDto>, ReportError>(null, new ReportError("Failed: " + exception.Message));
+            }
         }
 
         public Report<EmployeeSaleDto, ReportError> EmployeeSale(int id)
