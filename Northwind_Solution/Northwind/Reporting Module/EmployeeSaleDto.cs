@@ -27,7 +27,7 @@ namespace Northwind.Reporting_Module
                 tempOrders += orderDto.ToString() + "\n";
             }
             return "Employee name: " + EmployeeName + "\n" +
-                   "Reports told: " + ReportsToId + "\n" + tempOrders + "\n";  
+                   "Reports told: " + ReportsToId + "\n" + tempOrders;  
         }
 
         internal class OrderDto
