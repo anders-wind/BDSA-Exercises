@@ -19,6 +19,17 @@ namespace Northwind.Reporting_Module
         public int ReportsToId { get; private set; }
         public IList<OrderDto> orders { get; private set; }
 
+        public override string ToString()
+        {
+            string tempOrders = "";
+            foreach (var orderDto in orders)
+            {
+                tempOrders += orderDto.ToString() + "\n";
+            }
+            return "Employee name: " + EmployeeName + "\n" +
+                   "Reports told: " + ReportsToId + "\n" + tempOrders + "\n";  
+        }
+
         internal class OrderDto
         {
             public OrderDto(int orderId, DateTime? orderDate, IList<ProductDto> products, decimal totalPrice)
@@ -34,6 +45,20 @@ namespace Northwind.Reporting_Module
             public decimal TotalPrice { get; private set; }
             public IList<ProductDto> products { get; private set; }
 
+            public override string ToString()
+            {
+                string tempProducts = "";
+                foreach (var productDto in products)
+                {
+                    tempProducts += productDto.ToString() + "\n";
+                }
+
+                return "   Order Id: " + OrderId + "\n" +
+                       "   Order Date: " + OrderDate.Value + "\n" +
+                       "   Total price: " + TotalPrice + "\n" + 
+                       tempProducts + "\n";
+            }
+
             internal class ProductDto
             {
                 public ProductDto(string productName, decimal unitPrice, int quantity)
@@ -46,6 +71,13 @@ namespace Northwind.Reporting_Module
                 public string ProductName { get; private set; }
                 public decimal UnitPrice { get; private set; }
                 public int Quantity { get; private set; }
+
+                public override string ToString()
+                {
+                    return "   -   ProductName: " + ProductName + "\n" +
+                           "   -   Unit Price: " + UnitPrice + "\n" +
+                           "   -   Quantity: " + Quantity;
+                }
             }
         }
     }
