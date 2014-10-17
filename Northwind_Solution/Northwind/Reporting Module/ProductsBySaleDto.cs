@@ -33,15 +33,17 @@ namespace Northwind.Reporting_Module
 
         internal class UnitsSoldByMonth
         {
-            public UnitsSoldByMonth(int count, int month, int year)
+            public UnitsSoldByMonth(int count, int month, int year, IList<int> unitsSold)
             {
+                UnitsSold = unitsSold;
                 Month = month;
                 Year = year;
                 Count = count;
             }
 
-            public UnitsSoldByMonth(int count, DateTime date)
+            public UnitsSoldByMonth(int count, DateTime date, IList<int> unitsSold)
             {
+                UnitsSold = unitsSold;
                 Month = date.Month;
                 Year = date.Year;
                 Count = count;
@@ -50,6 +52,8 @@ namespace Northwind.Reporting_Module
             public int Count { get; set; }
             private DateTime dateTimeMonth;
             private DateTime dateTimeYear;
+
+            public IList<int> UnitsSold { get; private set; }
 
             public int Month
             {
