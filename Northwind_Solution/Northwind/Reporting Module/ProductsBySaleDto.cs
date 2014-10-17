@@ -51,21 +51,11 @@ namespace Northwind.Reporting_Module
             }
 
             public int Count { get; set; }
-            private DateTime dateTimeMonth;
-            private DateTime dateTimeYear;
 
             public IList<int> UnitsSold { get; private set; }
 
-            public int Month
-            {
-                get { return dateTimeMonth.Month; }
-                set { dateTimeMonth = new DateTime(1, value, 1); }
-            }
-            public int Year
-            {
-                get { return dateTimeYear.Year; }
-                set { dateTimeMonth = new DateTime(value, 1, 1); }
-            }
+            public int Month { get; private set; }
+            public int Year { get; private set; }
 
         }
     }
