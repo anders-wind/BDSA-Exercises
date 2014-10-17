@@ -1,0 +1,1 @@
+To run the program locate the Northwind.exe file in the AWIS_CNBL_PPMA.40.1\Northwind_Solution\Northwind\bin\Debug folder
