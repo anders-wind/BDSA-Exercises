@@ -40,6 +40,16 @@ namespace Northwind.DataStorage
             }
         }
 
+        public IList<Employee> Employees()
+        {
+            using (var db = new NORTHWNDEntities())
+            {
+                var employees = (from employee in db.Employees
+                    select employee);
+                return employees.ToList();
+            }
+        }
+
         public void CreateOrder(Order order)
         {
             using (var db = new NORTHWNDEntities())

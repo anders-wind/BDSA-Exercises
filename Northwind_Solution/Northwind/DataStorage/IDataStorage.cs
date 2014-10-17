@@ -24,6 +24,7 @@ namespace Northwind.DataStorage
         /// </summary>
         /// <returns>A list of Order objects</returns>
         IList<Order> Orders();
+        IList<Employee> Employees(); 
         /// <summary>
         /// Creates an Order and save it in the storage
         /// </summary>

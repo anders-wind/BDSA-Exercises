@@ -208,6 +208,11 @@ namespace Northwind.DataStorage
             return orderQuery.ToList();
         }
 
+        public IList<Employee> Employees()
+        {
+            throw new NotImplementedException();
+        }
+
         public void CreateOrder(Order order)
         {
         }

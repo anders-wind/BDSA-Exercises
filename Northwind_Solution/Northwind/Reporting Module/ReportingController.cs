@@ -4,6 +4,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Northwind.Reporting_Module
@@ -64,6 +65,33 @@ namespace Northwind.Reporting_Module
             return null;
         }
 
+        public Report<EmployeeSaleDto, ReportError> EmployeeSale(int id)
+        {
+            var listOfEmployees = _northwindController._employee;
+            var employeesSaleDto = (from employee in listOfEmployees
+                                    where employee.EmployeeID == id
+                let employeeName = employee.FirstName + " " + employee.LastName
+                let reportsTold = employee.Orders.Count
+                let orders = (from order in employee.Orders
+                    let products = (from order_Details in order.Order_Details
+                        let product = order_Details.Product
+                        select
+                            new EmployeeSaleDto.OrderDto.ProductDto(product.ProductName,
+                                product.UnitPrice.GetValueOrDefault(), order_Details.Quantity)).ToList()
+                    let totalPrice = (from order_Details in order.Order_Details
+                        select order_Details).Sum(order_Details => order_Details.UnitPrice)
+                    select new EmployeeSaleDto.OrderDto(order.OrderID, order.OrderDate, products, (decimal) totalPrice)).ToList()
+                select new EmployeeSaleDto(employeeName,reportsTold,orders));
+            try
+            {
+                return new Report<EmployeeSaleDto, ReportError>(employeesSaleDto.ToList().First(), null);
+            }
+            catch (Exception exception)
+            {
+                return new Report<EmployeeSaleDto, ReportError>(null, new ReportError("Failed: " + exception.Message));
+            }
+        }
+
         public class Report<TData, TError>
         {
             public TData Data { get; set; }
@@ -74,6 +102,12 @@ namespace Northwind.Reporting_Module
                 Error = error;
                 Data = data;
             }
+
+            public override string ToString()
+            {
+                if (Data == null) return Error.ToString();
+                return Data.ToString();
+            }
         }
 
         public class ReportError
@@ -83,6 +117,11 @@ namespace Northwind.Reporting_Module
             public ReportError(string errorMessage)
             {
                 this.errorMessage = errorMessage;
+            }
+
+            public override string ToString()
+            {
+                return errorMessage;
             }
         }
     }

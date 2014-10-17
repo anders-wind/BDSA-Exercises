@@ -18,6 +18,10 @@ namespace Northwind
         {
             get { return _storage.Products(); }
         }
+        public IList<Employee> _employee
+        {
+            get { return _storage.Employees(); }
+        }
 
 
         private IDataStorage _storage { get; set; }

@@ -21,7 +21,7 @@ namespace Northwind.Reporting_Module
 
         internal class OrderDto
         {
-            public OrderDto(int orderId, DateTime? orderDate, ProductDto products, decimal totalPrice)
+            public OrderDto(int orderId, DateTime? orderDate, IList<ProductDto> products, decimal totalPrice)
             {
                 OrderId = orderId;
                 OrderDate = orderDate;
@@ -32,7 +32,7 @@ namespace Northwind.Reporting_Module
             public int OrderId { get; private set; }
             public DateTime? OrderDate { get; private set; }
             public decimal TotalPrice { get; private set; }
-            public ProductDto products { get; private set; }
+            public IList<ProductDto> products { get; private set; }
 
             internal class ProductDto
             {
