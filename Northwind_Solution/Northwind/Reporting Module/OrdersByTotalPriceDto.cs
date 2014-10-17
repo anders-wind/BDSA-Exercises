@@ -22,5 +22,11 @@ namespace Northwind.Reporting_Module
         public string CustomerContactName { get; private set; }
         public decimal TotalPriceWithDiscount { get; private set; }
         public decimal TotalPrice { get; private set; }
+
+        public override string ToString()
+        {
+            return "OrderId | OrderDate | CustomerContactName | TotalPriceWithDiscount | TotalPrice " +
+                   OrderId + " | " + OrderDate.Value.Date + " | " + CustomerContactName + " | " + TotalPriceWithDiscount + " | " + TotalPrice + "\n";
+        }
     }
 }
