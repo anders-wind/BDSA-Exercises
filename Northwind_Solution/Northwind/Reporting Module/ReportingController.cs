@@ -53,12 +53,13 @@ namespace Northwind.Reporting_Module
         {
             var listOfProducts = _northwindController._products;
 
-            //IList<ProductsBySaleDto> ProductsBySaleDToList = from product in listOfProducts
-            //                                                 let ProductId = product.ProductID
-            //                                                 let ProductName = product.ProductName
-            //                                                 let Count = (from orderDetail in product.Order_Details
-            //                                                              where orderDetail.ProductID = product.ProductID
-            //                                                              select orderDetail).Count()
+            IList<ProductsBySaleDto> ProductsBySaleDToList = from product in listOfProducts
+                                                             let ProductId = product.ProductID
+                                                             let ProductName = product.ProductName
+                                                             let Count = (product.Order_Details.Where(x => x.ProductID == product.ProductID).GroupBy(x => x.ProductID)).Count()
+                                                             let UnitsSold = (from unit in product.Order_Details
+                                                                              select unit).Sum(x => x.Quantity)
+
 
             return null;
         }

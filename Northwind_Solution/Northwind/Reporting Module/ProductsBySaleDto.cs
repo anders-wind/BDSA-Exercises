@@ -8,7 +8,7 @@ namespace Northwind.Reporting_Module
 {
     class ProductsBySaleDto
     {
-        public ProductsBySaleDto(int productId, string productName, UnitsSoldByMonth unitsSoldByMonths)
+        public ProductsBySaleDto(int productId, string productName, IList<UnitsSoldByMonth> unitsSoldByMonths)
         {
             ProductId = productId;
             ProductName = productName;
@@ -17,12 +17,13 @@ namespace Northwind.Reporting_Module
 
         public int ProductId { get; private set; }
         public string ProductName { get; private set; }
-        public UnitsSoldByMonth UnitsSoldByMonths { get; private set; }
+        public IList<UnitsSoldByMonth> UnitsSoldByMonths { get; private set; }
 
         internal class UnitsSoldByMonth
         {
-            public UnitsSoldByMonth(int count, int month, int year)
+            public UnitsSoldByMonth(int unitsSold, int count, int month, int year)
             {
+                UnitsSold = unitsSold;
                 Month = month;
                 Year = year;
                 Count = count;
@@ -39,6 +40,11 @@ namespace Northwind.Reporting_Module
             private DateTime dateTimeMonth;
             private DateTime dateTimeYear;
 
+            public int UnitsSold
+            {
+                get { return UnitsSold; }
+                set { UnitsSold = value; }
+            }
             public int Month
             {
                 get { return dateTimeMonth.Month; }
