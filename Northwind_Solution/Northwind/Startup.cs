@@ -13,18 +13,15 @@ namespace Northwind
         static void Main(string[] args)
         {
             NorthwindController northwindController = new NorthwindController(new DataStorageDB());
-
-            //SubscribeAndAddOrder(northwindController);
-            //Print5FirstProducts(northwindController);
-            //ShippingCountriesInOrder(northwindController);
-
             ReportingController reportingController = new ReportingController(northwindController);
-            //Console.WriteLine(test.TopOrdersByTotalPrice(5).Error.errorMessage);
+
             Console.WriteLine(reportingController.TopOrdersByTotalPrice(5));
             Console.WriteLine(reportingController.EmployeeSale(1));
             Console.WriteLine(reportingController.TopProductsBySale(3));
 
-            Console.ReadKey();
+            SubscribeAndAddOrder(northwindController);
+            Print5FirstProducts(northwindController);
+            ShippingCountriesInOrder(northwindController);
         }
 
         private static void MainCSV(string[] args)

@@ -32,7 +32,7 @@ namespace Northwind.Reporting_Module
             var ordersByTotalPriceDto = (from order in ListOfOrders
                 let orderId = order.OrderID
                 let orderDate = order.OrderDate
-                let customerContactName = order.Customer.ContactName
+                let customerContactName = getCustomerNameOfOrderSafe(order)
                 let totalPrice = (from od in order.Order_Details
                     select od).Sum(od => od.UnitPrice*od.Quantity)
                 let totalPriceWithDiscount = (from od in order.Order_Details
@@ -80,6 +80,18 @@ namespace Northwind.Reporting_Module
             {
                 return new Report<IList<ProductsBySaleDto>, ReportError>(null,
                     new ReportError("Failed: " + exception.Message));
+            }
+        }
+
+        private string getCustomerNameOfOrderSafe(Order order)
+        {
+            try
+            {
+                return order.Customer.ContactName;
+            }
+            catch (Exception)
+            {
+                return null;
             }
         }
 
