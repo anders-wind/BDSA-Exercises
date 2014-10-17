@@ -53,6 +53,7 @@ namespace Northwind.Reporting_Module
         public Report<IList<ProductsBySaleDto>, ReportError> TopProductsBySale(int count)
         {
             var listOfProducts = _northwindController._products;
+            var listOfOrders = _northwindController._orders;
 
             IList<ProductsBySaleDto> ProductsBySaleDToList = from product in listOfProducts
                                                              let ProductId = product.ProductID
@@ -60,6 +61,8 @@ namespace Northwind.Reporting_Module
                                                              let Count = (product.Order_Details.Where(x => x.ProductID == product.ProductID).GroupBy(x => x.ProductID)).Count()
                                                              let UnitsSold = (from unit in product.Order_Details
                                                                               select unit).Sum(x => x.Quantity)
+                                                             let month = (from m in listOfOrders.Where(x => x.OrderID == (from id in product.Order_Details
+                                                                                                                              select id.OrderID)))
 
 
             return null;
