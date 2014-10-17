@@ -24,10 +24,10 @@ namespace Northwind.Reporting_Module
             string unitsSoldString = "";
             foreach (var unitSold in UnitsSoldByMonths)
             {
-                unitsSoldString += "\n" + unitSold.Count + " | " + unitSold.Month + " | " + unitSold.Year;
+                unitsSoldString += "\n" + unitSold.UnitsSold.Sum(x=>x) + " | " + unitSold.Count + " | " + unitSold.UnitsSold.Average(x=>x) + " | " + unitSold.Month + " | " + unitSold.Year);
             }
             return "Product ID: " + ProductId + " Name " + ProductName + "\n" +
-                   "Count | Month | Year" + "\n" +
+                   "Quantity | Count | Avg | Month | Year" + "\n" +
                    unitsSoldString.Trim();
         }
 
