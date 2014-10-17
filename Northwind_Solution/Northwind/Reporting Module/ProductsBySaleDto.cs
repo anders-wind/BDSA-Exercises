@@ -29,7 +29,8 @@ namespace Northwind.Reporting_Module
             }
             return "Product ID: " + ProductId + " Name " + ProductName + "\n" +
                    "Quantity | Count | Avg | Month | Year" + "\n" +
-                   unitsSoldString.Trim();
+                   unitsSoldString.Trim() + "\n" +
+                   "Total: " + UnitsSoldByMonths.Sum(e => e.UnitsSold.Sum(f => f)) + "\n";
         }
 
         internal class UnitsSoldByMonth

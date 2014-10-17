@@ -65,10 +65,10 @@ namespace Northwind.Reporting_Module
                     group unitSoldByMonth by new {month = date.Month, year = date.Year})
                 let unitsSoldByMonth = (from test in orderDetailsPerMonth
                     let county = test.Count()
-                    let quantity = (IList<int>) test.Select(e => (Int32) e.Quantity).ToList()
+                    let quantity = (test.Select(e => (Int32) e.Quantity)).ToList()
                     let date = test.Key
                     select new ProductsBySaleDto.UnitsSoldByMonth(county, date.month, date.year, quantity))
-                orderby unitsSoldByMonth.Sum(e => e.UnitsSold.Sum(f => f))
+                orderby unitsSoldByMonth.Sum(e => e.UnitsSold.Sum(f => f)) descending 
                 select new ProductsBySaleDto(ProductId, ProductName, unitsSoldByMonth.ToList())).Take(count);
 
 
