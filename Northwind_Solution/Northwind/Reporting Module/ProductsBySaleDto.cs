@@ -19,9 +19,21 @@ namespace Northwind.Reporting_Module
         public string ProductName { get; private set; }
         public IList<UnitsSoldByMonth> UnitsSoldByMonths { get; private set; }
 
+        public override string ToString()
+        {
+            string unitsSoldString = "";
+            foreach (var unitSold in UnitsSoldByMonths)
+            {
+                unitsSoldString += "\n" + unitSold.UnitsSold.Sum(x=>x) + " | " + unitSold.Count + " | " + unitSold.UnitsSold.Average(x=>x) + " | " + unitSold.Month + " | " + unitSold.Year);
+            }
+            return "Product ID: " + ProductId + " Name " + ProductName + "\n" +
+                   "Quantity | Count | Avg | Month | Year" + "\n" +
+                   unitsSoldString.Trim();
+        }
+
         internal class UnitsSoldByMonth
         {
-            public UnitsSoldByMonth(int unitsSold, int count, int month, int year)
+            public UnitsSoldByMonth(int count, int month, int year, IList<int> unitsSold)
             {
                 UnitsSold = unitsSold;
                 Month = month;
@@ -29,8 +41,9 @@ namespace Northwind.Reporting_Module
                 Count = count;
             }
 
-            public UnitsSoldByMonth(int count, DateTime date)
+            public UnitsSoldByMonth(int count, DateTime date, IList<int> unitsSold)
             {
+                UnitsSold = unitsSold;
                 Month = date.Month;
                 Year = date.Year;
                 Count = count;
@@ -40,11 +53,8 @@ namespace Northwind.Reporting_Module
             private DateTime dateTimeMonth;
             private DateTime dateTimeYear;
 
-            public int UnitsSold
-            {
-                get { return UnitsSold; }
-                set { UnitsSold = value; }
-            }
+            public IList<int> UnitsSold { get; private set; }
+
             public int Month
             {
                 get { return dateTimeMonth.Month; }
