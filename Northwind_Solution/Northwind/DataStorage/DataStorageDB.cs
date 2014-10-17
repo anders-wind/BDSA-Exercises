@@ -45,7 +45,7 @@ namespace Northwind.DataStorage
             using (var db = new NORTHWNDEntities())
             {
                 var employees = (from employee in db.Employees
-                    select employee);
+                                 select employee).Include("Orders").Include("Orders.Order_Details").Include("Orders.Order_Details.Product");
                 return employees.ToList();
             }
         }

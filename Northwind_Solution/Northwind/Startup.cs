@@ -21,6 +21,7 @@ namespace Northwind
             ReportingController reportingController = new ReportingController(northwindController);
             //Console.WriteLine(test.TopOrdersByTotalPrice(5).Error.errorMessage);
             Console.WriteLine(reportingController.TopOrdersByTotalPrice(5));
+            Console.WriteLine(reportingController.EmployeeSale(1));
 
             Console.ReadKey();
         }

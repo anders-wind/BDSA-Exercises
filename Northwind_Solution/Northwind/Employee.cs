@@ -42,7 +42,7 @@ namespace Northwind
     
         public virtual ICollection<Employee> Employees1 { get; set; }
         public virtual Employee Employee1 { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
+        public ICollection<Order> Orders { get; set; }
         public virtual ICollection<Territory> Territories { get; set; }
     }
 }
