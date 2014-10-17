@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
@@ -107,6 +108,15 @@ namespace Northwind.Reporting_Module
             public override string ToString()
             {
                 if (Data == null) return Error.ToString();
+                if (Data is IList)
+                {
+                    string tempstring = "";
+                    foreach (var dataToString in (IList)Data)
+                    {
+                        tempstring += dataToString + "\n";
+                    }
+                    return tempstring;
+                }
                 return Data.ToString();
             }
         }

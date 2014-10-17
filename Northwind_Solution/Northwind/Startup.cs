@@ -20,14 +20,8 @@ namespace Northwind
 
             ReportingController reportingController = new ReportingController(northwindController);
             //Console.WriteLine(test.TopOrdersByTotalPrice(5).Error.errorMessage);
-            foreach (var test in reportingController.TopOrdersByTotalPrice(5).Data)
-            {
-                Console.Write("\nOID: " + test.OrderId);
-                Console.Write(" OD: " + test.OrderDate);
-                Console.Write(" CN: " + test.CustomerContactName);
-                Console.Write(" TP: " + test.TotalPrice);
-                Console.Write(" TPWD: " + test.TotalPriceWithDiscount + "\n");
-            }
+            Console.WriteLine(reportingController.TopOrdersByTotalPrice(5));
+
             Console.ReadKey();
         }
 
