@@ -13,8 +13,8 @@ namespace Northwind.DataStorage
         {
             using (var db = new NORTHWNDEntities())
             {
-                var products = from product in db.Products
-                    select product;
+                var products = (from product in db.Products
+                                select product).Include("Order_Details").Include("Order_Details.Order");
                 return products.ToList();
             }
         }
