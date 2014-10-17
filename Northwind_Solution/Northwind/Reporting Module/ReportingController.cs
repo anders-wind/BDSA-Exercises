@@ -61,8 +61,7 @@ namespace Northwind.Reporting_Module
                                                              let ProductName = product.ProductName
                                                              let Count = (product.Order_Details.Where(x => x.ProductID == product.ProductID).GroupBy(x => x.ProductID)).Count()
                                                              let UnitsSold = (product.Order_Details.Where(x => x.ProductID == product.ProductID).Sum(x => x.Quantity))
-                                                             let date = (from d in listOfOrders.Where(x => x.OrderID == (from )))
-
+                                                             let date = (from d in listOfOrders.Where(x => x.OrderID == ()))
 
             return null;
         }
