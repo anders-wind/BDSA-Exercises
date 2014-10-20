@@ -8,7 +8,7 @@ namespace CalendarSystem.DataStorage
     /// A storage class which implements the IStorage interface.
     /// The class is meant to have a connection to a database where events will be added when they are created and put in the local Calendar class.
     /// </summary>
-    internal class DatabaseStorage : IStorage
+    internal class DatabaseStorageImplementor : IStorage
     {
 
         private string _username;
@@ -57,7 +57,7 @@ namespace CalendarSystem.DataStorage
             return _calendar.GetEvent(ID);
         }
 
-        public IList<IEvent> GetEventsBetweenDates(DateTime beginDateTime, DateTime enDateTime)
+        public IList<IEvent> GetEventsBetweenDates(DateTime beginDateTime, DateTime endDateTime)
         {
             throw new NotImplementedException();
         }

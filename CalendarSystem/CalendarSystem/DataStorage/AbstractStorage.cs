@@ -27,11 +27,11 @@ namespace CalendarSystem.DataStorage
         {
             if (storageType == storageTypes.TestStub)
             {
-                return new FakeStorage();
+                return new FakeStorageImplementor();
             }
             else if (storageType == storageTypes.Database)
             {
-                return new DatabaseStorage();
+                return new DatabaseStorageImplementor();
             }
             throw new Exception();
         }

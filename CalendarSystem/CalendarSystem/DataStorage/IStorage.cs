@@ -43,13 +43,14 @@ namespace CalendarSystem.DataStorage
         /// <param name="ID"></param>
         /// <returns></returns>
         IEvent GetEvent(int ID);
+
         /// <summary>
         /// Return all events between to given dates.
         /// </summary>
         /// <param name="beginDateTime"></param>
-        /// <param name="enDateTime"></param>
+        /// <param name="endDateTime"></param>
         /// <returns></returns>
-        IList<IEvent> GetEventsBetweenDates(DateTime beginDateTime, DateTime enDateTime);
+        IList<IEvent> GetEventsBetweenDates(DateTime beginDateTime, DateTime endDateTime);
         /// <summary>
         /// Create a tag and save it in the storage.
         /// </summary>
