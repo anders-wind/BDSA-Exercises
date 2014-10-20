@@ -14,8 +14,7 @@ namespace CalendarSystem.DataStorage
         /// <summary>
         /// The constructor takes a connection and a storagetype to create the storage and the given connection.
         /// </summary>
-        /// <param name="connection"></param>
-        /// <param name="storageType"></param>
+        /// <param name="storageFactory">The factory which creates the storage.</param>
         public StorageClient(AbstractStorageFactory storageFactory)
         {
             Storage = storageFactory.CreateStorage();
