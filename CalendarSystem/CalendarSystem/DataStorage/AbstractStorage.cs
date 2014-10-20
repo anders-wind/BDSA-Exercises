@@ -10,12 +10,11 @@ namespace CalendarSystem.DataStorage
     class AbstractStorage : IAbstractStorage
     {
         private IStorage _storage;
-        public IConnection _connection { private get; set; }
+        public IConnectionBaseStrategy _connection { private get; set; }
         public enum storageTypes
         {
             TestStub,
             Database
-
         }
 
         /// <summary>
@@ -41,7 +40,7 @@ namespace CalendarSystem.DataStorage
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="storageType"></param>
-        public AbstractStorage(IConnection connection, storageTypes storageType)
+        public AbstractStorage(IConnectionBaseStrategy connection, storageTypes storageType)
         {
             _storage = createStorage(storageType);
             _connection = connection;

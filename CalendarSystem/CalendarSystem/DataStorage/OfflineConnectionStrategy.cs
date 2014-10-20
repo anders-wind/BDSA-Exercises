@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace CalendarSystem.DataStorage
 {
-    class OfflineConnection : IConnection
+    class OfflineConnectionStrategy : IConnectionBaseStrategy
     {
+        public IStorage GetStorage()
+        {
+            return new FakeStorageImplementor();
+        }
     }
 }

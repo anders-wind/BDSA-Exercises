@@ -17,7 +17,7 @@ namespace CalendarSystem.Controller
        
         private InputController()
         {
-            _storage = new AbstractStorage(new OnlineConnection(), AbstractStorage.storageTypes.Database);
+            _storage = new AbstractStorage(new OnlineConnectionStrategy(), AbstractStorage.storageTypes.Database);
         }
 
         /// <summary>

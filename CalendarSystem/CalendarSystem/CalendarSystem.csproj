@@ -49,12 +49,13 @@
     <Compile Include="DataStorage\DatabaseStorageImplementor.cs" />
     <Compile Include="DataStorage\FakeStorageImplementor.cs" />
     <Compile Include="DataStorage\IAbstractStorage.cs" />
-    <Compile Include="DataStorage\IConnection.cs" />
+    <Compile Include="DataStorage\IConnectionBaseStrategy.cs" />
     <Compile Include="DataStorage\IStorage.cs" />
     <Compile Include="DataStorage\IUndoableCommand.cs" />
-    <Compile Include="DataStorage\OfflineConnection.cs" />
-    <Compile Include="DataStorage\OnlineConnection.cs" />
-    <Compile Include="DataStorage\StorageImplemenationBaseBridge.cs" />
+    <Compile Include="DataStorage\OfflineConnectionStrategy.cs" />
+    <Compile Include="DataStorage\OnlineConnectionStrategy.cs" />
+    <Compile Include="DataStorage\StorageAbstractionBridge.cs" />
+    <Compile Include="DataStorage\StorageRefinedAbstractionBridge.cs" />
     <Compile Include="DataStorage\StoreToGoogleCommand.cs" />
     <Compile Include="Model\Calendar.cs" />
     <Compile Include="Model\Event.cs" />
@@ -74,6 +75,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace CalendarSystem.DataStorage
 {
-    class OnlineConnection : IConnection
+    class OnlineConnectionStrategy : IConnectionBaseStrategy
     {
+        public IStorage GetStorage()
+        {
+            return new DatabaseStorageImplementor();
+        }
     }
 }
