@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace CalendarSystem.Model
     /// <summary>
     /// An interface for event classes, used for given the minimum an event class must be able to do, and have.
     /// </summary>
-    public interface IEvent
+    public interface IEvent : IComponentComposite
     {
         Notification _notification { get; set; }
         DateTime _date  { get; set; }

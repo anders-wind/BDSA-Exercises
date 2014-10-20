@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,30 +7,39 @@ using System.Threading.Tasks;
 
 namespace CalendarSystem.Model
 {
-    class LinkedEventsComposite : IEvent
+    class LinkedEventsComposite : IComponentComposite, IEnumerable<IComponentComposite>
     {
-
-        private IList<IEvent> events = new List<IEvent>();
-        public Notification _notification { get; set; }
-        public DateTime _date { get; set; }
-        public TimeSpan _timeSpan { get; set; }
-        public string _description { get; set; }
-
-        public int _ID { get; private set; }
-        public int tag { get; private set; }
-
-        public void AddEvent(IEvent anEvent)
+        private IList<IComponentComposite> _children = new List<IComponentComposite>();
+        
+        
+        public void AddEvent(IComponentComposite anEvent)
         {
-            events.Add(anEvent);
+            _children.Add(anEvent);
         }
-        public void AddRangeOfEvent(IList<IEvent> someEvents)
+        public void AddRangeOfEvent(IList<IComponentComposite> someEvents)
         {
-            events.Concat(someEvents);
+            _children.Concat(someEvents);
         }
 
-        public void changeTag(string tag)
+        public void removeEvent(IComponentComposite eventToRemove)
         {
-            throw new NotImplementedException();
+            _children.Remove(eventToRemove);
+        }
+
+        public IComponentComposite getChild(int index)
+        {
+            return _children[index];
+        }
+
+        public IEnumerator<IComponentComposite> GetEnumerator()
+        {
+            foreach (IComponentComposite child in _children)
+                yield return child;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

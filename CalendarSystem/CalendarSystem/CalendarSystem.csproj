@@ -61,11 +61,12 @@
     <Compile Include="DataStorage\StorageRefinedAbstractionBridge.cs" />
     <Compile Include="DataStorage\StoreToGoogleCommand.cs" />
     <Compile Include="Model\Calendar.cs" />
+    <Compile Include="Model\IComponentComposite.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\GoogleCalendarEntry.cs" />
     <Compile Include="Model\GoogleCalendarEventAdapter.cs" />
     <Compile Include="Model\IEvent.cs" />
-    <Compile Include="Model\LinkedEvents.cs" />
+    <Compile Include="Model\LinkedEventsComposite.cs" />
     <Compile Include="Model\Notification.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
