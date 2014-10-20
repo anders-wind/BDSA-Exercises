@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalendarSystem.Model
 {
-    class LinkedEvents : IEvent
+    class LinkedEventsComposite : IEvent
     {
 
         private IList<IEvent> events = new List<IEvent>();

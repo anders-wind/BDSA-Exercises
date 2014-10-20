@@ -9,8 +9,8 @@ namespace CalendarSystem.DataStorage
 {
     class StoreToGoogleCommand : IUndoableCommand
     {
-        private LinkedEvents _linkedEvents;
-        public StoreToGoogleCommand(LinkedEvents linkedEvents)
+        private LinkedEventsComposite _linkedEvents;
+        public StoreToGoogleCommand(LinkedEventsComposite linkedEvents)
         {
             _linkedEvents = linkedEvents;
         }
