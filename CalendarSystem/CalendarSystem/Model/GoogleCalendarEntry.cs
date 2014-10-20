@@ -8,5 +8,16 @@ namespace CalendarSystem.Model
 {
     class GoogleCalendarEntry
     {
+        public Notification GoogleNotification { get; set; }
+        public DateTime GoogleDate { get; set; }
+        public TimeSpan GoogleTimeSpan { get; set; }
+        public string GoogleDescription { get; set; }
+        public int GoogleID { get; private set; }
+        public int GoogleTag { get; private set; }
+
+        public void changeGoogleTag(string tag)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

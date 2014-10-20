@@ -7,7 +7,7 @@ using CalendarSystem.Model;
 
 namespace CalendarSystem.DataStorage
 {
-    interface IAbstractStorage : IObservable
+    interface IAbstractStorage
     {
         void loginAuthentication(string userName, string password);
 

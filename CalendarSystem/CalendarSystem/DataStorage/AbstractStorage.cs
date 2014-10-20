@@ -75,17 +75,5 @@ namespace CalendarSystem.DataStorage
         {
             _storage.CreateTag(tag);
         }
-        public void NotifyObservers()
-        {
-            _storage.NotifyObservers();
-        }
-        public void BeObserved(IObserver observer)
-        {
-            _storage.BeObserved(observer);
-        }
-        public void BeObserved(IList<IObserver> observers)
-        {
-            _storage.BeObserved(observers);
-        }
     }
 }

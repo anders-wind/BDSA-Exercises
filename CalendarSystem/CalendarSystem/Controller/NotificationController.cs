@@ -6,7 +6,7 @@ namespace CalendarSystem.Controller
     /// <summary>
     /// The Notification controller has a timer for the notifications and will create a popup when a notification's time is exceeded.
     /// </summary>
-    class NotificationController : IObserver
+    class NotificationController
     {
         private static NotificationController _instance = null;
         private Dictionary<int, Notification> notifications; 
@@ -30,14 +30,6 @@ namespace CalendarSystem.Controller
         {
             if (_instance == null) _instance = new NotificationController();
             return _instance;
-        }
-
-        /// <summary>
-        /// A change in the model has happened.
-        /// </summary>
-        public void BeNotifiedByObserved()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

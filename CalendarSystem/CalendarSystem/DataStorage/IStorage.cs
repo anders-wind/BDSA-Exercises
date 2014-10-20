@@ -7,7 +7,7 @@ namespace CalendarSystem.DataStorage
     /// <summary>
     /// An interface for a storage class. The interface has methods which will make it possible to get and save events into the calendar, without knowing the actual implementation.
     /// </summary>
-    interface IStorage : IObservable
+    interface IStorage
     {
         /// <summary>
         /// Authenticate and download Calendar and events belonging to that user.

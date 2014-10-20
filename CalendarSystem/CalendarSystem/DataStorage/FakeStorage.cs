@@ -10,7 +10,6 @@ namespace CalendarSystem.DataStorage
     /// </summary>
     class FakeStorage : IStorage
     {
-        private IList<IObserver> _Observers = new List<IObserver>();
 
         public void loginAuthentication(string userName, string password)
         {
@@ -43,21 +42,6 @@ namespace CalendarSystem.DataStorage
         }
 
         public void CreateTag(string tag)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void NotifyObservers()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void BeObserved(IObserver observer)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void BeObserved(IList<IObserver> observers)
         {
             throw new NotImplementedException();
         }
