@@ -13,11 +13,11 @@ namespace CalendarSystem.Controller
     {
         private static InputController _instance = null;
 
-        public IAbstractStorage _storage{ get; private set; }
+        private StorageClient _storageClient { get; set; }
        
         private InputController()
         {
-            _storage = new StorageClient(new OnlineConnectionStrategy(), StorageClient.storageTypes.Database);
+            _storageClient = new StorageClient(new ConcreteDBStorageFactory());
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace CalendarSystem.Controller
         /// <param name="endHour">The end hour of the event</param>
         public void CreateCalendarEntry(string description,int year, int month, int day, int startHour, int endHour)
         {
-            _storage.SaveEvent(description, new DateTime(year, month, day), new TimeSpan(endHour-startHour), null);
+            //_storage.SaveEvent(description, new DateTime(year, month, day), new TimeSpan(endHour-startHour), null);
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace CalendarSystem.Controller
         /// <param name="endHour">The end hour of the event</param>
         public void UpdateCalendarEntry(int ID, string description, int year, int month, int day, int startHour, int endHour)
         {
-            _storage.UpdateEvent(ID, description, new DateTime(year, month, day), new TimeSpan(endHour - startHour), null);
+            //_storage.UpdateEvent(ID, description, new DateTime(year, month, day), new TimeSpan(endHour - startHour), null);
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace CalendarSystem.Controller
         {
             try
             {
-                _storage.loginAuthentication(username, password);
+                _storageClient.Storage.LoginAuthentication(username, password);
                 ViewController.getInstance().startMainView();
             }
             catch (Exception)
