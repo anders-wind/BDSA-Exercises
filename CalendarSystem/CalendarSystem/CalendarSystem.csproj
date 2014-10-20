@@ -45,9 +45,12 @@
     <Compile Include="Controller\InputController.cs" />
     <Compile Include="Controller\NotificationController.cs" />
     <Compile Include="Controller\ViewController.cs" />
-    <Compile Include="DataStorage\AbstractStorage.cs" />
+    <Compile Include="DataStorage\StorageClient.cs" />
+    <Compile Include="DataStorage\AbstractStorageFactory.cs" />
+    <Compile Include="DataStorage\ConcreteDBStorageFactory.cs" />
+    <Compile Include="DataStorage\ConcreteLocalStorageFactory.cs" />
     <Compile Include="DataStorage\DatabaseStorageImplementor.cs" />
-    <Compile Include="DataStorage\FakeStorageImplementor.cs" />
+    <Compile Include="DataStorage\LocalStorageImplementor.cs" />
     <Compile Include="DataStorage\IAbstractStorage.cs" />
     <Compile Include="DataStorage\IConnectionBaseStrategy.cs" />
     <Compile Include="DataStorage\IStorage.cs" />

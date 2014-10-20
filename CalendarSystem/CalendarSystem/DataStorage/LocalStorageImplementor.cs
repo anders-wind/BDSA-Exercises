@@ -8,7 +8,7 @@ namespace CalendarSystem.DataStorage
     /// A storage class which implements the IStorage interface.
     /// The class is a fake storage in that sense that the fields and methods return components that are created at runtime. Therefore no events will be accessible from between runs of the system.
     /// </summary>
-    class FakeStorageImplementor : IStorage
+    class LocalStorageImplementor : IStorage
     {
 
         public void loginAuthentication(string userName, string password)
