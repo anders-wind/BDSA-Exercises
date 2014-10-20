@@ -9,7 +9,7 @@ namespace CalendarSystem.DataStorage
 {
     class StorageClient
     {
-        public IStorage Storage { get; private set; }
+        public StorageAbstractionBridge Storage { get; private set; }
 
         /// <summary>
         /// The constructor takes a connection and a storagetype to create the storage and the given connection.

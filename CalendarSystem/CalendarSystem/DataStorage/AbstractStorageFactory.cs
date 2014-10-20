@@ -8,6 +8,6 @@ namespace CalendarSystem.DataStorage
 {
     abstract class AbstractStorageFactory
     {
-        public abstract IStorage CreateStorage();
+        public abstract StorageAbstractionBridge CreateStorage();
     }
 }

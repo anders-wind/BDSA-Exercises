@@ -8,9 +8,11 @@ namespace CalendarSystem.DataStorage
 {
     class ConcreteLocalStorageFactory : AbstractStorageFactory
     {
-        public override IStorage CreateStorage()
+        public override StorageAbstractionBridge CreateStorage()
         {
-            return new LocalStorageImplementor();
+            var tempBridge = new StorageRefinedAbstractionBridge();
+            tempBridge.Storage = new LocalStorageImplementor();
+            return tempBridge;
         }
     }
 }
