@@ -10,7 +10,7 @@ namespace CalendarSystem.DataStorage
     class StorageRefinedAbstractionBridge : StorageAbstractionBridge
     {
         // can override the methods neccesary.
-        public override void loginAuthentication(string userName, string password)
+        public override void LoginAuthentication(string userName, string password)
         {
             Storage.loginAuthentication(userName, password);
         }
@@ -27,17 +27,17 @@ namespace CalendarSystem.DataStorage
 
         public override IList<IEvent> GetAllEvents()
         {
-            Storage.GetAllEvents();
+            return Storage.GetAllEvents();
         }
 
         public override IEvent GetEvent(int ID)
         {
-            Storage.GetEvent(ID);
+            return Storage.GetEvent(ID);
         }
 
         public override IList<IEvent> GetEventsBetweenDates(DateTime beginDateTime, DateTime endDateTime)
         {
-            Storage.GetEventsBetweenDates(beginDateTime, endDateTime);
+            return Storage.GetEventsBetweenDates(beginDateTime, endDateTime);
         }
 
         public override void CreateTag(string tag)

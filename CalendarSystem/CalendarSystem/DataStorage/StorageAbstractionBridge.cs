@@ -12,7 +12,7 @@ namespace CalendarSystem.DataStorage
         public IStorage Storage { get; set; }
 
 
-        public virtual void loginAuthentication(string userName, string password)
+        public virtual void LoginAuthentication(string userName, string password)
         {
             Storage.loginAuthentication(userName,password);
         }
@@ -29,17 +29,17 @@ namespace CalendarSystem.DataStorage
 
         public virtual IList<IEvent> GetAllEvents()
         {
-            Storage.GetAllEvents();
+            return Storage.GetAllEvents();
         }
 
         public virtual IEvent GetEvent(int ID)
         {
-            Storage.GetEvent(ID);
+            return Storage.GetEvent(ID);
         }
 
         public virtual IList<IEvent> GetEventsBetweenDates(DateTime beginDateTime, DateTime endDateTime)
         {
-            Storage.GetEventsBetweenDates(beginDateTime, endDateTime);
+            return Storage.GetEventsBetweenDates(beginDateTime, endDateTime);
         }
 
         public virtual void CreateTag(string tag)
