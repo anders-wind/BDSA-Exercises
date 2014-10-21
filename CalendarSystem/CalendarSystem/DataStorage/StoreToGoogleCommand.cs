@@ -9,16 +9,15 @@ namespace CalendarSystem.DataStorage
 {
     class StoreToGoogleCommand : IUndoableCommand
     {
-        private LinkedEventsComposite _linkedEvents;
-        public StoreToGoogleCommand(LinkedEventsComposite linkedEvents)
+        private IEvent _iEvent;
+        public StoreToGoogleCommand(IEvent iEvent)
         {
-            _linkedEvents = linkedEvents;
+            _iEvent = iEvent;
         }
 
         public void Undo()
         {
             // Delete the events that was uploaded
-            throw new NotImplementedException();
         }
 
         public void Execute()
@@ -27,9 +26,9 @@ namespace CalendarSystem.DataStorage
             {
                 // upload all the linked events.
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                Undo();
+                throw exception;
             }
         }
     }

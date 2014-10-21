@@ -45,6 +45,7 @@
     <Compile Include="Controller\InputController.cs" />
     <Compile Include="Controller\NotificationController.cs" />
     <Compile Include="Controller\ViewController.cs" />
+    <Compile Include="DataStorage\CommandManager.cs" />
     <Compile Include="DataStorage\StorageClient.cs" />
     <Compile Include="DataStorage\AbstractStorageFactory.cs" />
     <Compile Include="DataStorage\ConcreteDBStorageFactory.cs" />
@@ -61,7 +62,6 @@
     <Compile Include="DataStorage\StorageRefinedAbstractionBridge.cs" />
     <Compile Include="DataStorage\StoreToGoogleCommand.cs" />
     <Compile Include="Model\Calendar.cs" />
-    <Compile Include="Model\IComponentComposite.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\GoogleCalendarEntry.cs" />
     <Compile Include="Model\GoogleCalendarEventAdapter.cs" />
