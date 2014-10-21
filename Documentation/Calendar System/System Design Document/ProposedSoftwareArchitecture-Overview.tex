@@ -13,8 +13,7 @@ This subsystem is being used to update the views, by receiving the models state.
 Its assignment of functionality will be that this subsystem will have to update the views 
 with the received models state.\\
 \textbf{DataStorage subsystem:}
-This subsystem contains a database storage. Users gain accesss to this database storage through an interface.
-Therefore, its assignment of functionality of this subsystem will be to store data, which will be used at a later time.
+The DataStorage subsystem creates persistance of data either through a Database connection or locally in a file storage. The Client can gain access to the storage through a storage client which controls which kind of storage must be used at a given time and also controls the logic for the model to storage convertion. 
 
 \subsection{UML class Diagram}
 Along the project comes a UML Class Diagram file which can be viewed in Visual studio. Here we can see the different subsystems in action. Topmost is the Storage subsystem. The subsystem is in the form of a Abstract Factory pattern. The IAbsatract storage has a factory which creates Abstractstorages which has IStorage. \\In this section the bridge pattern is also in use (the abstract storage works as a bridge) and the strategy pattern in the form of the Offline and Online connection classes.\\
