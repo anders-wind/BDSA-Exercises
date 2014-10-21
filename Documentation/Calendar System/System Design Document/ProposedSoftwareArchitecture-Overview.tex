@@ -15,9 +15,11 @@ with the received models state.\\
 \textbf{DataStorage subsystem:}
 The DataStorage subsystem creates persistance of data either through a Database connection or locally in a file storage. The Client can gain access to the storage through a storage client which controls which kind of storage must be used at a given time and also controls the logic for the model to storage convertion. 
 
-\subsection{UML class Diagram}
-Along the project comes a UML Class Diagram file which can be viewed in Visual studio. Here we can see the different subsystems in action. Topmost is the Storage subsystem. The subsystem is in the form of a Abstract Factory pattern. The IAbsatract storage has a factory which creates Abstractstorages which has IStorage. \\In this section the bridge pattern is also in use (the abstract storage works as a bridge) and the strategy pattern in the form of the Offline and Online connection classes.\\
+\subsection{Overview of the program}
+\includegraphics[scale=0.13]{OverallClassDependencies}\\
 
-Beneath the storage subsystem we can see the view subsystem. The classes all share the IViews interface which provides the classe with basic view methods such as show, hide and clear.\\
+The figure shows the overall dependencies of the system, which object refers to which. References between objects in the subsystems are not included. In the Model Subsystem the objects form the data we want represented. Events, notifications, and so on. \\There are also a few extra classes the LinkedEventsComposite which is part of a Composite pattern used for linking together events, and the GoogleCalendarEventAdapter which is part of an Adapter pattern to make GoogleCalendarEvents able to be used along side our systems events.
 
-At the bottum of the UML class diagram we can see the Events and how they are implemented. The Event section of the model subsystem uses a couple of design patterns to increase coherence and loosen the coupling. The GoogleCalendarEvent is the result of the Adapter pattern and The LinkedEvents class is a result of the Composite pattern.
+The other interesting subsystem is the DataStorage. The classes of the subsystem form a number of objects which are used to store data. The objects form a number of design patterns together: The classes which is suffixed with Strategy forms a strategy pattern used to choose which factory to use. \\The classes suffixed with Factory is part of the Abstract factory pattern. These factories creates the products LocalStorageImplementor and DatabaseStorageImplementor in a bridge pattern class (suffixed with Bridge). \\The classes containing Command in their name are part of a command pattern, here the CommandManager can hold a number of commands, execute them and in case of a failure, call the commands undo method.\\
+
+The classes in the subsystems Controller and View do not contain any design patterns.
