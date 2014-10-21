@@ -119,5 +119,225 @@
         </appliedStereotypesInternal>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="486fc6c2-6119-4b4d-8563-7ffa2f13ebbe"
+        name="Nullable&lt;DateTime‎&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="3b6d3ec9-0f8a-4088-8f27-23d1e5e0c6a3"
+            name="struct"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c19e423f-2cb7-4325-b7f1-7bf4be1b2a02">
+                <propertyInstance
+                  Id="87166ef9-85a5-4f54-8173-552368d0afd1"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="164ac9cd-e245-4fc0-af8f-f9f6960fc824">
+                <propertyInstance
+                  Id="4ed2be5a-7991-4ec0-98e8-442c5a67efcf"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3265894f-7a8c-4202-a226-481dd41896db">
+                <propertyInstance
+                  Id="7b973836-fdd6-4fb7-9a2c-1f7a4bfa8410"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ddb2096f-b0e6-4689-af3b-3068f79b373c">
+                <propertyInstance
+                  Id="bc8420d5-6481-4391-b7f8-5e3079053cfb"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <signatures>
+          <templateBinding
+            Id="d29686f5-03e2-460f-b981-79356a0cf485">
+            <redefinableTemplateSignatureMoniker
+              Id="a136ea1b-7d99-4812-8d78-96da19b4c7e5"
+              LastKnownLocation="Package4_2307.uml" />
+            <relationshipOwnedElementsInternal>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="df5c8e04-6ee4-411d-a34d-42f52a64b0e2">
+                  <actuals>
+                    <classMoniker
+                      Id="db1451fb-798a-48e2-8b8a-4abf26ccba25"
+                      LastKnownName="DateTime"
+                      LastKnownLocation="Package4_2307.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="8ba46158-68af-41bb-8d56-818e89ba54a4"
+                      LastKnownLocation="Package4_2307.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+            </relationshipOwnedElementsInternal>
+          </templateBinding>
+        </signatures>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="71ddb7c7-d8be-4556-bf00-49624467d4c3"
+        name="Nullable"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="b4e7c6db-45be-4679-bcad-732435c521e0"
+            handle="viewcode://./CodeSchema_Struct?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3D(Name%3DNullable GenericParameterCount%3D1)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="54cc0846-464b-4487-9fb3-051a82eee4ed"
+            name="struct"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="979255ea-e254-4bc3-ae4e-6ca0fcb7416f">
+                <propertyInstance
+                  Id="02d50d9d-3e2b-47c5-9970-7cac3bdc227e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6cdb45b7-7efd-4eab-9586-1307bf15cacc">
+                <propertyInstance
+                  Id="99522012-773f-4b4d-900f-f156f7acad6d"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ab1aeb15-8902-4e99-a6fa-4c57deddae3b">
+                <propertyInstance
+                  Id="e430ee5f-14a6-4a2d-b344-f38ce8bbe363"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="318e3887-33ce-4f3e-a534-a1957ae1598f">
+                <propertyInstance
+                  Id="9813059d-356e-4875-ac43-e8d2632c16fb"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedRedefinableTemplateSignatureInternal>
+          <redefinableTemplateSignature
+            Id="a136ea1b-7d99-4812-8d78-96da19b4c7e5"
+            parameters=""
+            name="RedefinableTemplateSignature1"
+            isLeaf="false">
+            <ownedParameters>
+              <classifierTemplateParameter
+                Id="8ba46158-68af-41bb-8d56-818e89ba54a4">
+                <referencesInternal>
+                  <reference
+                    Id="c1b3dfd4-b193-4d5d-a156-2ccea2623f73"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3D(Name%3DNullable GenericParameterCount%3D1) ParameterIdentifier%3D0"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="7c02e5f5-f1cb-4f2d-a3dd-ff7a8b5f193d"
+                    name="T"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+            </ownedParameters>
+          </redefinableTemplateSignature>
+        </ownedRedefinableTemplateSignatureInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7682eb04-6551-43db-b5a8-cd7d7333343a"
+        name="Nullable&lt;TimeSpan‎&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="87fb3a0f-2ec2-4566-b9f6-d4bfe159cc1b"
+            name="struct"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="52c1cde9-0088-4134-973f-c7cacc496858">
+                <propertyInstance
+                  Id="f80e84a7-5e73-4b74-9143-bdb452c5b41c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="22b69e4b-56b3-4934-a86a-9a7f4ef983ad">
+                <propertyInstance
+                  Id="693965dd-6eed-4842-8570-90c891a92889"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="462a408b-4c2c-4399-960c-630e536949e7">
+                <propertyInstance
+                  Id="4cc261a0-fee4-41ba-bd0f-ef1b00e0580b"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="89791c8b-7a99-4285-a616-98dddcf35724">
+                <propertyInstance
+                  Id="141ac1bc-c971-472d-ba9d-3ae3358c7c92"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <signatures>
+          <templateBinding
+            Id="1aca7c21-0b63-403a-9c6d-0c2a9bf38e8e">
+            <redefinableTemplateSignatureMoniker
+              Id="a136ea1b-7d99-4812-8d78-96da19b4c7e5"
+              LastKnownLocation="Package4_2307.uml" />
+            <relationshipOwnedElementsInternal>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="b6ca85c2-0e20-4a1b-9e09-f95cc7a01bce">
+                  <actuals>
+                    <classMoniker
+                      Id="b46c45e6-e753-479e-b867-48f22e1337d0"
+                      LastKnownName="TimeSpan"
+                      LastKnownLocation="Package4_2307.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="8ba46158-68af-41bb-8d56-818e89ba54a4"
+                      LastKnownLocation="Package4_2307.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+            </relationshipOwnedElementsInternal>
+          </templateBinding>
+        </signatures>
+      </class>
+    </packageHasNamedElement>
   </packagedElements>
 </package>

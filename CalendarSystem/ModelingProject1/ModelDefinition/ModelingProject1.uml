@@ -101,6 +101,12 @@
         </appliedStereotypesInternal>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="b74704a0-e9d1-4b09-8ad8-8708e82fe915"
+        LastKnownName="CalendarSystemTests"
+        LastKnownLocation="Package_1847.uml" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
