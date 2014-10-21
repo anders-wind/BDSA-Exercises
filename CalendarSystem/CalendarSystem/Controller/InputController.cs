@@ -17,7 +17,7 @@ namespace CalendarSystem.Controller
        
         private InputController()
         {
-            _storageClient = new StorageClient(new ConcreteDBStorageFactory());
+            _storageClient = new StorageClient(new OnlineConnectionStrategy());
         }
 
         /// <summary>

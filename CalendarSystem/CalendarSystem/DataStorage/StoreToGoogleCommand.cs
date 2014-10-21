@@ -24,7 +24,6 @@ namespace CalendarSystem.DataStorage
         {
             try
             {
-                // make the event into the google entry type
                 // upload the event
             }
             catch (Exception exception)

@@ -19,7 +19,7 @@ namespace CalendarSystem.Model
         public int _ID { get; private set; }
         public int tag { get; private set; }
 
-        public Event(string description, TimeSpan timespan, DateTime date, Notification notification, int ID)
+        public Event(string description, TimeSpan? timespan, DateTime? date, Notification notification, int ID)
         {
             _date = date;
             _timeSpan = timespan;
