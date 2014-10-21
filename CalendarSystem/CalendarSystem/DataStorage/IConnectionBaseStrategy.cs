@@ -10,8 +10,6 @@ namespace CalendarSystem.DataStorage
 {
     interface IConnectionBaseStrategy
     {
-        IStorage GetStorage();
-
-        void saveEvent(IList<IEvent> events);
+        AbstractStorageFactory GetStorageFactory();
     }
 }

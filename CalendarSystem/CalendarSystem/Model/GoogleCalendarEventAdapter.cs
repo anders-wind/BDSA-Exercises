@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CalendarSystem.DataStorage;
 
 namespace CalendarSystem.Model
 {
@@ -21,16 +22,16 @@ namespace CalendarSystem.Model
             set { _googleCalendarEntry.GoogleNotification = value; }
         }
 
-        public DateTime _date
+        public DateTime? _date
         {
             get { return _googleCalendarEntry.GoogleDate; }
-            set { _googleCalendarEntry.GoogleDate = value; }
+            set { _googleCalendarEntry.GoogleDate = value.Value; }
         }
 
-        public TimeSpan _timeSpan
+        public TimeSpan? _timeSpan
         {
             get { return _googleCalendarEntry.GoogleTimeSpan; }
-            set { _googleCalendarEntry.GoogleTimeSpan = value; }
+            set { _googleCalendarEntry.GoogleTimeSpan = value.Value; }
         }
 
         public string _description

@@ -9,14 +9,9 @@ namespace CalendarSystem.DataStorage
 {
     class OfflineConnectionStrategy : IConnectionBaseStrategy
     {
-        public IStorage GetStorage()
+        public AbstractStorageFactory GetStorageFactory()
         {
-            return new LocalStorageImplementor();
-        }
-
-        public void saveEvent(IList<IEvent> events)
-        {
-            throw new NotImplementedException();
+            return new ConcreteLocalStorageFactory();
         }
     }
 }

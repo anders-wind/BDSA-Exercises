@@ -10,7 +10,7 @@ namespace CalendarSystem.DataStorage
     class StoreToGoogleCommand : IUndoableCommand
     {
         private IEvent _iEvent;
-        public StoreToGoogleCommand(IEvent iEvent)
+        public StoreToGoogleCommand(IEvent iEvent) /// google adapter pattern
         {
             _iEvent = iEvent;
         }
@@ -24,7 +24,8 @@ namespace CalendarSystem.DataStorage
         {
             try
             {
-                // upload all the linked events.
+                // make the event into the google entry type
+                // upload the event
             }
             catch (Exception exception)
             {

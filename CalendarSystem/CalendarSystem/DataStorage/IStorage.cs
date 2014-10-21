@@ -23,7 +23,7 @@ namespace CalendarSystem.DataStorage
         /// <param name="dateTime"></param>
         /// <param name="timeSpan"></param>
         /// <param name="notification"></param>
-        void SaveEvent(string description, DateTime dateTime, TimeSpan timeSpan, Notification notification);
+        void SaveEvent(string description, DateTime? dateTime, TimeSpan? timeSpan, Notification notification);
         /// <summary>
         /// Update an event to the storage
         /// </summary>
@@ -31,7 +31,7 @@ namespace CalendarSystem.DataStorage
         /// <param name="dateTime"></param>
         /// <param name="timeSpan"></param>
         /// <param name="notification"></param>
-        void UpdateEvent(int ID, string description, DateTime dateTime, TimeSpan timeSpan, Notification notification);
+        void UpdateEvent(int ID, string description, DateTime? dateTime, TimeSpan? timeSpan, Notification notification);
         /// <summary>
         /// Returns all events in the active calendar
         /// </summary>
