@@ -10,9 +10,9 @@ namespace CalendarSystem.Model
     {
         public Notification _notification { get; set; }
 
-        public DateTime _date { get; set; }
+        public DateTime ?_date { get; set; }
 
-        public TimeSpan _timeSpan { get; set; }
+        public TimeSpan ?_timeSpan { get; set; }
 
         public string _description { get; set; }
 
