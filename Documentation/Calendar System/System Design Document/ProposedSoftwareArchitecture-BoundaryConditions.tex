@@ -1,4 +1,15 @@
 \section{Boundary conditions}
-When looking at the data storage a boundary use case stands clear. If the storage must be able to save data locally and in the cloud(online database), the storage must have a method which can check for data integrity between the two, such that the online database at all possible time has the newest data.\\
 
-When looking at the start and shutdown of the system, making sure that data is saved and retrieved to/from the available storage(optimally the online database).
+\begin{tabular}{ |l|p{10cm}| }
+  \hline
+  \multicolumn{2}{|c|}{Boundary Conditions:} \\
+  \hline
+  PersistentDataStorage & When the CalendarSystem is shut down, the CalendarSystem can convert the persistent storage from a flat file storage to a database storage or from a database storage to a flat file storage, depending on the current state of internet connection.\\
+  \hline
+    StartCalendar & The CalendarSystem invokes the Check Data Integrity use case on start-up, and depending on the state of connection from previous shutdown will load from either persistent storage.\\
+    \hline
+    ShutDownCalendar & The CalendarSystem checks for any changes being committed at the time of termination, and depending on the internet connection, will confirm saves to the respective storage current. \\
+    \hline
+    CheckDataIntegrity & CalendarSystem checks the integrity of the persistent data. For the textfile-based storage, this may include checking if the last logged transactions were saved to the textfile. For database storage, this may include invoking tools providing by the database system to re-index the tables. \\
+  \hline
+\end{tabular}
