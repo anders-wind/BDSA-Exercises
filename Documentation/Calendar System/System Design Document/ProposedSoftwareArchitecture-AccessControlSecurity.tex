@@ -12,10 +12,12 @@
     \backslashbox{Actors}{Objects} & Calendar  & Notification & Event \\ \hline
                User & createCalendar & setNotification & createEvent\\
             & updateCalendar &  & updateEvent\\
-            & deleteCalendar &  & deleteEvent  \\ \hline
+            & deleteCalendar &  & deleteEvent \\
+            & userLogin & & \\ \hline
                  System & createCalendarView & createNotifier &createEventView  \\ \hline
 \end{tabular}\\\\
 
-Due to the fact that our Calendarsystem is available for many users, possibly with sensitive information, it is important to keep the individuals data private as seen necessary. This is done by providing each user with a password. When the user wishes to access his or her data, the password will be prompted, and after authentication through encryption, the respective data will be accessable to the user.
+Due to the fact that our Calendarsystem is available for many users, possibly with sensitive information, it is important to keep the individuals data private as seen necessary. This is done by providing each user with a password. When the user wishes to access his or her data, the password will be prompted, and after authentication through encryption, the respective data will be accessable to the user. This limits the users access to other users personal information.\\
+Furthermore it can bee seen from the matrix that the user only has access to certain data through certain objects. This is done to provide ease of use to the user. While the user can create, delete and update entries and modify their associations, the system handles the automated `reminders'.
 
 %\end{document}
