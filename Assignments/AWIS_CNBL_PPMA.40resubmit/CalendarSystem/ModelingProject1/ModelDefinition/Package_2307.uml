@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="6ed6ae1d-64e1-4907-b481-31e17bfa2dae"
+  name="CalendarSystem"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="aec67ebd-79b6-4a2e-9333-d2a1f6b6350c"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCalendarSystem"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="b3ce34a3-5ea0-48fa-a9f6-8b314787bfa1"
+        LastKnownName="DataStorage"
+        LastKnownLocation="Package1_2307.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="59102819-c94b-405f-b968-f328eb75cf65"
+        LastKnownName="View"
+        LastKnownLocation="Package2_2307.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="5f7aab44-1b79-400e-80e2-6d713684ff71"
+        LastKnownName="Model"
+        LastKnownLocation="Package3_2307.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="7cb20481-34ee-4c6b-b33e-1143a070d504"
+        LastKnownName="Controller"
+        LastKnownLocation="Package7_2307.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9dd48aaa-5a72-416b-aea9-31fd0bc52d71"
+        name="Startup"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="69d423fd-df41-481a-8585-7e7a1c45cc91"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem Type%3DStartup"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="90df7524-8516-463d-b2cc-1170a1071843"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e31ababd-66bf-4c83-81ea-057b03cfeac8">
+                <propertyInstance
+                  Id="0d3fffe4-5a80-4a53-bd73-c5734d553645"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dfc7b341-6031-4eeb-a3be-3c4590a92f07">
+                <propertyInstance
+                  Id="f2b6e304-7b88-4c9a-b5b7-00490ef9aa18"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="eb3b4e61-7bc6-46dd-bd8e-5d71264ca84e">
+                <propertyInstance
+                  Id="93061d9d-4302-448a-ba15-2c2c5f333093"
+                  name="IsStatic"
+                  value="True" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9807f655-cb24-4484-adb0-05d6fb6e52b2">
+                <propertyInstance
+                  Id="efb15821-2f4d-44ec-94b0-04db576d0642"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6520f64c-81cf-4f2e-9086-c085ea6adcfb">
+                <propertyInstance
+                  Id="86ad9d13-6536-484a-9127-4b1f2c28e951"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="9faff056-8763-480b-8060-5276a858cdcf"
+            name="Main"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="74cb438e-6b81-4ffc-9af4-e156d242fc3b"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem Type%3DStartup Member%3D(Name%3DMain OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3D(Name%3DString ArrayRank%3D1 ParentType%3DString))])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c1081e18-ccd0-4185-820d-ce4133c4e9b7"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5df829a3-6350-4c08-8759-fac306cd7bb7">
+                    <propertyInstance
+                      Id="2a5f8128-744f-41ad-ad49-4f331242759f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8facc28a-a8d1-485e-bbb8-73c65402eaaf">
+                    <propertyInstance
+                      Id="7336e262-bd91-4e44-b0d3-65b69f141838"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5fb301cb-69a3-4cdd-9a07-678198954d72">
+                    <propertyInstance
+                      Id="b142bea2-57ec-4555-9adc-c81de338c35c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="582bb0c6-d7a2-4ca1-bb1d-37c122466b45">
+                    <propertyInstance
+                      Id="58555071-4cc5-44d5-a3e5-a7becfd5cbe1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0e768eb2-8e37-4078-95d2-dfe94f341a71">
+                    <propertyInstance
+                      Id="8c84bf97-d622-4963-9f33-6b26a3a0189e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b8222531-619e-485b-9527-61b6af34918f">
+                    <propertyInstance
+                      Id="fa601357-80a8-4e2c-b772-d69a98b43192"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="84292343-f5a3-495c-8ced-f6b9855d194a"
+                  name="args"
+                  direction="In"
+                  isOrdered="true">
+                  <referencesInternal>
+                    <reference
+                      Id="6142a6b9-1208-4b54-99df-204947f1caa7"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem Type%3DStartup Member%3D(Name%3DMain OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3D(Name%3DString ArrayRank%3D1 ParentType%3DString))]) ParameterIdentifier%3Dargs"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <lowerValueInternal>
+                    <literalString
+                      Id="cb5abfc9-359f-48bc-9b05-048b4b79fc40"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="c62fa185-2719-4b71-9b3b-c17ea8a17877"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -1,0 +1,131 @@
+\hypertarget{class_calendar_system_1_1_controller_1_1_view_controller}{\section{Calendar\+System.\+Controller.\+View\+Controller Class Reference}
+\label{class_calendar_system_1_1_controller_1_1_view_controller}\index{Calendar\+System.\+Controller.\+View\+Controller@{Calendar\+System.\+Controller.\+View\+Controller}}
+}
+
+
+The view controller handles all calls and creations of the view. It implements the I\+Observer interface and therefore can get notified when changes in the model happens.  
+
+
+Inheritance diagram for Calendar\+System.\+Controller.\+View\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_calendar_system_1_1_controller_1_1_view_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_calendar_system_1_1_controller_1_1_view_controller_a70e4c5e8dd89b0dbd3f8da0d39ab652b}{start\+Main\+View} ()
+\begin{DoxyCompactList}\small\item\em Create the main view \end{DoxyCompactList}\item 
+void \hyperlink{class_calendar_system_1_1_controller_1_1_view_controller_a6f51cc970fd23a5cfa9c861af874be9e}{create\+Event\+View} ()
+\begin{DoxyCompactList}\small\item\em Create a new event view \end{DoxyCompactList}\item 
+\hypertarget{class_calendar_system_1_1_controller_1_1_view_controller_a5ccc036864876db5c50e549ba2ab8093}{void {\bfseries create\+Notification\+View} (int I\+D, \hyperlink{class_calendar_system_1_1_model_1_1_notification}{Notification} notification)}\label{class_calendar_system_1_1_controller_1_1_view_controller_a5ccc036864876db5c50e549ba2ab8093}
+
+\item 
+void \hyperlink{class_calendar_system_1_1_controller_1_1_view_controller_a536858a1ed8b64b91a0b06d42c62875a}{create\+Event\+View} (\hyperlink{interface_calendar_system_1_1_model_1_1_i_event}{I\+Event} i\+Event)
+\begin{DoxyCompactList}\small\item\em Create an Event view with the data from a already existing event (update event) \end{DoxyCompactList}\item 
+void \hyperlink{class_calendar_system_1_1_controller_1_1_view_controller_a595641816a2e31edac5fe38f4d1f9f17}{Update\+Calender\+Overview} (string overview\+Type)
+\begin{DoxyCompactList}\small\item\em Change the overviewtype of the calendarview. Right now it does not use the enum type correctly. Must be updated to properly use the enum type. \end{DoxyCompactList}\item 
+void \hyperlink{class_calendar_system_1_1_controller_1_1_view_controller_a46f9d0983af0da3f95e00e4047d685a5}{Be\+Notified\+By\+Observed} ()
+\begin{DoxyCompactList}\small\item\em The observable pattern method of the observers. When a change in the model has happened (the model is the observable) it has to update the calendar view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_calendar_system_1_1_controller_1_1_view_controller}{View\+Controller} \hyperlink{class_calendar_system_1_1_controller_1_1_view_controller_ad07bc062091a439c61ba0b74f487e82d}{get\+Instance} ()
+\begin{DoxyCompactList}\small\item\em Singleton pattern. Makes sure only one instance can exist at a given time, and give classes easy access to the controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The view controller handles all calls and creations of the view. It implements the I\+Observer interface and therefore can get notified when changes in the model happens. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_calendar_system_1_1_controller_1_1_view_controller_a46f9d0983af0da3f95e00e4047d685a5}{\index{Calendar\+System\+::\+Controller\+::\+View\+Controller@{Calendar\+System\+::\+Controller\+::\+View\+Controller}!Be\+Notified\+By\+Observed@{Be\+Notified\+By\+Observed}}
+\index{Be\+Notified\+By\+Observed@{Be\+Notified\+By\+Observed}!Calendar\+System\+::\+Controller\+::\+View\+Controller@{Calendar\+System\+::\+Controller\+::\+View\+Controller}}
+\subsubsection[{Be\+Notified\+By\+Observed}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Controller.\+View\+Controller.\+Be\+Notified\+By\+Observed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_controller_1_1_view_controller_a46f9d0983af0da3f95e00e4047d685a5}
+
+
+The observable pattern method of the observers. When a change in the model has happened (the model is the observable) it has to update the calendar view. 
+
+
+
+Implements \hyperlink{interface_calendar_system_1_1_model_1_1_i_observer_a87a0dd14cdbb1ae4b4531329011167fb}{Calendar\+System.\+Model.\+I\+Observer}.
+
+\hypertarget{class_calendar_system_1_1_controller_1_1_view_controller_a6f51cc970fd23a5cfa9c861af874be9e}{\index{Calendar\+System\+::\+Controller\+::\+View\+Controller@{Calendar\+System\+::\+Controller\+::\+View\+Controller}!create\+Event\+View@{create\+Event\+View}}
+\index{create\+Event\+View@{create\+Event\+View}!Calendar\+System\+::\+Controller\+::\+View\+Controller@{Calendar\+System\+::\+Controller\+::\+View\+Controller}}
+\subsubsection[{create\+Event\+View}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Controller.\+View\+Controller.\+create\+Event\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_controller_1_1_view_controller_a6f51cc970fd23a5cfa9c861af874be9e}
+
+
+Create a new event view 
+
+\hypertarget{class_calendar_system_1_1_controller_1_1_view_controller_a536858a1ed8b64b91a0b06d42c62875a}{\index{Calendar\+System\+::\+Controller\+::\+View\+Controller@{Calendar\+System\+::\+Controller\+::\+View\+Controller}!create\+Event\+View@{create\+Event\+View}}
+\index{create\+Event\+View@{create\+Event\+View}!Calendar\+System\+::\+Controller\+::\+View\+Controller@{Calendar\+System\+::\+Controller\+::\+View\+Controller}}
+\subsubsection[{create\+Event\+View}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Controller.\+View\+Controller.\+create\+Event\+View (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+Event}}]{i\+Event}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_controller_1_1_view_controller_a536858a1ed8b64b91a0b06d42c62875a}
+
+
+Create an Event view with the data from a already existing event (update event) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+Event} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_calendar_system_1_1_controller_1_1_view_controller_ad07bc062091a439c61ba0b74f487e82d}{\index{Calendar\+System\+::\+Controller\+::\+View\+Controller@{Calendar\+System\+::\+Controller\+::\+View\+Controller}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Calendar\+System\+::\+Controller\+::\+View\+Controller@{Calendar\+System\+::\+Controller\+::\+View\+Controller}}
+\subsubsection[{get\+Instance}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf View\+Controller} Calendar\+System.\+Controller.\+View\+Controller.\+get\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_calendar_system_1_1_controller_1_1_view_controller_ad07bc062091a439c61ba0b74f487e82d}
+
+
+Singleton pattern. Makes sure only one instance can exist at a given time, and give classes easy access to the controller. 
+
+\begin{DoxyReturn}{Returns}
+The only instance of the class
+\end{DoxyReturn}
+\hypertarget{class_calendar_system_1_1_controller_1_1_view_controller_a70e4c5e8dd89b0dbd3f8da0d39ab652b}{\index{Calendar\+System\+::\+Controller\+::\+View\+Controller@{Calendar\+System\+::\+Controller\+::\+View\+Controller}!start\+Main\+View@{start\+Main\+View}}
+\index{start\+Main\+View@{start\+Main\+View}!Calendar\+System\+::\+Controller\+::\+View\+Controller@{Calendar\+System\+::\+Controller\+::\+View\+Controller}}
+\subsubsection[{start\+Main\+View}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Controller.\+View\+Controller.\+start\+Main\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_controller_1_1_view_controller_a70e4c5e8dd89b0dbd3f8da0d39ab652b}
+
+
+Create the main view 
+
+\hypertarget{class_calendar_system_1_1_controller_1_1_view_controller_a595641816a2e31edac5fe38f4d1f9f17}{\index{Calendar\+System\+::\+Controller\+::\+View\+Controller@{Calendar\+System\+::\+Controller\+::\+View\+Controller}!Update\+Calender\+Overview@{Update\+Calender\+Overview}}
+\index{Update\+Calender\+Overview@{Update\+Calender\+Overview}!Calendar\+System\+::\+Controller\+::\+View\+Controller@{Calendar\+System\+::\+Controller\+::\+View\+Controller}}
+\subsubsection[{Update\+Calender\+Overview}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Controller.\+View\+Controller.\+Update\+Calender\+Overview (
+\begin{DoxyParamCaption}
+\item[{string}]{overview\+Type}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_controller_1_1_view_controller_a595641816a2e31edac5fe38f4d1f9f17}
+
+
+Change the overviewtype of the calendarview. Right now it does not use the enum type correctly. Must be updated to properly use the enum type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em overview\+Type} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Calendar\+System/\+Controller/View\+Controller.\+cs\end{DoxyCompactItemize}
