@@ -1,9 +1,11 @@
 \chapter{Subsystem Services}
-
-
 \textbf{Controller Subsystem}\\\\
-\includegraphics[scale=0.8]{ControllerServices}\\\\
-
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{ControllerServices}
+	\caption{Diagram of the Controller subsystem service}
+  \label{fig:ControllerService}
+\end{figure}\\
 The ControllerSubsystem is a subsystem that contains 3 different controllers:
 
 \begin{itemize}
@@ -18,26 +20,35 @@ The purpose of our InputController is to use the input that the system gets and 
 
 The purpose of our NotificationController is to notify the user, of a specific notification that has been set by the user. The NotifyUser service will be using the NotificationController to notify the user, which then will create a NotificationView that will be showed by the viewController to the user.\\
 
-
 \textbf{Model Subsystem}\\\\
-\includegraphics[scale=0.8]{ModelServices}\\\\
-
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{ModelServices}
+	\caption{Diagram of the model subsystem service}
+  \label{fig:ModelService}
+\end{figure}\\
 The ModelSubsystem consists of two different services: UpdateState and ObserveDataStorage.\\
 
 Our UpdateState service is meant to update the state of the model, that the current system is using. When the UpdateModel service is being used by the ControllerSubsystem, the ModelSubsystem will receive whatever data that the UpdateModel service has to give, and then update its own state with the new data, received by the ControllerSubsystem, by using the UpdateState service.\\
 
 Our ObserveDataStorage service is meant to observe and receive data from our persistent data storage, which is our database. When the user starts up our system, our ModelSubsystem will be using the ObserveDataStorage service to check if there is any updated data, that the current system doesn't contain, and if there are any updated data, it will receive that data from the database, store it locally and show it by using the ViewController.\\
 
-
 \textbf{View Subsystem}\\\\
-\includegraphics[scale=0.8]{ViewServices}\\\\
-
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{ViewServices}
+		\caption{Diagram of the view subsystem service}
+  \label{fig:ViewService}
+\end{figure}\\
 The ViewSubsystem contains four different services: NotificationView, EventView, CalendarView and LoginView.\\
 
 As the ViewSubsystem services in themselves are views, the Subsystem services' purpose will be to create the different views, depending on the current event.\\
 
-
 \textbf{DataStorage Subsystem}\\\\
-\includegraphics[scale=0.8]{DatastorageServices}\\\\
-
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{DatastorageServices}
+		\caption{Diagram of the data storage subsystem service}
+  \label{fig:DataStorageService}
+\end{figure}\\
 The DataStorage Subsystem contains a single service, which will be used to access the persistent data, that has been put into our database. This service will be used by our ObserveDataStorage service of our ModelSubsystem, to observe and receive data from the database, though our DataStorage Subsystem.

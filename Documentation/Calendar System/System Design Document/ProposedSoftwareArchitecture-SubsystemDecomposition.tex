@@ -17,21 +17,46 @@ As we have chosen to use the MVC pattern, we will have 3 different subsystems, p
 
 The overall relations between the subsystems can be seen here. The controller controls the flow of the software and takes requests and sends data on from the storage. Objects from the Model will be send to the controller and in some cases the view, from the storage.\newpage
 \textbf{Overall Subsystem Decomposition}\\
-\includegraphics[scale=0.8]{OverallSubsystemDecomposition}
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{OverallSubsystemDecomposition}
+	\caption{The overall subsystem decomposition - not up-to-date}
+  \label{fig:OverallSubsystemDecomposition}
+\end{figure}
 
 Our \textbf{Model subsystem} has the responsibility to keep notifying the controllers to update the views, which the user is using. Here is a picture of our subsystem:\\
-\includegraphics[scale=0.8]{modelSubsystem}
-
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{modelSubsystem}
+		\caption{The model subsystem decomposition - not up-to-date}
+  \label{fig:ModelSubsystemDecomposition}
+\end{figure}
 \pagebreak
 
 Our \textbf{View subsystem} has the responsibility to represent the model’s state. Whenever the state of the model is changed, the view will also be changed to represent the new state of the model. Here is a picture of our subsystem:\\
-\includegraphics[scale=0.8]{viewSubsystem}
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{viewSubsystem}
+	\caption{The view subsystem decomposition}
+  \label{fig:ViewSubsystemDecomposition}
+\end{figure}
 \\
 
 Our \textbf{Control subsystem} has the responsibility to update the view, whenever the model has changed. The controllers will be used to update the views, by being notified by the model about its state. Here is a picture of subsystem:\\
-\includegraphics[scale=0.8]{controlSubsystem}
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{controlSubsystem}
+	\caption{The control subsystem decomposition}
+  \label{fig:ControlSubsystemDecomposition}
+\end{figure}
 
 \pagebreak
 
 Our \textbf{DataStorage subsystem} has the responsibility to save persistent data, which the system will be using at another time. Persistent data could be a calendar for a specific user. When the user will be login into the system, the controllers will be using the DataStorage subsystem to receive the calendar. Here is a picture of our subsystem:\\
-\includegraphics[scale=0.8]{datastorageSubsystem}
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{datastorageSubsystem}
+	\caption{The data control subsystem decomposition - not up to date}
+  \label{fig:DataStorageSubsystemDecomposition}
+\end{figure}
+\newpage
