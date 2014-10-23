@@ -8,7 +8,7 @@ namespace CalendarSystem.Model
 {
     class GoogleCalendarEntry
     {
-        public Notification GoogleNotification { get; set; }
+        public INotification GoogleNotification { get; set; }
         public DateTime GoogleDate { get; set; }
         public TimeSpan GoogleTimeSpan { get; set; }
         public string GoogleDescription { get; set; }

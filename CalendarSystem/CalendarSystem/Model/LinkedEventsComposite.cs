@@ -42,7 +42,7 @@ namespace CalendarSystem.Model
             return GetEnumerator();
         }
 
-        public Notification _notification
+        public INotification _notification
         {
             get{throw new Exception();}
             set{ throw new Exception(); }

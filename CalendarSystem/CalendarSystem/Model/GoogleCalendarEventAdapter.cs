@@ -16,7 +16,7 @@ namespace CalendarSystem.Model
             _googleCalendarEntry = new GoogleCalendarEntry();
         }
 
-        public Notification _notification
+        public INotification _notification
         {
             get { return _googleCalendarEntry.GoogleNotification; }
             set { _googleCalendarEntry.GoogleNotification = value; }

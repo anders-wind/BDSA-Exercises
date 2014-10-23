@@ -5,7 +5,7 @@ namespace CalendarSystem.Model
     /// <summary>
     /// A class which has a date for when the notification enters an alarmstate and a description.
     /// </summary>
-    public class Notification
+    public class Notification : INotification
     {
         private DateTime _date; //date for notification
         private String _description; //notification description

@@ -12,7 +12,7 @@ namespace CalendarSystem.Model
     /// </summary>
     public interface IEvent
     {
-        Notification _notification { get; set; }
+        INotification _notification { get; set; }
         DateTime ?_date  { get; set; }
         TimeSpan ?_timeSpan { get; set; }
         string _description { get; set; }

@@ -8,7 +8,7 @@ namespace CalendarSystem.Model
     /// </summary>
     public class Event : IEvent
     {
-        public Notification _notification { get; set; }
+        public INotification _notification { get; set; }
 
         public DateTime ?_date { get; set; }
 
@@ -19,7 +19,7 @@ namespace CalendarSystem.Model
         public int _ID { get; private set; }
         public int tag { get; private set; }
 
-        public Event(string description, TimeSpan? timespan, DateTime? date, Notification notification, int ID)
+        public Event(string description, TimeSpan? timespan, DateTime? date, INotification notification, int ID)
         {
             _date = date;
             _timeSpan = timespan;
