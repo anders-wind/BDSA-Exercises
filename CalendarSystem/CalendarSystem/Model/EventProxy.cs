@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace CalendarSystem.Model
 {
+    /// <summary>
+    /// This Proxy makes the client able to generate events with a date and an ID only. Therefore saving retrieving a lot of data from the storage in case of a large amount of events.
+    /// By doing this we can have all events in the system and first when the user reaches chooses the daily view or opens the event do we have to pick the rest of the information.
+    /// This Class is a part of the Delaying expensive computations version of the Proxy Pattern.
+    /// </summary>
     public class EventProxy : IEvent
     {
         private IEvent _trueEvent;
