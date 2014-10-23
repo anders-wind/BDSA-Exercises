@@ -8,12 +8,12 @@ namespace CalendarSystem.Model
     public class Notification : INotification
     {
         private DateTime _date; //date for notification
-        private String _description; //notification description
+        public string Description { get; set; }
 
         public Notification(DateTime date, string description)
         {
             _date = date;
-            _description = description;
+            Description = description;
         }
 
         public bool isInAlarmState()

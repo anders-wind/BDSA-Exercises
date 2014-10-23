@@ -8,5 +8,7 @@ namespace CalendarSystem.Model
 {
     public interface INotification
     {
+        string Description { get; set; }
+        bool isInAlarmState();
     }
 }
