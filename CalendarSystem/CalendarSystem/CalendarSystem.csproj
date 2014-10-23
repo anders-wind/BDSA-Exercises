@@ -58,6 +58,7 @@
     <Compile Include="DataStorage\OfflineConnectionStrategy.cs" />
     <Compile Include="DataStorage\OnlineConnectionStrategy.cs" />
     <Compile Include="DataStorage\StorageAbstractionBridge.cs" />
+    <Compile Include="DataStorage\StorageProxy.cs" />
     <Compile Include="DataStorage\StorageRefinedAbstractionBridge.cs" />
     <Compile Include="DataStorage\StoreToGoogleCommand.cs" />
     <Compile Include="Model\Calendar.cs" />
