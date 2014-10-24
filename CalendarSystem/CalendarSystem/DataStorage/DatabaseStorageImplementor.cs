@@ -49,9 +49,14 @@ namespace CalendarSystem.DataStorage
 
         public void UpdateEvent(IEvent eventToUpdate)
         {
+            if (eventToUpdate == null) new ArgumentException();
+            if (GetEvent(eventToUpdate._ID) == null) new EventDoesNotExistException();
+            var beforeEventsCount = GetAllEvents().Count;
 
             _calendar.updateCalenderEntry(eventToUpdate);
             // upload
+
+            if (GetAllEvents().Count == beforeEventsCount || GetEvent(eventToUpdate._ID) == eventToUpdate) throw new StorageFailedToUpdateEventException();
         }
 
         public void DeleteEvent(int ID)
