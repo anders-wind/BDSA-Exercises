@@ -49,19 +49,23 @@ namespace CalendarSystem.DataStorage
 
         public void UpdateEvent(IEvent eventToUpdate)
         {
-            if (eventToUpdate == null) new ArgumentException();
+            if (eventToUpdate == null) new ArgumentNullException();
             if (GetEvent(eventToUpdate._ID) == null) new EventDoesNotExistException();
             var beforeEventsCount = GetAllEvents().Count;
 
             _calendar.updateCalenderEntry(eventToUpdate);
             // upload
 
-            if (GetAllEvents().Count == beforeEventsCount || GetEvent(eventToUpdate._ID) == eventToUpdate) throw new StorageFailedToUpdateEventException();
+            if (GetAllEvents().Count != beforeEventsCount || GetEvent(eventToUpdate._ID) == eventToUpdate) throw new StorageFailedToUpdateEventException();
         }
 
         public void DeleteEvent(int ID)
         {
-            throw new NotImplementedException();
+            if(GetEvent(ID) == null) throw new ArgumentNullException();
+            if(ID < 0) throw new FaultyIDException();
+            var beforeEventsCount = GetAllEvents().Count;
+
+            if (GetEvent(ID) != null || beforeEventsCount -1 != GetAllEvents().Count) throw new StorageFailedToDeleteEventException();
         }
 
         public IList<IEvent> GetAllEvents()
@@ -76,6 +80,12 @@ namespace CalendarSystem.DataStorage
 
         public IList<IEvent> GetEventsBetweenDates(DateTime beginDateTime, DateTime endDateTime)
         {
+            if(beginDateTime > endDateTime) throw new BeginDateIsLesserThanEndDateException();
+            if(beginDateTime < new DateTime(1900,1,1) || beginDateTime > new DateTime(2100,1,1)) throw new InvalidBeginDateException();
+            if(endDateTime < new DateTime(1900, 1, 1) || endDateTime > new DateTime(2100, 1, 1)) throw new InvalidEndDateException();
+            var listToReturn = new List<IEvent>();
+
+            if (listToReturn == null || !listToReturn.TrueForAll(e=>e._date.Value >= beginDateTime && e._date.Value <= endDateTime)) throw new StorageFailedToRetrieveEventsException();
             throw new NotImplementedException();
         }
 
