@@ -9,7 +9,7 @@ namespace CalendarSystem.DataStorage
     /// </summary>
     interface IStorage
     {
-        // TODO make pre and post conditions make method for autherization
+        // TODO make pre and post conditions SDD
         /// <summary>
         /// Authenticate and download Calendar and events belonging to that user.
         /// <para> @pre userName != null </para>
@@ -34,6 +34,7 @@ namespace CalendarSystem.DataStorage
         /// <param name="eventToSave"></param>
         void SaveEvent(IEvent eventToSave);
 
+        // TODO sdd the post and pre here DONE
         /// <summary>
         /// Update an event to the storage
         /// <para> @pre eventToUpdate != null </para>
@@ -42,7 +43,6 @@ namespace CalendarSystem.DataStorage
         /// <para> @post GetEvent(eventToUpdate.ID) == eventToUpdate</para>
         /// </summary>
         /// <param name="eventToUpdate"></param>
-        // TODO sdd the post and pre here DONE
         void UpdateEvent(IEvent eventToUpdate);
 
         // TODO make pre and post conditions

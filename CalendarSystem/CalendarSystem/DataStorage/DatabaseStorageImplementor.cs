@@ -21,7 +21,6 @@ namespace CalendarSystem.DataStorage
             _username = userName;
             _password = password;
             _calendar = getCalendar();
-            SaveEvent(new EventProxy(null,1));
         }
 
         private Calendar getCalendar()
