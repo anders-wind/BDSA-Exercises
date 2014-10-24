@@ -2,6 +2,7 @@
 
 namespace CalendarSystem.Model
 {
+    // todo invariant implementation
     /// <summary>
     /// A class which has a date for when the notification enters an alarmstate and a description.
     /// </summary>
@@ -24,6 +25,11 @@ namespace CalendarSystem.Model
         public bool IsInAlarmState()
         {
             return (DateTime.Now > _date);
+        }
+
+        private void checkInvariants()
+        {
+            
         }
 
         // getters og setters for date, startTime, endTime, nd (notification description) og nt (notification tag)

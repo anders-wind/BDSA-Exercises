@@ -4,6 +4,7 @@ using CalendarSystem.Model;
 
 namespace CalendarSystem.DataStorage
 {
+    //TODO invariants
     /// <summary>
     /// An interface for a storage class. The interface has methods which will make it possible to get and save events into the calendar, without knowing the actual implementation.
     /// Invariants:

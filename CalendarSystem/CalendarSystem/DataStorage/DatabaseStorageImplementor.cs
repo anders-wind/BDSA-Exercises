@@ -5,6 +5,7 @@ using CalendarSystem.Model;
 
 namespace CalendarSystem.DataStorage
 {
+    //todo invariant implementation
     /// <summary>
     /// A storage class which implements the IStorage interface.
     /// The class is meant to have a connection to a database where events will be added when they are created and put in the local Calendar class.
