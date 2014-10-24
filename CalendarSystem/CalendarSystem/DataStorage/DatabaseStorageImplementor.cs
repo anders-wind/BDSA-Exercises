@@ -93,5 +93,10 @@ namespace CalendarSystem.DataStorage
         {
             throw new NotImplementedException();
         }
+
+        public bool EventsBelongsto(IList<IEvent> events, string userName)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
