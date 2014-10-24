@@ -81,7 +81,7 @@ namespace CalendarSystem.DataStorage
         // TODO sdd the post and pre here CHECK WITH TA check return in ocl
         /// <summary>
         /// Return all events between to given dates.
-        /// <para> @pre beginDateTime &gt; endDateTime </para> 
+        /// <para> @pre beginDateTime &lt; endDateTime </para> 
         /// <para> @pre beginDateTime &gt;= new Date(1900,1,1) </para> 
         /// <para> @pre endDateTime &gt;= new Date(1900,1,1) </para> 
         /// <para> @pre beginDateTime &lt;= new Date(2100,1,1) </para> 
