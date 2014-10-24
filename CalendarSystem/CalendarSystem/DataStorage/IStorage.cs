@@ -13,7 +13,7 @@ namespace CalendarSystem.DataStorage
     /// Only data belonging to the authenticated user will be loaded
     /// <para> @inv EventsBelongTo(events, userName) </para>
     /// Events will always take place on a valid date
-    /// <para> @inv (1990,1,1) &lt;= dateTime &gt;= (2100,1,1)  </para>
+    /// <para> @inv (1990,1,1) &lt;= DateTime &gt;= (2100,1,1)  </para>
     /// </summary>
     interface IStorage
     {

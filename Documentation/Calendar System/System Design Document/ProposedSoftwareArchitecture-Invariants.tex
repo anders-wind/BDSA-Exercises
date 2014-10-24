@@ -2,3 +2,20 @@
 
 \textbf{Event\\}
 context Event inv:
+DateTime > (1990,1,1) \&\& DateTime < (2100,1,1)\\\\
+context Event inv:
+this.ID < storage.MaxValue(ID)\\\\
+context Event inv:
+this.ID > -1\\\\
+\textbf{INotification\\}
+context INotification inv:
+DateTime > (1990,1,1) \&\& DateTime < (2100,1,1)\\\\
+context INotification inv:
+DateTime.now > _date == IsInAlarmState\\\\
+\textbf{IStorage\\}
+context IStorage inv:
+GetAllEvents().Count() < GetMaxID()\\\\
+context IStorage inv:
+EventsBelongTo(events, userName)\\\\
+context IStorage inv:
+DateTime > (1990,1,1) \&\& DateTime < (2100,1,1)
