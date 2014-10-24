@@ -1,0 +1,2299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="59102819-c94b-405f-b968-f328eb75cf65"
+  name="View"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="98af921d-0c0a-44b8-9cd6-a3b628f66079"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCalendarSystem.View"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <enumeration
+        Id="bfe80566-bd7c-4e6b-ba43-64053b29958d"
+        name="OverviewType"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="9c5725a7-ca71-4438-a2a3-8ef1a04cabe9"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3D(Name%3DOverviewType ParentType%3DCalendarView)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="5f695d12-0c76-4621-bfe2-87d111fd9bd4"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c92f6354-4092-4907-8dd4-1ccc1c7a724b">
+                <propertyInstance
+                  Id="3e993ec0-4083-4f80-9a55-cca8ce86acaa"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8f161acc-0cc7-4f4e-b825-68ed3b3a44db">
+                <propertyInstance
+                  Id="22591471-83be-45ee-81e0-fc6cdd5378a5"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b976a27a-adef-4208-a63c-563480ea38f7">
+                <propertyInstance
+                  Id="07fadf1b-b600-4192-9d01-bf28cd58bd37"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="3c14ce0a-d65d-41bd-a22d-08b25bfc060c"
+            name="daily">
+            <referencesInternal>
+              <reference
+                Id="1fbaaa50-d832-4ffe-8e9b-f582dee7c40f"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3D(Name%3DOverviewType ParentType%3DCalendarView) Member%3Ddaily"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="ec666a0a-653b-4ee6-b027-2f3d7831827f"
+            name="montly">
+            <referencesInternal>
+              <reference
+                Id="5f07b9d3-cb54-49f6-9b5c-6754dd20616d"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3D(Name%3DOverviewType ParentType%3DCalendarView) Member%3Dmontly"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="9b239d58-90e0-4ed4-ab2f-88458a65cd95"
+            name="weekly">
+            <referencesInternal>
+              <reference
+                Id="f6d52571-b4e5-4800-8bca-8e22082b065e"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3D(Name%3DOverviewType ParentType%3DCalendarView) Member%3Dweekly"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="119c9e5f-e7c1-4b24-935a-b8328be3f055"
+        name="CalendarView"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="447f0c70-6552-4877-af3e-2301e20cc45f"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DCalendarView"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="718d4d1a-2277-465a-9e0a-fe7ca59a8214"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f3e2ddf0-4d2a-4ea2-af67-b18df23d3933">
+                <propertyInstance
+                  Id="bd542ab7-f58c-4c59-8c0f-c0771f57af33"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="095ca97f-91ec-42df-bf9c-468428c97329">
+                <propertyInstance
+                  Id="546f9f65-dd8b-476b-8d65-31626f1b207d"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dfb9db7e-c324-439f-9af2-7fdb60506598">
+                <propertyInstance
+                  Id="033c5943-5fcb-41a7-b316-fa7b2c2aa21d"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5430c086-c972-4d5f-80b1-fc386f3c8fb7">
+                <propertyInstance
+                  Id="58dc243a-d286-429d-a50f-04a482168c68"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f537c36e-05a9-44c9-85d0-fa850f8cf45d">
+                <propertyInstance
+                  Id="a0ea1699-8dcb-410b-acbe-893a235349ed"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="311b872a-4c9f-4840-b845-18374ffbd707">
+            <interfaceMoniker
+              Id="a62adc03-960f-468c-8981-6ce0771aece9"
+              LastKnownName="IViews"
+              LastKnownLocation="Package2_2307.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="42ff2ecc-30b7-4826-982c-4a520406e479"
+            name="currentOverviewType"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="de8728d8-40f4-4585-bd19-360c7c49d9aa"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DCalendarView Member%3DcurrentOverviewType"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="768a4718-b577-4ffc-8b66-f419b454f5ac"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="51a75dc3-3694-486d-9c77-c9cbd54e764b">
+                    <propertyInstance
+                      Id="977bbdc1-5e37-4860-8bff-f39683ddcf9d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="70d7736d-3e38-43f0-8378-cbd2e5ec4a64">
+                    <propertyInstance
+                      Id="468debed-b8e3-4683-aa39-4ff5d315ba9e"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0376b480-e101-4828-b90c-1e95d59346db">
+                    <propertyInstance
+                      Id="8a99bf1d-a8d2-4c72-929e-d42512f7ec03"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cf273b62-6592-4da0-bfa1-1bab853d456c">
+                    <propertyInstance
+                      Id="636570b4-07e2-4f87-b8c3-3735652dd141"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="16185799-c98d-46d0-9819-6e27900453dc">
+                    <propertyInstance
+                      Id="a0c5d5f3-68bd-4a5b-9e36-cf45d807d680"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <enumerationMoniker
+                Id="bfe80566-bd7c-4e6b-ba43-64053b29958d"
+                LastKnownName="OverviewType"
+                LastKnownLocation="Package2_2307.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="148318bd-8ec4-410f-ab60-aa89a42f18d5"
+            name="Clear"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="bad05c5d-6d8e-4b92-8db6-72eea7f804a3"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DCalendarView Member%3DClear"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="210920ff-aadf-402e-9ac3-ccc168c0dc61"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="62a40ee8-2cab-43c6-9c2a-7ac4a907572d">
+                    <propertyInstance
+                      Id="04ad7051-81dc-4240-b5d6-18d0ad7c831e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="854f763b-696e-4adc-81ad-f8e0ebd1b343">
+                    <propertyInstance
+                      Id="b9033dc3-2216-4d87-a8fd-436b6d72c0f1"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1bea6931-c734-49f4-aa23-7bc18c6bd68d">
+                    <propertyInstance
+                      Id="33a5daac-1574-4e7a-b24a-de09c5de8513"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="19a75db7-710e-46c4-ba38-c82c7e05b059">
+                    <propertyInstance
+                      Id="1df6d51b-f069-48e9-b911-c8893b11d270"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="87f1f82f-b30b-4ff4-b11f-fc387119a8e0">
+                    <propertyInstance
+                      Id="62d950bd-6f1b-423b-a547-093d45924244"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eb6e5025-1d42-4dfd-9061-8848c3d04072">
+                    <propertyInstance
+                      Id="56bdf22d-ca8d-408f-b819-59c5d62bd386"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="ab9b3c2f-712c-4d61-9ec1-36e66d9bad36"
+            name="Hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b90d1204-b8da-4702-beec-0d453aee3922"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DCalendarView Member%3DHide"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="50cac3ff-9932-469c-ac7e-69f254218257"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4c726d5c-c240-42d8-8fbb-f96b84c3a602">
+                    <propertyInstance
+                      Id="30d15588-ed64-4a71-ae65-2186a4c4ca65"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dc6cb9c1-bdfe-4837-81b3-b30fd3bdce62">
+                    <propertyInstance
+                      Id="996a8b46-7b04-4e37-b33f-aec6d51d9505"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d2640650-6df9-4982-a1cc-123854b7cfe8">
+                    <propertyInstance
+                      Id="87527635-9f65-4d81-a04b-998d856b1fcf"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="af080772-f585-421d-a249-1806790c5297">
+                    <propertyInstance
+                      Id="5f535e6e-607a-43af-945b-e1ddcd7eeb79"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c9a1272a-94aa-46a3-90b5-3512d596ad62">
+                    <propertyInstance
+                      Id="eb5f63ff-45ae-43c7-9848-1fd187027032"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4739dc07-e676-4c9b-90d6-ed0089e19d56">
+                    <propertyInstance
+                      Id="fc6768df-5c61-4e4f-915e-a6484b305d24"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="c762fd54-d0ee-4b4d-a3f6-a0e7b50f65b3"
+            name="Show"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b3c8762b-bdc7-4eef-b328-66f9cb8c9f50"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DCalendarView Member%3DShow"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="cfb7d172-d2c1-4e79-a9e7-bee8596ac2af"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="afa34b14-c777-47e2-96f2-8ccc2442293b">
+                    <propertyInstance
+                      Id="a35c20f1-5144-4edc-9946-86d3b7a65b5f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="47c139e6-6067-4d1d-a6a1-ba13ef76ce67">
+                    <propertyInstance
+                      Id="55679c6b-4698-4fbb-a9b7-2a3f7df7ce0a"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1e650ea5-8390-4dce-a281-4060aee662da">
+                    <propertyInstance
+                      Id="a6540901-36b0-43b1-a67e-31387b17987a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="465e635f-ca33-4821-ae38-d6a01eb33abb">
+                    <propertyInstance
+                      Id="9ccb5fde-1214-4e16-aa41-17b0e49f0526"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4cebd850-0b0a-4a04-9fba-66085c429723">
+                    <propertyInstance
+                      Id="a6d69821-be4c-458f-ad18-c3061375a6c5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7e942e7a-d8e0-405a-a183-29815dc40b0e">
+                    <propertyInstance
+                      Id="a68a9f4c-e5d1-4260-97df-7a4f2f63ed2b"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="6f413d66-a4f8-452f-8142-16bff1254b3e"
+            name="changeOverviewType"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="ed2ed35f-6455-4c95-9e9a-a7d19c40f6b7"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DCalendarView Member%3D(Name%3DchangeOverviewType OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3D(Name%3DOverviewType ParentType%3DCalendarView))])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="183976b8-5ab4-41b9-89ea-d91a012e48f9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cbd31215-76ba-43fc-a5f7-0e2d56a029a3">
+                    <propertyInstance
+                      Id="caf16e32-9355-4a9c-b15b-dcfc4ba5cfba"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="98e8a776-cd74-4737-bd4e-9aeefb6149fe">
+                    <propertyInstance
+                      Id="192af464-8a2e-4a87-ba76-e41bf342b658"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e78897c9-5191-42a1-b340-406a235b1688">
+                    <propertyInstance
+                      Id="f31c3bd3-ef03-4465-95d3-610afd1e26dc"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="884dad6e-e74f-4fbd-adf7-5646805404d2">
+                    <propertyInstance
+                      Id="61fa07e2-fb3a-494b-9bc4-72f4d80cef19"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="46104606-662a-4e22-8049-5ef2d0957310">
+                    <propertyInstance
+                      Id="0ac3cfb6-8815-4b94-af26-148a2b92681e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d9d4bd40-048d-4e2b-89e8-d11387e615d3">
+                    <propertyInstance
+                      Id="fd66b4e7-064c-4f16-806e-f5424a558dfa"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="181a3db6-e26e-4044-b669-48c497100262"
+                  name="overviewType"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="55b9d34a-9241-4053-abb3-042d99fb41fc"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DCalendarView Member%3D(Name%3DchangeOverviewType OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3D(Name%3DOverviewType ParentType%3DCalendarView))]) ParameterIdentifier%3DoverviewType"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="bfe80566-bd7c-4e6b-ba43-64053b29958d"
+                      LastKnownName="OverviewType"
+                      LastKnownLocation="Package2_2307.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="01c96385-ec3c-4ee2-81a4-ae380aecaa3c"
+            name="CalendarView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a834edd6-ec7a-4357-be8f-5290cbde461d"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DCalendarView Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="34d81bc2-4036-41d6-b262-6f81a9113a33"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1fe72c9c-2559-423e-a007-7d770815af84">
+                    <propertyInstance
+                      Id="5203ce43-5327-4c37-b90a-67665add468f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="68cad414-2daf-4d3e-bbb0-25fde8577ca9">
+                    <propertyInstance
+                      Id="c32198f4-8e05-483e-9af4-0390efe63a66"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="85b7af0a-87d1-47ce-a93b-b3a14c5aa9f1">
+                    <propertyInstance
+                      Id="90baf6ba-4dc1-4354-b195-7a8a429d7629"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="419cfe69-ec09-404c-902a-305de772358a">
+                    <propertyInstance
+                      Id="c3d21a69-155f-43a8-ad5e-6d6e567ffa79"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ec760957-f3fe-4512-b69f-54f0fddb38f9">
+                    <propertyInstance
+                      Id="8163205b-3449-4fce-9ea4-6906a6437c11"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a03e9744-bc1b-4003-ada2-323a3478f5bd">
+                    <propertyInstance
+                      Id="1c363705-7361-4674-89e4-1003aeded8a3"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="a62adc03-960f-468c-8981-6ce0771aece9"
+        name="IViews"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="a41c5aa5-e844-4c68-a91c-e5b3101331ab"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DIViews"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="93b68222-0e97-48c0-8d46-d8bbde122776"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="350d3f71-84e8-44be-a4a2-b9980deb9891">
+                <propertyInstance
+                  Id="f564ac7d-2b9d-4ec2-a4b4-5df0a8bab132"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0f4df3f6-7d29-4425-b5cd-59292e8b919b">
+                <propertyInstance
+                  Id="38343699-c373-45bc-99b2-0d6b9c101598"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="880579bf-11f6-49a0-b19c-bb1d149b28f0">
+                <propertyInstance
+                  Id="41230a17-ce79-481d-8272-3b71d52c23d4"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="125b3448-ba84-413e-9810-dec31b9685a9">
+                <propertyInstance
+                  Id="4ea64a4a-7776-4e76-a627-39402ef672d9"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperations>
+          <operation
+            Id="b5639f4f-1c7d-48be-964a-2cb1c52b5347"
+            name="Clear"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="fac1d484-4da2-4a8a-ad31-e5f9ab4aada5"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DIViews Member%3DClear"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="59c68038-a653-44ef-ae07-8c16842f1c05"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="51af88ce-91cb-4b43-8f94-cf5ece60606c">
+                    <propertyInstance
+                      Id="9d2f494e-73a9-4d12-b2f4-65bad0b68acf"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8d4e2e5d-2c76-498c-91f1-4020f9476a0a">
+                    <propertyInstance
+                      Id="c0e5edf9-5d41-434f-bd47-80aef6bb19f5"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e45ba929-2c1a-48a6-bc1f-7a128179f20a">
+                    <propertyInstance
+                      Id="11ab5a81-cb8a-49b6-b087-4a87d3064ef9"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="462d639f-51ff-49d0-9cdb-028900d46e59">
+                    <propertyInstance
+                      Id="06b19a78-d339-41b4-ad66-108ae9e33c77"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7b357cad-340b-4334-8883-b3f5f0069664">
+                    <propertyInstance
+                      Id="2b373f07-a193-4e7e-af27-ef168e86e933"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c274873a-935a-423d-97ae-f2cb1be77665">
+                    <propertyInstance
+                      Id="b2ddee79-00d9-45b7-acbc-cd58f625c43e"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="186932ef-7d1a-4188-8e2a-f706c5893469"
+            name="Hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="4c8cd25a-35eb-441c-995f-22abbcb0ca10"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DIViews Member%3DHide"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0ba36374-61f8-472e-ac56-b79047fcad1a"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="55bdb239-b7b5-41cb-9026-c1a4bdb8f313">
+                    <propertyInstance
+                      Id="b6a1df1d-344e-48fe-a3f0-06d7fcbe9357"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d544595d-82e1-4121-ad1f-a395144e423a">
+                    <propertyInstance
+                      Id="cdb684cd-05f0-40aa-ac2d-ad509cec5c52"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7e897db8-a84c-4e14-a8d4-104754d3db2f">
+                    <propertyInstance
+                      Id="3cdd0413-298a-4078-b549-15889cec9ddd"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cf79d04b-8d68-45e5-b54b-9a3b00ade67c">
+                    <propertyInstance
+                      Id="bb34fc2d-e1bb-404f-8532-df1d377f36f3"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="edbab536-dfac-479f-8d2d-e5b556cb4f8f">
+                    <propertyInstance
+                      Id="a629efc9-f18a-44f2-99ca-b7a8934585a2"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bfc43f91-9909-48f8-b65d-94e654a5f04c">
+                    <propertyInstance
+                      Id="2ea514f9-2746-40ee-9640-ce4c19272d4a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="f621c011-7c63-4021-88cf-cf0eb4a09dfb"
+            name="Show"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a836fd45-06f0-4965-8422-06d1d29f3ee1"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DIViews Member%3DShow"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="da93ee67-6b6a-46c0-b9a4-6375f4164485"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4765d939-ca23-4adb-867d-cb1296ab66fa">
+                    <propertyInstance
+                      Id="e75bd47a-37da-473f-b3f4-1616b57ff27d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="83eab775-bf58-49cb-bba9-3597f4c1f3f0">
+                    <propertyInstance
+                      Id="e84c6a1a-e39a-467e-b2a1-d4555dcf74aa"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="81be6df0-f5c9-4ec7-a057-45d617df5921">
+                    <propertyInstance
+                      Id="a5ec6d3f-7a1b-4ade-a045-8011a0d48b9a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e02ecfb9-321e-491a-b031-1746fb36b97d">
+                    <propertyInstance
+                      Id="3618c02d-4407-479c-a30d-f49e692b7dd2"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6dfc7078-5ee6-4e45-b04c-d1ac9140d71d">
+                    <propertyInstance
+                      Id="1451b9e0-7dd1-4e08-9b96-9fee486432a5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ab049c85-6d89-4db4-80b6-3fa823347687">
+                    <propertyInstance
+                      Id="deaad398-f0ba-4873-ad46-8b663e149d45"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7a5cabcd-a068-4923-af92-5484faeb369b"
+        name="EventView"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="63c800ab-3cea-49e5-b37b-9f631d12ce63"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DEventView"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="097e6302-a433-4bcf-aaf9-fd631f492d07"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b0c9178e-abeb-4af6-8319-91b93e9222f8">
+                <propertyInstance
+                  Id="cc74dc18-8aa0-4338-9cc5-3dd29a2aa752"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2d074a49-4daa-41cf-bbed-f803bc21663b">
+                <propertyInstance
+                  Id="b6ff458b-910d-4ce0-a112-b7047ef59505"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f126b151-97c9-4511-ac3c-0d97ac294ec5">
+                <propertyInstance
+                  Id="f09997c5-2ba6-455a-8475-e3614239416e"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3da5e814-1bb5-4342-ac2a-5660d4b19db0">
+                <propertyInstance
+                  Id="5e0ce99e-5d17-4136-babd-105a9f10bd56"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="23225b84-785e-48b0-8df4-33bee6c46993">
+                <propertyInstance
+                  Id="88281681-7249-4a51-910e-123c40310e35"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="1740bca1-c74c-4b55-8c78-a04665a7ac1e">
+            <interfaceMoniker
+              Id="a62adc03-960f-468c-8981-6ce0771aece9"
+              LastKnownName="IViews"
+              LastKnownLocation="Package2_2307.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f2fc72a4-cab7-4554-a612-56cd4edac597"
+            name="Clear"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="cbe37841-8c91-4cb1-95fe-6421de253742"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DEventView Member%3DClear"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f569873c-07e7-4f54-9a37-dce3b7aafce3"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1bf26075-a2cb-4e26-a2d0-f0d390eb80b3">
+                    <propertyInstance
+                      Id="f6756c7a-7d9e-465d-9541-05b27614e093"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bda18ba4-b5a2-4818-8bf4-27330427c99d">
+                    <propertyInstance
+                      Id="0c1c0c71-f758-4d41-a21f-fbf3843f4638"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dd52659c-0e90-4c20-a92a-8485177f9254">
+                    <propertyInstance
+                      Id="7192793e-c83a-44b7-a568-9013c54fd907"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3a4f493a-bd3a-4952-9f38-96927ddd62f6">
+                    <propertyInstance
+                      Id="cd8ec442-d8fe-41a6-9467-165dcd839b3c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0bb0f7e3-fbe1-4c3a-8ef0-716d327f02fc">
+                    <propertyInstance
+                      Id="b307a1d9-8b84-41d8-a4e5-e91887b4808f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f3147da7-cce3-4343-9a08-abde7f864e64">
+                    <propertyInstance
+                      Id="1dae2011-daa4-4cbc-ab75-c857a7c2ba29"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="a92007b4-bc15-4866-afe8-814ca6a8382a"
+            name="Hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e26ed6e6-018d-46ff-833a-55d57a5df87f"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DEventView Member%3DHide"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a491671b-d9d9-4472-8cc1-9704fe4a5b2d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5c27055e-6a54-40d1-b8be-95718726d669">
+                    <propertyInstance
+                      Id="f8c5f1e6-085c-4160-92df-4c1ef21e3100"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ef95948c-c335-4cdd-91cb-2d067d990c10">
+                    <propertyInstance
+                      Id="7dc43e1c-d5ea-4006-b857-b20a78f659b9"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="61805ac0-a4bc-449f-908c-62a8742ab3ac">
+                    <propertyInstance
+                      Id="35e25bbc-2a18-447c-a487-047ee8a49349"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fbc1042f-39ce-4882-b420-f111637a5fd3">
+                    <propertyInstance
+                      Id="53e7fe70-4382-45f8-9cd0-543d86de6125"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="94454abc-f662-4bf4-bb63-8810aee9633a">
+                    <propertyInstance
+                      Id="edfda309-c3aa-4aad-8a66-d94c4102c2e3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d38b4e94-b6f2-4185-8325-7445dab2e2e3">
+                    <propertyInstance
+                      Id="056af8f5-7544-4865-b1b3-6abf9f52988c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="eb01c192-db8c-4378-a7cb-8988c74b73fb"
+            name="Show"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b783ed8f-2042-4db2-a368-b7bd39c26c54"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DEventView Member%3DShow"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e2077d33-2036-4097-b100-b11efcd67b10"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7f32ef04-ed21-44f4-9758-23eb7051fd00">
+                    <propertyInstance
+                      Id="e2c951c8-f232-4898-8d9c-d44ac1994316"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3360b790-95c1-475a-9cee-1116321eefce">
+                    <propertyInstance
+                      Id="c6a00436-522e-4410-bf48-0e2f5b371004"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eb065699-8b61-45a0-9cc5-65e76ec1af02">
+                    <propertyInstance
+                      Id="d0b94177-c4df-41a7-8244-07954081d57b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5c6f4fe6-eafc-4d5f-b404-ca8b5a91f95d">
+                    <propertyInstance
+                      Id="36057286-05d0-4b8d-a326-c1cfaf62e085"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="43124195-75f2-457b-ab7f-29a3c479a66b">
+                    <propertyInstance
+                      Id="f3ae66c5-f09f-42e0-9a6c-e70007da5e69"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c5365e3c-0a57-4c39-98aa-56ab6c0669f3">
+                    <propertyInstance
+                      Id="59064d53-4302-4a6c-8514-57801e53e218"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="8bea6cfc-38ca-443c-ad14-6232a8ced395"
+            name="EventView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="243a7a4f-6264-4e29-a57f-814244a50d65"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DEventView Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b56da4f4-fb10-4364-a2a7-64268372f547"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ba3eddde-7cbc-463c-8f84-679b0e8c8cdd">
+                    <propertyInstance
+                      Id="60c6344a-6747-41f3-989c-5bab25a34efb"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5d65dfb4-cadd-416d-ac3b-814ddbe5d125">
+                    <propertyInstance
+                      Id="2b463f72-cff6-4885-8841-11a226db419e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="82ec41fb-77c7-4fca-816a-b96d9553fbb2">
+                    <propertyInstance
+                      Id="2c55b45d-a2e4-4a17-9d42-b0d006f7f0c1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8b44f5c9-dc11-465b-ae1d-f8d28cc190af">
+                    <propertyInstance
+                      Id="09f89a40-1e3f-4db2-96cb-ba19be1fd280"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="925c9867-0907-4e20-b58d-3a1ba577a633">
+                    <propertyInstance
+                      Id="a0ccc724-fe25-420e-aa5c-be2dd1ba33ad"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="79e563da-154d-4c30-8226-b5f90b29fc93">
+                    <propertyInstance
+                      Id="6b7a0c16-e651-4280-b162-5d4c38640bab"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4efc8571-7674-4202-9d7c-48ea9d1b4acc"
+        name="LoginView"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="fa36428c-fd26-434e-b412-7e95329fbed3"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DLoginView"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="e7299494-9167-400c-988d-68398841b395"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a9a20887-545e-4f96-922e-134887cab3bf">
+                <propertyInstance
+                  Id="3f571162-fdf9-492b-aaa2-798c946a8002"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6cd53c95-3796-4ca0-a8d2-9e1550c4f8d5">
+                <propertyInstance
+                  Id="f3bf42c9-fdc8-46ae-9673-628c01930231"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="493f1258-639f-4571-9782-a32d54fa6c40">
+                <propertyInstance
+                  Id="8a0ebcaa-c2f8-4ca2-9db1-e5975688e7b3"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="189a139f-b1de-4ab7-a1f0-f59599c6c2b0">
+                <propertyInstance
+                  Id="2706342e-217b-41c9-a3f4-20a7f96f9307"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b5490c43-f812-45d2-b7c7-78b3ecb2f6c0">
+                <propertyInstance
+                  Id="5af586a5-ca93-4264-a941-2dc95294f704"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="b043339f-ec34-4e53-8787-bc4532a16e60">
+            <interfaceMoniker
+              Id="a62adc03-960f-468c-8981-6ce0771aece9"
+              LastKnownName="IViews"
+              LastKnownLocation="Package2_2307.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="3781ef6a-6ec1-4eef-8ffe-058b33bd1486"
+            name="Clear"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="c067f03b-34f3-4ad8-9889-56dc7df2d1d0"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DLoginView Member%3DClear"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e39e7504-6ad9-46ee-ace1-9e801c5caaa8"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0b58d332-841b-45a9-b902-dab1a6870a6d">
+                    <propertyInstance
+                      Id="eb29baa4-1709-45a7-ae88-861c79e2293a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a4d8e29-1bb3-4b03-9fec-7b3a34419a49">
+                    <propertyInstance
+                      Id="76b318ce-b22b-4c1e-89ef-f0a42e1a3ea2"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="43717db1-d279-450a-940f-5f92365d22a7">
+                    <propertyInstance
+                      Id="e80ad1a0-6b5d-4678-b252-5faaff3cf508"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f41c8c1a-0451-46e6-9b31-14df24238264">
+                    <propertyInstance
+                      Id="640661d1-b206-4433-90d1-e34960da773c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="46cbde36-d127-4989-8342-8f55d4f83483">
+                    <propertyInstance
+                      Id="1687e44b-7e8c-4234-ab36-942fc2fdaa66"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9c48677a-8778-48bd-9a5e-359713eed2fe">
+                    <propertyInstance
+                      Id="1b60c009-45b5-4c83-b602-b40120b18211"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="5e8e0d23-d006-48c5-a154-776f6c7a1c7b"
+            name="Hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="7d4362de-5620-49b7-8aab-16d5ff01111f"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DLoginView Member%3DHide"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="afd3c873-16a0-4fa2-8919-67e454f02a20"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d8ade635-a5e0-4748-89f3-097680efdd2a">
+                    <propertyInstance
+                      Id="4a02c8fc-d7d0-4d55-b55c-927a0d843389"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="13c017fe-20b6-459b-9f06-5ed81caa3dc7">
+                    <propertyInstance
+                      Id="46378c30-6251-457d-8d55-0e4a5d149893"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="076b771e-98db-43df-a0a0-66412c3fd880">
+                    <propertyInstance
+                      Id="09c8dab6-09bc-4f2a-adca-0099d46eb6ae"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4fcf434c-5334-4f29-8dcb-bcd22597f045">
+                    <propertyInstance
+                      Id="4ece8964-1aa8-407f-b7a7-af3914e3e625"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2b591852-9c1b-48ab-980d-10653908a0c4">
+                    <propertyInstance
+                      Id="b91a90c9-a35e-4fc7-8869-0f4bec7a9d7b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd8bc4a7-7a6f-406c-a732-9ad22ed440d3">
+                    <propertyInstance
+                      Id="445bc67d-5340-4666-b7bd-91bcd792d7c9"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="4e601e70-7a3a-4835-b85c-529fd0821fc4"
+            name="Show"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="963300b7-5cab-4c73-a917-8782fb821a60"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DLoginView Member%3DShow"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8091fcb4-928f-4175-9553-2d6e78bc9a2f"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a41bae2e-fe98-4db3-8d72-c9b8d83f8ea0">
+                    <propertyInstance
+                      Id="de1a9b4c-6337-4a38-825d-a3c9d451594d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5da6c7dc-bac3-4650-9629-9c31a3c58cd6">
+                    <propertyInstance
+                      Id="2ec74b73-38e3-4a37-b40d-c5cfc5c8eb00"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a98e9d39-f878-4001-bd67-458f068c2f8c">
+                    <propertyInstance
+                      Id="7586f3e2-0e37-4df5-ba9c-efa15c06d230"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d23245dc-3361-4361-baa9-dd6c4fbe50fb">
+                    <propertyInstance
+                      Id="3b934b09-5d33-4b5d-aa5d-e04b939b4927"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="460ed9fc-b112-4569-9fec-3ba399da4036">
+                    <propertyInstance
+                      Id="38940b65-5a7c-421e-b7e4-bb186ef6301a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e98317b9-69b1-402b-af63-c7030de744de">
+                    <propertyInstance
+                      Id="896ad3a4-245f-4217-b342-20da92af618a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="43a4227a-c6d2-4439-9a00-c8c7ca23aad1"
+            name="okButton"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="50dcfb1c-b077-4175-b893-c7dc24e22a99"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DLoginView Member%3DokButton"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="058baf05-f3bf-4913-96c6-2521ce7ca50c"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0644d93d-f59b-41fb-9c59-53931cf9f461">
+                    <propertyInstance
+                      Id="10ee7c6f-7819-4bb3-bf52-87fb15e1d472"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1ca98eb4-93e6-4a99-b98f-d4007b3c7f2a">
+                    <propertyInstance
+                      Id="d8b1896e-5cf1-4764-9cd4-fb50759c6699"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d7c73ca6-36fd-4377-956e-09d2ea79c332">
+                    <propertyInstance
+                      Id="32d312ec-64ac-4505-9d2c-bc7a90fe70b9"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="69425edf-1cba-4a3e-a47d-f4732ba0885f">
+                    <propertyInstance
+                      Id="7533b2a2-86b7-4095-9897-0f21112ab06a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="55f1aa4a-4a9f-4987-a9dd-3c93021a09e1">
+                    <propertyInstance
+                      Id="f96f83d2-8529-4c9d-9f78-e5dfe35e93f6"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="34fb5537-1b7a-447e-b7e6-cfdb3c4d7033">
+                    <propertyInstance
+                      Id="ae095b2e-2176-4a4b-b4aa-460dd72e9e71"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="c6ab0a3f-c3fc-41d6-9d88-5bdd1195b450"
+            name="LoginView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="665e9cf8-ffac-4143-8ec1-c4cc21cb3fdb"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DLoginView Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1bafecaf-5c33-4096-82fc-665a2bd53fe8"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4371c61c-00be-42b4-bf6a-b3aca38ef9cb">
+                    <propertyInstance
+                      Id="19e9c2ed-e09e-4d7a-8289-b8b6dc1facd5"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="162d68ba-708a-4af6-b250-f53d56c812d6">
+                    <propertyInstance
+                      Id="b57a4156-2fb2-4000-93ac-188f35e58a82"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e175e2f2-e250-497d-b0f8-469dbe22de74">
+                    <propertyInstance
+                      Id="dbfe0cc2-59a3-4a2f-a15e-891e4a1f1fad"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0c9ca9a9-0270-4798-bd50-cfa1c3d59ccf">
+                    <propertyInstance
+                      Id="a760e151-4822-4406-bcbe-8bbe43af81f7"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b83d6d52-3713-43c2-850e-9d739e2d09b1">
+                    <propertyInstance
+                      Id="55ed0226-4bfe-4236-badf-0f11497ca5c0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="22fd4f84-d7f6-4021-a193-97f0b57e1f86">
+                    <propertyInstance
+                      Id="b28f9a9f-9ea6-4931-ab19-0f3bb785352a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6727d0dd-cb0f-44c5-8760-010b1d7e0522"
+        name="MainView"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="f96599fa-157b-4f8b-82e0-c9a1127565f6"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DMainView"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="4a218eec-51dd-481c-a77b-b38eee176db2"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a9f060b3-7c26-4c1e-8193-1db345532c93">
+                <propertyInstance
+                  Id="66e1cac0-d313-41db-909e-799bf080e3b0"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ccb28984-3542-44d1-8401-ac6f9ba2de42">
+                <propertyInstance
+                  Id="af70e9fa-bdfb-47b7-a388-8db5acec376f"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5b48a587-52da-4676-aa44-bcd921445e70">
+                <propertyInstance
+                  Id="2b222d7f-1f78-4370-be86-e3eee80596a1"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c95b3486-d452-440f-aad4-63ac24b87d3a">
+                <propertyInstance
+                  Id="8ed89dce-a7e0-476d-9fbd-ed6354dab5e8"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7055aeca-dc17-4245-a6a2-5392c10fa007">
+                <propertyInstance
+                  Id="ac524526-a305-4006-8fe4-37e4692dda1c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="f2f21d8e-0181-48a1-8c98-491a6e3b4773">
+            <interfaceMoniker
+              Id="a62adc03-960f-468c-8981-6ce0771aece9"
+              LastKnownName="IViews"
+              LastKnownLocation="Package2_2307.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="95b3061a-e90f-4e38-ab62-19101e978b80"
+            name="_calendarView"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="d7d47921-8dc1-4a31-b232-cf56d9f5f50c"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DMainView Member%3D_calendarView"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="cb9e31ac-0526-4edb-ab0b-29f88866da2d"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e1f55449-d4b0-42b7-b87a-9351ef9866f6">
+                    <propertyInstance
+                      Id="dc804b9f-68de-4064-bb3c-9e8cc3a72b67"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="76685ec9-356b-47e1-a617-fda90c2e2824">
+                    <propertyInstance
+                      Id="edde9243-67fc-4264-8760-87ab4f4814d1"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="614cf537-2712-492b-960f-c116c5d109da">
+                    <propertyInstance
+                      Id="54f438b5-0709-40ce-9f08-8a8b2b62201d"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2cdc7594-04f1-42bf-8fa9-adab6a891673">
+                    <propertyInstance
+                      Id="900fd4d1-08f6-452d-907e-ca71364c65c7"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5f20a458-8872-466e-8e7b-99d992210027">
+                    <propertyInstance
+                      Id="a5c58bff-9208-4fab-9e40-ecc5a4a535f7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="119c9e5f-e7c1-4b24-935a-b8328be3f055"
+                LastKnownName="CalendarView"
+                LastKnownLocation="Package2_2307.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="dfc79120-3262-4027-b733-c2e2e422c206"
+            name="Clear"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="2c53917e-b565-4043-8b3b-8f0148db926a"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DMainView Member%3DClear"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="318e4953-556b-46e5-abe1-40a737ca88b1"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c55015b8-00e1-4613-8548-d84220b749ba">
+                    <propertyInstance
+                      Id="d9d34325-223a-4b4e-997d-fdb4c44d3352"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="be07a0de-74f7-4c52-bc3a-0442a949d987">
+                    <propertyInstance
+                      Id="b2a11916-e1b0-4fa7-b1dd-5fbb01f2c0b3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="77912a69-d75f-4e55-bf8f-183e5af1dbe7">
+                    <propertyInstance
+                      Id="1ae5f573-3226-48ba-9e7c-0fb6a2e2bf2a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8d2e70a1-b852-41a9-835f-743bdff6bacc">
+                    <propertyInstance
+                      Id="c7e93288-dd4d-4652-a896-49dc1af08863"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b72cd446-050f-40fb-a4f6-f2396c7a9d92">
+                    <propertyInstance
+                      Id="43838db8-01d8-4ffc-8678-1911f3429c89"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="49bf24b5-b3e6-41bd-abfd-99ad8548816d">
+                    <propertyInstance
+                      Id="2030a922-179b-4da9-bb09-42fc302e1a91"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="62b33fa1-11d7-442a-bc28-c404c6e3a361"
+            name="Hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="32aa6340-019d-44b5-bf8f-a20fdcff2ae1"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DMainView Member%3DHide"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8014ebc6-f854-4ce9-8fec-82ab4f59c8ca"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7660e0b4-7add-40b1-bd55-95de067f8116">
+                    <propertyInstance
+                      Id="9171ed1f-fb9d-4861-8598-c0c884a70653"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="be4ed534-af6d-4039-a7ba-95b7a0163e16">
+                    <propertyInstance
+                      Id="1dedad17-0f5b-48c2-b9ea-fce88cfecbca"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a8e11cd5-cc51-4a40-98eb-4c5cfe6045c8">
+                    <propertyInstance
+                      Id="a2b08deb-0fe3-48af-b6ba-d48f2fdf4691"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="674731e6-7136-4b74-96b0-a53396a136f8">
+                    <propertyInstance
+                      Id="f05e3403-a36c-4efc-96af-a2782fa270e1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6ea795e6-8d7c-4cea-83e9-d0160fdd6bd2">
+                    <propertyInstance
+                      Id="a82a5e31-68cc-4741-9d1e-e004d8f757df"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bb214eed-b4fa-469e-a4bb-956d2e4a283d">
+                    <propertyInstance
+                      Id="ac93d1e8-e486-410c-956c-9c5689b6561f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="cba53fda-dd40-4e27-93c5-5a119395b564"
+            name="Show"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="86378c70-799f-4d6b-b17d-f2eb2c5c35da"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DMainView Member%3DShow"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5a179a02-1c8b-4f16-b09d-9d87b9c766b5"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="964b4448-d88d-45fd-80bf-0881caeaa797">
+                    <propertyInstance
+                      Id="9c0410e1-9c3f-4b7e-8679-8c7b65fa17ef"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd27acaf-4f79-426f-8c5d-90102baf204b">
+                    <propertyInstance
+                      Id="06642410-77d3-4ff3-aaba-13e1caf08482"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aadf86b7-3be2-4a31-bdd7-4a6cc2a6ea76">
+                    <propertyInstance
+                      Id="5a39e405-2631-4db2-9e5e-5a2f4682c089"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="057e2309-62c0-47b0-bcbe-fcfa0bd4accb">
+                    <propertyInstance
+                      Id="524a4eff-7778-46af-8a6f-c4fd6b4b58e5"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f6f491f0-d589-4c2a-88e5-17527f65d20f">
+                    <propertyInstance
+                      Id="ebab240b-e66b-4972-ad19-222ed284a925"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f80d371f-64b5-4046-8662-c7fddb94f87a">
+                    <propertyInstance
+                      Id="06e77e7e-f48d-444a-b60b-9a5e63a1229e"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="a1521463-6df2-4888-8896-a4a1d3cec17b"
+            name="MainView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="d4a23f8f-d3b4-48a5-86c7-c9f526cbbb3b"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DMainView Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DCalendarView)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ad393322-4aa7-4ea9-a1dd-57f61371813f"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a959c804-0da1-48a3-b5bf-e6120b5dea2b">
+                    <propertyInstance
+                      Id="0bdf5ddf-7647-4463-b8d8-79bab1449c7f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="73f3d18f-0aef-4827-934f-d2780822c0e8">
+                    <propertyInstance
+                      Id="c652d94d-8d3c-4b3a-a3d7-f516f23675bf"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5655fd9a-c697-4401-9d80-95a080d9c619">
+                    <propertyInstance
+                      Id="ef797e25-5bdc-46f3-a6dd-01f2baa6c01d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="84f31c69-95d8-4038-845f-d8371bc9bf93">
+                    <propertyInstance
+                      Id="e5ecdefe-b69e-4f59-b4e2-bcf37d3be9a1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0b5fe119-9407-4a89-b86c-6317245f9c3c">
+                    <propertyInstance
+                      Id="95957885-f017-4016-a5da-778e1a397fc5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0c1c15aa-f132-44b7-99a2-950f81def350">
+                    <propertyInstance
+                      Id="11955aac-94f8-459f-8294-fe381e8e613c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="35e8812e-f12e-4f9e-8a2a-07919a495e35"
+                  name="calendarView"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="9d6d1d58-9593-40bf-847e-bdeea8956c95"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DMainView Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DCalendarView)]) ParameterIdentifier%3DcalendarView"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="119c9e5f-e7c1-4b24-935a-b8328be3f055"
+                      LastKnownName="CalendarView"
+                      LastKnownLocation="Package2_2307.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9867b7d2-0819-4017-a7c3-90463f75356c"
+        name="NotificationView"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="5d5d73ce-af4a-40b5-a153-f6dfcb3a8ab4"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DNotificationView"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="a92706b8-5fb8-4700-9fb6-e3fbbc97a36d"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="67289dfc-9f70-4e3b-b513-a6e7cf2872b0">
+                <propertyInstance
+                  Id="06da1fcd-6e6f-4353-8a59-abe9e29a7f6d"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dab81fd1-8916-44bc-ad5b-0963053909e8">
+                <propertyInstance
+                  Id="8081b61d-a0ee-4a96-8d2e-ab5df5987049"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4951997b-709d-4f0c-8f06-0276191cd326">
+                <propertyInstance
+                  Id="a82a891a-b3cf-428e-9473-4839dddbfd56"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c3033be4-ddf5-4293-bece-c8ad2d9e1564">
+                <propertyInstance
+                  Id="18220f5b-7dda-4bd9-9a39-11a27ceab6ef"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="697e3a1b-2eaf-4874-9c5b-8089c6e292c7">
+                <propertyInstance
+                  Id="a9beed88-d962-4c56-8059-c14b59f0f53f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="e611a4eb-87d1-4ff5-99f4-84cc4f1bf3d4">
+            <interfaceMoniker
+              Id="a62adc03-960f-468c-8981-6ce0771aece9"
+              LastKnownName="IViews"
+              LastKnownLocation="Package2_2307.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="e60ef472-2964-411d-ab8f-0b1c1841e954"
+            name="Clear"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="41b479b5-e6f4-4bb1-a4b9-a52927dcf732"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DNotificationView Member%3DClear"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5611e6a1-dff4-4091-aa6a-a9d2770d3a88"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c2b02b06-9b26-452f-8a64-0b32e2490328">
+                    <propertyInstance
+                      Id="a6362903-efa9-4644-bbf6-06056edc5157"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d273ac3c-cd13-46ee-9fbc-cdf828b785a2">
+                    <propertyInstance
+                      Id="1750c39e-a913-4cd6-b7f6-0eda3adfc23c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4e604c1c-63c6-4f73-8a80-b51bfad3246d">
+                    <propertyInstance
+                      Id="e12b9c9a-8720-4636-bca4-2c41079e9e0c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9c52c07b-8f7e-4ab0-ae09-d0c4a3f7b1ce">
+                    <propertyInstance
+                      Id="43c6db4e-f558-4128-b999-cb4aac248451"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a91818c3-c792-4155-9a6f-046a4ad41e5d">
+                    <propertyInstance
+                      Id="934381a9-d63e-4a5b-b9e3-3f9e0a58d9b5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="25868a25-36ec-4232-a4b1-38db0513e745">
+                    <propertyInstance
+                      Id="6a4695db-9d26-4b9e-b00d-0c04c80c41c5"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="432b31f8-0d74-413b-86aa-258b7ee3f994"
+            name="Hide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="73ab723b-e9ab-4bba-ba30-12b92d9a65e3"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DNotificationView Member%3DHide"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="455d71c7-4b75-42cd-a7f6-895f55f56bd4"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="805b805f-5c31-4540-9559-4e70d53160dc">
+                    <propertyInstance
+                      Id="830cd16c-c86f-4af9-a0ee-191cba904690"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d32b48ac-edd1-4495-a3eb-955449cdc4c2">
+                    <propertyInstance
+                      Id="1a240fe6-ac68-4420-a2ab-d7f5f7aab2f3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3b1b09c3-2f73-4449-9bdb-ca9af5a1b400">
+                    <propertyInstance
+                      Id="b7c2c5f3-6496-414b-b87f-848f0a246b4c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b70fe89e-4fb0-4674-a772-c75187147e3b">
+                    <propertyInstance
+                      Id="a99cf900-f39a-4b95-87e5-d27644c3962c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="af6c4f63-4ce9-403e-bfb5-c6c10dd001a0">
+                    <propertyInstance
+                      Id="d487c4bb-1b5f-4e48-a5ab-595d920144a2"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d59fe189-6f4e-4ec1-a57c-fbc4dcfd9581">
+                    <propertyInstance
+                      Id="e090c753-59ba-4821-93a3-63a6cff4bcc5"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="166fcd4b-6b30-4859-b6a0-bbdf76c88c62"
+            name="Show"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="44a7fea5-4bdc-4bdd-a4c6-847324310c54"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DNotificationView Member%3DShow"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b1f51b0d-4c52-4270-ba4d-080b91448ee6"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a9619ec1-bd2c-4acc-9ae0-434427a81770">
+                    <propertyInstance
+                      Id="74442bcf-19d9-4c7b-a18d-b1412f2a765d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7f77fcc1-cf59-434c-b86f-f1755091f855">
+                    <propertyInstance
+                      Id="669fb695-de35-4629-9c4b-37687628c139"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3fd3095c-7c0d-4264-af53-8974bf08e466">
+                    <propertyInstance
+                      Id="9254fefe-f8fd-462c-8f35-402514025542"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a9852a2f-6780-473f-b054-94415c122d2c">
+                    <propertyInstance
+                      Id="a7849cad-efb0-4eb1-bdb8-b0819b27ddf4"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f8ed91ea-529c-4c62-aec5-876336aee354">
+                    <propertyInstance
+                      Id="5f990dbe-0c69-41a3-89b5-996fb56a0f34"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e8effb10-fffd-4a37-a508-b297d17ee067">
+                    <propertyInstance
+                      Id="dc6b3cfb-4399-4974-9fd4-bf764a914fdb"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="ec7fa5e8-fc0c-41a9-8df3-1bdaeb4fcb31"
+            name="NotificationView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="64ff7344-0c39-4244-9a63-27a262bc9303"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FE:%2FUser (E)%2FProgramming (E)%2FBDSA-Exercises%2FCalendarSystem%2FCalendarSystem%2Fbin%2FDebug%2FCalendarSystem.exe&quot; Namespace%3DCalendarSystem.View Type%3DNotificationView Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b2fc66b6-04fa-4189-a363-cb30f1b1f114"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f6971aa-d4b9-4f78-95f0-ee1a14ca12ba">
+                    <propertyInstance
+                      Id="35d60f0f-76d7-40e2-8d04-3733427a28bc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="02e0b2be-b7e9-463b-a75b-d73a825110d1">
+                    <propertyInstance
+                      Id="bba16e0d-799d-4ff4-b4f4-62a6e62c9b1f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4c6951de-dd6f-4e10-809d-3aa9217de3e0">
+                    <propertyInstance
+                      Id="60ab01ec-7a42-484c-9878-97b2d152b13f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="21b74028-45dd-4379-bd48-9fe3c8a5f1be">
+                    <propertyInstance
+                      Id="fa2c0353-3877-417c-9d33-87eca051260e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="10717546-0e47-4f6f-8a0d-44666147cd14">
+                    <propertyInstance
+                      Id="8e4a407e-85c9-4074-9e99-fe8ec83a5f43"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8b4cf285-6469-4004-8f11-d343d0b4cca9">
+                    <propertyInstance
+                      Id="0c4a93ff-6d76-4e83-9222-56306d8725bc"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
