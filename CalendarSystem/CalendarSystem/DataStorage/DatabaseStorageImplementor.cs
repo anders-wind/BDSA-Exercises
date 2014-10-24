@@ -5,7 +5,6 @@ using CalendarSystem.Model;
 
 namespace CalendarSystem.DataStorage
 {
-    //TODO the code implementation of pre post conditions is in this class document
     /// <summary>
     /// A storage class which implements the IStorage interface.
     /// The class is meant to have a connection to a database where events will be added when they are created and put in the local Calendar class.

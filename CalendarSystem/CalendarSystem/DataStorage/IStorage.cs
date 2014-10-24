@@ -14,7 +14,7 @@ namespace CalendarSystem.DataStorage
     /// Events can never be of value null
     /// <para> @inv IEvent != null </para>
     /// Events will always take place on a valid date
-    /// <para> @inv (1990,1,1) &ls;= dateTime &gt;= (2100,1,1)  </para>
+    /// <para> @inv (1990,1,1) &lt;= dateTime &gt;= (2100,1,1)  </para>
     /// </summary>
     interface IStorage
     {
