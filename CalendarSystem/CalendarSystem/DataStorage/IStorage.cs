@@ -28,14 +28,14 @@ namespace CalendarSystem.DataStorage
         /// <param name="userName"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        void loginAuthentication(string userName, string password);
+        void LoginAuthentication(string userName, string password);
 
         // TODO sdd the post and pre here DONE       
         /// <summary>
         /// Save an event to the storage
         /// <para>@pre eventToSave != null </para>
         /// <para>@pre GetEvent(eventToSave.ID) == null </para>
-        /// <para>@pre eventToSave.ID &lt; 0 </para>
+        /// <para>@pre eventToSave.ID &gt; 0 </para>
         /// <para>@post GetAllEvents().Count == self@pre.GetAllEvents().Count + 1</para>
         /// <para>@post GetEvent(eventToSave.ID) == eventToSave </para>
         /// </summary>
@@ -47,7 +47,7 @@ namespace CalendarSystem.DataStorage
         /// Update an event to the storage
         /// <para> @pre eventToUpdate != null </para>
         /// <para> @pre GetEvent(eventToUpdate.ID) != null </para> 
-        /// <para> @post getAllEvents().Count == self@pre.GetAllEvents().Count</para>
+        /// <para> @post getAllEvents().Count() == self@pre.GetAllEvents().Count</para>
         /// <para> @post GetEvent(eventToUpdate.ID) == eventToUpdate</para>
         /// </summary>
         /// <param name="eventToUpdate"></param>
@@ -111,7 +111,7 @@ namespace CalendarSystem.DataStorage
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns>true if they match, false otherwise</returns>
-        bool match(string username, string password);
+        bool Match(string username, string password);
 
         /// <summary>
         /// Checks if a username exists in the storage
@@ -119,7 +119,7 @@ namespace CalendarSystem.DataStorage
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns>true if it exists, false otherwise</returns>
-        bool exists(string username);
+        bool Exists(string username);
 
         /// <summary>
         /// Checks if the events belong to the user.

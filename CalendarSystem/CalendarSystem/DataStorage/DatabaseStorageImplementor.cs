@@ -17,11 +17,11 @@ namespace CalendarSystem.DataStorage
         private string _password;
         private Calendar _calendar;
 
-        public void loginAuthentication(string userName, string password)
+        public void LoginAuthentication(string userName, string password)
         {
             if(userName == null || password == null) throw new ArgumentNullException();
-            if(exists(userName) != true) throw new UserDoesNotExistException();
-            if(match(userName,password) != true) throw new UsernamePasswordMismatchException();
+            if(Exists(userName) != true) throw new UserDoesNotExistException();
+            if(Match(userName,password) != true) throw new UsernamePasswordMismatchException();
 
             _username = userName;
             _password = password;
@@ -107,12 +107,12 @@ namespace CalendarSystem.DataStorage
             throw new NotImplementedException();
         }
 
-        public bool match(string username, string password)
+        public bool Match(string username, string password)
         {
             throw new NotImplementedException();
         }
 
-        public bool exists(string username)
+        public bool Exists(string username)
         {
             throw new NotImplementedException();
         }

@@ -12,7 +12,7 @@ namespace CalendarSystem.DataStorage
         // can override the methods neccesary.
         public override void LoginAuthentication(string userName, string password)
         {
-            Storage.loginAuthentication(userName, password);
+            Storage.LoginAuthentication(userName, password);
         }
 
         public override void SaveEvent(IEvent eventToSave)

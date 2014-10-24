@@ -11,7 +11,7 @@ namespace CalendarSystem.DataStorage
     class LocalStorageImplementor : IStorage
     {
 
-        public void loginAuthentication(string userName, string password)
+        public void LoginAuthentication(string userName, string password)
         {
             throw new NotImplementedException();
         }
@@ -56,12 +56,12 @@ namespace CalendarSystem.DataStorage
             throw new NotImplementedException();
         }
 
-        public bool match(string username, string password)
+        public bool Match(string username, string password)
         {
             throw new NotImplementedException();
         }
 
-        public bool exists(string username)
+        public bool Exists(string username)
         {
             throw new NotImplementedException();
         }

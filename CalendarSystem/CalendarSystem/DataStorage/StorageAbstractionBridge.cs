@@ -14,7 +14,7 @@ namespace CalendarSystem.DataStorage
 
         public virtual void LoginAuthentication(string userName, string password)
         {
-            Storage.loginAuthentication(userName,password);
+            Storage.LoginAuthentication(userName,password);
         }
 
         public virtual void SaveEvent(IEvent eventToSave)

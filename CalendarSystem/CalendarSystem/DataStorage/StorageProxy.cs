@@ -20,9 +20,9 @@ namespace CalendarSystem.DataStorage
         {
             _trueStorage = trueStorage;
         }
-        public void loginAuthentication(string userName, string password)
+        public void LoginAuthentication(string userName, string password)
         {
-            _trueStorage.loginAuthentication(userName,password);
+            _trueStorage.LoginAuthentication(userName,password);
         }
 
         public void SaveEvent(IEvent eventToSave)
@@ -83,12 +83,12 @@ namespace CalendarSystem.DataStorage
             throw new NotImplementedException();
         }
 
-        public bool match(string username, string password)
+        public bool Match(string username, string password)
         {
             throw new NotImplementedException();
         }
 
-        public bool exists(string username)
+        public bool Exists(string username)
         {
             throw new NotImplementedException();
         }

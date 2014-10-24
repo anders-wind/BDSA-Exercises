@@ -1,21 +1,73 @@
-\section{Invariants}
-
+\section{Invariants and pre- \& post-conditions}
+\subsection{Invariants}
 \textbf{Event\\}
-context Event inv:
+context Event inv:\\
 DateTime > (1990,1,1) \&\& DateTime < (2100,1,1)\\\\
-context Event inv:
+context Event inv:\\
 this.ID < storage.MaxValue(ID)\\\\
-context Event inv:
+context Event inv:\\
 this.ID > -1\\\\
 \textbf{INotification\\}
-context INotification inv:
+context INotification inv:\\
 DateTime > (1990,1,1) \&\& DateTime < (2100,1,1)\\\\
-context INotification inv:
+context INotification inv:\\
 DateTime.now > _date == IsInAlarmState\\\\
 \textbf{IStorage\\}
-context IStorage inv:
+context IStorage inv:\\
 GetAllEvents().Count() < GetMaxID()\\\\
-context IStorage inv:
+context IStorage inv:\\
 EventsBelongTo(events, userName)\\\\
-context IStorage inv:
+context IStorage inv:\\
 DateTime > (1990,1,1) \&\& DateTime < (2100,1,1)
+
+\subsection{Pre- \& Post-conditions}
+\textbf{IStorage\\}
+context IStorage pre:\\
+userName != null\\\\
+context IStorage pre:\\
+password != null\\\\
+context IStorage::LoginAuthentication(u: userName, p: password) pre:\\
+match(u, p)\\\\
+context IStorage::LoginAuthentication(u: userName, p: password)pre:\\
+exists(u)\\\\\\
+context IStorage::SaveEvent(e: eventToSave) pre:\\
+eventToSave != null\\\\
+context IStorage::SaveEvent(e: eventToSave) pre:\\
+GetEvent(e.ID) == null\\\\
+context IStorage::SaveEvent(e: eventToSave) pre:\\
+e.ID > 0\\\\
+context IStorage::SaveEvent(e: eventToSave) post:\\
+GetAllEvents().Count() == self@pre.getAllEvents().Count() + 1\\\\
+context IStorage::SaveEvent(e: eventToSave) post:\\
+GetEvent(e.ID) == e\\\\\\
+context IStorage::UpdateEvent(e: eventToUpdate) pre:\\
+e != null\\\\
+context IStorage::UpdateEvent(e: eventToUpdate) pre:\\
+GetEvent(e.ID) != null\\\\
+context IStorage::UpdateEvent(e: eventToUpdate) post:\\
+GetAllEvents().Count() == self@pre.GetAllEvents().Count()\\\\
+context IStorage::UpdateEvent(e: eventToUpdate) post:\\
+GetEvent(e.ID) == e\\\\\\
+context IStorage::DeleteEvent(i: ID) pre:\\
+GetEvent(i) != null\\\\
+context IStorage::DeleteEvent(i: ID) pre:\\
+i > -1\\\\
+context IStorage::DeleteEvent(i: ID) post:\\
+GetEvent(i) == null\\\\
+context IStorage::DeleteEvent(i: ID) post:\\
+getAllEvents().Count() == self@pre.GetAllEvents.Count() - 1\\\\\\
+context IStorage::GetEventsBetweenDates(b: beginDateTime, e: endDateTime) pre:\\
+b < e\\\\
+context IStorage::GetEventsBetweenDates(b: beginDateTime, e: endDateTime) pre:\\
+b > new Date(1900,1,1)\\\\
+context IStorage::GetEventsBetweenDates(b: beginDateTime, e: endDateTime) pre:\\
+e > new Date(1900,1,1)\\\\
+context IStorage::GetEventsBetweenDates(b: beginDateTime, e: endDateTime) pre:\\
+b < new Date(2100,1,1)\\\\
+context IStorage::GetEventsBetweenDates(b: beginDateTime, e: endDateTime) pre:\\
+e < new Date(2100,1,1)\\\\
+context IStorage::GetEventsBetweenDates(b: beginDateTime, e: endDateTime) post:\\
+return.TrueForAll(e => e.\_date.Value >= beginDateTime \&\& e.\_date.Value <= endDateTime)\\\\
+context IStorage::GetEventsBetweenDates(b: beginDateTime, e: endDateTime) post:\\
+return != null
+\newpage
