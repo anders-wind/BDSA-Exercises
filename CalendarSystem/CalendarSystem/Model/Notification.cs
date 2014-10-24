@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace CalendarSystem.Model
 {
@@ -29,7 +30,8 @@ namespace CalendarSystem.Model
 
         private void checkInvariants()
         {
-            
+            if (_date < new DateTime(1900, 1, 1) || _date > new DateTime(2100, 1, 1)) throw new InvalidDataException();
+            if (DateTime.Now > _date != IsInAlarmState()) throw new Exception();
         }
 
         // getters og setters for date, startTime, endTime, nd (notification description) og nt (notification tag)

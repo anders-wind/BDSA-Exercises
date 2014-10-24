@@ -10,8 +10,8 @@ namespace CalendarSystem.Model
     /// <summary>
     /// Interface for objects of type notification
     /// Invariants:
-    /// Notifications will always have a date
-    /// <para> @inv _date != null </para>
+    /// Notifications will always have a date between year 1900 and 2100
+    /// <para> @inv (1990,1,1) &lt;= date &gt;= (2100,1,1)  </para>
     /// IsInAlarmState must always be true if the current time is greater than the time set for the notification
     /// <para> @inv DateTime.Now &gt; _date == IsInAlarmState </para>
     /// </summary>
