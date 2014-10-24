@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
 namespace CalendarSystem.Model
@@ -26,6 +29,10 @@ namespace CalendarSystem.Model
             _description = description;
             _notification = notification;
             _ID = ID;
+            var list = new List<Event>();
+            var beginDate = new DateTime(2000,1,1);
+            var endDate = new DateTime(2100, 1, 1);
+            list.TrueForAll(e=>e._date.Value > beginDate && e._date.Value < endDate);
         }
 
         // getters og setters for _date, startTime, endTime, _description (event description) og tag
