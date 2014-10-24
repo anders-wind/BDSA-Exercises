@@ -39,13 +39,12 @@ namespace CalendarSystem.DataStorage
             if(eventToSave == null) throw new ArgumentNullException();
             if(GetEvent(eventToSave._ID) != null) throw new EventAlreadyExistsException();
             if (eventToSave._ID < 0) throw new FaultyIDException();
+            var beforeEventsCount = GetAllEvents().Count;
 
             _calendar.createCalenderEntry(eventToSave);
             // upload
 
-            /// <para>@post GetAllEvents().Count == self@pre.GetAllEvents().Count + 1</para>
-            /// <para>@post GetEvent(eventToSave.ID) == eventToSave </para>
-            
+            if (beforeEventsCount + 1 != GetAllEvents().Count || GetEvent(eventToSave._ID) != eventToSave) throw new StorageFailedToSaveEventException();
         }
 
         public void UpdateEvent(IEvent eventToUpdate)
