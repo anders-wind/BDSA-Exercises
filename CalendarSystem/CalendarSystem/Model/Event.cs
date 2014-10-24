@@ -8,14 +8,9 @@ namespace CalendarSystem.Model
 {
     /// <summary>
     /// The event class implements the IEvent interface and represents a period of time at a given time, with a couple of other fields.
-    /// 
-    /// Invariants:
-    /// The event ID must be lower than max value of ID in the database.
-    /// Invariant: this.ID < storage.MaxValue(ID)
-    ///
-    /// The event ID must be higher than the previous event put into the database.
-    /// Invariant: this.ID > -1
-    /// 
+    /// <para> @inv this.ID < storage.MaxValue(ID) </para>
+    /// <para> @inv this.ID > -1 </para>
+    /// TODO Invariants made for this class
     /// </summary>
     public class Event : IEvent
     {
