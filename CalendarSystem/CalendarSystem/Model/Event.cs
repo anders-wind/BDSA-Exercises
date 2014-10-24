@@ -8,9 +8,9 @@ namespace CalendarSystem.Model
 {
     /// <summary>
     /// The event class implements the IEvent interface and represents a period of time at a given time, with a couple of other fields.
-    /// Invariants:
-    /// Events will always take place on a valid date
-    /// <para> @inv (1990,1,1) &lt;= dateTime &gt;= (2100,1,1)  </para>
+    /// <para> @inv this.ID < storage.MaxValue(ID) </para>
+    /// <para> @inv this.ID > -1 </para>
+    /// TODO Invariants made for this class
     /// </summary>
     public class Event : IEvent
     {

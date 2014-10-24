@@ -61,6 +61,7 @@
     <Compile Include="DataStorage\StorageProxy.cs" />
     <Compile Include="DataStorage\StorageRefinedAbstractionBridge.cs" />
     <Compile Include="DataStorage\StoreToGoogleCommand.cs" />
+    <Compile Include="Exceptions\EventDoesNotExistException.cs" />
     <Compile Include="Model\Calendar.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\EventProxy.cs" />

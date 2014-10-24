@@ -72,5 +72,15 @@ namespace CalendarSystem.DataStorage
         {
             throw new NotImplementedException();
         }
+
+        public bool match(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool exists(string username)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
