@@ -19,12 +19,12 @@ namespace CalendarSystem.DataStorage
 
         public virtual void SaveEvent(IEvent eventToSave)
         {
-            Storage.SaveEvent(eventToSave._description, eventToSave._date, eventToSave._timeSpan, eventToSave._notification);
+            Storage.SaveEvent(eventToSave);
         }
 
         public virtual void UpdateEvent(IEvent eventToUpdate)
         {
-            Storage.UpdateEvent(eventToUpdate._ID, eventToUpdate._description, eventToUpdate._date, eventToUpdate._timeSpan, eventToUpdate._notification);
+            Storage.UpdateEvent(eventToUpdate);
         }
 
         public virtual IList<IEvent> GetAllEvents()

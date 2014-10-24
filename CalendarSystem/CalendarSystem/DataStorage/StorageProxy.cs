@@ -25,14 +25,19 @@ namespace CalendarSystem.DataStorage
             _trueStorage.loginAuthentication(userName,password);
         }
 
-        public void SaveEvent(string description, DateTime? dateTime, TimeSpan? timeSpan, INotification notification)
+        public void SaveEvent(IEvent eventToSave)
         {
-            _trueStorage.SaveEvent(description, dateTime,timeSpan,notification);
+            _trueStorage.SaveEvent(eventToSave);
         }
 
-        public void UpdateEvent(int ID, string description, DateTime? dateTime, TimeSpan? timeSpan, INotification notification)
+        public void UpdateEvent(IEvent eventToUpdate)
         {
-            _trueStorage.UpdateEvent(ID, description, dateTime, timeSpan, notification);
+            _trueStorage.UpdateEvent(eventToUpdate);
+        }
+
+        public void DeleteEvent(int ID)
+        {
+            throw new NotImplementedException();
         }
 
         public IList<IEvent> GetAllEvents()
@@ -69,6 +74,11 @@ namespace CalendarSystem.DataStorage
         }
 
         public void CreateTag(string tag)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetMaxID()
         {
             throw new NotImplementedException();
         }

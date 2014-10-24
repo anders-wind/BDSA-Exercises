@@ -16,10 +16,10 @@ namespace CalendarSystem.DataStorage
         /// <param name="password"></param>
         /// <pre> userName != null </pre>
         /// <pre> password != null </pre>
-        /// <post> if(username !match password)throw Exception </post>
-        /// <post> if(username !exist) throw Expcetion </post>
+        /// <pre> if(username !match password)</pre>
+        /// <pre> if(username !exist)</pre>
         /// <returns></returns>
-        // TODO make pre and post conditions
+        // TODO make pre and post conditions make method for autherization
         void loginAuthentication(string userName, string password);
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace CalendarSystem.DataStorage
         /// <param name="timeSpan"></param>
         /// <param name="notification"></param>
         /// <pre> eventToUpdate != null </pre>
-        /// <pre> GetEvent(eventToUpdate.ID) != null </pre>
+        /// <pre> GetEvent(eventToUpdate.ID) != null </pre> 
         /// <post> getAllEvents().Count == self@pre.GetAllEvents().Count</post>
         /// <post> GetEvent(eventToUpdate.ID) == eventToUpdate</post>
         // TODO sdd the post and pre here DONE
@@ -81,10 +81,10 @@ namespace CalendarSystem.DataStorage
         /// <pre> endDateTime >= new Date(1900,1,1) </pre> 
         /// <pre> beginDateTime <= new Date(2100,1,1) </pre> 
         /// <pre> endDateTime <= new Date(2100,1,1) </pre> 
-        /// <post> returnList.TrueForAll(e=>e._date.Value >= beginDateTime && e._date.Value <= endDateTime)</post>
-        /// <post> returnList != null</post>
+        /// <post> return.TrueForAll(e=>e._date.Value >= beginDateTime && e._date.Value <= endDateTime)</post>
+        /// <post> return != null</post>
         /// <returns></returns>
-        // TODO sdd the post and pre here CHECK WITH TA
+        // TODO sdd the post and pre here CHECK WITH TA check return in ocl
         IList<IEvent> GetEventsBetweenDates(DateTime beginDateTime, DateTime endDateTime);
 
         /// <summary>

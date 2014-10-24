@@ -17,12 +17,12 @@ namespace CalendarSystem.DataStorage
 
         public override void SaveEvent(IEvent eventToSave)
         {
-            Storage.SaveEvent(eventToSave._description, eventToSave._date, eventToSave._timeSpan, eventToSave._notification);
+            Storage.SaveEvent(eventToSave);
         }
 
         public override void UpdateEvent(IEvent eventToUpdate)
         {
-            Storage.UpdateEvent(eventToUpdate._ID, eventToUpdate._description, eventToUpdate._date, eventToUpdate._timeSpan, eventToUpdate._notification);
+            Storage.UpdateEvent(eventToUpdate);
         }
 
         public override IList<IEvent> GetAllEvents()

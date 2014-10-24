@@ -29,21 +29,23 @@ namespace CalendarSystem.DataStorage
             throw new NotImplementedException();
         }
 
-        public void SaveEvent(string description, DateTime? dateTime, TimeSpan? timeSpan, INotification notification)
+        public void SaveEvent(IEvent eventToSave)
         {
-            int ID = 0; // get ID from DB
-            IEvent tempEvent = new Event(description, timeSpan, dateTime, notification, ID);
 
-            _calendar.createCalenderEntry(tempEvent);
+            _calendar.createCalenderEntry(eventToSave);
             // upload
         }
 
-        public void UpdateEvent(int ID, string description, DateTime? dateTime, TimeSpan? timeSpan, INotification notification)
+        public void UpdateEvent(IEvent eventToUpdate)
         {
-            IEvent tempEvent = new Event(description, timeSpan, dateTime, notification, ID);
 
-            _calendar.updateCalenderEntry(tempEvent);
+            _calendar.updateCalenderEntry(eventToUpdate);
             // upload
+        }
+
+        public void DeleteEvent(int ID)
+        {
+            throw new NotImplementedException();
         }
 
         public IList<IEvent> GetAllEvents()
@@ -64,6 +66,11 @@ namespace CalendarSystem.DataStorage
         public void CreateTag(string tag)
         {
             throw new System.NotImplementedException();
+        }
+
+        public int GetMaxID()
+        {
+            throw new NotImplementedException();
         }
     }
 }

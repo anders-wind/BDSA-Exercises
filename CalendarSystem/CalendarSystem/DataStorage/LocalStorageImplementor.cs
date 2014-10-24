@@ -16,12 +16,17 @@ namespace CalendarSystem.DataStorage
             throw new NotImplementedException();
         }
 
-        public void SaveEvent(string description, DateTime? dateTime, TimeSpan? timeSpan, INotification notification)
+        public void SaveEvent(IEvent eventToSave)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateEvent(int ID, string description, DateTime? dateTime, TimeSpan? timeSpan, INotification notification)
+        public void UpdateEvent(IEvent eventToUpdate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteEvent(int ID)
         {
             throw new NotImplementedException();
         }
@@ -42,6 +47,11 @@ namespace CalendarSystem.DataStorage
         }
 
         public void CreateTag(string tag)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetMaxID()
         {
             throw new NotImplementedException();
         }
