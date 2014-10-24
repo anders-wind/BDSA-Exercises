@@ -13,8 +13,8 @@ namespace CalendarSystem.DataStorage
         /// Authenticate and download Calendar and events belonging to that user.
         /// <para> @pre userName != null </para>
         /// <para> @pre password != null </para>
-        /// <para> @pre username.match(password)</para>
-        /// <para> @pre exist(username)</para>
+        /// <para> @pre match(username, password)</para>
+        /// <para> @pre exists(username)</para>
         /// </summary>
         /// <param name="userName"></param>
         /// <param name="password"></param>
@@ -96,5 +96,21 @@ namespace CalendarSystem.DataStorage
         /// </summary>
         /// <returns>an Int from 0 -> Int32.MaxValue</returns>
         int GetMaxID();
+
+        /// <summary>
+        /// Checks if a username and password matches
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns>true if they match, false otherwise</returns>
+        bool match(string username, string password);
+
+        /// <summary>
+        /// Checks if a username exists in the storage
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns>true if it exists, false otherwise</returns>
+        bool exists(string username);
     }
 }
