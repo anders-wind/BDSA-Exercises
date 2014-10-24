@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using CalendarSystem.Exceptions;
 using CalendarSystem.Model;
 
 namespace CalendarSystem.DataStorage
 {
+    //TODO the code implementation of pre post conditions is in this class document
     /// <summary>
     /// A storage class which implements the IStorage interface.
     /// The class is meant to have a connection to a database where events will be added when they are created and put in the local Calendar class.
@@ -17,7 +19,10 @@ namespace CalendarSystem.DataStorage
 
         public void loginAuthentication(string userName, string password)
         {
-            // check if okay
+            if(userName == null || password == null) throw new ArgumentNullException();
+            if(exists(userName) != true) throw new UserDoesNotExistException();
+            if(match(userName,password) != true) throw new UsernamePasswordMismatchException();
+
             _username = userName;
             _password = password;
             _calendar = getCalendar();
@@ -31,9 +36,16 @@ namespace CalendarSystem.DataStorage
 
         public void SaveEvent(IEvent eventToSave)
         {
+            if(eventToSave == null) throw new ArgumentNullException();
+            if(GetEvent(eventToSave._ID) != null) throw new EventAlreadyExistsException();
+            if (eventToSave._ID < 0) throw new FaultyIDException();
 
             _calendar.createCalenderEntry(eventToSave);
             // upload
+
+            /// <para>@post GetAllEvents().Count == self@pre.GetAllEvents().Count + 1</para>
+            /// <para>@post GetEvent(eventToSave.ID) == eventToSave </para>
+            
         }
 
         public void UpdateEvent(IEvent eventToUpdate)
