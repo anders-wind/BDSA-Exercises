@@ -26,6 +26,14 @@ namespace CalendarSystem.DataStorage
             _password = password;
             _calendar = getCalendar();
         }
+        /// <summary>
+        /// checks invariants
+        /// </summary>
+        private void checkInvariants()
+        {
+            if(GetAllEvents().Count != GetMaxID()) throw new Exception();
+            if (EventsBelongsto(_calendar.Events, _username)) throw new Exception();
+        }
 
         private Calendar getCalendar()
         {
@@ -69,7 +77,7 @@ namespace CalendarSystem.DataStorage
 
         public IList<IEvent> GetAllEvents()
         {
-            return _calendar._Events;
+            return _calendar.Events;
         }
 
         public IEvent GetEvent(int ID)
