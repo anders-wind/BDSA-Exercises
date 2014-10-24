@@ -41,7 +41,7 @@ namespace CalendarSystem.Model
             }
         }
 
-        public bool isInAlarmState()
+        public bool IsInAlarmState()
         {
             if (DateTime.Now < _date)
             {

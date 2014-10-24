@@ -10,22 +10,20 @@ namespace CalendarSystem.Model
         private DateTime _date; //date for notification
         public string Description { get; set; }
 
+        public Notification(DateTime date)
+        {
+            _date = date;
+        }
+
         public Notification(DateTime date, string description)
         {
             _date = date;
             Description = description;
         }
 
-        public bool isInAlarmState()
+        public bool IsInAlarmState()
         {
-            if (DateTime.Now < _date)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return (DateTime.Now > _date);
         }
 
         // getters og setters for date, startTime, endTime, nd (notification description) og nt (notification tag)
