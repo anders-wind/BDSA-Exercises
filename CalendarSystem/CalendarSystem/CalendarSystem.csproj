@@ -67,6 +67,7 @@
     <Compile Include="Exceptions\FaultyIDException.cs" />
     <Compile Include="Exceptions\InvalidBeginDateException.cs" />
     <Compile Include="Exceptions\InvalidEndDateException.cs" />
+    <Compile Include="Exceptions\StorageFailedToRetrieveEventsException.cs" />
     <Compile Include="Exceptions\StorageFailedToDeleteEventException.cs" />
     <Compile Include="Exceptions\StorageFailedToSaveEventException.cs" />
     <Compile Include="Exceptions\StorageFailedToUpdateEventException.cs" />

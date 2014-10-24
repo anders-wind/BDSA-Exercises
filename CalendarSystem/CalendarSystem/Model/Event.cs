@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using CalendarSystem.Controller;
+using CalendarSystem.Exceptions;
 
 namespace CalendarSystem.Model
 {
@@ -19,7 +22,15 @@ namespace CalendarSystem.Model
     {
         public INotification _notification { get; set; }
 
-        public DateTime ?_date { get; set; }
+        public DateTime? _date
+        {
+            get { return _date; }
+            set
+            {
+                if (value < new DateTime(1900, 1, 1) || value > new DateTime(2100, 1, 1)) throw new InvalidDataException();
+                _date = value;
+            }
+        }
 
         public TimeSpan ?_timeSpan { get; set; }
 
@@ -30,15 +41,13 @@ namespace CalendarSystem.Model
 
         public Event(string description, TimeSpan? timespan, DateTime? date, INotification notification, int ID)
         {
+            if (ID < 0) throw new FaultyIDException();
+            if (date < new DateTime(1900, 1, 1) || date > new DateTime(2100, 1, 1)) throw new InvalidDataException();
             _date = date;
             _timeSpan = timespan;
             _description = description;
             _notification = notification;
-            _ID = ID;
-            var list = new List<Event>();
-            var beginDate = new DateTime(2000,1,1);
-            var endDate = new DateTime(2100, 1, 1);
-            list.TrueForAll(e=>e._date.Value > beginDate && e._date.Value < endDate);
+            _ID = ID;           
         }
 
         // getters og setters for _date, startTime, endTime, _description (event description) og tag

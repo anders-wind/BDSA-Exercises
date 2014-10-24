@@ -8,13 +8,11 @@ namespace CalendarSystem.DataStorage
     /// An interface for a storage class. The interface has methods which will make it possible to get and save events into the calendar, without knowing the actual implementation.
     /// Invariants:
     /// The number of events are always less or equal to the max ID
-    /// <para> @inv GetAllEvents().Count() %ls;= GetMaxID() </para> 
+    /// <para> @inv GetAllEvents().Count() %lt;= GetMaxID() </para> 
     /// Only data belonging to the authenticated user will be loaded
     /// <para> @inv EventsBelongTo(events, userName) </para>
-    /// Events can never be of value null
-    /// <para> @inv IEvent != null </para>
     /// Events will always take place on a valid date
-    /// <para> @inv (1990,1,1) &ls;= dateTime &gt;= (2100,1,1)  </para>
+    /// <para> @inv (1990,1,1) &lt;= dateTime &gt;= (2100,1,1)  </para>
     /// </summary>
     interface IStorage
     {

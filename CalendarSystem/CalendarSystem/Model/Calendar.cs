@@ -9,17 +9,17 @@ namespace CalendarSystem.Model
     public class Calendar
     {
         // eventually a tree structure to create faster gets
-        public IList<IEvent> _Events = new List<IEvent>();
+        public IList<IEvent> Events = new List<IEvent>();
 
         public void createCalenderEntry(IEvent newEvent)
         {
-            _Events.Add(newEvent);
+            Events.Add(newEvent);
         }
 
         public void updateCalenderEntry(IEvent newEvent)
         {
             IEvent eventToRemove = null;
-            foreach (IEvent eventToUpdate in _Events)
+            foreach (IEvent eventToUpdate in Events)
             {
                 if (newEvent._ID == eventToUpdate._ID)
                 {
@@ -29,15 +29,15 @@ namespace CalendarSystem.Model
             }
             if (eventToRemove != null)
             {
-                _Events.Remove(eventToRemove);
-                _Events.Add(newEvent);
+                Events.Remove(eventToRemove);
+                Events.Add(newEvent);
             }
             throw new Exception(); // could not find event
         }
 
         public IEvent GetEvent(int ID)
         {
-            foreach (IEvent eventToReturn in _Events)
+            foreach (IEvent eventToReturn in Events)
             {
                 if (ID == eventToReturn._ID)
                 {
