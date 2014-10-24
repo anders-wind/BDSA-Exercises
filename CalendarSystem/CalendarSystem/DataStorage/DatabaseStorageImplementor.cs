@@ -21,7 +21,6 @@ namespace CalendarSystem.DataStorage
             _username = userName;
             _password = password;
             _calendar = getCalendar();
-            SaveEvent();
             SaveEvent(new EventProxy(null,1));
         }
 
@@ -71,6 +70,16 @@ namespace CalendarSystem.DataStorage
         }
 
         public int GetMaxID()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool match(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool exists(string username)
         {
             throw new NotImplementedException();
         }

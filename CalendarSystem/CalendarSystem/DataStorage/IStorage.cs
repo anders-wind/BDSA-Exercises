@@ -9,6 +9,7 @@ namespace CalendarSystem.DataStorage
     /// </summary>
     interface IStorage
     {
+        // TODO make pre and post conditions make method for autherization
         /// <summary>
         /// Authenticate and download Calendar and events belonging to that user.
         /// <para> @pre userName != null </para>
@@ -19,7 +20,6 @@ namespace CalendarSystem.DataStorage
         /// <param name="userName"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        // TODO make pre and post conditions make method for autherization
         void loginAuthentication(string userName, string password);
 
         // TODO sdd the post and pre here DONE       
@@ -45,6 +45,7 @@ namespace CalendarSystem.DataStorage
         // TODO sdd the post and pre here DONE
         void UpdateEvent(IEvent eventToUpdate);
 
+        // TODO make pre and post conditions
         /// <summary>
         /// Deletes the event with the given ID
         /// <para> @pre GetEvent(ID) != null </para>
@@ -53,7 +54,6 @@ namespace CalendarSystem.DataStorage
         /// <para> @post getAllEvents().Count == self@pre.GetAllEvents().Count -1</para>
         /// </summary>
         /// <param name="ID">The ID of the </param>
-        // TODO make pre and post conditions
         void DeleteEvent(int ID);
 
         /// <summary>
@@ -69,6 +69,7 @@ namespace CalendarSystem.DataStorage
         /// <returns>null if does not exist otherwise return an Event object</returns>
         IEvent GetEvent(int ID);
 
+        // TODO sdd the post and pre here CHECK WITH TA check return in ocl
         /// <summary>
         /// Return all events between to given dates.
         /// <para> @pre beginDateTime &lt; endDateTime </para> 
@@ -82,7 +83,6 @@ namespace CalendarSystem.DataStorage
         /// <param name="beginDateTime"></param>
         /// <param name="endDateTime"></param>
         /// <returns>A list of events</returns>
-        // TODO sdd the post and pre here CHECK WITH TA check return in ocl
         IList<IEvent> GetEventsBetweenDates(DateTime beginDateTime, DateTime endDateTime);
 
         /// <summary>
