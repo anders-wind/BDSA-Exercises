@@ -27,8 +27,8 @@ namespace CalendarSystem.Model
             get { return _date; }
             set
             {
-                if (value < new DateTime(1900, 1, 1) || value > new DateTime(2100, 1, 1)) throw new InvalidDataException();
                 _date = value;
+                checkInvariant();
             }
         }
 
@@ -41,18 +41,21 @@ namespace CalendarSystem.Model
 
         public Event(string description, TimeSpan? timespan, DateTime? date, INotification notification, int ID)
         {
-            if (ID < 0) throw new FaultyIDException();
-            if (date < new DateTime(1900, 1, 1) || date > new DateTime(2100, 1, 1)) throw new InvalidDataException();
             _date = date;
             _timeSpan = timespan;
             _description = description;
             _notification = notification;
-            _ID = ID;           
+            _ID = ID;
+            checkInvariant();
         }
 
         // getters og setters for _date, startTime, endTime, _description (event description) og tag
 
-
+        private void checkInvariant()
+        {
+            if (_ID < 0) throw new FaultyIDException();
+            if (_date < new DateTime(1900, 1, 1) || _date > new DateTime(2100, 1, 1)) throw new InvalidDataException();
+        }
         
         /// <summary>
         /// Change the tag of the 
