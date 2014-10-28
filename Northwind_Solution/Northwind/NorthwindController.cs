@@ -8,7 +8,7 @@ using Northwind.DataStorage;
 
 namespace Northwind
 {
-    class NorthwindController
+    public class NorthwindController
     {
         public IList<Order> _orders
         {

@@ -39,7 +39,6 @@ namespace NorthwindApplication
             tempList.Add(tempItem);
 
             ListOfObjects.Items.Add(tempList);
-
         }
     }
 }
