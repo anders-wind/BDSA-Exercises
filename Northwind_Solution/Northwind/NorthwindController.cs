@@ -8,7 +8,7 @@ using Northwind.DataStorage;
 
 namespace Northwind
 {
-    class NorthwindController
+    public class NorthwindController
     {
         public IList<Order> _orders
         {
@@ -31,6 +31,11 @@ namespace Northwind
         public NorthwindController(IDataStorage storage)
         {
             _storage = storage;
+        }
+
+        public NorthwindController()
+        {
+            _storage = new DataStorageDB();
         }
 
         public void AddOrder(IList<Order_Detail> orderDetails, DateTime requiredDate, DateTime? shippedDate, decimal freight, string shipName, string shipAddress, string shipCity, string shipRegion, string shipPostalCode, string shipCountry)
