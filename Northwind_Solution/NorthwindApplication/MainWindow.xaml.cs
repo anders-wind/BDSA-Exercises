@@ -23,10 +23,22 @@ namespace NorthwindApplication
         public MainWindow()
         {
             InitializeComponent();
+            getData();
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+        }
+
+        private void getData()
+        {
+            var tempList = new List<ListBoxItem>();
+            var tempItem = new ListBoxItem();
+            tempItem.Content = "hej 1";
+            tempList.Add(tempItem);
+
+            ListOfObjects.Items.Add(tempList);
 
         }
     }

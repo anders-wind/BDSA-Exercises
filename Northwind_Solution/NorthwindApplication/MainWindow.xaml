@@ -4,7 +4,11 @@
         Title="Nortwind Data Viewer" Height="600" Width="800">
     <Grid Height="569" VerticalAlignment="Top">
         <ComboBox Margin="100,48,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="208"/>
-        <ListBox HorizontalAlignment="Stretch" Margin="100,100,100,50" VerticalAlignment="Stretch" SelectionChanged="ListBox_SelectionChanged"/>
-
+        <ListBox Name="ListOfObjects" HorizontalAlignment="Stretch" Margin="100,100,100,50" VerticalAlignment="Stretch" SelectionChanged="ListBox_SelectionChanged">
+            <ListBoxItem>Item 1</ListBoxItem>
+            <ListBoxItem>Item 2</ListBoxItem>
+            <ListBoxItem>Item 3</ListBoxItem>
+            <ListBoxItem>Item 4</ListBoxItem>
+        </ListBox>
     </Grid>
 </Window>
