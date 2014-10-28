@@ -24,7 +24,8 @@ namespace NorthwindApplication
         {
             InitializeComponent();
             var OVM = new OrderViewModel().GetOrder(10248);
-            LabelOrderID.Content = OVM.OrderID;
+            LabelOrderID.Content = OVM.ShipCity;
+
         }
     }
 }

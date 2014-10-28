@@ -66,7 +66,7 @@ namespace NorthwindApplication.ViewModels
         public OrderViewModel GetOrder(int orderId)
         {
 
-                var order = storageController._orders.First(e => e.OrderID == OrderID);
+            var order = storageController._orders.First(e => e.OrderID == orderId);
                 return new OrderViewModel
                 {
                     OrderID = order.OrderID,

@@ -81,16 +81,9 @@
     <Compile Include="WindMainWindow.xaml.cs">
       <DependentUpon>WindMainWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="BlundellMainWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BlundellMainWindow.xaml.cs">
-      <DependentUpon>BlundellMainWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="PierreMainWindow.xaml">
       <SubType>Designer</SubType>
