@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Northwind.DataStorage
 {
-    interface IDataStorage
+    public interface IDataStorage
     {
         /// <summary>
         /// Returns all products in the storage
