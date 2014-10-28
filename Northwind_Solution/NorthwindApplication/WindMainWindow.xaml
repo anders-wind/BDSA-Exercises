@@ -1,0 +1,9 @@
+﻿<Window x:Class="NorthwindApplication.WindMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WindMainWindow" Height="300" Width="300">
+    <Grid>
+        <Label x:Name ="LabelOrderID" Content="Order ID" HorizontalAlignment="Left" Margin="108,72,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
