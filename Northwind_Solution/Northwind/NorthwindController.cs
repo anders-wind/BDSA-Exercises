@@ -33,6 +33,11 @@ namespace Northwind
             _storage = storage;
         }
 
+        public NorthwindController()
+        {
+            _storage = new DataStorageDB();
+        }
+
         public void AddOrder(IList<Order_Detail> orderDetails, DateTime requiredDate, DateTime? shippedDate, decimal freight, string shipName, string shipAddress, string shipCity, string shipRegion, string shipPostalCode, string shipCountry)
         {
             Order tempOrder = new Order(_storage.maxOrderID() + 1,DateTime.Now,requiredDate,shippedDate,freight,shipName,shipAddress,shipCity,shipRegion,shipPostalCode,orderDetails,shipCountry);
