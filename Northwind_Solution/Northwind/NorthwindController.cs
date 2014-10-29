@@ -22,6 +22,10 @@ namespace Northwind
         {
             get { return _storage.Employees(); }
         }
+        public IList<Order_Detail> _orderDetails
+        {
+            get { return _storage.OrderDetails(); }
+        }
 
 
         private IDataStorage _storage { get; set; }

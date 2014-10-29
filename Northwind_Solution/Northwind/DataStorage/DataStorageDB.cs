@@ -40,6 +40,16 @@ namespace Northwind.DataStorage
             }
         }
 
+        public IList<Order_Detail> OrderDetails()
+        {
+            using (var db = new NORTHWNDEntities())
+            {
+                var orderDetails = (from orderDetail in db.Order_Details
+                                    select orderDetail).Include("Products");
+                return orderDetails.ToList();
+            }
+        }
+
         public IList<Employee> Employees()
         {
             using (var db = new NORTHWNDEntities())
