@@ -12,7 +12,7 @@ namespace NorthwindApplication.ViewModels
         private OrderViewModel order = new OrderViewModel();
         private NorthwindController storageController = new NorthwindController();
 
-        private IList<OrderViewModel> ordersList =  new List<OrderViewModel>();
+        public IList<OrderViewModel> ordersList =  new List<OrderViewModel>();
 
         public IList<OrderViewModel> GetOrders()
         {

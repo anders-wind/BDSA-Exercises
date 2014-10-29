@@ -23,16 +23,7 @@ namespace NorthwindApplication
         public WindMainWindow()
         {
             InitializeComponent();
-
-            var OVM = new OrderViewModel().GetOrder(10248);
-            OrderIdLabel.Content = OVM.OrderID;
-            CustomerNameLabel.Content = OVM.CustomerID;
-            EmployeeNameLabel.Content = OVM.EmployeeID;
-            ShipAddressLabel.Content = OVM.ShipAddress;
-            ShipCityLabel.Content = OVM.ShipCity;
-            ShipNameLabel.Content = OVM.ShipName;
-            ShippingDateLabel.Content = OVM.ShippedDate.ToString();
-            TotalPriceLabel.Content = OVM.TotalPrice;
+            //new OrdersViewModel().GetOrders();
         }
     }
 }
