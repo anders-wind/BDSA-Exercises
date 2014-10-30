@@ -20,10 +20,27 @@ namespace NorthwindApplication
     /// </summary>
     public partial class WindMainWindow : Window
     {
+        private OrdersViewModel ordersListViewModel;
+        private OrderViewModel orderViewModel;
         public WindMainWindow()
         {
+            ordersListViewModel = new OrdersViewModel();
+            orderViewModel = new OrderViewModel();
+            orderViewModel.GetOrder(10248);
+            ordersListViewModel.GetOrders();
             InitializeComponent();
-            //new OrdersViewModel().GetOrders();
+
+            OrderIdLabel.Content = orderViewModel.OrderID;
+            OrdersDataGrid.ItemsSource = ordersListViewModel.ordersList;
+
+            //Console.WriteLine("hej");
+        }
+
+        public void UpdateCurrentOrder()
+        {
+            orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID);
         }
     }
+
+
 }

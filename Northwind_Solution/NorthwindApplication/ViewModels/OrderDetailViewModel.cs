@@ -7,7 +7,7 @@ using Northwind;
 
 namespace NorthwindApplication.ViewModels
 {
-    class OrderDetailViewModel : ViewModelBase
+    public class OrderDetailViewModel : ViewModelBase
     {
         public string ProductName { get; set; }
         public decimal UnitPrice { get; set; }

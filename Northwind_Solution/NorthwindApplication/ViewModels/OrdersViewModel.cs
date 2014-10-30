@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,16 +8,20 @@ using Northwind;
 
 namespace NorthwindApplication.ViewModels
 {
-    class OrdersViewModel : ViewModelBase
+    public class OrdersViewModel : ViewModelBase
     {
         private OrderViewModel order = new OrderViewModel();
         private NorthwindController storageController = new NorthwindController();
 
-        public IList<OrderViewModel> ordersList =  new List<OrderViewModel>();
+        public ObservableCollection<OrderViewModel> ordersList { get; set; }
 
+        public OrdersViewModel()
+        {
+            ordersList = new ObservableCollection<OrderViewModel>();
+        }
         public IList<OrderViewModel> GetOrders()
         {
-            var listOfOrders = storageController._orders.Select(e => e.OrderID);
+            var listOfOrders = storageController._orders;
 
             foreach (var orderId in listOfOrders)
             {

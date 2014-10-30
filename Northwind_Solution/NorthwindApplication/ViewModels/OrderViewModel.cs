@@ -41,5 +41,24 @@ namespace NorthwindApplication.ViewModels
                     TotalPrice = order.Order_Details.Sum(e => e.UnitPrice)
                 };
         }
+
+        public OrderViewModel GetOrder(Order order)
+        {
+            return new OrderViewModel
+            {
+                OrderID = order.OrderID,
+                CustomerID = order.Customer.ContactName,
+                EmployeeID = order.Employee.FirstName + " " + order.Employee.LastName,
+                OrderDate = order.OrderDate,
+                ShippedDate = order.ShippedDate,
+                ShipName = order.ShipName,
+                ShipAddress = order.ShipAddress,
+                ShipCity = order.ShipCity,
+                ShipRegion = order.ShipRegion,
+                ShipPostalCode = order.ShipPostalCode,
+                ShipCountry = order.ShipCountry,
+                TotalPrice = order.Order_Details.Sum(e => e.UnitPrice)
+            };
+        }
     }
 }
