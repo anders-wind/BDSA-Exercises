@@ -38,7 +38,14 @@ namespace NorthwindApplication
 
         public void UpdateCurrentOrder()
         {
-            orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID);
+            OrderIdLabel.Content = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID).OrderID;
+            CustomerNameLabel.Content = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID).CustomerID;
+            EmployeeNameLabel.Content = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID).EmployeeID;
+            ShipNameLabel.Content = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID).ShipName;
+            ShipAddressLabel.Content = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID).ShipAddress;
+            ShipCityLabel.Content = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID).ShipCity;
+            ShippingDateLabel.Content = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID).ShippedDate;
+            TotalPriceLabel.Content = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID).TotalPrice;
         }
     }
 
