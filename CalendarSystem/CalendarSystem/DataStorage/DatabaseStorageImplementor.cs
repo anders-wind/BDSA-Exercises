@@ -41,6 +41,11 @@ namespace CalendarSystem.DataStorage
             throw new NotImplementedException();
         }
 
+        public void LoginAuthentication(User user)
+        {
+            throw new NotImplementedException();
+        }
+
         public void SaveEvent(IEvent eventToSave)
         {
             if(eventToSave == null) throw new ArgumentNullException();

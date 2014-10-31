@@ -66,6 +66,7 @@
     <Compile Include="Exceptions\EventDoesNotExistException.cs" />
     <Compile Include="Exceptions\FaultyIDException.cs" />
     <Compile Include="Exceptions\InvalidDateException.cs" />
+    <Compile Include="Exceptions\NotificationAlarmStateException.cs" />
     <Compile Include="Exceptions\StorageException.cs" />
     <Compile Include="Exceptions\StorageFailedToRetrieveEventsException.cs" />
     <Compile Include="Exceptions\StorageFailedToDeleteEventException.cs" />

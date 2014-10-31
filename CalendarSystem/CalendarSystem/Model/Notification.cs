@@ -4,7 +4,6 @@ using CalendarSystem.Exceptions;
 
 namespace CalendarSystem.Model
 {
-    // todo invariant implementation
     /// <summary>
     /// A class which has a date for when the notification enters an alarmstate and a description.
     /// </summary>
