@@ -82,6 +82,7 @@
     </Compile>
     <Compile Include="DataStorage\DataStorageDB.cs" />
     <Compile Include="DataStorage\DataStorageCSVfiles.cs" />
+    <Compile Include="DataStorage\DataStorageMock.cs" />
     <Compile Include="DataStorage\IDataStorage.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>NorthwindDatabase.tt</DependentUpon>
