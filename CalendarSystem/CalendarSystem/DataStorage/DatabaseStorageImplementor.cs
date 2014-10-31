@@ -5,7 +5,6 @@ using CalendarSystem.Model;
 
 namespace CalendarSystem.DataStorage
 {
-    //todo invariant implementation
     /// <summary>
     /// A storage class which implements the IStorage interface.
     /// The class is meant to have a connection to a database where events will be added when they are created and put in the local Calendar class.
@@ -32,8 +31,8 @@ namespace CalendarSystem.DataStorage
         /// </summary>
         private void checkInvariants()
         {
-            if(GetAllEvents().Count != GetMaxID()) throw new Exception();
-            if (EventsBelongsto(_calendar.Events, _username)) throw new Exception();
+            if(GetAllEvents().Count != GetMaxID()) throw new StorageException("A mismatch between the maximum ID and the number of events occured");
+            if (EventsBelongsto(_calendar.Events, _username)) throw new UserException("A mismatch between the calendar and the user occured. TERMINATE");
         }
 
         private Calendar getCalendar()
