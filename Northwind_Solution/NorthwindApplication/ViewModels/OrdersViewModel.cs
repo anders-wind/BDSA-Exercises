@@ -5,19 +5,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Northwind;
+using Northwind.DataStorage;
 
 namespace NorthwindApplication.ViewModels
 {
     public class OrdersViewModel : ViewModelBase
     {
         private OrderViewModel order = new OrderViewModel();
-        private NorthwindController storageController = new NorthwindController();
+        private NorthwindController storageController;
 
         public ObservableCollection<OrderViewModel> ordersList { get; set; }
 
-        public OrdersViewModel()
+        public OrdersViewModel(IDataStorage iStorage)
         {
+            storageController = new NorthwindController(iStorage);
             ordersList = new ObservableCollection<OrderViewModel>();
+        }
+        public OrdersViewModel()
+            : this(new DataStorageDB())
+        {
+            
         }
         public IList<OrderViewModel> GetOrders()
         {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Northwind;
+using Northwind.DataStorage;
 
 namespace NorthwindApplication.ViewModels
 {
@@ -23,7 +24,18 @@ namespace NorthwindApplication.ViewModels
         public IList<OrderDetailViewModel> OrderDetailViews { get; set; }
 
         private OrderDetailViewModel orderdetailsObject = new OrderDetailViewModel();
-        private NorthwindController storageController = new NorthwindController();
+
+
+        private NorthwindController storageController;
+
+        public OrderViewModel(IDataStorage iStorage)
+        {
+            storageController = new NorthwindController(iStorage);
+        }
+        public OrderViewModel() : this(new DataStorageDB())
+        {
+            
+        }
 
         public OrderViewModel GetOrder(int orderId)
         {

@@ -42,9 +42,8 @@ namespace Northwind
             _storage = storage;
         }
 
-        public NorthwindController()
+        public NorthwindController() : this(new DataStorageDB())
         {
-            _storage = new DataStorageDB();
         }
 
         public void AddOrder(IList<Order_Detail> orderDetails, DateTime requiredDate, DateTime? shippedDate, decimal freight, string shipName, string shipAddress, string shipCity, string shipRegion, string shipPostalCode, string shipCountry)

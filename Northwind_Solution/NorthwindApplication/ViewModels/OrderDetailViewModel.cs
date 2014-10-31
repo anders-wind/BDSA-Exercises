@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Northwind;
+using Northwind.DataStorage;
 
 namespace NorthwindApplication.ViewModels
 {
@@ -14,7 +15,17 @@ namespace NorthwindApplication.ViewModels
         public int Quantity { get; set; }
         public float Discount { get; set; }
 
-        private NorthwindController storageController = new NorthwindController();
+        private NorthwindController storageController;
+
+        public OrderDetailViewModel(IDataStorage iStorage)
+        {
+            storageController = new NorthwindController(iStorage);
+        }
+        public OrderDetailViewModel()
+            : this(new DataStorageDB())
+        {
+            
+        }
 
 
         public IList<OrderDetailViewModel> GetOrderDetails(int orderId)

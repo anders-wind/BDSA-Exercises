@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Northwind.DataStorage
 {
-    class DataStorageDB : IDataStorage
+    public class DataStorageDB : IDataStorage
     {
         public IList<Product> Products()
         {
