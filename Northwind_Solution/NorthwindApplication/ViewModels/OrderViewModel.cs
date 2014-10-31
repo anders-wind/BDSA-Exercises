@@ -31,6 +31,8 @@ namespace NorthwindApplication.ViewModels
         public OrderViewModel(IDataStorage iStorage)
         {
             storageController = new NorthwindController(iStorage);
+            OrderDate = null;
+            ShippedDate = null;
         }
         public OrderViewModel() : this(new DataStorageDB())
         {
@@ -41,12 +43,12 @@ namespace NorthwindApplication.ViewModels
         {
 
             var order = storageController._orders.First(e => e.OrderID == orderId);
-                return new OrderViewModel
+                return new OrderViewModel()
                 {
                     OrderID = order.OrderID,
                     CustomerID = order.Customer.ContactName,
                     EmployeeID = order.Employee.FirstName + " " + order.Employee.LastName,
-                    OrderDate = order.OrderDate.Value,
+                    OrderDate = order.OrderDate,
                     ShippedDate = order.ShippedDate,
                     ShipName = order.ShipName,
                     ShipAddress = order.ShipAddress,

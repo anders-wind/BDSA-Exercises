@@ -52,7 +52,7 @@ namespace Northwind.DataStorage
             using (var db = new NORTHWNDEntities())
             {
                 var orderDetails = (from orderDetail in db.Order_Details
-                                    select orderDetail).Include("Products").Include("Order");
+                                    select orderDetail).Include("Product").Include("Order");
                 return orderDetails.ToList();
             }
         }

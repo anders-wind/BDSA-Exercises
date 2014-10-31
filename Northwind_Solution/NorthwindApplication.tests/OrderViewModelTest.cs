@@ -1,6 +1,6 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Northwind.DataStorage;
+using Northwind.Reporting_Module;
 using NorthwindApplication.ViewModels;
 using NUnit.Framework;
 
@@ -16,8 +16,11 @@ namespace NorthwindApplication.tests
             orderViewModel = new OrderViewModel(new DataStorageMock());
         }
         [Test]
-        public void TestMethod1()
+        public void TestGetOrder0()
         {
+            var tempOrderView = orderViewModel.GetOrder(0);
+            //Assert.AreEqual(0,orderViewModel.OrderID);
+            //StringAssert.AreEqualIgnoringCase("Customer 0", orderViewModel.CustomerID);
         }
     }
 }
