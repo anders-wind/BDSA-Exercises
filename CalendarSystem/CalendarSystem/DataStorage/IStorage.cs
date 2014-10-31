@@ -17,7 +17,6 @@ namespace CalendarSystem.DataStorage
     /// </summary>
     interface IStorage
     {
-        // TODO make pre and post conditions SDD
         /// <summary>
         /// Authenticate and download Calendar and events belonging to that user.
         /// <para> @pre userName != null </para>
@@ -29,8 +28,7 @@ namespace CalendarSystem.DataStorage
         /// <param name="password"></param>
         /// <returns></returns>
         void LoginAuthentication(string userName, string password);
-
-        // TODO sdd the post and pre here DONE       
+    
         /// <summary>
         /// Save an event to the storage
         /// <para>@pre eventToSave != null </para>
@@ -42,7 +40,6 @@ namespace CalendarSystem.DataStorage
         /// <param name="eventToSave"></param>
         void SaveEvent(IEvent eventToSave);
 
-        // TODO sdd the post and pre here DONE
         /// <summary>
         /// Update an event to the storage
         /// <para> @pre eventToUpdate != null </para>
@@ -53,7 +50,6 @@ namespace CalendarSystem.DataStorage
         /// <param name="eventToUpdate"></param>
         void UpdateEvent(IEvent eventToUpdate);
 
-        // TODO make pre and post conditions
         /// <summary>
         /// Deletes the event with the given ID
         /// <para> @pre GetEvent(ID) != null </para>
@@ -77,7 +73,6 @@ namespace CalendarSystem.DataStorage
         /// <returns>null if does not exist otherwise return an Event object</returns>
         IEvent GetEvent(int ID);
 
-        // TODO sdd the post and pre here CHECK WITH TA check return in ocl
         /// <summary>
         /// Return all events between to given dates.
         /// <para> @pre beginDateTime &lt; endDateTime </para> 
