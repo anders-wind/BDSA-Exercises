@@ -38,7 +38,7 @@ namespace NorthwindApplication.ViewModels
                     ShipRegion = order.ShipRegion,
                     ShipPostalCode = order.ShipPostalCode,
                     ShipCountry = order.ShipCountry,
-                    TotalPrice = order.Order_Details.Sum(e => (e.UnitPrice * e.Quantity))
+                    TotalPrice = order.Order_Details.Sum(e => (e.UnitPrice * e.Quantity) - (e.UnitPrice * e.Quantity * (decimal)e.Discount))
                 };
         }
 
@@ -57,7 +57,7 @@ namespace NorthwindApplication.ViewModels
                 ShipRegion = order.ShipRegion,
                 ShipPostalCode = order.ShipPostalCode,
                 ShipCountry = order.ShipCountry,
-                TotalPrice = order.Order_Details.Sum(e => e.UnitPrice * e.Quantity)
+                TotalPrice = order.Order_Details.Sum(e => (e.UnitPrice * e.Quantity) - (e.UnitPrice * e.Quantity * (decimal)e.Discount))
             };
         }
     }
