@@ -30,14 +30,21 @@ namespace Northwind.DataStorage
             }
         }
 
+        private IList<Order> _orders = null; 
         public IList<Order> Orders()
         {
-            using (var db = new NORTHWNDEntities())
+            if (_orders != null) return _orders;
+            else
             {
-                var orders = (from order in db.Orders
-                    select order).Include("Customer").Include("Order_Details").Include("Employee");
-                return orders.ToList();
+                using (var db = new NORTHWNDEntities())
+                {
+                    var orders = (from order in db.Orders
+                        select order).Include("Customer").Include("Order_Details").Include("Employee");
+                    _orders = orders.ToList();;
+                    return _orders;
+                }
             }
+
         }
 
         public IList<Order_Detail> OrderDetails()
