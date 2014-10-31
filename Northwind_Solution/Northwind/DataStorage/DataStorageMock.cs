@@ -228,24 +228,36 @@ namespace Northwind.DataStorage
             _orders.Add(new Order()
             {
                 OrderID = 0,
-                OrderDate = new DateTime(0,0,0),
+                OrderDate = null,
                 CustomerID = _customers[0].CustomerID,
                 Customer = _customers[0],
                 EmployeeID = _employees[0].EmployeeID,
                 Employee = _employees[0],
                 Freight = 0,
                 Order_Details = _orderDetails0,
+                ShipAddress = "address 0",
+                ShipCity = "city 0",
+                ShipCountry = "country 0",
+                ShipName = "name 0",
+                ShipRegion = "region 0",
+                ShipPostalCode = "pc 0",
             });
             _orders.Add(new Order()
             {
                 OrderID = 1,
-                OrderDate = new DateTime(1, 1, 1),
+                OrderDate = new DateTime(1,1,1),
                 CustomerID = _customers[1].CustomerID,
                 Customer = _customers[1],
                 EmployeeID = _employees[1].EmployeeID,
                 Employee = _employees[1],
                 Freight = 1,
                 Order_Details = _orderDetails1,
+                ShipAddress = "address 1",
+                ShipCity = "city 1",
+                ShipCountry = "country 1",
+                ShipName = "name 1",
+                ShipRegion = "region 1",
+                ShipPostalCode = "pc 1"
             });
             _orders.Add(new Order()
             {
@@ -257,6 +269,12 @@ namespace Northwind.DataStorage
                 Employee = _employees[2],
                 Freight = 2,
                 Order_Details = _orderDetails2,
+                ShipAddress = "address 2",
+                ShipCity = "city 2",
+                ShipCountry = "country 2",
+                ShipName = "name 2",
+                ShipRegion = "region 2",
+                ShipPostalCode = "pc 2"
             });
             _orders.Add(new Order()
             {
@@ -268,6 +286,12 @@ namespace Northwind.DataStorage
                 Employee = _employees[3],
                 Freight = 3,
                 Order_Details = _orderDetails3,
+                ShipAddress = "address 3",
+                ShipCity = "city 3",
+                ShipCountry = "country 3",
+                ShipName = "name 3",
+                ShipRegion = "region 3",
+                ShipPostalCode = "pc 3"
             });
         }
 

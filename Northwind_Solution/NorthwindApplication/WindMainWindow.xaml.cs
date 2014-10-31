@@ -22,7 +22,6 @@ namespace NorthwindApplication
     public partial class WindMainWindow : Window
     {
         private OrdersViewModel ordersListViewModel = new OrdersViewModel();
-        private OrderViewModel orderViewModel = new OrderViewModel();
         public WindMainWindow()
         {
             ordersListViewModel.GetOrders();
