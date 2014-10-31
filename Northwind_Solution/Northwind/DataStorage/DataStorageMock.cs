@@ -117,6 +117,7 @@ namespace Northwind.DataStorage
             {
                 Discount = 0,
                 ProductID = 0,
+                OrderID = 0,
                 Product = _products[0],
                 Quantity = 0,
                 UnitPrice = 0,
@@ -125,6 +126,7 @@ namespace Northwind.DataStorage
             {
                 Discount = 0,
                 ProductID = 0,
+                OrderID = 0,
                 Product = _products[0],
                 Quantity = 0,
                 UnitPrice = 0,
@@ -134,6 +136,7 @@ namespace Northwind.DataStorage
             {
                 Discount = 0.1f,
                 ProductID = 1,
+                OrderID = 1,
                 Product = _products[1],
                 Quantity = 1,
                 UnitPrice = 1,
@@ -142,6 +145,7 @@ namespace Northwind.DataStorage
             {
                 Discount = 0.1f,
                 ProductID = 1,
+                OrderID = 1,
                 Product = _products[1],
                 Quantity = 1,
                 UnitPrice = 1,
@@ -151,6 +155,7 @@ namespace Northwind.DataStorage
             {
                 Discount = 0.2f,
                 ProductID = 2,
+                OrderID = 2,
                 Product = _products[2],
                 Quantity = 2,
                 UnitPrice = 2,
@@ -160,6 +165,7 @@ namespace Northwind.DataStorage
             {
                 Discount = 0.3f,
                 ProductID = 3,
+                OrderID = 3,
                 Product = _products[3],
                 Quantity = 3,
                 UnitPrice = 3,
@@ -317,7 +323,7 @@ namespace Northwind.DataStorage
 
         public IList<Order_Detail> OrderDetails()
         {
-            throw new NotImplementedException();
+            return _orderDetails0.Concat(_orderDetails1).Concat(_orderDetails2).Concat(_orderDetails3).ToList();
         }
 
         public void CreateOrder(Order order)
