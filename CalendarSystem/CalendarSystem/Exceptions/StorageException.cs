@@ -8,6 +8,10 @@ namespace CalendarSystem.Exceptions
 {
     public class StorageException : Exception
     {
+        public override string Message
+        {
+            get { return base.Message + "A error occured in the Storage"; }
+        }
         public StorageException()
         {
 

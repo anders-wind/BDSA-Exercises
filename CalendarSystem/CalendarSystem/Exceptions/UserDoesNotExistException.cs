@@ -8,6 +8,10 @@ namespace CalendarSystem.Exceptions
 {
     public class UserDoesNotExistException : Exception
     {
+        public override string Message
+        {
+            get { return base.Message + ": The User does not exist in the system"; }
+        }
         public UserDoesNotExistException()
         {
 

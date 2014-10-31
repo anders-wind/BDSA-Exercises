@@ -8,6 +8,10 @@ namespace CalendarSystem.Exceptions
 {
     class InvalidDateException : Exception
     {
+        public override string Message
+        {
+            get { return base.Message + "The date was invalid"; }
+        }
         public InvalidDateException()
         {
 

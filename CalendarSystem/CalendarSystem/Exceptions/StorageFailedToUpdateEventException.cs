@@ -8,6 +8,10 @@ namespace CalendarSystem.Exceptions
 {
     public class StorageFailedToUpdateEventException : StorageException
     {
+        public override string Message
+        {
+            get { return base.Message + ": The storage failed to update an event"; }
+        }
         public StorageFailedToUpdateEventException()
         {
 

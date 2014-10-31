@@ -8,6 +8,10 @@ namespace CalendarSystem.Exceptions
 {
     public class UserException : Exception
     {
+        public override string Message
+        {
+            get { return base.Message + "A user error occured"; }
+        }
         public UserException()
         {
 

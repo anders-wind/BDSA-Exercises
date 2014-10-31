@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace CalendarSystem.Model
 {
-    // todo invariants here
     /// <summary>
     /// Interface for objects of type notification
     /// Invariants:

@@ -8,6 +8,10 @@ namespace CalendarSystem.Exceptions
 {
     public class StorageFailedToSaveEventException : StorageException
     {
+        public override string Message
+        {
+            get { return base.Message + ": The Storage failed to save an event"; }
+        }
         public StorageFailedToSaveEventException()
         {
 
