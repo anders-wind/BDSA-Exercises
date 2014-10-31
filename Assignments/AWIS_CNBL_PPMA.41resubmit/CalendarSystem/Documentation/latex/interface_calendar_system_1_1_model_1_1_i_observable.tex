@@ -1,0 +1,91 @@
+\hypertarget{interface_calendar_system_1_1_model_1_1_i_observable}{\section{Calendar\+System.\+Model.\+I\+Observable Interface Reference}
+\label{interface_calendar_system_1_1_model_1_1_i_observable}\index{Calendar\+System.\+Model.\+I\+Observable@{Calendar\+System.\+Model.\+I\+Observable}}
+}
+
+
+The interface for observable objects. Used to implement the observer pattern, such that the model can notify the view(controller)  
+
+
+Inheritance diagram for Calendar\+System.\+Model.\+I\+Observable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.926829cm]{interface_calendar_system_1_1_model_1_1_i_observable}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{interface_calendar_system_1_1_model_1_1_i_observable_aee5d17758abde1cd470266ede5fab0c1}{Notify\+Observers} ()
+\begin{DoxyCompactList}\small\item\em Notify observers that a change has happened. \end{DoxyCompactList}\item 
+void \hyperlink{interface_calendar_system_1_1_model_1_1_i_observable_a23ca77451b9e6b19cdc111e0ef5f87c6}{Be\+Observed} (\hyperlink{interface_calendar_system_1_1_model_1_1_i_observer}{I\+Observer} observer)
+\begin{DoxyCompactList}\small\item\em Become observed by an object which class has implemented \hyperlink{interface_calendar_system_1_1_model_1_1_i_observer}{I\+Observer} \end{DoxyCompactList}\item 
+void \hyperlink{interface_calendar_system_1_1_model_1_1_i_observable_a53350aea0b6bf4ef1266d5d955db4700}{Be\+Observed} (I\+List$<$ \hyperlink{interface_calendar_system_1_1_model_1_1_i_observer}{I\+Observer} $>$ observers)
+\begin{DoxyCompactList}\small\item\em Be observed by a list of I\+Observer(s). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The interface for observable objects. Used to implement the observer pattern, such that the model can notify the view(controller) 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_calendar_system_1_1_model_1_1_i_observable_a23ca77451b9e6b19cdc111e0ef5f87c6}{\index{Calendar\+System\+::\+Model\+::\+I\+Observable@{Calendar\+System\+::\+Model\+::\+I\+Observable}!Be\+Observed@{Be\+Observed}}
+\index{Be\+Observed@{Be\+Observed}!Calendar\+System\+::\+Model\+::\+I\+Observable@{Calendar\+System\+::\+Model\+::\+I\+Observable}}
+\subsubsection[{Be\+Observed}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Model.\+I\+Observable.\+Be\+Observed (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+Observer}}]{observer}
+\end{DoxyParamCaption}
+)}}\label{interface_calendar_system_1_1_model_1_1_i_observable_a23ca77451b9e6b19cdc111e0ef5f87c6}
+
+
+Become observed by an object which class has implemented \hyperlink{interface_calendar_system_1_1_model_1_1_i_observer}{I\+Observer} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_calendar_system_1_1_data_storage_1_1_database_storage_a6a80bdff8f3619508f20afdb3dddf650}{Calendar\+System.\+Data\+Storage.\+Database\+Storage}, and \hyperlink{class_calendar_system_1_1_data_storage_1_1_fake_storage_a145d71dfbca477a39bbd5c865f2e10fe}{Calendar\+System.\+Data\+Storage.\+Fake\+Storage}.
+
+\hypertarget{interface_calendar_system_1_1_model_1_1_i_observable_a53350aea0b6bf4ef1266d5d955db4700}{\index{Calendar\+System\+::\+Model\+::\+I\+Observable@{Calendar\+System\+::\+Model\+::\+I\+Observable}!Be\+Observed@{Be\+Observed}}
+\index{Be\+Observed@{Be\+Observed}!Calendar\+System\+::\+Model\+::\+I\+Observable@{Calendar\+System\+::\+Model\+::\+I\+Observable}}
+\subsubsection[{Be\+Observed}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Model.\+I\+Observable.\+Be\+Observed (
+\begin{DoxyParamCaption}
+\item[{I\+List$<$ {\bf I\+Observer} $>$}]{observers}
+\end{DoxyParamCaption}
+)}}\label{interface_calendar_system_1_1_model_1_1_i_observable_a53350aea0b6bf4ef1266d5d955db4700}
+
+
+Be observed by a list of I\+Observer(s). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observers} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_calendar_system_1_1_data_storage_1_1_database_storage_a21c41a45e85e0ace4e49838659587934}{Calendar\+System.\+Data\+Storage.\+Database\+Storage}, and \hyperlink{class_calendar_system_1_1_data_storage_1_1_fake_storage_ab9861bbbb0b5f5af8928f4c7efec59b5}{Calendar\+System.\+Data\+Storage.\+Fake\+Storage}.
+
+\hypertarget{interface_calendar_system_1_1_model_1_1_i_observable_aee5d17758abde1cd470266ede5fab0c1}{\index{Calendar\+System\+::\+Model\+::\+I\+Observable@{Calendar\+System\+::\+Model\+::\+I\+Observable}!Notify\+Observers@{Notify\+Observers}}
+\index{Notify\+Observers@{Notify\+Observers}!Calendar\+System\+::\+Model\+::\+I\+Observable@{Calendar\+System\+::\+Model\+::\+I\+Observable}}
+\subsubsection[{Notify\+Observers}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Model.\+I\+Observable.\+Notify\+Observers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interface_calendar_system_1_1_model_1_1_i_observable_aee5d17758abde1cd470266ede5fab0c1}
+
+
+Notify observers that a change has happened. 
+
+
+
+Implemented in \hyperlink{class_calendar_system_1_1_data_storage_1_1_database_storage_a9dde52dd67fc234b5f4ed217801968af}{Calendar\+System.\+Data\+Storage.\+Database\+Storage}, and \hyperlink{class_calendar_system_1_1_data_storage_1_1_fake_storage_ad141dac914a11365efa50b8bf1bcc80d}{Calendar\+System.\+Data\+Storage.\+Fake\+Storage}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Calendar\+System/\+Model/I\+Observable.\+cs\end{DoxyCompactItemize}

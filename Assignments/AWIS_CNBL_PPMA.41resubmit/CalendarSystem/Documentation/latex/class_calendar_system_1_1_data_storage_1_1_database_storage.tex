@@ -1,0 +1,277 @@
+\hypertarget{class_calendar_system_1_1_data_storage_1_1_database_storage}{\section{Calendar\+System.\+Data\+Storage.\+Database\+Storage Class Reference}
+\label{class_calendar_system_1_1_data_storage_1_1_database_storage}\index{Calendar\+System.\+Data\+Storage.\+Database\+Storage@{Calendar\+System.\+Data\+Storage.\+Database\+Storage}}
+}
+
+
+A storage class which implements the \hyperlink{interface_calendar_system_1_1_data_storage_1_1_i_storage}{I\+Storage} interface. The class is meant to have a connection to a database where events will be added when they are created and put in the local Calendar class.  
+
+
+Inheritance diagram for Calendar\+System.\+Data\+Storage.\+Database\+Storage\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_calendar_system_1_1_data_storage_1_1_database_storage}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_calendar_system_1_1_data_storage_1_1_database_storage_a3c7ccd413ae0f0d4684cf1b1998cddcd}{login\+Authentication} (string user\+Name, string password)
+\begin{DoxyCompactList}\small\item\em Authenticate and download Calendar and events belonging to that user. \end{DoxyCompactList}\item 
+void \hyperlink{class_calendar_system_1_1_data_storage_1_1_database_storage_ae4e6526f9d99e4a01b75a591a15fba9c}{Save\+Event} (string description, Date\+Time date\+Time, Time\+Span time\+Span, \hyperlink{class_calendar_system_1_1_model_1_1_notification}{Notification} notification)
+\begin{DoxyCompactList}\small\item\em Save an event to the storage \end{DoxyCompactList}\item 
+void \hyperlink{class_calendar_system_1_1_data_storage_1_1_database_storage_a9be31393f6b29a9b1b09297153da6b87}{Update\+Event} (int I\+D, string description, Date\+Time date\+Time, Time\+Span time\+Span, \hyperlink{class_calendar_system_1_1_model_1_1_notification}{Notification} notification)
+\begin{DoxyCompactList}\small\item\em Update an event to the storage \end{DoxyCompactList}\item 
+I\+List$<$ \hyperlink{interface_calendar_system_1_1_model_1_1_i_event}{I\+Event} $>$ \hyperlink{class_calendar_system_1_1_data_storage_1_1_database_storage_ab28e18e900a2011f271239952d9e2e26}{Get\+All\+Events} ()
+\begin{DoxyCompactList}\small\item\em Returns all events in the active calendar \end{DoxyCompactList}\item 
+\hyperlink{interface_calendar_system_1_1_model_1_1_i_event}{I\+Event} \hyperlink{class_calendar_system_1_1_data_storage_1_1_database_storage_a792702533aed5e26a856b216dffb67b4}{Get\+Event} (int I\+D)
+\begin{DoxyCompactList}\small\item\em Get a single event with a given I\+D if possible. \end{DoxyCompactList}\item 
+I\+List$<$ \hyperlink{interface_calendar_system_1_1_model_1_1_i_event}{I\+Event} $>$ \hyperlink{class_calendar_system_1_1_data_storage_1_1_database_storage_a168ecf83f6b5d8686fedd72c422b4486}{Get\+Events\+Between\+Dates} (Date\+Time begin\+Date\+Time, Date\+Time en\+Date\+Time)
+\begin{DoxyCompactList}\small\item\em Return all events between to given dates. \end{DoxyCompactList}\item 
+void \hyperlink{class_calendar_system_1_1_data_storage_1_1_database_storage_aee69c1fc20000371ee89ac06617d3610}{Create\+Tag} (\hyperlink{class_calendar_system_1_1_model_1_1_tag}{Tag} tag)
+\begin{DoxyCompactList}\small\item\em Create a tag and save it in the storage. \end{DoxyCompactList}\item 
+void \hyperlink{class_calendar_system_1_1_data_storage_1_1_database_storage_a9dde52dd67fc234b5f4ed217801968af}{Notify\+Observers} ()
+\begin{DoxyCompactList}\small\item\em Notify observers that a change has happened. \end{DoxyCompactList}\item 
+void \hyperlink{class_calendar_system_1_1_data_storage_1_1_database_storage_a6a80bdff8f3619508f20afdb3dddf650}{Be\+Observed} (\hyperlink{interface_calendar_system_1_1_model_1_1_i_observer}{I\+Observer} observer)
+\begin{DoxyCompactList}\small\item\em Become observed by an object which class has implemented I\+Observer \end{DoxyCompactList}\item 
+void \hyperlink{class_calendar_system_1_1_data_storage_1_1_database_storage_a21c41a45e85e0ace4e49838659587934}{Be\+Observed} (I\+List$<$ \hyperlink{interface_calendar_system_1_1_model_1_1_i_observer}{I\+Observer} $>$ observers)
+\begin{DoxyCompactList}\small\item\em Be observed by a list of I\+Observer(s). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A storage class which implements the \hyperlink{interface_calendar_system_1_1_data_storage_1_1_i_storage}{I\+Storage} interface. The class is meant to have a connection to a database where events will be added when they are created and put in the local Calendar class. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_calendar_system_1_1_data_storage_1_1_database_storage_a6a80bdff8f3619508f20afdb3dddf650}{\index{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}!Be\+Observed@{Be\+Observed}}
+\index{Be\+Observed@{Be\+Observed}!Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}}
+\subsubsection[{Be\+Observed}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Data\+Storage.\+Database\+Storage.\+Be\+Observed (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+Observer}}]{observer}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_data_storage_1_1_database_storage_a6a80bdff8f3619508f20afdb3dddf650}
+
+
+Become observed by an object which class has implemented I\+Observer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_calendar_system_1_1_model_1_1_i_observable_a23ca77451b9e6b19cdc111e0ef5f87c6}{Calendar\+System.\+Model.\+I\+Observable}.
+
+\hypertarget{class_calendar_system_1_1_data_storage_1_1_database_storage_a21c41a45e85e0ace4e49838659587934}{\index{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}!Be\+Observed@{Be\+Observed}}
+\index{Be\+Observed@{Be\+Observed}!Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}}
+\subsubsection[{Be\+Observed}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Data\+Storage.\+Database\+Storage.\+Be\+Observed (
+\begin{DoxyParamCaption}
+\item[{I\+List$<$ {\bf I\+Observer} $>$}]{observers}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_data_storage_1_1_database_storage_a21c41a45e85e0ace4e49838659587934}
+
+
+Be observed by a list of I\+Observer(s). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observers} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_calendar_system_1_1_model_1_1_i_observable_a53350aea0b6bf4ef1266d5d955db4700}{Calendar\+System.\+Model.\+I\+Observable}.
+
+\hypertarget{class_calendar_system_1_1_data_storage_1_1_database_storage_aee69c1fc20000371ee89ac06617d3610}{\index{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}!Create\+Tag@{Create\+Tag}}
+\index{Create\+Tag@{Create\+Tag}!Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}}
+\subsubsection[{Create\+Tag}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Data\+Storage.\+Database\+Storage.\+Create\+Tag (
+\begin{DoxyParamCaption}
+\item[{{\bf Tag}}]{tag}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_data_storage_1_1_database_storage_aee69c1fc20000371ee89ac06617d3610}
+
+
+Create a tag and save it in the storage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_calendar_system_1_1_data_storage_1_1_i_storage_a8831822c54d654f17c98a8b13e679240}{Calendar\+System.\+Data\+Storage.\+I\+Storage}.
+
+\hypertarget{class_calendar_system_1_1_data_storage_1_1_database_storage_ab28e18e900a2011f271239952d9e2e26}{\index{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}!Get\+All\+Events@{Get\+All\+Events}}
+\index{Get\+All\+Events@{Get\+All\+Events}!Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}}
+\subsubsection[{Get\+All\+Events}]{\setlength{\rightskip}{0pt plus 5cm}I\+List$<${\bf I\+Event}$>$ Calendar\+System.\+Data\+Storage.\+Database\+Storage.\+Get\+All\+Events (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_data_storage_1_1_database_storage_ab28e18e900a2011f271239952d9e2e26}
+
+
+Returns all events in the active calendar 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_calendar_system_1_1_data_storage_1_1_i_storage_a06b5b139e4ef5fc7e66be8ffad9aed82}{Calendar\+System.\+Data\+Storage.\+I\+Storage}.
+
+\hypertarget{class_calendar_system_1_1_data_storage_1_1_database_storage_a792702533aed5e26a856b216dffb67b4}{\index{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}!Get\+Event@{Get\+Event}}
+\index{Get\+Event@{Get\+Event}!Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}}
+\subsubsection[{Get\+Event}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+Event} Calendar\+System.\+Data\+Storage.\+Database\+Storage.\+Get\+Event (
+\begin{DoxyParamCaption}
+\item[{int}]{I\+D}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_data_storage_1_1_database_storage_a792702533aed5e26a856b216dffb67b4}
+
+
+Get a single event with a given I\+D if possible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I\+D} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_calendar_system_1_1_data_storage_1_1_i_storage_a9b144e859410dbe90cc0876750c2872f}{Calendar\+System.\+Data\+Storage.\+I\+Storage}.
+
+\hypertarget{class_calendar_system_1_1_data_storage_1_1_database_storage_a168ecf83f6b5d8686fedd72c422b4486}{\index{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}!Get\+Events\+Between\+Dates@{Get\+Events\+Between\+Dates}}
+\index{Get\+Events\+Between\+Dates@{Get\+Events\+Between\+Dates}!Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}}
+\subsubsection[{Get\+Events\+Between\+Dates}]{\setlength{\rightskip}{0pt plus 5cm}I\+List$<${\bf I\+Event}$>$ Calendar\+System.\+Data\+Storage.\+Database\+Storage.\+Get\+Events\+Between\+Dates (
+\begin{DoxyParamCaption}
+\item[{Date\+Time}]{begin\+Date\+Time, }
+\item[{Date\+Time}]{en\+Date\+Time}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_data_storage_1_1_database_storage_a168ecf83f6b5d8686fedd72c422b4486}
+
+
+Return all events between to given dates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin\+Date\+Time} & \\
+\hline
+{\em en\+Date\+Time} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_calendar_system_1_1_data_storage_1_1_i_storage_a1547353aae64841c1a79d60f07384c99}{Calendar\+System.\+Data\+Storage.\+I\+Storage}.
+
+\hypertarget{class_calendar_system_1_1_data_storage_1_1_database_storage_a3c7ccd413ae0f0d4684cf1b1998cddcd}{\index{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}!login\+Authentication@{login\+Authentication}}
+\index{login\+Authentication@{login\+Authentication}!Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}}
+\subsubsection[{login\+Authentication}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Data\+Storage.\+Database\+Storage.\+login\+Authentication (
+\begin{DoxyParamCaption}
+\item[{string}]{user\+Name, }
+\item[{string}]{password}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_data_storage_1_1_database_storage_a3c7ccd413ae0f0d4684cf1b1998cddcd}
+
+
+Authenticate and download Calendar and events belonging to that user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Name} & \\
+\hline
+{\em password} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_calendar_system_1_1_data_storage_1_1_i_storage_a7818cf23c7f6dfca608c175d70558aa6}{Calendar\+System.\+Data\+Storage.\+I\+Storage}.
+
+\hypertarget{class_calendar_system_1_1_data_storage_1_1_database_storage_a9dde52dd67fc234b5f4ed217801968af}{\index{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}!Notify\+Observers@{Notify\+Observers}}
+\index{Notify\+Observers@{Notify\+Observers}!Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}}
+\subsubsection[{Notify\+Observers}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Data\+Storage.\+Database\+Storage.\+Notify\+Observers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_data_storage_1_1_database_storage_a9dde52dd67fc234b5f4ed217801968af}
+
+
+Notify observers that a change has happened. 
+
+
+
+Implements \hyperlink{interface_calendar_system_1_1_model_1_1_i_observable_aee5d17758abde1cd470266ede5fab0c1}{Calendar\+System.\+Model.\+I\+Observable}.
+
+\hypertarget{class_calendar_system_1_1_data_storage_1_1_database_storage_ae4e6526f9d99e4a01b75a591a15fba9c}{\index{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}!Save\+Event@{Save\+Event}}
+\index{Save\+Event@{Save\+Event}!Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}}
+\subsubsection[{Save\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Data\+Storage.\+Database\+Storage.\+Save\+Event (
+\begin{DoxyParamCaption}
+\item[{string}]{description, }
+\item[{Date\+Time}]{date\+Time, }
+\item[{Time\+Span}]{time\+Span, }
+\item[{{\bf Notification}}]{notification}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_data_storage_1_1_database_storage_ae4e6526f9d99e4a01b75a591a15fba9c}
+
+
+Save an event to the storage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em description} & \\
+\hline
+{\em date\+Time} & \\
+\hline
+{\em time\+Span} & \\
+\hline
+{\em notification} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_calendar_system_1_1_data_storage_1_1_i_storage_a041366475064bd7008e0546ac8d5d148}{Calendar\+System.\+Data\+Storage.\+I\+Storage}.
+
+\hypertarget{class_calendar_system_1_1_data_storage_1_1_database_storage_a9be31393f6b29a9b1b09297153da6b87}{\index{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}!Update\+Event@{Update\+Event}}
+\index{Update\+Event@{Update\+Event}!Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage@{Calendar\+System\+::\+Data\+Storage\+::\+Database\+Storage}}
+\subsubsection[{Update\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar\+System.\+Data\+Storage.\+Database\+Storage.\+Update\+Event (
+\begin{DoxyParamCaption}
+\item[{int}]{I\+D, }
+\item[{string}]{description, }
+\item[{Date\+Time}]{date\+Time, }
+\item[{Time\+Span}]{time\+Span, }
+\item[{{\bf Notification}}]{notification}
+\end{DoxyParamCaption}
+)}}\label{class_calendar_system_1_1_data_storage_1_1_database_storage_a9be31393f6b29a9b1b09297153da6b87}
+
+
+Update an event to the storage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em description} & \\
+\hline
+{\em date\+Time} & \\
+\hline
+{\em time\+Span} & \\
+\hline
+{\em notification} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_calendar_system_1_1_data_storage_1_1_i_storage_a671ad7560e3d8197ec7867e98d3c138e}{Calendar\+System.\+Data\+Storage.\+I\+Storage}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Calendar\+System/\+Data\+Storage/Database\+Storage.\+cs\end{DoxyCompactItemize}
