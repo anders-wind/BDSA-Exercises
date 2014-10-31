@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace CalendarSystem.Exceptions
 {
-    class BeginDateIsLesserThanEndDateException : Exception
+    class BeginDateIsLesserThanEndDateException : InvalidDateException
     {
+        public override string Message
+        {
+            get { return base.Message + ": The begin date given was at a later point than the enddate"; }
+        }
+
         public BeginDateIsLesserThanEndDateException()
         {
-
         }
 
         public BeginDateIsLesserThanEndDateException(string message)

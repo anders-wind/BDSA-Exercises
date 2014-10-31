@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace CalendarSystem.Exceptions
 {
-    class StorageFailedToRetrieveEventsException : Exception
+    class StorageFailedToRetrieveEventsException : StorageException
     {
+        public override string Message
+        {
+            get { return base.Message + ": The Storage failed to retrieve data"; }
+        }
         public StorageFailedToRetrieveEventsException()
         {
 

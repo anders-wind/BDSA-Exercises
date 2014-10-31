@@ -30,14 +30,21 @@ namespace Northwind.DataStorage
             }
         }
 
+        private IList<Order> _orders = null; 
         public IList<Order> Orders()
         {
-            using (var db = new NORTHWNDEntities())
+            if (_orders != null) return _orders;
+            else
             {
-                var orders = (from order in db.Orders
-                    select order).Include("Customer").Include("Order_Details").Include("Employee");
-                return orders.ToList();
+                using (var db = new NORTHWNDEntities())
+                {
+                    var orders = (from order in db.Orders
+                        select order).Include("Customer").Include("Order_Details").Include("Employee").Include("Order_Details.Product");
+                    _orders = orders.ToList();;
+                    return _orders;
+                }
             }
+
         }
 
         public IList<Order_Detail> OrderDetails()
@@ -45,7 +52,7 @@ namespace Northwind.DataStorage
             using (var db = new NORTHWNDEntities())
             {
                 var orderDetails = (from orderDetail in db.Order_Details
-                                    select orderDetail).Include("Products");
+                                    select orderDetail).Include("Products").Include("Order");
                 return orderDetails.ToList();
             }
         }
@@ -75,6 +82,17 @@ namespace Northwind.DataStorage
             {
                 var maxID = db.Orders.Max(order => order.OrderID);
                 return maxID;
+            }
+        }
+
+        public Order getOrder(int ID)
+        {
+            using (var db = new NORTHWNDEntities())
+            {
+                var tempOrder = from order in db.Orders
+                    where order.OrderID == ID
+                    select order;
+                return tempOrder.FirstOrDefault();
             }
         }
     }

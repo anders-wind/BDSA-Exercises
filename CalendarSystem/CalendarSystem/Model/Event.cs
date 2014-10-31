@@ -16,7 +16,6 @@ namespace CalendarSystem.Model
     /// <para> @inv (1990,1,1) &lt;= DateTime &lt;= (2100,1,1)  </para>
     /// <para> @inv this.ID &lt; storage.MaxValue(ID) </para>
     /// <para> @inv this.ID &gt; -1 </para>
-    /// TODO Invariants made for this class
     /// </summary>
     public class Event : IEvent
     {

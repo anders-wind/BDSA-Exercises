@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace CalendarSystem.Exceptions
 {
-    class StorageFailedToDeleteEventException : Exception
+    class StorageFailedToDeleteEventException : StorageException
     {
+        public override string Message
+        {
+            get { return base.Message + ": The Storage failed to delete an event"; }
+        }
         public StorageFailedToDeleteEventException()
         {
 
