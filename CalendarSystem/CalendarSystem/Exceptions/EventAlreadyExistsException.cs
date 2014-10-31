@@ -8,6 +8,10 @@ namespace CalendarSystem.Exceptions
 {
     public class EventAlreadyExistsException : Exception
     {
+        public override string Message
+        {
+            get { return base.Message + "The event already exists in the storage. You cant save if an event already exists with the same ID"; }
+        }
         public EventAlreadyExistsException()
         {
 

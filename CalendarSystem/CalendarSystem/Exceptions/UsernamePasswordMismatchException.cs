@@ -8,6 +8,10 @@ namespace CalendarSystem.Exceptions
 {
     public class UsernamePasswordMismatchException : Exception
     {
+        public override string Message
+        {
+            get { return base.Message + ": The Username and password does not match"; }
+        }
         public UsernamePasswordMismatchException()
         {
 

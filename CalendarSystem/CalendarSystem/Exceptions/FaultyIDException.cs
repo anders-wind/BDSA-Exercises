@@ -8,6 +8,10 @@ namespace CalendarSystem.Exceptions
 {
     class FaultyIDException : Exception
     {
+        public override string Message
+        {
+            get { return base.Message + "The Id is not valid. The ID must be larger than 0."; }
+        }
         public FaultyIDException()
         {
 

@@ -8,6 +8,10 @@ namespace CalendarSystem.Exceptions
 {
     class StorageFailedToDeleteEventException : StorageException
     {
+        public override string Message
+        {
+            get { return base.Message + ": The Storage failed to delete an event"; }
+        }
         public StorageFailedToDeleteEventException()
         {
 
