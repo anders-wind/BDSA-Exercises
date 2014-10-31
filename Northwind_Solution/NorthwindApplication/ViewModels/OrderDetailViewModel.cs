@@ -16,16 +16,16 @@ namespace NorthwindApplication.ViewModels
 
         private NorthwindController storageController = new NorthwindController();
 
-        private IList<OrderDetailViewModel> orderDetails = new List<OrderDetailViewModel>(); 
 
         public IList<OrderDetailViewModel> GetOrderDetails(int orderId)
         {
 
             var orderDetail = storageController._orderDetails.Select(e => e).Where(x => x.OrderID == orderId);
+            var tempList = new List<OrderDetailViewModel>(); 
 
             foreach (var od in orderDetail)
             {
-                orderDetails.Add(new OrderDetailViewModel
+                tempList.Add(new OrderDetailViewModel
                 {
                     ProductName = od.Product.ProductName,
                     UnitPrice = od.UnitPrice,
@@ -34,7 +34,24 @@ namespace NorthwindApplication.ViewModels
                 });
             }
 
-            return orderDetails;
+            return tempList;
+        }
+
+        public IList<OrderDetailViewModel> GetOrderDetails(IList<Order_Detail> orderDetailsFromOrder)
+        {
+            var tempList = new List<OrderDetailViewModel>(); 
+            foreach (var od in orderDetailsFromOrder)
+            {
+                tempList.Add(new OrderDetailViewModel
+                {
+                    ProductName = od.Product.ProductName,
+                    UnitPrice = od.UnitPrice,
+                    Quantity = od.Quantity,
+                    Discount = od.Discount
+                });
+            }
+
+            return tempList;
         }
     }
 }

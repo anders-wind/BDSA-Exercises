@@ -30,11 +30,14 @@ namespace NorthwindApplication
             InitializeComponent();
 
             OrdersDataGrid.ItemsSource = ordersListViewModel.ordersList;
+            UpdateCurrentOrder();
         }
 
         public void UpdateCurrentOrder()
         {
-            OrderObjectGrid.DataContext = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID);
+            OrderObjectGrid.DataContext = ordersListViewModel.ordersList[OrdersDataGrid.SelectedIndex];
+            OrderDetailsDataGrid.DataContext = ordersListViewModel.ordersList[OrdersDataGrid.SelectedIndex];
+            //OrderDetailsDataGrid.ItemsSource = ordersListViewModel.ordersList[OrdersDataGrid.SelectedIndex].OrderDetailViews;
         }
     }
 
