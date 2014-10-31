@@ -10,10 +10,12 @@ namespace NorthwindApplication.tests
     public class OrderViewModelTest
     {
         private OrderViewModel orderViewModel;
+        private IDataStorage storage;
         [SetUp]
         public void setup()
         {
-            orderViewModel = new OrderViewModel(new DataStorageMock());
+            storage = new DataStorageMock();
+            orderViewModel = new OrderViewModel(storage);
         }
         [Test]
         public void TestGetOrder0()
@@ -80,6 +82,15 @@ namespace NorthwindApplication.tests
             StringAssert.AreEqualIgnoringCase("region 3", tempOrderView.ShipRegion);
             StringAssert.AreEqualIgnoringCase("pc 3", tempOrderView.ShipPostalCode);
             Assert.AreEqual(6.3m, tempOrderView.TotalPrice);
+        }
+
+        [Test]
+        public void TestGetOrderOverload()
+        {
+            Assert.AreEqual(orderViewModel.GetOrder(0), orderViewModel.GetOrder(storage.getOrder(0)));
+            Assert.AreEqual(orderViewModel.GetOrder(1), orderViewModel.GetOrder(storage.getOrder(1)));
+            Assert.AreEqual(orderViewModel.GetOrder(2), orderViewModel.GetOrder(storage.getOrder(2)));
+            Assert.AreEqual(orderViewModel.GetOrder(3), orderViewModel.GetOrder(storage.getOrder(3)));
         }
     }
 }

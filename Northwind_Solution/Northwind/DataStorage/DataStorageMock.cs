@@ -332,7 +332,7 @@ namespace Northwind.DataStorage
 
         public Order getOrder(int ID)
         {
-            return _orders[3];
+            return _orders[ID];
         }
     }
 }

@@ -57,7 +57,7 @@ namespace NorthwindApplication.ViewModels
                     ShipPostalCode = order.ShipPostalCode,
                     ShipCountry = order.ShipCountry,
                     TotalPrice = order.Order_Details.Sum(e => (e.UnitPrice * e.Quantity) - (e.UnitPrice * e.Quantity * (decimal)e.Discount)),
-                    OrderDetailViews = orderdetailsObject.GetOrderDetails(orderId)
+                    OrderDetailViews = orderdetailsObject.GetOrderDetails(order.Order_Details.ToList())
                 };
         }
 
@@ -79,6 +79,42 @@ namespace NorthwindApplication.ViewModels
                 TotalPrice = order.Order_Details.Sum(e => (e.UnitPrice * e.Quantity) - (e.UnitPrice * e.Quantity * (decimal)e.Discount)),
                 OrderDetailViews = orderdetailsObject.GetOrderDetails(order.Order_Details.ToList())
             };
+        }
+
+        protected bool Equals(OrderViewModel other)
+        {
+            return string.Equals(CustomerID, other.CustomerID) && OrderID == other.OrderID && string.Equals(EmployeeID, other.EmployeeID) && OrderDate.Equals(other.OrderDate) && string.Equals(ShipName, other.ShipName) && string.Equals(ShipAddress, other.ShipAddress) && string.Equals(ShipCity, other.ShipCity) && string.Equals(ShipRegion, other.ShipRegion) && string.Equals(ShipPostalCode, other.ShipPostalCode) && string.Equals(ShipCountry, other.ShipCountry) && TotalPrice == other.TotalPrice;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((OrderViewModel) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                int hashCode = (storageController != null ? storageController.GetHashCode() : 0);
+                hashCode = (hashCode*397) ^ (CustomerID != null ? CustomerID.GetHashCode() : 0);
+                hashCode = (hashCode*397) ^ OrderID;
+                hashCode = (hashCode*397) ^ (orderdetailsObject != null ? orderdetailsObject.GetHashCode() : 0);
+                hashCode = (hashCode*397) ^ (EmployeeID != null ? EmployeeID.GetHashCode() : 0);
+                hashCode = (hashCode*397) ^ OrderDate.GetHashCode();
+                hashCode = (hashCode*397) ^ ShippedDate.GetHashCode();
+                hashCode = (hashCode*397) ^ (ShipName != null ? ShipName.GetHashCode() : 0);
+                hashCode = (hashCode*397) ^ (ShipAddress != null ? ShipAddress.GetHashCode() : 0);
+                hashCode = (hashCode*397) ^ (ShipCity != null ? ShipCity.GetHashCode() : 0);
+                hashCode = (hashCode*397) ^ (ShipRegion != null ? ShipRegion.GetHashCode() : 0);
+                hashCode = (hashCode*397) ^ (ShipPostalCode != null ? ShipPostalCode.GetHashCode() : 0);
+                hashCode = (hashCode*397) ^ (ShipCountry != null ? ShipCountry.GetHashCode() : 0);
+                hashCode = (hashCode*397) ^ (OrderDetailViews != null ? OrderDetailViews.GetHashCode() : 0);
+                hashCode = (hashCode*397) ^ TotalPrice.GetHashCode();
+                return hashCode;
+            }
         }
     }
 }
