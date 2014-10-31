@@ -7,4 +7,21 @@ The Data which must be persistant is the following objects:
 	\item Tags 
 	\item User info - passwords, usernames and their connection.
 \end{itemize}
-To peek, post, update, delete LINQ can be used since it supports these features in a strong cross storage-platform language.
+To peek, post, update, delete LINQ can be used since it supports these features in a strong cross storage-platform language.\\\\
+
+\newpage
+\textbf{OO to RDBMS mapping:}
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{OOtoRDBMSMapping}
+	\caption{Zoom in to see details: Model of OO to RDBMS Mapping}
+	\label{fig:OO to RDBMS Mapping}
+\end{figure}
+
+As for the primary, foreign and candidate keys it goes as following.\\
+In the User table, the userID is the primary key. The candidate keys are userName and email, as these just as well could be the primary key as they always be unique.\\
+In the Calendar table, the calendarID is the primary key.\\
+In the Event table, the eventID is the primary key, while the calendarID is the foreign key.\\
+In the Notification table,  the notID is the primary key, while the eventID is the foreign key.\\
+Finally in the UserCalendars join table, both userID and eventID are foreign keys.\\

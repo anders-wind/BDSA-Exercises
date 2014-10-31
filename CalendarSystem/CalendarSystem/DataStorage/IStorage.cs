@@ -18,15 +18,13 @@ namespace CalendarSystem.DataStorage
     {
         /// <summary>
         /// Authenticate and download Calendar and events belonging to that user.
-        /// <para> @pre userName != null </para>
-        /// <para> @pre password != null </para>
+        /// <para> @pre User != null </para>
         /// <para> @pre match(username, password)</para>
         /// <para> @pre exists(username)</para>
         /// </summary>
-        /// <param name="userName"></param>
-        /// <param name="password"></param>
+        /// <param name="User"></param>
         /// <returns></returns>
-        void LoginAuthentication(string userName, string password);
+        void LoginAuthentication(User user);
     
         /// <summary>
         /// Save an event to the storage
