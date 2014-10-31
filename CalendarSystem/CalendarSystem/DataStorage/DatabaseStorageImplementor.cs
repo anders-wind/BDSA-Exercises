@@ -89,8 +89,8 @@ namespace CalendarSystem.DataStorage
         public IList<IEvent> GetEventsBetweenDates(DateTime beginDateTime, DateTime endDateTime)
         {
             if(beginDateTime > endDateTime) throw new BeginDateIsLesserThanEndDateException();
-            if(beginDateTime < new DateTime(1900,1,1) || beginDateTime > new DateTime(2100,1,1)) throw new InvalidBeginDateException();
-            if(endDateTime < new DateTime(1900, 1, 1) || endDateTime > new DateTime(2100, 1, 1)) throw new InvalidEndDateException();
+            if(beginDateTime < new DateTime(1900,1,1) || beginDateTime > new DateTime(2100,1,1)) throw new InvalidDateException("Begin date not between 1900 and 2100");
+            if (endDateTime < new DateTime(1900, 1, 1) || endDateTime > new DateTime(2100, 1, 1)) throw new InvalidDateException("End date not between 1900 and 2100");
             var listToReturn = new List<IEvent>();
 
             if (listToReturn == null || !listToReturn.TrueForAll(e=>e._date.Value >= beginDateTime && e._date.Value <= endDateTime)) throw new StorageFailedToRetrieveEventsException();

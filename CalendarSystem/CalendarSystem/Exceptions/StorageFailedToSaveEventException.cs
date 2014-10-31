@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalendarSystem.Exceptions
 {
-    public class StorageFailedToSaveEventException : Exception
+    public class StorageFailedToSaveEventException : StorageException
     {
         public StorageFailedToSaveEventException()
         {

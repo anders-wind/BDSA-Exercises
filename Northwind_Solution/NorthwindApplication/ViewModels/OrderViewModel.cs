@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Northwind;
 
@@ -19,6 +20,9 @@ namespace NorthwindApplication.ViewModels
         public string ShipCountry { get; set; }
         public decimal TotalPrice { get; set; }
 
+        public IList<OrderDetailViewModel> OrderDetailViews { get; set; }
+
+        private OrderDetailViewModel orderdetailsObject = new OrderDetailViewModel();
         private NorthwindController storageController = new NorthwindController();
 
         public OrderViewModel GetOrder(int orderId)
@@ -30,7 +34,7 @@ namespace NorthwindApplication.ViewModels
                     OrderID = order.OrderID,
                     CustomerID = order.Customer.ContactName,
                     EmployeeID = order.Employee.FirstName + " " + order.Employee.LastName,
-                    OrderDate = order.OrderDate,
+                    OrderDate = order.OrderDate.Value,
                     ShippedDate = order.ShippedDate,
                     ShipName = order.ShipName,
                     ShipAddress = order.ShipAddress,
@@ -38,7 +42,8 @@ namespace NorthwindApplication.ViewModels
                     ShipRegion = order.ShipRegion,
                     ShipPostalCode = order.ShipPostalCode,
                     ShipCountry = order.ShipCountry,
-                    TotalPrice = order.Order_Details.Sum(e => (e.UnitPrice * e.Quantity) - (e.UnitPrice * e.Quantity * (decimal)e.Discount))
+                    TotalPrice = order.Order_Details.Sum(e => (e.UnitPrice * e.Quantity) - (e.UnitPrice * e.Quantity * (decimal)e.Discount)),
+                    OrderDetailViews = orderdetailsObject.GetOrderDetails(orderId)
                 };
         }
 
@@ -57,7 +62,8 @@ namespace NorthwindApplication.ViewModels
                 ShipRegion = order.ShipRegion,
                 ShipPostalCode = order.ShipPostalCode,
                 ShipCountry = order.ShipCountry,
-                TotalPrice = order.Order_Details.Sum(e => (e.UnitPrice * e.Quantity) - (e.UnitPrice * e.Quantity * (decimal)e.Discount))
+                TotalPrice = order.Order_Details.Sum(e => (e.UnitPrice * e.Quantity) - (e.UnitPrice * e.Quantity * (decimal)e.Discount)),
+                OrderDetailViews = orderdetailsObject.GetOrderDetails(order.Order_Details.ToList())
             };
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalendarSystem.Exceptions
 {
-    public class EventDoesNotExistException : Exception
+    public class EventDoesNotExistException : KeyNotFoundException
     {
         public EventDoesNotExistException()
         {

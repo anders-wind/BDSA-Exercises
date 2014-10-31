@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalendarSystem.Exceptions
 {
-    class StorageFailedToRetrieveEventsException : Exception
+    class StorageFailedToRetrieveEventsException : StorageException
     {
         public StorageFailedToRetrieveEventsException()
         {

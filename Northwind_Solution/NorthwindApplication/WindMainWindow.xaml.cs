@@ -21,33 +21,23 @@ namespace NorthwindApplication
     /// </summary>
     public partial class WindMainWindow : Window
     {
-        private OrdersViewModel ordersListViewModel;
-        private OrderViewModel orderViewModel;
+        private OrdersViewModel ordersListViewModel = new OrdersViewModel();
+        private OrderViewModel orderViewModel = new OrderViewModel();
         public WindMainWindow()
         {
-            ordersListViewModel = new OrdersViewModel();
-            orderViewModel = new OrderViewModel();
-            orderViewModel.GetOrder(10248);
             ordersListViewModel.GetOrders();
+
             InitializeComponent();
 
-            OrderIdLabel.Content = orderViewModel.OrderID;
             OrdersDataGrid.ItemsSource = ordersListViewModel.ordersList;
-
-            //Console.WriteLine("hej");
+            UpdateCurrentOrder();
         }
 
         public void UpdateCurrentOrder()
         {
-            var tempOVM = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID);
-            OrderIdLabel.Content = tempOVM.OrderID;
-            CustomerNameLabel.Content = tempOVM.CustomerID;
-            EmployeeNameLabel.Content = tempOVM.EmployeeID;
-            ShipNameLabel.Content = tempOVM.ShipName;
-            ShipAddressLabel.Content = tempOVM.ShipAddress;
-            ShipCityLabel.Content = tempOVM.ShipCity;
-            ShippingDateLabel.Content = tempOVM.ShippedDate;
-            TotalPriceLabel.Content = tempOVM.TotalPrice;
+            OrderObjectGrid.DataContext = ordersListViewModel.ordersList[OrdersDataGrid.SelectedIndex];
+            OrderDetailsDataGrid.DataContext = ordersListViewModel.ordersList[OrdersDataGrid.SelectedIndex];
+            //OrderDetailsDataGrid.ItemsSource = ordersListViewModel.ordersList[OrdersDataGrid.SelectedIndex].OrderDetailViews;
         }
     }
 

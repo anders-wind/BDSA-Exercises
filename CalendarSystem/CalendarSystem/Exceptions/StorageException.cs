@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace CalendarSystem.Exceptions
 {
-    class InvalidEndDateException : Exception
+    public class StorageException : Exception
     {
-        public InvalidEndDateException()
+        public StorageException()
         {
 
         }
 
-        public InvalidEndDateException(string message)
+        public StorageException(string message)
             : base(message)
         {
         }
 
-        public InvalidEndDateException(string message, Exception inner)
+        public StorageException(string message, Exception inner)
             : base(message, inner)
         {
         }
