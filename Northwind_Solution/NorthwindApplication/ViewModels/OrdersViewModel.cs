@@ -23,9 +23,9 @@ namespace NorthwindApplication.ViewModels
         {
             var listOfOrders = storageController._orders;
 
-            foreach (var orderId in listOfOrders)
+            foreach (var orderObject in listOfOrders)
             {
-                ordersList.Add(order.GetOrder(orderId));
+                ordersList.Add(order.GetOrder(orderObject));
             }
 
             return ordersList;

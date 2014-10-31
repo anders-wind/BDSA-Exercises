@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Northwind;
 using NorthwindApplication.ViewModels;
 
 namespace NorthwindApplication
@@ -38,14 +39,15 @@ namespace NorthwindApplication
 
         public void UpdateCurrentOrder()
         {
-            OrderIdLabel.Content = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID).OrderID;
-            CustomerNameLabel.Content = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID).CustomerID;
-            EmployeeNameLabel.Content = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID).EmployeeID;
-            ShipNameLabel.Content = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID).ShipName;
-            ShipAddressLabel.Content = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID).ShipAddress;
-            ShipCityLabel.Content = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID).ShipCity;
-            ShippingDateLabel.Content = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID).ShippedDate;
-            TotalPriceLabel.Content = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID).TotalPrice;
+            var tempOVM = orderViewModel.GetOrder((OrdersDataGrid.SelectedItem as OrderViewModel).OrderID);
+            OrderIdLabel.Content = tempOVM.OrderID;
+            CustomerNameLabel.Content = tempOVM.CustomerID;
+            EmployeeNameLabel.Content = tempOVM.EmployeeID;
+            ShipNameLabel.Content = tempOVM.ShipName;
+            ShipAddressLabel.Content = tempOVM.ShipAddress;
+            ShipCityLabel.Content = tempOVM.ShipCity;
+            ShippingDateLabel.Content = tempOVM.ShippedDate;
+            TotalPriceLabel.Content = tempOVM.TotalPrice;
         }
     }
 
