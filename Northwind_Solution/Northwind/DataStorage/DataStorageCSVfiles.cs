@@ -230,5 +230,10 @@ namespace Northwind.DataStorage
                 select elements[0];
             return Int32.Parse(orderQuery.Max(e => e));
         }
+
+        public Order getOrder(int ID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

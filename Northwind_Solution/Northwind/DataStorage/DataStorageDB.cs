@@ -84,5 +84,16 @@ namespace Northwind.DataStorage
                 return maxID;
             }
         }
+
+        public Order getOrder(int ID)
+        {
+            using (var db = new NORTHWNDEntities())
+            {
+                var tempOrder = from order in db.Orders
+                    where order.OrderID == ID
+                    select order;
+                return tempOrder.FirstOrDefault();
+            }
+        }
     }
 }

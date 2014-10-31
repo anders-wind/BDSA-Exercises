@@ -27,6 +27,11 @@ namespace Northwind
             get { return _storage.OrderDetails(); }
         }
 
+        public Order getOrder(int ID)
+        {
+            return _storage.getOrder(ID);
+        }
+
 
         private IDataStorage _storage { get; set; }
 

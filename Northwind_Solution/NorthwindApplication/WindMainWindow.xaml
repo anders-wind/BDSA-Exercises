@@ -3,56 +3,52 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:ViewModels="clr-namespace:NorthwindApplication.ViewModels" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" x:Name="window" mc:Ignorable="d" x:Class="NorthwindApplication.WindMainWindow"
         Title="Order Viewer" Height="448" Width="651">
-	<Grid Margin="0,0,2,0">
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="179*"/>
-			<ColumnDefinition Width="464*"/>
-		</Grid.ColumnDefinitions>
-		<Label Content="Order Id:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,22.665,0,0" VerticalAlignment="Top" Height="25.96" Width="56.883"/>
-		<Label Content="Customer:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,48.625,0,0" VerticalAlignment="Top" Height="25.96" Width="63.797"/>
-		<Label Content="Employee:" Grid.Column="1" HorizontalAlignment="Left" Margin="10.666,74.585,0,0" VerticalAlignment="Top" Height="25.96" Width="64.357"/>
-		<Label Content="Ship name:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,100.545,0,0" VerticalAlignment="Top" Height="25.96" Width="68.52"/>
-		<Label Content="Ship address:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,126.505,0,0" VerticalAlignment="Top" Height="25.96" Width="79.887"/>
-		<Label Content="Ship city:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,152.465,0,0" VerticalAlignment="Top" Height="25.96" Width="57.333"/>
-		<Label Content="Shipping date:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,178.425,0,0" VerticalAlignment="Top" Height="25.96" Width="86.343"/>
-		<Label Content="Total price:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,204.385,0,0" VerticalAlignment="Top" Height="25.96" Width="68.237"/>
-		<Label x:Name="OrderIdLabel" Grid.Column="1" HorizontalAlignment="Left" Margin="134,23,0,0" VerticalAlignment="Top" Height="26" Width="153" Content="{Binding OrderID}">
-			<Label.DataContext>
-				<ViewModels:OrderViewModel OrderID="0"/>
-			</Label.DataContext>
-		</Label>
-		<Label x:Name="CustomerNameLabel" Content="{Binding CustomerID}" Grid.Column="1" HorizontalAlignment="Left" Margin="134,49,0,0" VerticalAlignment="Top" Height="26" Width="153">
-			<Label.DataContext>
-				<ViewModels:OrderViewModel/>
-			</Label.DataContext>
-		</Label>
-		<Label x:Name="EmployeeNameLabel" Content="{Binding EmployeeID}" Grid.Column="1" HorizontalAlignment="Left" Margin="134,75,0,0" VerticalAlignment="Top" Height="26" Width="153">
-			<Label.DataContext>
-				<ViewModels:OrderViewModel/>
-			</Label.DataContext>
-		</Label>
-		<Label x:Name="ShipNameLabel" Content="shipname" Grid.Column="1" HorizontalAlignment="Left" Margin="134.333,100.545,0,0" VerticalAlignment="Top"/>
-		<Label x:Name="ShipAddressLabel" Content="shipaddress" Grid.Column="1" HorizontalAlignment="Left" Margin="134.333,126.505,0,0" VerticalAlignment="Top"/>
-		<Label x:Name="ShipCityLabel" Content="shipcity" Grid.Column="1" HorizontalAlignment="Left" Margin="134.333,152.465,0,0" VerticalAlignment="Top"/>
-		<Label x:Name="ShippingDateLabel" Content="shippingdate" Grid.Column="1" HorizontalAlignment="Left" Margin="134.333,178.425,0,0" VerticalAlignment="Top"/>
-		<Label x:Name="TotalPriceLabel" Content="totalprice" Grid.Column="1" HorizontalAlignment="Left" Margin="134.333,204.385,0,0" VerticalAlignment="Top"/>
-		<Grid Margin="10,10,0,0">
-			<DataGrid x:Name="OrdersDataGrid" IsReadOnly ="True" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Height="343" ItemsSource="{Binding ordersList}" HeadersVisibility="Column" AutoGenerateColumns="False" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
-				<DataGrid.DataContext>
-					<ViewModels:OrdersViewModel/>
-				</DataGrid.DataContext>
-				<DataGrid.Columns>
-					<DataGridTextColumn Header="Order Id" Binding="{Binding OrderID}"/>
-					<DataGridTextColumn Header="Order Date" Binding="{Binding OrderDate}"/>
-				</DataGrid.Columns>
-				<i:Interaction.Triggers>
-					<i:EventTrigger EventName="SelectedCellsChanged">
-						<ei:CallMethodAction MethodName="UpdateCurrentOrder" TargetObject="{Binding ElementName=window, Mode=OneWay}"/>
-					</i:EventTrigger>
-				</i:Interaction.Triggers>
-			</DataGrid>
-			<Border BorderBrush="Black" BorderThickness="1" Margin="0,0,0,10"/>
-			<Label Content="Orders:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
-		</Grid>
-	</Grid>
+    <Grid Margin="0,0,2,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="316*"/>
+            <ColumnDefinition Width="325*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Margin="10,10,0,0" HorizontalAlignment="Left" Width="296">
+            <DataGrid x:Name="OrdersDataGrid" IsReadOnly ="True" Margin="21,41,24,21" ItemsSource="{Binding ordersList}" HeadersVisibility="Column" AutoGenerateColumns="False" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <DataGrid.DataContext>
+                    <ViewModels:OrdersViewModel/>
+                </DataGrid.DataContext>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Order Id" Binding="{Binding OrderID}" Width="80"/>
+                    <DataGridTextColumn Header="Order Date" Binding="{Binding OrderDate}" Width="150" CanUserResize="False"/>
+                </DataGrid.Columns>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectedCellsChanged">
+                        <ei:CallMethodAction MethodName="UpdateCurrentOrder" TargetObject="{Binding ElementName=window, Mode=OneWay}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </DataGrid>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,10,10"/>
+            <Label Content="Orders:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,10,0,0" FontSize="18"/>
+        </Grid>
+        <Grid x:Name="OrderObjectGrid" Grid.Column="1" HorizontalAlignment="Left" Height="397" Margin="10,10,0,0" VerticalAlignment="Top" Width="307">
+            <Grid.DataContext>
+                <ViewModels:OrderViewModel/>
+            </Grid.DataContext>
+            <Label Content="Order Id:" HorizontalAlignment="Left" Margin="18,15,0,0" VerticalAlignment="Top" Height="26" Width="57"/>
+            <Label Content="Customer:" HorizontalAlignment="Left" Margin="18,41,0,0" VerticalAlignment="Top" Height="26" Width="64"/>
+            <Label Content="Employee:" HorizontalAlignment="Left" Margin="19,67,0,0" VerticalAlignment="Top" Height="26" Width="64"/>
+            <Label Content="Ship name:" HorizontalAlignment="Left" Margin="18,93,0,0" VerticalAlignment="Top" Height="26" Width="69"/>
+            <Label Content="Ship address:" HorizontalAlignment="Left" Margin="18,119,0,0" VerticalAlignment="Top" Height="25" Width="80"/>
+            <Label Content="Ship city:" HorizontalAlignment="Left" Margin="18,144,0,0" VerticalAlignment="Top" Height="26" Width="57"/>
+            <Label Content="Shipping date:" HorizontalAlignment="Left" Margin="18,170,0,0" VerticalAlignment="Top" Height="26" Width="86"/>
+            <Label Content="Total price:" HorizontalAlignment="Left" Margin="18,196,0,0" VerticalAlignment="Top" Height="26" Width="68"/>
+            <Label x:Name="OrderIdLabel" HorizontalAlignment="Left" Margin="142,15,0,0" VerticalAlignment="Top" Height="26" Width="153" Content="{Binding OrderID}">
+            </Label>
+            <Label x:Name="CustomerNameLabel" Content="{Binding CustomerID}" HorizontalAlignment="Left" Margin="142,41,0,0" VerticalAlignment="Top" Height="26" Width="153">
+            </Label>
+            <Label x:Name="EmployeeNameLabel" Content="{Binding EmployeeID}" HorizontalAlignment="Left" Margin="142,67,0,0" VerticalAlignment="Top" Height="26" Width="153">
+            </Label>
+            <Label x:Name="ShipNameLabel" Content="{Binding ShipName}" HorizontalAlignment="Left" Margin="142,93,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="ShipAddressLabel"  Content="{Binding ShipAddress}" HorizontalAlignment="Left" Margin="142,119,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="ShipCityLabel"  Content="{Binding ShipCity}" HorizontalAlignment="Left" Margin="142,144,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="ShippingDateLabel"  Content="{Binding ShippedDate}" HorizontalAlignment="Left" Margin="142,170,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="TotalPriceLabel"  Content="{Binding TotalPrice}" HorizontalAlignment="Left" Margin="142,196,0,0" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
 </Window>

@@ -36,5 +36,7 @@ namespace Northwind.DataStorage
         /// </summary>
         /// <returns>The Highest OrderID int</returns>
         int maxOrderID();
+
+        Order getOrder(int ID);
     }
 }

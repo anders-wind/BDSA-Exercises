@@ -30,7 +30,7 @@ namespace NorthwindApplication.ViewModels
                     OrderID = order.OrderID,
                     CustomerID = order.Customer.ContactName,
                     EmployeeID = order.Employee.FirstName + " " + order.Employee.LastName,
-                    OrderDate = order.OrderDate,
+                    OrderDate = order.OrderDate.Value,
                     ShippedDate = order.ShippedDate,
                     ShipName = order.ShipName,
                     ShipAddress = order.ShipAddress,
