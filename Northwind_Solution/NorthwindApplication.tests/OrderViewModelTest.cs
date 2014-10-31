@@ -65,6 +65,7 @@ namespace NorthwindApplication.tests
             StringAssert.AreEqualIgnoringCase("pc 2", tempOrderView.ShipPostalCode);
             Assert.AreEqual(3.2m, tempOrderView.TotalPrice);
         }
+        [Test]
         public void TestGetOrder3()
         {
             var tempOrderView = orderViewModel.GetOrder(3);
@@ -78,7 +79,7 @@ namespace NorthwindApplication.tests
             StringAssert.AreEqualIgnoringCase("name 3", tempOrderView.ShipName);
             StringAssert.AreEqualIgnoringCase("region 3", tempOrderView.ShipRegion);
             StringAssert.AreEqualIgnoringCase("pc 3", tempOrderView.ShipPostalCode);
-            Assert.AreEqual(3.2m, tempOrderView.TotalPrice);
+            Assert.AreEqual(6.3m, tempOrderView.TotalPrice);
         }
     }
 }
