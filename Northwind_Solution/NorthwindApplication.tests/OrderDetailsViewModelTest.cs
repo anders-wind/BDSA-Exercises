@@ -7,14 +7,15 @@ using NUnit.Framework;
 namespace NorthwindApplication.tests
 {
     [TestFixture]
-    public class OrderViewModelTest
+    public class OrderDetailsViewModelTest
     {
-        private OrderViewModel orderViewModel;
+        private OrderDetailViewModel orderDetailViewModel;
         [SetUp]
         public void setup()
         {
-            orderViewModel = new OrderViewModel(new DataStorageMock());
+            orderDetailViewModel = new OrderDetailViewModel(new DataStorageMock());
         }
+
         [Test]
         public void TestMethod1()
         {
