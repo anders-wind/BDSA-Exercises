@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace CalendarSystem.Exceptions
 {
-    public class StorageFailedToUpdateEventException : StorageException
+    public class UserException : Exception
     {
-        public StorageFailedToUpdateEventException()
+        public UserException()
         {
 
         }
 
-        public StorageFailedToUpdateEventException(string message)
+        public UserException(string message)
             : base(message)
         {
         }
 
-        public StorageFailedToUpdateEventException(string message, Exception inner)
+        public UserException(string message, Exception inner)
             : base(message, inner)
         {
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalendarSystem.Exceptions
 {
-    class BeginDateIsLesserThanEndDateException : Exception
+    class BeginDateIsLesserThanEndDateException : InvalidDateException
     {
         public BeginDateIsLesserThanEndDateException()
         {

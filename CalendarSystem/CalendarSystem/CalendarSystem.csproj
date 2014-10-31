@@ -65,13 +65,14 @@
     <Compile Include="Exceptions\EventAlreadyExistsException.cs" />
     <Compile Include="Exceptions\EventDoesNotExistException.cs" />
     <Compile Include="Exceptions\FaultyIDException.cs" />
-    <Compile Include="Exceptions\InvalidBeginDateException.cs" />
-    <Compile Include="Exceptions\InvalidEndDateException.cs" />
+    <Compile Include="Exceptions\InvalidDateException.cs" />
+    <Compile Include="Exceptions\StorageException.cs" />
     <Compile Include="Exceptions\StorageFailedToRetrieveEventsException.cs" />
     <Compile Include="Exceptions\StorageFailedToDeleteEventException.cs" />
     <Compile Include="Exceptions\StorageFailedToSaveEventException.cs" />
     <Compile Include="Exceptions\StorageFailedToUpdateEventException.cs" />
     <Compile Include="Exceptions\UserDoesNotExistException.cs" />
+    <Compile Include="Exceptions\UserException.cs" />
     <Compile Include="Exceptions\UsernamePasswordMismatchException.cs" />
     <Compile Include="Model\Calendar.cs" />
     <Compile Include="Model\Event.cs" />
