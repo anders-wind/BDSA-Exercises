@@ -70,12 +70,14 @@ namespace NorthwindApplication.tests
             }
         }
 
+        [Test]
         public void TestGetOrderDetailsOverloads()
         {
             for (int j = 0; j < 4; j++)
             {
                 var tempList1 = orderDetailViewModel.GetOrderDetails(j);
                 var tempList2 = orderDetailViewModel.GetOrderDetails(storage.getOrder(j).Order_Details.ToList());
+                Assert.AreEqual(tempList1.Count, tempList2.Count);
                 for (int i = 0; i < tempList1.Count; i++)
                 {
                     Assert.AreEqual(tempList1[i].Discount, tempList2[i].Discount);
